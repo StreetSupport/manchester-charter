@@ -3,9 +3,11 @@ git:
 language: node_js
 node_js:
   - '4'
-  - '5'
 cache:
   directories:
     - node_modules
 before_script:
+  - npm install npm -g
   - npm install gulp-cli -g
+  - chmod +x ./deploy-website.sh
+script: "./deploy-website.sh"
