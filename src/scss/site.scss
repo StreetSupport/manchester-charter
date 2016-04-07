@@ -1,18 +1,26 @@
 // Non outputted Sass
-@import 'modules/functions';
-@import 'modules/variables';
-@import 'modules/mixins';
+
+@import "modules/functions";
+@import "modules/variables";
+@import "modules/mixins";
 
 // Vendor files
-@import 'vendor/normalize';
-@import 'sass-mq'; // from npm
-@import 'susy'; // from npm
+// Sass-mq & susy are from NPM
+
+@import "vendor/normalize";
+@import "sass-mq";
+@import "susy";
 
 // Partials
-@import 'partials/base';
-@import 'partials/svgsprite';
-@import 'partials/container';
-@import 'partials/typography';
-@import 'partials/header';
-@import 'partials/footer';
-@import 'partials/grid-test';
+
+@import "partials/base";
+@import "partials/svgsprite";
+@import "partials/container";
+@import "partials/typography";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/block";
+
+// Charter Specific
+
+@import "partials/charter-nav";

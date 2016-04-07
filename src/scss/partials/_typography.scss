@@ -11,29 +11,65 @@ body {
 }
 
 .h1 {
-  font-size: 32px;
-  line-height: 1.1;
-
-  background-color: $brand-b;
-
-  @include mq($from: m) {
-    font-size: 45px;
-  }
+  font-size: 36px;
+  line-height: 1.4;
+  margin-top: 0;
 }
 
 .h2 {
-  font-size: 24px;
-  line-height: 1.2;
-
-  @include mq($from: m) {
-    font-size: 31px;
-  }
+  font-size: 25px;
+  line-height: 1.4;
 }
 
 .h3 {
   font-size: 16px;
+  line-height: 1.4;
+}
 
-  @include mq($from: m) {
-    font-size: 22px;
+p {
+  line-height: 1.4;
+}
+
+ul {
+  line-height: 1.4;
+
+  li {
+    margin-bottom: 5px;
   }
+}
+
+ol {
+  line-height: 1.4;
+
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+dl {
+  line-height: 1.4;
+
+  dt {
+    margin-bottom: 5px;
+  }
+
+  dd {
+    margin-bottom: 10px;
+  }
+}
+
+strong {
+  font-weight: $font-headline-weight;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
