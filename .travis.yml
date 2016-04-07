@@ -2,12 +2,15 @@ git:
   depth: 1
 language: node_js
 node_js:
-  - '4'
+- '4'
 cache:
   directories:
-    - node_modules
+  - node_modules
 before_script:
-  - npm install npm -g
-  - npm install gulp-cli -g
-  - chmod +x ./deploy-website.sh
+- npm install npm -g
+- npm install gulp-cli -g
+- chmod +x ./deploy-website.sh
 script: "./deploy-website.sh"
+env:
+  global:
+    secure: l3aPPRQ7f13YTH6z+48ilHOttXASa3jq6cfvr6gmVvkyb+4v/B1nCQKG1GPpXNOzZFtvGiJ9s2AkGaRsCbv/GfFv9nxs1XBao/pL44OAWUwSaplG5Cf60YULu6MJ2G06pdx4O6oITOYSrkytp/5fhhqqN07f0bEMWjzN4Y4Z6x3MzVHB9NcWWJay7fJWL+ftevLyDu6JK7ntXD6NR1AwAxC1awguNLOdAj6ws1D8Yv6mxQnUihhfQLh+QUNgpkt+13bXohDqOt3Lp9UJ/NhBEjafbeUPbyYJ3MWPm40dQjFLZXNmXtsi4LPnkTIzblSl082tjBVl0MMKscXu1AomySqvq+ccov0hlzOpTF3In6ryEq36Qu08dNcAaD9bd1PYMxupLHeW8NuO6dK4e1x5Uk7gtnq/GpdM4aUxL5FLAuZL3bsJoIsNE0qa4Vkw6UU2NKXgXMAQG2RYqjwKz+8pEPMBGCiJ7YJiuZz7lHwK7bBhoZAOiZ5nPUxRSzRV8clw0sbuYPwscSmcH0Jc+sQm7uryyY3l2SYyMx0CR55yH8eDmQZLRpTwRWukNgIKfq3bgWka7BMoCtiwbklLTUpqIJ72K43MSvm3L89Vg7B/Z1M8uBqXiTUmdWq836B2NNkVJUTMnUoJh4rL4J6ndAKQLV7SPkbH/c9K3xcK8oWmRNo=
