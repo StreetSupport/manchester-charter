@@ -9,7 +9,7 @@ APIENVIRONMENT=1
 # Define variables depending on the branch
 if [[ $TRAVIS_BRANCH == 'develop' ]]
   then
-    GH_REPO="github.com/StreetSupport/dev-charter.streetsupport.net.git"
+    GH_REPO="github.com/StreetSupport/charter-dev.streetsupport.net.git"   
     DOMAIN="charter-dev.streetsupport.net"
     APIENVIRONMENT=1
 fi
