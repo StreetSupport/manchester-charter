@@ -69,4 +69,16 @@
       color: inherit;
     }
   }
+
+  &__promo {
+    &--left {
+      float: left;
+      margin-right: 20px;
+    }
+
+    &--right {
+      float: right;
+      margin-left: 20px;
+    }
+  }
 }
