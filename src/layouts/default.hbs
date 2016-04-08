@@ -1,7 +1,17 @@
 {{> head}}
-{{> header}}
 
-{{{contents}}}
+{{>header-nav}}
 
-{{> footer}}
+<div class="nav__push js-nav-push">
+  {{> header}}
+  {{>charter-nav}}
+
+
+  {{{contents}}}
+
+  {{> footer}}
+
+  <div class="nav__overlay js-nav-overlay"></div>
+</div>
+
 {{> foot}}

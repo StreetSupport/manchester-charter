@@ -3,6 +3,8 @@
 import Holder from 'holderjs'
 import Svg4everybody from 'svg4everybody'
 import 'feature.js'
+import nav from './nav.js'
+import analytics from './analytics.js'
 
 // jQuery test
 console.log('testing if jquery is loaded globally:')
@@ -13,6 +15,9 @@ if ('querySelector' in document && 'addEventListener' in window) {
   var html = document.querySelector('html')
   html.classList.remove('no-js')
   html.classList.add('js')
+
+  nav.init()
+  // analytics.init()
 
   // Check if we need fastclick
   if ('touchAction' in document.body.style) {
