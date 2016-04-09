@@ -1,0 +1,15 @@
+.split {
+  @include cf();
+
+  &__element {
+    @include span(3 of $column-small);
+
+    @include mq($from: l) {
+      @include span(6 of $column-large);
+    }
+  }
+
+  .btn {
+    display: block;
+  }
+}
