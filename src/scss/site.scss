@@ -11,18 +11,21 @@
 @import "sass-mq";
 @import "susy";
 
-// Street Support Partials
+// Street Support Shared Partials
 
 @import "partials/base";
 @import "partials/svgsprite";
 @import "partials/container";
 @import "partials/typography";
+@import "partials/btn";
+@import "partials/block";
+
+// Street Support Shared Components
+
 @import "partials/header";
 @import "partials/footer";
-@import "partials/block";
-@import "partials/btn";
 @import "partials/nav";
 
-// Charter Specific
+// Charter Specific Components
 
 @import "partials/charter-nav";
