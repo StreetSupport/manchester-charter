@@ -71,14 +71,18 @@
   }
 
   &__promo {
-    &--left {
-      float: left;
-      margin-right: 20px;
-    }
+    margin-bottom: 20px;
 
-    &--right {
-      float: right;
-      margin-left: 20px;
+    @include mq($from: l) {
+      &--left {
+        float: left;
+        margin-right: 20px;
+      }
+
+      &--right {
+        float: right;
+        margin-left: 20px;
+      }
     }
   }
 }
