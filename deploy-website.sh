@@ -9,9 +9,18 @@ APIENVIRONMENT=1
 # Define variables depending on the branch
 if [[ $TRAVIS_BRANCH == 'develop' ]]
   then
-    GH_REPO="github.com/StreetSupport/charter-dev.streetsupport.net.git"   
-    DOMAIN="charter-dev.streetsupport.net"
     APIENVIRONMENT=1
+    AZURE_WEBSITE=$DEV_AZURE_WEBSITE
+fi
+if [[ $TRAVIS_BRANCH == 'staging' ]]
+  then
+    APIENVIRONMENT=1
+    AZURE_WEBSITE=$STAGING_AZURE_WEBSITE
+fi
+if [[ $TRAVIS_BRANCH == 'release' ]]
+  then
+    APIENVIRONMENT=1
+    AZURE_WEBSITE=$LIVE_AZURE_WEBSITE
 fi
 
 # Get the commit details
@@ -39,19 +48,14 @@ gulp deploy --debug --production
 # Move to created directory
 cd _dist
 
-# Create CNAME file and populate with domain depending on branch
-cat > CNAME << EOF
-$DOMAIN
-EOF
-
 # Push to git by overriding previous commits
 # IMPORTANT: Supress messages so nothing appears in logs
-if [[ $TRAVIS_BRANCH == 'develop' ]]
+if [[ $TRAVIS_BRANCH == 'release' ]] || [[ $TRAVIS_BRANCH == 'staging' ]] || [[ $TRAVIS_BRANCH == 'develop' ]]
   then
     git init
     git add -A
     git commit -m "Travis CI automatic build for $THE_COMMIT"
-    git push --force --quiet "https://${GH_TOKEN}@${GH_REPO}" master:gh-pages > /dev/null 2>&1
+    git push --quiet --force "https://${AZURE_USER}:${AZURE_PASSWORD}@${AZURE_WEBSITE}.scm.azurewebsites.net:443/${AZURE_WEBSITE}.git" master > /dev/null 2>&1
   else
-    echo "Not on a build branch so don't push the changes to GitHub Pages"
+    echo "Not on a build branch so don't deploy the changes"
 fi
