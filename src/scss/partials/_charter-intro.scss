@@ -16,4 +16,12 @@
       margin-left: 0;
     }
   }
+
+  @include mq($from: l) {
+    .btn:first-of-type {
+      .btn__text {
+        line-height: 2.4;
+      }
+    }
+  }
 }
