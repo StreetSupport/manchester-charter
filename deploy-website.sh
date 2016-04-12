@@ -10,17 +10,17 @@ APIENVIRONMENT=1
 if [[ $TRAVIS_BRANCH == 'develop' ]]
   then
     APIENVIRONMENT=1
-    AZUREWEBSITE=$DEV_AZURE_WEBSITE
+    AZURE_WEBSITE=$DEV_AZURE_WEBSITE
 fi
 if [[ $TRAVIS_BRANCH == 'staging' ]]
   then
     APIENVIRONMENT=1
-    AZUREWEBSITE=$STAGING_AZURE_WEBSITE
+    AZURE_WEBSITE=$STAGING_AZURE_WEBSITE
 fi
 if [[ $TRAVIS_BRANCH == 'release' ]]
   then
     APIENVIRONMENT=1
-    AZUREWEBSITE=$LIVE_AZURE_WEBSITE
+    AZURE_WEBSITE=$LIVE_AZURE_WEBSITE
 fi
 
 # Get the commit details
@@ -44,9 +44,6 @@ cd ../../
 
 # Run gulp
 gulp deploy --debug --production
-
-echo $AZURE_USER
-echo $AZURE_WEBSITE
 
 # Move to created directory
 cd _dist
