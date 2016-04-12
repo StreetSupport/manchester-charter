@@ -2,10 +2,10 @@
   @include cf();
 
   &__element {
-    @include span(3 of $column-small);
+    @include span(3 of $grid-column);
 
     @include mq($from: l) {
-      @include span(6 of $column-large);
+      @include span(6 of $grid-column);
     }
   }
 }

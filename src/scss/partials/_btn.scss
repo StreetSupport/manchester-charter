@@ -13,26 +13,14 @@
 
   // Components
   &__icon {
-    height: 80px;
     width: 100%;
     display: block;
-    background-position: center top;
-    background-size: 100% auto;
+    background: linear-gradient(#ADE1F9, #FFFFFF);
+    border-radius: 10px 10px 0 0;
 
-    @include mq($from: xs) {
-      height: 100px;
-    }
-
-    @include mq($from: s) {
-      height: 120px;
-    }
-
-    @include mq($from: m) {
-      height: 190px;
-    }
-
-    @include mq($from: l) {
-      height: 140px;
+    svg {
+      width: 100%;
+      height: 110px;
     }
 
     & + span {
@@ -53,6 +41,19 @@
   }
 
   // Variants
+  &--cta {
+    @include span(full);
+
+    @include mq($from: xs) {
+      @include span(4 of $grid-column);
+    }
+
+    @include mq($from: m) {
+      @include span(2 of $grid-column);
+    }
+  }
+
+
   &--brand-d {
     .btn__text {
       background-color: $brand-d;
