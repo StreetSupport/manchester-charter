@@ -12,20 +12,9 @@ appName: home
       <h2 class="h2">Manchester Homelessness Charter</h2>
       <p>The Manchester Homelessness Charter defines a new, shared approach to addressing the challenges of homelessness in our city. It sets out a shared vision and set of values, with the ultimate goal to end homelessness in the city.</p>
       <p>[We're individuals and organisations to Pledge and support the Charter, and will be [carrying out these activities] to make a difference to homelessness in Manchester]</p>
-      <button class="btn btn--cta btn--brand-e" href="changethislink">
-        <span class="btn__icon">{{>icon name="join" class=""}}</span>
-        <span class="btn__text">Join</span>
-      </button>
-
-      <button class="btn btn--cta btn--brand-e" href="changethislink">
-        <span class="btn__icon">{{>icon name="pledge" class=""}}</span>
-        <span class="btn__text">Pledge</span>
-      </button>
-
-      <button class="btn btn--cta btn--brand-e" href="changethislink">
-        <span class="btn__icon">{{>icon name="read" class=""}}</span>
-        <span class="btn__text">Read</span>
-      </button>
+      {{>cta brand="e" link="changethislink" icon="join" name="Join"}}
+      {{>cta brand="e" link="changethislink" icon="pledge" name="Pledge"}}
+      {{>cta brand="e" link="changethislink" icon="read" name="Read"}}
     </div>
   </div>
 </div>
@@ -77,25 +66,10 @@ appName: home
       <p>[If this page is not part of the Street Support site, some text here about who SS is and how they link with the charter would be good, it's also an opportunity to promote post-pledge activities here]</p>
       <p>Find out what you can do to help people who are homeless:</p>
 
-      <button class="btn btn--cta btn--brand-e" href="changethislink">
-        <span class="btn__icon">{{>icon name="give" class=""}}</span>
-        <span class="btn__text">Give</span>
-      </button>
-
-      <button class="btn btn--cta btn--brand-e" href="changethislink">
-        <span class="btn__icon">{{>icon name="volunteer" class=""}}</span>
-        <span class="btn__text">Volunteer</span>
-      </button>
-
-      <button class="btn btn--cta btn--brand-e" href="changethislink">
-        <span class="btn__icon">{{>icon name="donate" class=""}}</span>
-        <span class="btn__text">Donate</span>
-      </button>
-
-      <button class="btn btn--cta btn--brand-e" href="changethislink">
-        <span class="btn__icon">{{>icon name="partnerships" class=""}}</span>
-        <span class="btn__text">Partnerships</span>
-      </button>
+      {{>cta brand="e" link="changethislink" icon="give" name="Give"}}
+      {{>cta brand="e" link="changethislink" icon="volunteer" name="Volunteer"}}
+      {{>cta brand="e" link="changethislink" icon="donate" name="Donate"}}
+      {{>cta brand="e" link="changethislink" icon="partnerships" name="Partnerships"}}
     </div>
   </div>
 </div>

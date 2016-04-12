@@ -17,6 +17,7 @@
     display: block;
     background: linear-gradient(#ADE1F9, #FFFFFF);
     border-radius: 10px 10px 0 0;
+    position: relative;
 
     svg {
       width: 100%;
@@ -33,11 +34,19 @@
     padding: 15px 20px;
     border-radius: 10px;
     box-shadow: 0px 5px 0px 0px darken( $brand-d, 15% );
-    transition: background-color 200ms ease, box-shadow 200ms ease;
+    transition: background-color 250ms linear, box-shadow 250ms linear;
+  }
 
-    &:hover {
-      box-shadow: none;
-    }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 250ms linear;
+    border-radius: 10px 10px 0 0;
   }
 
   // Variants
@@ -50,6 +59,16 @@
 
     @include mq($from: m) {
       @include span(2 of $grid-column);
+    }
+
+    &:hover {
+      .btn__overlay {
+        opacity: 1;
+      }
+
+      .btn__text {
+        box-shadow: none;
+      }
     }
   }
 
