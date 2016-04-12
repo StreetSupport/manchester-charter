@@ -1,9 +1,19 @@
 .charter-intro {
   text-align: center;
-  
+
+  @include mq($from: xs) {
+    .btn:last-of-type {
+      @include push(2 of $grid-column);
+    }
+  }
+
   @include mq($from: m) {
     .btn:first-of-type {
       @include push(1 of $grid-column);
+    }
+
+    .btn:last-of-type {
+      margin-left: 0;
     }
   }
 }
