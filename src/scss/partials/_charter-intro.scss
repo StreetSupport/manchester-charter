@@ -13,7 +13,7 @@
     }
 
     .btn:last-of-type {
-      margin-left: 0;
+      @include push(0 of $grid-column);
     }
   }
 
