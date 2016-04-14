@@ -1,27 +1,30 @@
 // use require for sinon mocking
-var ajax = require('./ajax')
-var browser = require('./browser')
-var endpoints = require('./api-endpoints')
+const ajax = require('./ajax')
+const browser = require('./browser')
+const endpoints = require('./api-endpoints')
 
 let Pledges = function () {
-  var self = this
+  let self = this
   self.pledges = []
+
+  let mapPledge = (p) => {
+    return {
+      'firstName': p.firstName,
+      'lastName': p.lastName,
+      'organisation': p.organisation,
+      'creationDate': p.creationDate
+    }
+  }
+
   let init = () => {
     browser.loading()
     ajax
       .get(endpoints.pledges)
       .then((result) => {
-        self.pledges = result.data.map((p) => {
-          return {
-            'firstName': p.firstName,
-            'lastName': p.lastName,
-            'organisation': p.organisation,
-            'creationDate': p.creationDate
-          }
-        })
+        self.pledges = result.data.map((p) => mapPledge(p))
         browser.loaded()
-      }, (error) => {
-
+      }, () => {
+        browser.redirect('500.html')
       })
   }
 

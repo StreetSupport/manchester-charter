@@ -1,14 +1,17 @@
+/*
+  global describe, beforeEach, afterEach, it, expect
+*/
 'use strict'
 
-import sinon  from 'sinon'
+import sinon from 'sinon'
 
 // use require for sinon mocking
-var browser = require('../src/js/browser')
-var ajax = require('../src/js/ajax')
+var browser = require('../../src/js/browser')
+var ajax = require('../../src/js/ajax')
 
-var Pledges = require('../src/js/pledges')
+var Pledges = require('../../src/js/pledges')
 
-import * as endpoints from '../src/js/api-endpoints'
+import * as endpoints from '../../src/js/api-endpoints'
 
 describe('Show Pledges', () => {
   var browserLoadingStub
@@ -21,21 +24,18 @@ describe('Show Pledges', () => {
     lastName: 'last name 1',
     organisation: 'organisation 1',
     creationDate: '2016-04-11T11:04:55.8600000Z'
-  },{
+  }, {
     firstName: 'first name 2',
     lastName: 'last name 2',
     organisation: 'organisation 2',
     creationDate: '2016-04-11T11:04:55.8600000Z'
-  },{
+  }, {
     firstName: 'first name 3',
     lastName: 'last name 3',
     organisation: 'organisation 3',
     creationDate: '2016-04-11T11:04:55.8600000Z'
   }]
   const getPledgesEndpoint = endpoints.pledges
-  const headers = {
-    'content-type': 'application/json'
-  }
 
   beforeEach(() => {
     browserLoadingStub = sinon.stub(browser, 'loading')
