@@ -1,6 +1,7 @@
 'use strict'
 
 const browser = require('./browser')
+import { validate as emailIsValid } from 'email-validator'
 
 export function getFormData (schema) {
   let titleCase = (string) => {
@@ -17,6 +18,9 @@ export function getFormData (schema) {
     formData.data[f.name] = value
     if (f.required && value.length === 0) {
       formData.errors.push({ fieldName: f.name, message: titleCase(f.name) + ' should not be empty.' })
+    }
+    if (f.dataType === 'email' && !emailIsValid(value)) {
+      formData.errors.push({ fieldName: f.name, message: titleCase(f.name) + ' is not valid.' })
     }
   })
 
