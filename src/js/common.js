@@ -4,7 +4,7 @@ import Holder from 'holderjs'
 import Svg4everybody from 'svg4everybody'
 import 'feature.js'
 import nav from './nav.js'
-import analytics from './analytics.js'
+// import analytics from './analytics.js'
 
 // jQuery test
 console.log('testing if jquery is loaded globally:')

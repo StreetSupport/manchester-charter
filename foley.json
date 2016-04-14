@@ -9,6 +9,7 @@
     "icons": "src/icons/",
     "img": "src/img/",
     "js": "src/js/",
+    "spec": "spec/",    
     "layouts": "src/layouts/",
     "pages": "src/pages/",
     "partials": "src/partials/"
