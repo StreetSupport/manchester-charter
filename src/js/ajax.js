@@ -1,11 +1,6 @@
 var Q = require('q')
 
 var post = function (url, headers, data) {
-  if (Object.keys(headers).length === 0) {
-    headers = {
-      'content-type': 'application/json'
-    }
-  }
   return makeRequest({
     method: 'POST',
     url: url,
@@ -15,11 +10,6 @@ var post = function (url, headers, data) {
 }
 
 var put = function (url, headers, data) {
-  if (Object.keys(headers).length === 0) {
-    headers = {
-      'content-type': 'application/json'
-    }
-  }
   return makeRequest({
     method: 'PUT',
     url: url,
@@ -40,6 +30,12 @@ var makeRequest = function (options) {
   var deferred = Q.defer()
   var req = new XMLHttpRequest()
   req.open(options.method, options.url, true)
+
+  if (Object.keys(options.headers).length === 0) {
+    headers = {
+      'content-type': 'application/json'
+    }
+  }
 
   for (var key in options.headers) {
     if (options.headers.hasOwnProperty(key)) {
