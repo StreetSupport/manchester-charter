@@ -13,7 +13,7 @@ const tasks = requireDir(__dirname + '/tasks') // eslint-disable-line
 gulp.task('watch', () => {
   gulp.watch(config.paths.scss + '**/*.scss', ['scss'])
   gulp.watch(config.paths.spec + '**/*[Ss]pec.js', ['jasmine'])
-  gulp.watch(config.paths.js + '**/*.js', ['jasmine', 'webpack'])
+  gulp.watch(config.paths.js + '**/*.js', ['jasmine', 'jslint', 'webpack'])
   gulp.watch(config.paths.img + '{,**/}*.{png,jpg,gif,svg}', ['img'])
   gulp.watch(config.paths.icons + '**/*.svg', ['svgsprite'])
   gulp.watch([config.paths.fonts + '**/*', config.paths.files + '**/*'], ['copy'])
@@ -24,6 +24,7 @@ gulp.task('watch', () => {
 gulp.task('default', callback => {
   runSequence(
     'jasmine',
+    'jslint',
     'clean',
     'metalsmith',
     ['htmlmin', 'svgsprite', 'scss', 'webpack', 'img', 'copy'],
@@ -36,6 +37,7 @@ gulp.task('default', callback => {
 gulp.task('deploy', callback => {
   runSequence(
     'jasmine',
+    'jslint',    
     'clean',
     'metalsmith',
     ['htmlmin', 'svgsprite', 'scss', 'webpack', 'img', 'copy'],
