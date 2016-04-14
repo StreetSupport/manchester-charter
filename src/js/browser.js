@@ -1,3 +1,7 @@
+/*
+  global ga
+*/
+
 var Spinner = require('spin.js')
 
 var redirect = function (url) {

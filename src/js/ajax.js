@@ -1,3 +1,7 @@
+/*
+  global XMLHttpRequest
+*/
+
 var Q = require('q')
 
 var post = function (url, data, headers) {

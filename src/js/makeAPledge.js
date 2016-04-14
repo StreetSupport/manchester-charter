@@ -11,12 +11,12 @@ let MakeAPledge = function () {
   }
 
   let formData = {
-    'firstName': null,
-    'lastName': null,
-    'supporterCategory': null,
-    'organisation': null,
-    'email': null,
-    'isOptedIn': null
+    firstName: null,
+    lastName: null,
+    supporterCategory: null,
+    organisation: null,
+    email: null,
+    isOptedIn: null
   }
 
   let getFormData = () => {
