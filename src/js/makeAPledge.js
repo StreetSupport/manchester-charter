@@ -14,7 +14,8 @@ let MakeAPledge = function () {
       { name: 'lastName', required: true },
       { name: 'supporterCategory', required: false },
       { name: 'organisation', required: false },
-      { name: 'email', required: false },
+      { name: 'pledge', required: true },
+      { name: 'email', required: true },
       { name: 'isOptedIn', required: false }
     ]
   }

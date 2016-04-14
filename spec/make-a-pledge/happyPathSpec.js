@@ -30,6 +30,7 @@ describe('Make a Pledge', () => {
     browserGetInputFieldStub.withArgs('lastName').returns('last name')
     browserGetInputFieldStub.withArgs('supporterCategory').returns('supporter category')
     browserGetInputFieldStub.withArgs('organisation').returns('organisation')
+    browserGetInputFieldStub.withArgs('pledge').returns('pledge')
     browserGetInputFieldStub.withArgs('email').returns('email@test.com')
     browserGetInputFieldStub.withArgs('isOptedIn').returns(true)
 
@@ -45,6 +46,7 @@ describe('Make a Pledge', () => {
       'firstName': 'first name',
       'lastName': 'last name',
       'supporterCategory': 'supporter category',
+      'pledge': 'pledge',
       'organisation': 'organisation',
       'email': 'email@test.com',
       'isOptedIn': true

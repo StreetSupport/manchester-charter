@@ -11,7 +11,7 @@ var ajax = require('../../src/js/ajax')
 
 var MakeAPledge = require('../../src/js/makeAPledge')
 
-describe('Make a Pledge - No First Name', () => {
+describe('Make a Pledge - No Last Name', () => {
   let browserGetInputFieldStub // eslint-disable-line
   let browserShowErrorStub // eslint-disable-line
   let ajaxPostStub // eslint-disable-line
@@ -19,8 +19,8 @@ describe('Make a Pledge - No First Name', () => {
 
   beforeEach(() => {
     browserGetInputFieldStub = sinon.stub(browser, 'getInputField')
-    browserGetInputFieldStub.withArgs('firstName').returns('')
-    browserGetInputFieldStub.withArgs('lastName').returns('last name')
+    browserGetInputFieldStub.withArgs('firstName').returns('first name')
+    browserGetInputFieldStub.withArgs('lastName').returns('')
     browserGetInputFieldStub.withArgs('supporterCategory').returns('supporter category')
     browserGetInputFieldStub.withArgs('pledge').returns('pledge')
     browserGetInputFieldStub.withArgs('organisation').returns('organisation')
@@ -45,6 +45,6 @@ describe('Make a Pledge - No First Name', () => {
   })
 
   it('should tell browser to show error', () => {
-    expect(browserShowErrorStub.withArgs('firstName', 'First Name should not be empty.').calledOnce).toBeTruthy()
+    expect(browserShowErrorStub.withArgs('lastName', 'Last Name should not be empty.').calledOnce).toBeTruthy()
   })
 })
