@@ -1,6 +1,6 @@
 var Q = require('q')
 
-var post = function (url, headers, data) {
+var post = function (url, data, headers) {
   return makeRequest({
     method: 'POST',
     url: url,
@@ -9,7 +9,7 @@ var post = function (url, headers, data) {
   }).promise
 }
 
-var put = function (url, headers, data) {
+var put = function (url, data, headers) {
   return makeRequest({
     method: 'PUT',
     url: url,
