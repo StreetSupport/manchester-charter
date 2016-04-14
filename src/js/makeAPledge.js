@@ -8,7 +8,7 @@ import { getFormData } from './forms'
 let MakeAPledge = function () {
   let self = this
 
-  let formData = {
+  let formSchema = {
     firstName: null,
     lastName: null,
     supporterCategory: null,
@@ -20,7 +20,7 @@ let MakeAPledge = function () {
   self.submitForm = () => {
     browser.loading()
     ajax
-      .post(endpoints.makeAPledge, getFormData(formData))
+      .post(endpoints.makeAPledge, getFormData(formSchema))
       .then((result) => {
         browser.loaded()
       }, () => {

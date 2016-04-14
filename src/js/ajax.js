@@ -36,7 +36,7 @@ var makeRequest = function (options) {
   req.open(options.method, options.url, true)
 
   if (Object.keys(options.headers).length === 0) {
-    headers = {
+    options.headers = {
       'content-type': 'application/json'
     }
   }

@@ -13,5 +13,5 @@ function p (addr) {
 
 module.exports = {
   pledges: p('/v1/approved-charter-supporters'),
-  makeAPledge: p('/v1/charter-supporters'),
+  makeAPledge: p('/v1/charter-supporters')
 }
