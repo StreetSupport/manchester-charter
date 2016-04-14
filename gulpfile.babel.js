@@ -21,7 +21,7 @@ gulp.task('watch', () => {
 
 // JS Dev Watch task
 gulp.task('dev-watch', () => {
-  gulp.watch(config.paths.specs + '**/*[Ss]pec.js', ['run-jasmine'])
+  gulp.watch('spec/**/*[Ss]pec.js', ['run-jasmine'])
   gulp.watch(config.paths.js + '**/*.js', ['run-jasmine'])
 })
 
