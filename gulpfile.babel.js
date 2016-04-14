@@ -19,9 +19,16 @@ gulp.task('watch', () => {
   gulp.watch([config.paths.layouts + '**/*.hbs', config.paths.pages + '**/*.hbs', config.paths.partials + '**/*.hbs'], ['metalsmith'])
 })
 
+// JS Dev Watch task
+gulp.task('dev-watch', () => {
+  gulp.watch(config.paths.specs + '**/*[Ss]pec.js', ['run-jasmine'])
+  gulp.watch(config.paths.js + '**/*.js', ['run-jasmine'])
+})
+
 // Build website, either with development or minified assets and run server with live reloading
 gulp.task('default', callback => {
   runSequence(
+    'run-jasmine',
     'clean',
     'metalsmith',
     ['htmlmin', 'svgsprite', 'scss', 'webpack', 'img', 'copy'],
@@ -30,9 +37,19 @@ gulp.task('default', callback => {
   )
 })
 
+// Run tests and watch js/spec files
+gulp.task('dev', callback => {
+  runSequence(
+    'run-jasmine',
+    'dev-watch',
+    callback
+  )
+})
+
 // Build website, either with development or minified assets depending on flag
 gulp.task('deploy', callback => {
   runSequence(
+    'run-jasmine',
     'clean',
     'metalsmith',
     ['htmlmin', 'svgsprite', 'scss', 'webpack', 'img', 'copy'],
