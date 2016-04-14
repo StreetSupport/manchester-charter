@@ -3,6 +3,8 @@ const ajax = require('./ajax')
 const browser = require('./browser')
 const endpoints = require('./api-endpoints')
 
+import { getFormData } from './forms'
+
 let MakeAPledge = function () {
   let self = this
 
@@ -17,16 +19,6 @@ let MakeAPledge = function () {
     organisation: null,
     email: null,
     isOptedIn: null
-  }
-
-  let getFormData = (schema) => {
-    for (var key in schema) {
-      if (schema.hasOwnProperty(key)) {
-        schema[key] = browser.getInputField(key)
-      }
-    }
-
-    return schema
   }
 
   self.submitForm = () => {
