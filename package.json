@@ -43,6 +43,7 @@
     "gulp-util": "3.0.7",
     "handlebars": "4.0.5",
     "imagemin-pngquant": "4.2.2",
+    "jasmine": "^2.4.1",
     "metalsmith": "2.1.0",
     "metalsmith-collections": "0.7.0",
     "metalsmith-discover-helpers": "0.1.0",
