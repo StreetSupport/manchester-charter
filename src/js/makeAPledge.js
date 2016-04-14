@@ -9,23 +9,28 @@ let MakeAPledge = function () {
   let self = this
 
   let formSchema = {
-    firstName: null,
-    lastName: null,
-    supporterCategory: null,
-    organisation: null,
-    email: null,
-    isOptedIn: null
+    fields: [
+      { name: 'firstName', required: true },
+      { name: 'lastName', required: false },
+      { name: 'supporterCategory', required: false },
+      { name: 'organisation', required: false },
+      { name: 'email', required: false },
+      { name: 'isOptedIn', required: false }
+    ]
   }
 
   self.submitForm = () => {
-    browser.loading()
-    ajax
-      .post(endpoints.makeAPledge, getFormData(formSchema))
-      .then((result) => {
-        browser.loaded()
-      }, () => {
+    let formData = getFormData(formSchema)
+    if (formData.errors.length === 0) {
+      browser.loading()
+      ajax
+        .post(endpoints.makeAPledge, formData.data)
+        .then((result) => {
+          browser.loaded()
+        }, () => {
 
-      })
+        })
+    }
   }
 }
 

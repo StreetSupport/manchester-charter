@@ -74,7 +74,7 @@ describe('Make a Pledge', () => {
     expect(ajaxPostStub.calledOnce).toBeTruthy()
   })
 
-  it('should get hide loader', () => {
+  it('should hide loader', () => {
     expect(browserLoadedStub.calledAfter(ajaxPostStub)).toBeTruthy()
   })
 })
