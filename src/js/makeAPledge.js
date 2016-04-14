@@ -8,10 +8,6 @@ import { getFormData } from './forms'
 let MakeAPledge = function () {
   let self = this
 
-  let init = () => {
-
-  }
-
   let formData = {
     firstName: null,
     lastName: null,
@@ -31,8 +27,6 @@ let MakeAPledge = function () {
 
       })
   }
-
-  init()
 }
 
 module.exports = MakeAPledge
