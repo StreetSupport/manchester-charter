@@ -28,6 +28,10 @@ var getInputField = function (inputSelector) {
   return 'some string' // checkboxes should return boolean
 }
 
+var showError = function (fieldName, message) {
+  return 'wang'
+}
+
 var trackEvent = function (src, action, description) {
   ga('send', 'event', src, action, description)
 }
@@ -37,5 +41,6 @@ module.exports = {
   loading: loading,
   loaded: loaded,
   trackEvent: trackEvent,
-  getInputField: getInputField
+  getInputField: getInputField,
+  showError: showError
 }

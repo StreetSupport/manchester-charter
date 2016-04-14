@@ -3,7 +3,7 @@ const ajax = require('./ajax')
 const browser = require('./browser')
 const endpoints = require('./api-endpoints')
 
-import { getFormData } from './forms'
+import { getFormData, showErrors } from './forms'
 
 let MakeAPledge = function () {
   let self = this
@@ -21,7 +21,9 @@ let MakeAPledge = function () {
 
   self.submitForm = () => {
     let formData = getFormData(formSchema)
-    if (formData.errors.length === 0) {
+    if (formData.errors.length > 0) {
+      showErrors(formData.errors)
+    } else {
       browser.loading()
       ajax
         .post(endpoints.makeAPledge, formData.data)
