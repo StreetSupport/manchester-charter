@@ -22,7 +22,7 @@ gulp.task('watch', () => {
 
 // jsdev Watch task
 gulp.task('jsdevwatch', () => {
-  gulp.watch(config.paths.spec + '**/*[Ss]pec.js', ['jasmine, '])
+  gulp.watch(config.paths.spec + '**/*[Ss]pec.js', ['jasmine', 'specsjslint'])
   gulp.watch(config.paths.js + '**/*.js', ['jasmine'])
 })
 
