@@ -19,20 +19,20 @@ let MakeAPledge = function () {
     isOptedIn: null
   }
 
-  let getFormData = () => {
-    for (var key in formData) {
-      if (formData.hasOwnProperty(key)) {
-        formData[key] = browser.getInputField(key)
+  let getFormData = (schema) => {
+    for (var key in schema) {
+      if (schema.hasOwnProperty(key)) {
+        schema[key] = browser.getInputField(key)
       }
     }
 
-    return formData
+    return schema
   }
 
   self.submitForm = () => {
     browser.loading()
     ajax
-      .post(endpoints.makeAPledge, getFormData())
+      .post(endpoints.makeAPledge, getFormData(formData))
       .then((result) => {
         browser.loaded()
       }, () => {
