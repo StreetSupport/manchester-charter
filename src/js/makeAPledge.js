@@ -11,7 +11,7 @@ let MakeAPledge = function () {
   let formSchema = {
     fields: [
       { name: 'firstName', required: true },
-      { name: 'lastName', required: false },
+      { name: 'lastName', required: true },
       { name: 'supporterCategory', required: false },
       { name: 'organisation', required: false },
       { name: 'email', required: false },
