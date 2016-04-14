@@ -61,6 +61,7 @@
     "require-dir": "0.3.0",
     "run-sequence": "1.1.5",
     "sass-mq": "3.2.9",
+    "sinon": "^1.17.3",
     "stylelint": "5.4.0",
     "stylelint-config-suitcss": "5.0.0",
     "susy": "2.2.12",
@@ -73,6 +74,7 @@
     "holderjs": "2.9.3",
     "jquery": "2.2.3",
     "lodash": "4.9.0",
+    "spin.js": "^2.3.2",
     "svg4everybody": "2.0.3"
   },
   "babel": {
