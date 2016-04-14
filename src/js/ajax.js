@@ -1,6 +1,10 @@
+/*
+  global XMLHttpRequest
+*/
+
 var Q = require('q')
 
-var post = function (url, headers, data) {
+var post = function (url, data, headers) {
   return makeRequest({
     method: 'POST',
     url: url,
@@ -9,7 +13,7 @@ var post = function (url, headers, data) {
   }).promise
 }
 
-var put = function (url, headers, data) {
+var put = function (url, data, headers) {
   return makeRequest({
     method: 'PUT',
     url: url,
@@ -32,7 +36,7 @@ var makeRequest = function (options) {
   req.open(options.method, options.url, true)
 
   if (Object.keys(options.headers).length === 0) {
-    headers = {
+    options.headers = {
       'content-type': 'application/json'
     }
   }

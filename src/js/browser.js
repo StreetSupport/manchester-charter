@@ -1,14 +1,11 @@
+/*
+  global ga
+*/
+
 var Spinner = require('spin.js')
 
 var redirect = function (url) {
   window.location = url
-}
-
-var dataLoaded = function () {
-  var dynamicElements = document.getElementsByClassName('awaiting-data')
-  Array.from(dynamicElements).forEach(element => {
-    element.className = element.className.replace(/(?:^|\s)awaiting-data(?!\S)/g, '')
-  })
 }
 
 var loaderAnim
@@ -27,6 +24,14 @@ var loaded = function () {
   getLoader().stop()
 }
 
+var getInputField = function (inputSelector) {
+  return 'some string' // checkboxes should return boolean
+}
+
+var showError = function (fieldName, message) {
+  return 'wang'
+}
+
 var trackEvent = function (src, action, description) {
   ga('send', 'event', src, action, description)
 }
@@ -36,5 +41,6 @@ module.exports = {
   loading: loading,
   loaded: loaded,
   trackEvent: trackEvent,
-  dataLoaded: dataLoaded // deprecated
+  getInputField: getInputField,
+  showError: showError
 }
