@@ -23,7 +23,7 @@ gulp.task('watch', () => {
 // jsdev Watch task
 gulp.task('jsdevwatch', () => {
   gulp.watch(config.paths.spec + '**/*[Ss]pec.js', ['jasmine', 'specsjslint'])
-  gulp.watch(config.paths.js + '**/*.js', ['jasmine'])
+  gulp.watch(config.paths.js + '**/*.js', ['jasmine', 'jslint'])
 })
 
 // Build website, either with development or minified assets and run server with live reloading
@@ -56,6 +56,7 @@ gulp.task('deploy', callback => {
 gulp.task('jsdev', callback => {
   runSequence(
     'jasmine',
+    'jslint',
     'specsjslint',
     'jsdevwatch',
     callback
