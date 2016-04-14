@@ -1,7 +1,7 @@
 .cta {
   @include span(full);
   margin-top: 20px;
-  margin-bottom: 20px;  
+  margin-bottom: 20px;
 
   @include mq($from: xs) {
     @include span(4 of $grid-column);
@@ -26,6 +26,11 @@
     .btn__overlay {
       opacity: 1;
     }
+  }
+
+  // If there is no icon, we need to set the width of the btn to the container
+  .btn {
+    width: 100%;
   }
 
   /*
