@@ -1,1 +1,1 @@
-/* tba */
+module.exports = 1
