@@ -1,5 +1,5 @@
 .charter-social {
-  margin: 20px 0;
+  margin: 20px 0 10px 0;
 
   &__list {
     margin: 0;
@@ -8,8 +8,13 @@
   }
 
   &__item {
-    margin: 0 20px 0 0;
+    margin: 0 0 10px 0;
     padding: 0;
-    display: inline-block;
+    display: block;
+
+      @include mq($from: l) {
+        display: inline-block;
+        margin-right: 20px;
+      }
   }
 }
