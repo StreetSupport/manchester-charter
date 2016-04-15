@@ -3,7 +3,7 @@
 
   @include mq($from: xs) {
     @include span(4 of $grid-column);
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
   }
 
   @include mq($from: m) {
@@ -32,9 +32,7 @@
     width: 100%;
   }
 
-  /*
   &__description {
-
+    margin-top: 15px !important;
   }
-  */
 }
