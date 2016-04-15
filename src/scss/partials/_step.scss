@@ -1,0 +1,18 @@
+.step {
+  @include cf();
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+  }
+
+  &__item {
+    margin: 0;
+    padding: 0 10px 0 0;
+    display: inline-block;
+  }
+}

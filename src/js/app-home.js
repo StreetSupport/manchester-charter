@@ -12,3 +12,6 @@ if (feature.touch) {
 } else {
   console.log('touch is NOT supported')
 }
+
+import accordion from './accordion.js'
+accordion.init()

@@ -1,0 +1,10 @@
+.pledge-form {
+  @include cf();
+
+  &__textarea {
+    width: 70%;
+    height: 150px;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
