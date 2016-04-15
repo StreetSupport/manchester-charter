@@ -4,7 +4,7 @@
   .line-break {
     display: none;
 
-    @include mq($from: l) {
+    @include mq($from: m) {
       display: block;
     }
   }
