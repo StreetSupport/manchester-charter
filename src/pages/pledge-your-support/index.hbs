@@ -3,7 +3,7 @@ title: Pledge your Support
 description: Test Description
 layout: default.hbs
 permalink: false
-appName: home
+appName: pledgeYourSupport
 sectionName: charter
 ---
 
@@ -32,47 +32,13 @@ sectionName: charter
           </ol>
         </div>
 
-        <form action="#" class="pledge-form js-pledge-form">
+        <form action="" class="pledge-form js-pledge-form">
           <div class="pledge-section pledge-section--1 is-active">
             <p>I/We Pledge to support the Manchester Homelessness Charter</p>
 
             <h3 class="h3">As a...</h3>
-            <div class="accordion js-accordion">
-              <button class="h3 accordion__header js-header">Header 1</button>
-              <div class="accordion__item js-item">
-                <div class="accordion__inner">
-                  <h3 class="h3">[Select and edit a pledge below, or create your own]</h3>
-                  <div class="pledge-select">
-                    <ul class="pledge-select__list">
-                      <li class="pledge-select__item"><button class="pledge-select__btn">Pledge Example 1</button></li>
-                      <li class="pledge-select__item"><button class="pledge-select__btn">Pledge Example 2</button></li>
-                      <li class="pledge-select__item"><button class="pledge-select__btn">Pledge Example 3</button></li>
-                      <li class="pledge-select__item"><button class="pledge-select__btn">Pledge Example 4</button></li>
-                      <li class="pledge-select__item"><button class="pledge-select__btn">Pledge Example 5</button></li>
-                    </ul>
-                    <h3 class="h3">Can't see yours? Add your own</h3>
-                    <label class="pledge-form__label hide-screen" for="customtype">Add your own</label>
-            				<input class="pledge-form__textarea" type="textarea" id="customtype" placeholder="Add your own"></input>
-                    <p>[If you're not sure what pledge works best for you, leave this blank and we'll be in touch]</p>
-                    <button class="pledge-select__btn">Add your pledge</button>
-                  </div>
-                </div>
-              </div>
+            <div id="js-example-pledges-output" class="template"></div>
 
-              <button class="h3 accordion__header js-header">Header 2</button>
-              <div class="accordion__item js-item">
-                <div class="accordion__inner">
-                  Code like header 1 here
-                </div>
-              </div>
-
-              <button class="h3 accordion__header js-header">Header 3</button>
-              <div class="accordion__item js-item">
-                <div class="accordion__inner">
-                  Code like header 1 here
-                </div>
-              </div>
-            </div>
           </div>
 
           <div class="pledge-section pledge-section--2">
@@ -107,3 +73,28 @@ sectionName: charter
     </div>
   </div>
 </div>
+
+<script id="js-example-pledges-tpl" type="text/template">
+<div class="accordion js-accordion">
+  \{{#categories}}
+  <button class="h3 accordion__header js-header">\{{name}}</button>
+  <div class="accordion__item js-item">
+    <div class="accordion__inner">
+      <h3 class="h3">[Select and edit a pledge below, or create your own]</h3>
+      <div class="pledge-select">
+        <ul class="pledge-select__list">
+          \{{#examplePledges}}
+          <li class="pledge-select__item"><button class="pledge-select__btn">\{{.}}</button></li>
+          \{{/examplePledges}}
+        </ul>
+        <h3 class="h3">Can't see yours? Add your own</h3>
+        <label class="pledge-form__label hide-screen" for="customtype">Add your own</label>
+        <input class="pledge-form__textarea" type="textarea" id="customtype" placeholder="Add your own"></input>
+        <p>[If you're not sure what pledge works best for you, leave this blank and we'll be in touch]</p>
+        <button class="pledge-select__btn">Add your pledge</button>
+      </div>
+    </div>
+  </div>
+  \{{/categories}}
+</div>
+</script>

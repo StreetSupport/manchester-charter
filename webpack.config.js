@@ -20,7 +20,8 @@ if (argv.production) {
 module.exports = {
   entry: {
     home: __dirname + '/src/js/app-home',
-    blog: __dirname + '/src/js/app-blog'
+    blog: __dirname + '/src/js/app-blog',
+    pledgeYourSupport: __dirname + '/src/js/app-pledgeYourSupport'
   },
   output: {
     path: path.join(__dirname, '/_dist/assets/js/'),
