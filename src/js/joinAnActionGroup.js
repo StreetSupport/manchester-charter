@@ -3,24 +3,25 @@ const endpoints = require('./api-endpoints')
 
 import { submitForm } from './forms'
 
-let MakeAPledge = function () {
+let Model = function () {
   let self = this
 
   let formSchema = {
     fields: [
       { name: 'firstName', required: true },
       { name: 'lastName', required: true },
-      { name: 'supporterCategory', required: false },
-      { name: 'organisation', required: false },
-      { name: 'pledge', required: true },
+      { name: 'message', required: true },
       { name: 'email', required: true, dataType: 'email' },
       { name: 'isOptedIn', required: false }
     ]
   }
 
+  let actionGroupId = 'action group id'
+  let endpoint = `${endpoints.actionGroup}/${actionGroupId}/joining-enquiries`
+
   self.submitForm = () => {
-    submitForm(formSchema, endpoints.makeAPledge, (result) => { }, () => { })
+    submitForm(formSchema, endpoint, (result) => { }, () => { })
   }
 }
 
-module.exports = MakeAPledge
+module.exports = Model
