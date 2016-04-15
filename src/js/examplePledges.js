@@ -1,4 +1,4 @@
-export function getSupporterCategories() {
+export function getSupporterCategories () {
   return [{
     'name': 'A Person with experience of homelessness',
     'listOrder': 1,

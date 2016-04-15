@@ -33,14 +33,14 @@ var getInputField = function (fieldName) {
 
 var showError = function (fieldName, message) {
   let insertAfter = (referenceNode, newNode) => {
-      referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling)
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling)
   }
 
   let refNode = document.querySelector('[name=${fieldName}')
   let errorNode = document.createElement('span')
   errorNode.innerHTML = message
   errorNode.className = 'input-error'
-  insertAfter(refNode, errorNode);
+  insertAfter(refNode, errorNode)
 }
 
 var trackEvent = function (src, action, description) {
