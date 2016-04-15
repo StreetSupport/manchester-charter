@@ -1,6 +1,7 @@
 'use strict'
 
 const browser = require('./browser')
+const ajax = require('./ajax')
 import { validate as emailIsValid } from 'email-validator'
 
 export function getFormData (schema) {
@@ -25,6 +26,23 @@ export function getFormData (schema) {
   })
 
   return formData
+}
+
+export function submitForm (formSchema, endpoint, onSuccess, onError) {
+  let formData = getFormData(formSchema)
+  if (formData.errors.length > 0) {
+    showErrors(formData.errors)
+  } else {
+    browser.loading()
+    ajax
+      .post(endpoint, formData.data)
+      .then((result) => {
+        browser.loaded()
+        onSuccess(result)
+      }, (error) => {
+        onError(error)
+      })
+  }
 }
 
 export function showErrors (errors) {
