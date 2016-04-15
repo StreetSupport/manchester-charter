@@ -1,9 +1,7 @@
 // use require for sinon mocking
-const ajax = require('./ajax')
-const browser = require('./browser')
 const endpoints = require('./api-endpoints')
 
-import { getFormData, showErrors } from './forms'
+import { submitForm } from './forms'
 
 let MakeAPledge = function () {
   let self = this
@@ -21,7 +19,7 @@ let MakeAPledge = function () {
   }
 
   self.submitForm = () => {
-    submitForm(formSchema, endpoints.makeAPledge, (result) => { }, (error) => {  })
+    submitForm(formSchema, endpoints.makeAPledge, (result) => { }, () => {  })
   }
 }
 
