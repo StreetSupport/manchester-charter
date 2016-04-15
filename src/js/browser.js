@@ -24,12 +24,23 @@ var loaded = function () {
   getLoader().stop()
 }
 
-var getInputField = function (inputSelector) {
-  return 'some string' // checkboxes should return boolean
+var getInputField = function (fieldName) {
+  // checkboxes should return boolean
+  return document
+    .querySelector('[name=${fieldName}')
+    .value
 }
 
 var showError = function (fieldName, message) {
-  return 'wang'
+  let insertAfter = (referenceNode, newNode) => {
+      referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling)
+  }
+
+  let refNode = document.querySelector('[name=${fieldName}')
+  let errorNode = document.createElement('span')
+  errorNode.innerHTML = message
+  errorNode.className = 'input-error'
+  insertAfter(refNode, errorNode);
 }
 
 var trackEvent = function (src, action, description) {
