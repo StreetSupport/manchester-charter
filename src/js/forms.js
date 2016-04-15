@@ -28,6 +28,12 @@ function getFormData (schema) {
   return formData
 }
 
+function showErrors (errors) {
+  errors.forEach((e) => {
+    browser.showError(e.fieldName, e.message)
+  })
+}
+
 export function submitForm (formSchema, endpoint, onSuccess, onError) {
   let formData = getFormData(formSchema)
   if (formData.errors.length > 0) {
@@ -43,10 +49,4 @@ export function submitForm (formSchema, endpoint, onSuccess, onError) {
         onError(error)
       })
   }
-}
-
-function showErrors (errors) {
-  errors.forEach((e) => {
-    browser.showError(e.fieldName, e.message)
-  })
 }
