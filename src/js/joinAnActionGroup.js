@@ -20,7 +20,7 @@ let Model = function () {
   let endpoint = `${endpoints.actionGroup}/${actionGroupId}/joining-enquiries`
 
   self.submitForm = () => {
-    submitForm(formSchema, endpoint, (result) => { }, () => {  })
+    submitForm(formSchema, endpoint, (result) => { }, () => { })
   }
 }
 

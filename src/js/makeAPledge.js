@@ -19,7 +19,7 @@ let MakeAPledge = function () {
   }
 
   self.submitForm = () => {
-    submitForm(formSchema, endpoints.makeAPledge, (result) => { }, () => {  })
+    submitForm(formSchema, endpoints.makeAPledge, (result) => { }, () => { })
   }
 }
 
