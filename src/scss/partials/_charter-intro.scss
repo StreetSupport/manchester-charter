@@ -1,14 +1,6 @@
 .charter-intro {
   text-align: center;
 
-  .line-break {
-    display: none;
-
-    @include mq($from: m) {
-      display: block;
-    }
-  }
-
   @include mq($from: xs) {
     .cta:last-of-type {
       @include push(2 of $grid-column);
