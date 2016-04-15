@@ -10,7 +10,7 @@ let Model = function () {
     fields: [
       { name: 'firstName', required: true },
       { name: 'lastName', required: true },
-      { name: 'message', required: false },
+      { name: 'message', required: true },
       { name: 'email', required: true, dataType: 'email' },
       { name: 'isOptedIn', required: false }
     ]
