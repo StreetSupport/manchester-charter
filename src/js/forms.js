@@ -4,7 +4,7 @@ const browser = require('./browser')
 const ajax = require('./ajax')
 import { validate as emailIsValid } from 'email-validator'
 
-export function getFormData (schema) {
+function getFormData (schema) {
   let titleCase = (string) => {
     return string.split(/(?=[A-Z])/g)
       .map((w) => w.charAt(0).toUpperCase() + w.substring(1))
@@ -45,7 +45,7 @@ export function submitForm (formSchema, endpoint, onSuccess, onError) {
   }
 }
 
-export function showErrors (errors) {
+function showErrors (errors) {
   errors.forEach((e) => {
     browser.showError(e.fieldName, e.message)
   })
