@@ -1,20 +1,16 @@
-/* global */
+/* global feature */
 
 import './common'
 
-import accordion from './accordion.js'
-import { render } from './templating'
-import { getSupporterCategories } from './examplePledges'
+var ko = require('knockout')
+var Model = require('./PledgeYourSupport')
 
-let callback = () => {
-  document.querySelector('form')
-    .addEventListener('submit', (event) => {
-      event.preventDefault()
-    })
-  accordion.init()
-}
-let data = {
-  categories: getSupporterCategories()
-}
-console.log(data)
-render('js-example-pledges-tpl', data, 'js-example-pledges-output', callback)
+ko.applyBindings(new Model())
+
+import accordion from './accordion.js'
+accordion.init()
+
+document.querySelector('form')
+  .addEventListener('submit', (event) => {
+    event.preventDefault()
+  })

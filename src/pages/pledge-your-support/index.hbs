@@ -37,30 +37,45 @@ sectionName: charter
             <p>I/We Pledge to support the Manchester Homelessness Charter</p>
 
             <h3 class="h3">As a...</h3>
-            <div id="js-example-pledges-output" class="template"></div>
+            <div class="accordion js-accordion" data-bind="foreach: supporterCategories">
+              <button class="h3 accordion__header js-header" data-bind="text: name"></button>
+              <div class="accordion__item js-item">
+                <div class="accordion__inner">
+                  <h3 class="h3">[Select and edit a pledge below, or create your own]</h3>
+                  <div class="pledge-select">
+                    <ul class="pledge-select__list" data-bind="foreach: examplePledges">
+                      <li class="pledge-select__item"><button class="pledge-select__btn" data-bind="text: $data"></button></li>
+                    </ul>
+                    <h3 class="h3">Can't see yours? Add your own</h3>
+                    <label class="pledge-form__label hide-screen" for="customtype">Add your own</label>
+                    <input class="pledge-form__textarea" type="textarea" placeholder="Add your own"></input>
+                    <p>[If you're not sure what pledge works best for you, leave this blank and we'll be in touch]</p>
+                    <button class="use-custom-pledge__btn">Add your pledge</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
           </div>
 
           <div class="pledge-section pledge-section--2">
             <span>I </span>
 
-            <label class="pledge-form__label hide-screen" for="firstname">First Name *</label>
-    				<input class="pledge-form__input" type="text" id="firstname" placeholder="First Name *"></input>
-            <label class="pledge-form__label hide-screen" for="lastname">Last Name *</label>
-    				<input class="pledge-form__input" type="text" id="lastname" placeholder="Last Name *"></input>
+            <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
+    				<input class="pledge-form__input" type="text" id="firstName" name="firstName" placeholder="First Name *"></input>
+            <label class="pledge-form__label hide-screen" for="lastName">Last Name *</label>
+    				<input class="pledge-form__input" type="text" id="lastName" name="lastName" placeholder="Last Name *"></input>
 
             <span>pledge to support the Manchester Homeless Charter by:</span>
 
-            <input class="pledge-form__textarea" type="textarea" id="pledge" value="[pledge from step 1 goes here]"></input>
+            <input class="pledge-form__textarea" type="textarea" id="pledge" name="pledge" value="[pledge from step 1 goes here]"></input>
 
-            <label class="pledge-form__label" for="business">Business Name</label>
-    				<input class="pledge-form__input" type="text" id="business" placeholder="Business Name"></input>
+            <label class="pledge-form__label" for="organisation">Organisation Name</label>
+    				<input class="pledge-form__input" type="text" id="organisation" name="organisation" placeholder="Organisation Name"></input>
             <label class="pledge-form__label" for="email">Email * (We will never share your email ever)</label>
-    				<input class="pledge-form__input" type="text" id="email" placeholder="Email *"></input>
-
-            <label class="pledge-form__label" for="subscribe">Recieve email updates about the Charter?</label>
+    				<input class="pledge-form__input" type="text" id="email" name="email" placeholder="Email *"></input>
+            <label class="pledge-form__label" for="subscribe">Receive email updates about the Charter?</label>
     				<input class="pledge-form__checkbox" type="checkbox" name="subscribe" value="subscribe">
-
             <input type="submit" />
           </div>
 
@@ -73,28 +88,3 @@ sectionName: charter
     </div>
   </div>
 </div>
-
-<script id="js-example-pledges-tpl" type="text/template">
-<div class="accordion js-accordion">
-  \{{#categories}}
-  <button class="h3 accordion__header js-header">\{{name}}</button>
-  <div class="accordion__item js-item">
-    <div class="accordion__inner">
-      <h3 class="h3">[Select and edit a pledge below, or create your own]</h3>
-      <div class="pledge-select">
-        <ul class="pledge-select__list">
-          \{{#examplePledges}}
-          <li class="pledge-select__item"><button class="pledge-select__btn">\{{.}}</button></li>
-          \{{/examplePledges}}
-        </ul>
-        <h3 class="h3">Can't see yours? Add your own</h3>
-        <label class="pledge-form__label hide-screen" for="customtype">Add your own</label>
-        <input class="pledge-form__textarea" type="textarea" id="customtype" placeholder="Add your own"></input>
-        <p>[If you're not sure what pledge works best for you, leave this blank and we'll be in touch]</p>
-        <button class="pledge-select__btn">Add your pledge</button>
-      </div>
-    </div>
-  </div>
-  \{{/categories}}
-</div>
-</script>
