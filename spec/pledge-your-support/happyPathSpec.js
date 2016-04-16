@@ -33,5 +33,15 @@ describe('Pledge Your Support', () => {
       expect(sut.pledge()).toEqual(sut.supporterCategories[2].examplePledges[1].description)
     })
   })
+
+  describe('- Custom Pledge', () => {
+    beforeEach(() => {
+      sut.supporterCategories[2].customPledge('my custom pledge')
+      sut.supporterCategories[2].useCustomPledge()
+    })
+    it('- Should populate pledge with custom pledge', () => {
+      expect(sut.pledge()).toEqual('my custom pledge')
+    })
+  })
 })
 

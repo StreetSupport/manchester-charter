@@ -9,7 +9,7 @@ let ExamplePledge = function (data, listener) {
   self.listener = listener
 
   self.selectExamplePledge = () => {
-    self.listener.examplePledgeSelected(data)
+    self.listener.pledgeSelected(data)
   }
 }
 
@@ -19,9 +19,13 @@ let SupporterCategory = function (data, listener) {
   self.listener = listener
   self.examplePledges = data.examplePledges
     .map((p) => new ExamplePledge(p, self))
+  self.customPledge = ko.observable()
 
-  self.examplePledgeSelected = (pledge) => {
-    self.listener.examplePledgeSelected(pledge)
+  self.pledgeSelected = (pledge) => {
+    self.listener.pledgeSelected(pledge)
+  }
+  self.useCustomPledge = () => {
+    self.listener.pledgeSelected(self.customPledge())
   }
 }
 
@@ -34,7 +38,7 @@ let PledgeYourSupport = function () {
       .map((sc) => new SupporterCategory(sc, self))
   }
 
-  self.examplePledgeSelected = (pledge) => {
+  self.pledgeSelected = (pledge) => {
     self.pledge(pledge)
   }
 

@@ -50,9 +50,9 @@ sectionName: charter
                     </ul>
                     <h3 class="h3">Can't see yours? Add your own</h3>
                     <label class="pledge-form__label hide-screen" for="customtype">Add your own</label>
-                    <input class="pledge-form__textarea" type="textarea" placeholder="Add your own"></input>
+                    <input class="pledge-form__textarea" type="textarea" placeholder="Add your own" data-bind="textInput: customPledge"></input>
                     <p>[If you're not sure what pledge works best for you, leave this blank and we'll be in touch]</p>
-                    <button class="use-custom-pledge__btn">Add your pledge</button>
+                    <button class="use-custom-pledge__btn" data-bind="click: useCustomPledge">Add your pledge</button>
                   </div>
                 </div>
               </div>
