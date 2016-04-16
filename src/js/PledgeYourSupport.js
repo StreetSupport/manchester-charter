@@ -29,17 +29,33 @@ let SupporterCategory = function (data, listener) {
   }
 }
 
+let Section = function () {
+  var self = this
+  self.isActive = ko.observable(false)
+}
+
 let PledgeYourSupport = function () {
   var self = this
-  self.pledge = ko.observable()
+
+  let setActiveSection = (sectionIndex) => {
+    let sections = [self.section1, self.section2, self.section3]
+    sections.forEach((s) => s.isActive(false))
+    sections[sectionIndex - 1].isActive(true)
+  }
 
   self.init = () => {
+    self.pledge = ko.observable()
     self.supporterCategories = getSupporterCategories()
       .map((sc) => new SupporterCategory(sc, self))
+    self.section1 = new Section()
+    self.section2 = new Section()
+    self.section3 = new Section()
+    setActiveSection(1)
   }
 
   self.pledgeSelected = (pledge) => {
     self.pledge(pledge)
+    setActiveSection(2)
   }
 
   self.init()

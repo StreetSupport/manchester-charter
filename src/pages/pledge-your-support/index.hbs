@@ -33,7 +33,7 @@ sectionName: charter
         </div>
 
         <form action="" class="pledge-form js-pledge-form">
-          <div class="pledge-section pledge-section--1 is-active">
+          <div class="pledge-section pledge-section--1" data-bind="css: { active: section1.isActive() }">
             <p>I/We Pledge to support the Manchester Homelessness Charter</p>
 
             <h3 class="h3">As a...</h3>
@@ -60,7 +60,7 @@ sectionName: charter
 
           </div>
 
-          <div class="pledge-section pledge-section--2">
+          <div class="pledge-section pledge-section--2" data-bind="css: { active: section2.isActive() }">
             <span>I </span>
 
             <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
@@ -81,7 +81,7 @@ sectionName: charter
             <input type="submit" />
           </div>
 
-          <div class="pledge-section pledge-section--3">
+          <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
             step 3 confirmation tba
           </div>
         </form>
