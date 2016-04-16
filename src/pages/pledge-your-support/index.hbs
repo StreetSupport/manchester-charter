@@ -44,7 +44,9 @@ sectionName: charter
                   <h3 class="h3">[Select and edit a pledge below, or create your own]</h3>
                   <div class="pledge-select">
                     <ul class="pledge-select__list" data-bind="foreach: examplePledges">
-                      <li class="pledge-select__item"><button class="pledge-select__btn" data-bind="text: description"></button></li>
+                      <li class="pledge-select__item">
+                        <button class="pledge-select__btn" data-bind="text: description, click: selectExamplePledge"></button>
+                      </li>
                     </ul>
                     <h3 class="h3">Can't see yours? Add your own</h3>
                     <label class="pledge-form__label hide-screen" for="customtype">Add your own</label>
@@ -68,7 +70,7 @@ sectionName: charter
 
             <span>pledge to support the Manchester Homeless Charter by:</span>
 
-            <input class="pledge-form__textarea" type="textarea" id="pledge" name="pledge" value="[pledge from step 1 goes here]"></input>
+            <input class="pledge-form__textarea" type="textarea" id="pledge" name="pledge" data-bind="attr: {value: pledge }"></input>
 
             <label class="pledge-form__label" for="organisation">Organisation Name</label>
     				<input class="pledge-form__input" type="text" id="organisation" name="organisation" placeholder="Organisation Name"></input>
