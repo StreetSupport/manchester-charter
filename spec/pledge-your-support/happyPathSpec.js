@@ -20,9 +20,18 @@ describe('Pledge Your Support', () => {
   afterEach(() => {
 
   })
-  it('Should populate example pledges', () => {
+  it('- Should populate example pledges', () => {
     // from hard coded file
     expect(sut.supporterCategories.length).toEqual(7)
+  })
+
+  describe('- Example Pledge', () => {
+    beforeEach(() => {
+      sut.supporterCategories[2].examplePledges[1].selectExamplePledge()
+    })
+    it('- Should populate pledge with example pledge', () => {
+      expect(sut.pledge()).toEqual(sut.supporterCategories[2].examplePledges[1].description)
+    })
   })
 })
 
