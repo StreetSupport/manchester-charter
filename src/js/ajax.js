@@ -38,6 +38,7 @@ var makeRequest = function (options) {
     'statusCode': 201,
     'data': {}
   })
+  return deferred
 
   var req = new XMLHttpRequest()
   req.open(options.method, options.url, true)
