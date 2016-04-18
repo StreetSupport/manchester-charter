@@ -58,6 +58,10 @@ let PledgeYourSupport = function () {
     setActiveSection(2)
   }
 
+  self.submitPledge = () => {
+    setActiveSection(3)
+  }
+
   self.init()
 }
 

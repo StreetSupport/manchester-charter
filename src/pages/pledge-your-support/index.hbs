@@ -78,7 +78,7 @@ sectionName: charter
     				<input class="pledge-form__input" type="text" id="email" name="email" placeholder="Email *"></input>
             <label class="pledge-form__label" for="subscribe">Receive email updates about the Charter?</label>
     				<input class="pledge-form__checkbox" type="checkbox" name="subscribe" value="subscribe">
-            <input type="submit" />
+            <input type="submit" data-bind="click: submitPledge" />
           </div>
 
           <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
