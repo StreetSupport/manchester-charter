@@ -76,4 +76,12 @@
     margin: 20px 0;
     text-align: left;
   }
+
+  .validationMessage {
+    display: block;
+    color: $brand-g;
+    margin-bottom: 10px;
+    font-family: $font-headline;
+    font-weight: $font-headline-weight;    
+  }
 }
