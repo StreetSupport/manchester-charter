@@ -1,5 +1,5 @@
 /*
-  global describe, beforeEach, it, expect
+  global describe, beforeEach, afterEach, it, expect
 */
 'use strict'
 
