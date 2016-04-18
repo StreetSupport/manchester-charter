@@ -37,7 +37,6 @@
         display: inline;
         width: 200px;
         margin-top: 0;
-        vertical-align: top;
       }
     }
   }
@@ -61,6 +60,10 @@
   &__item {
     margin: 0 0 5px 0;
     padding: 0;
+
+    & > * {
+      vertical-align: top;
+    }
   }
 
   &__btn {
