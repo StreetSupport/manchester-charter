@@ -1,8 +1,5 @@
 .pledge-section {
   @include cf();
-
-  border-bottom: 1px dashed #111;
-
   display: none;
 
   &.active {

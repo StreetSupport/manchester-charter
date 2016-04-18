@@ -1,5 +1,5 @@
-.charter-social {
-  margin: 20px 0 10px 0;
+.pledge-select {
+  @include cf();
 
   &__list {
     margin: 0;
@@ -10,9 +10,9 @@
   &__item {
     margin: 0 0 10px 0;
     padding: 0;
-    display: block;
+  }
 
-    height: 150px;
-     resize: none;
+  &__btn {
+    text-align: left;    
   }
 }

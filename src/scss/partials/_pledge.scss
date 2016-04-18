@@ -1,4 +1,12 @@
 .pledge {
   background-color: #e8e8e8;
   padding: 10px 20px;
+
+  &__heading {
+    &--inline {
+      @include mq($from: m) {
+        display: inline;
+      }
+    }
+  }
 }
