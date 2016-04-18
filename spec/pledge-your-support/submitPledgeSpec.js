@@ -56,13 +56,13 @@ describe('Pledge Your Support - Submit Pledge', () => {
     expect(browserLoadingStub.calledOnce).toBeTruthy()
   })
 
-  // it('- Should post pledge to API', () => {
-  //   expect(ajaxPostStub.calledOnce).toBeTruthy()
-  // })
+  it('- Should post pledge to API', () => {
+    expect(ajaxPostStub.calledOnce).toBeTruthy()
+  })
 
-  // it('- Should notify user it has loaded', () => {
-  //   expect(browserLoadedStub.calledAfter(ajaxPostStub)).toBeTruthy()
-  // })
+  it('- Should notify user it has loaded', () => {
+    expect(browserLoadedStub.calledAfter(ajaxPostStub)).toBeTruthy()
+  })
 
   it('- Should set Section 1 as inactive', () => {
     expect(sut.section1.isActive()).toBeFalsy()
