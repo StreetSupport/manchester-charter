@@ -1,12 +1,31 @@
 /*
-  global describe, it, expect
+  global describe, beforeEach, afterEach, it, expect
 */
 'use strict'
 
 let Model = require('../../src/js/PledgeYourSupport')
+var sinon = require('sinon')
+var validation = require('../../src/js/validation')
 
 describe('Pledge Your Support', () => {
-  let sut = new Model()
+  var sut
+  var validationInitStub
+  var validationGetGroupStub
+  var validationGroup
+
+  beforeEach(() => {
+    validationInitStub = sinon.stub(validation, 'initialise')
+    validationGroup = {
+      'validation': 'group'
+    }
+    validationGetGroupStub = sinon.stub(validation, 'getValidationGroup').returns(validationGroup)
+    sut = new Model()
+  })
+
+  afterEach(() => {
+    validation.initialise.restore()
+    validation.getValidationGroup.restore()
+  })
 
   it('- Should set Section 1 as active', () => {
     expect(sut.section1.isActive()).toBeTruthy()
@@ -18,5 +37,13 @@ describe('Pledge Your Support', () => {
 
   it('- Should set Section 3 as inactive', () => {
     expect(sut.section3.isActive()).toBeFalsy()
+  })
+
+  it('- Should initialise validation', () => {
+    expect(validationInitStub.calledOnce).toBeTruthy()
+  })
+
+  it('- Should set validation group with form model', () => {
+    expect(validationGetGroupStub.calledOnce).toBeTruthy()
   })
 })

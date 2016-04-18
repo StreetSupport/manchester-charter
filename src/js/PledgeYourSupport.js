@@ -4,9 +4,10 @@ import { getSupporterCategories } from './examplePledges'
 import ko from 'knockout'
 require('knockout.validation') // No variable here is deliberate!
 
-var browser = require('./browser')
 var ajax = require('./ajax')
 var api = require('./api-endpoints')
+var browser = require('./browser')
+var validation = require('./validation')
 
 let ExamplePledge = function (data, listener) {
   var self = this
@@ -46,9 +47,14 @@ let PledgeYourSupport = function () {
     let sections = [self.section1, self.section2, self.section3]
     sections.forEach((s) => s.isActive(false))
     sections[sectionIndex - 1].isActive(true)
+    if (self.activeSection() > 0) {
+      browser.scrollTo('.js-pledge')
+    }
+    self.activeSection(sectionIndex)
   }
 
   self.init = () => {
+    validation.initialise(ko.validation)
     self.formModel = ko.validatedObservable({
       firstName: ko.observable().extend({ required: true }),
       lastName: ko.observable().extend({ required: true }),
@@ -57,12 +63,14 @@ let PledgeYourSupport = function () {
       email: ko.observable().extend({ required: true, email: true }),
       isOptedIn: ko.observable()
     })
+    self.fieldErrors = validation.getValidationGroup(ko.validation, self.formModel)
 
     self.supporterCategories = getSupporterCategories()
       .map((sc) => new SupporterCategory(sc, self))
     self.section1 = new Section()
     self.section2 = new Section()
     self.section3 = new Section()
+    self.activeSection = ko.observable(-1)
     setActiveSection(1)
   }
 
@@ -104,7 +112,7 @@ let PledgeYourSupport = function () {
     if (self.formModel.isValid()) {
       submitForm()
     } else {
-
+      self.fieldErrors.showAllMessages()
     }
   }
 
