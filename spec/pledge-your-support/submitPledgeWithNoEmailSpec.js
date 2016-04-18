@@ -8,7 +8,7 @@ let Model = require('../../src/js/PledgeYourSupport')
 var sinon = require('sinon')
 var ajax = require('../../src/js/ajax')
 
-describe('Pledge Your Support - Submit Pledge - No First Name', () => {
+describe('Pledge Your Support - Submit Pledge - No Email', () => {
   var ajaxPostStub
   var sut
 
@@ -16,12 +16,12 @@ describe('Pledge Your Support - Submit Pledge - No First Name', () => {
     sut = new Model()
     ajaxPostStub = sinon.stub(ajax, 'post')
 
-    sut.formModel().firstName('')
+    sut.formModel().firstName('first name')
     sut.formModel().lastName('last name')
-    sut.formModel().email('test@email.com')
+    sut.formModel().email('')
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
-    sut.formModel().pledge('my pledge')
+    sut.formModel().pledge('pledge')
     sut.submitPledge()
   })
 
