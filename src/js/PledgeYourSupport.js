@@ -50,9 +50,9 @@ let PledgeYourSupport = function () {
 
   self.init = () => {
     self.formModel = ko.validatedObservable({
-      pledge: ko.observable(),
-      firstName: ko.observable(),
+      firstName: ko.observable().extend({ required: true }),
       lastName: ko.observable(),
+      pledge: ko.observable(),
       organisation: ko.observable(),
       email: ko.observable(),
       isOptedIn: ko.observable()
@@ -68,7 +68,6 @@ let PledgeYourSupport = function () {
 
   self.pledgeSelected = (pledge) => {
     self.formModel().pledge(pledge)
-    console.log(self.formModel().pledge())
     setActiveSection(2)
   }
 
@@ -77,24 +76,28 @@ let PledgeYourSupport = function () {
   }
 
   self.submitPledge = () => {
-    browser.loading()
-    let endpoint = api.makeAPledge
-    let data = {
-      firstName: self.formModel().firstName(),
-      lastName: self.formModel().lastName(),
-      email: self.formModel().email(),
-      organisation: self.formModel().organisation(),
-      isOptedIn: self.formModel().isOptedIn(),
-      pledge: self.formModel().pledge()
-    }
-    // ajax
-    //   .post(endpoint, data)
-    //   .then((result) => {
-        browser.loaded()
-        setActiveSection(3)
-      // }, (error) => {
+    if(self.formModel.isValid()) {
+      browser.loading()
+      let endpoint = api.makeAPledge
+      let data = {
+        firstName: self.formModel().firstName(),
+        lastName: self.formModel().lastName(),
+        email: self.formModel().email(),
+        organisation: self.formModel().organisation(),
+        isOptedIn: self.formModel().isOptedIn(),
+        pledge: self.formModel().pledge()
+      }
+      ajax
+        .post(endpoint, data)
+        .then((result) => {
+          browser.loaded()
+          setActiveSection(3)
+        }, (error) => {
 
-      // })
+        })
+    } else {
+
+    }
   }
 
   self.init()
