@@ -50,9 +50,9 @@ export function getSupporterCategories () {
     'name': 'A member of a community or faith-based groups',
     'listOrder': 1,
     'examplePledges': [
-      'Providing emergency accomodation for rough sleepers all year round.',
-      'Informing my community about homelessness and altenative giving.',
-      'Domating or fundraising for local organisations.',
+      'Providing emergency accommodation for rough sleepers all year round.',
+      'Informing my community about homelessness and alternative giving.',
+      'Donating or fundraising for local organisations.',
       'Providing housing - supported housing or host families.'
     ]
   }, {
