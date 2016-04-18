@@ -3,7 +3,7 @@ title: Join an Action Group
 description: Join an action group to work with others to end homelessness in Manchester
 layout: default.hbs
 permalink: false
-appName: joinActionGroup
+appName: home
 sectionName: charter
 ---
 
@@ -42,16 +42,25 @@ sectionName: charter
         </div>
 
         <form action="" class="pledge-form js-pledge-form">
-          <div class="pledge-section pledge-section--1" data-bind="css: { active: section1.isActive() }">
+          <div class="pledge-section pledge-section--1" style="display: block;">
             <p>Please select the action group you wish to join:</p>
             <div class="action-select">
-              <ul class="action-select__list" data-bind="foreach: actionGroups">
-                <li class="action-select__item" data-bind="click: selectActionGroup">
+              <ul class="action-select__list">
+                <li class="action-select__item">
                   <span class="action-select__logo">
                     <img data-src="holder.js/100px100p?text=Logo" />
                   </span>
                   <span class="action-select__summary">
-                    <h3 class="h3 action-select__name" data-bind="text: name"></h3>
+                    <h3 class="h3 action-select__name">Mental Health</h3>
+                    <p class="action-select__description">[A short sentence or keywords about the group]</p>
+                  </span>
+                </li>
+                <li class="action-select__item">
+                  <span class="action-select__logo">
+                    <img data-src="holder.js/100px100p?text=Logo" />
+                  </span>
+                  <span class="action-select__summary">
+                    <h3 class="h3 action-select__name">Another</h3>
                     <p class="action-select__description">[A short sentence or keywords about the group]</p>
                   </span>
                 </li>
@@ -59,14 +68,14 @@ sectionName: charter
               <p>If there is an issue not listed here, which you think worthy of an action group please email your suggestions to <a href="mailto:actiongroups@streetsupport.net">actiongroups@streetsupport.net</a>.</p>
             </div>
           </div>
-          <div class="pledge-section pledge-section--2" data-bind="css: { active: section2.isActive() }, with: formModel">
+          <div class="pledge-section pledge-section--2" style="display: block;">
             <ul class="action-select__list">
               <li class="action-select__item">
                 <span class="action-select__logo">
                   <img data-src="holder.js/100px100p?text=Logo" />
                 </span>
                 <span class="action-select__summary">
-                  <h3 class="h3 action-select__name" data-bind="text: actionGroup"></h3>
+                  <h3 class="h3 action-select__name">[GROUP NAME]</h3>
                 </span>
               </li>
             </ul>
@@ -101,16 +110,15 @@ sectionName: charter
           </div>
         </form>
 
-        <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
-          <h2 class="h2">Thank you for ...</h2>
-          <p>...</p>
-          <p>...</p>
+        <div class="pledge-section pledge-section--3" style="display: block;">
+          <h2 class="h2">Thank you for your enquiry</h2>
+          <p>Thanks for offering to be part of the action groups. The group host will be in touch shortly with more information.</p>
 
           <div class="charter-social">
             <ul class="charter-social__list">
-              <li class="charter-social__item">Download your charter <img data-src="holder.js/44x44?text=Icon" /></li>
-              <li class="charter-social__item">Print your charter <img data-src="holder.js/44x44?text=Icon" /></li>
-              <li class="charter-social__item">Share your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Download <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Print <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Share <img data-src="holder.js/44x44?text=Icon" /></li>
             </ul>
           </div>
         </div>
