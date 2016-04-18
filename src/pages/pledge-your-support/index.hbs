@@ -65,24 +65,24 @@ sectionName: charter
 
 
 <script type="text/html" id="step-1">
-<p>I/We Pledge to support the Manchester Homelessness Charter</p>
+<p>I pledge to support the Manchester Homelessness Charter</p>
 <h3 class="h3">As a...</h3>
 <div class="accordion js-accordion" data-bind="foreach: supporterCategories">
   <button class="h3 accordion__header js-header" data-bind="text: name"></button>
   <div class="accordion__item js-item">
     <div class="accordion__inner">
-      <h3 class="h3">[Select and edit a pledge below, or create your own]</h3>
+      <h3 class="h3">By (please select or create your pledge)</h3>
       <div class="pledge-select">
         <ul class="pledge-select__list" data-bind="foreach: examplePledges">
           <li class="pledge-select__item">
             <button class="pledge-select__btn" data-bind="text: description, click: selectExamplePledge"></button>
           </li>
         </ul>
-        <h3 class="h3">Can't see yours? Add your own</h3>
-        <label class="pledge-form__label hide-screen" for="customtype">Add your own</label>
-        <textarea class="pledge-form__textarea" placeholder="Add your own custom Pledge" data-bind="textInput: customPledge"></textarea>
-        <p>[If you're not sure what pledge works best for you, leave this blank and we'll be in touch]</p>
-        <button class="pledge-form__btn" data-bind="click: useCustomPledge">Add your pledge</button>
+        <h3 class="h3">Have something else to offer? Write your own pledge.</h3>
+        <label class="pledge-form__label hide-screen" for="customtype">Write your own</label>
+        <textarea class="pledge-form__textarea" placeholder="Write your own custom pledge" data-bind="textInput: customPledge"></textarea>
+        <p>(If you’re a little unsure what to pledge, leave this section blank and we’ll be in touch to give you a helping hand)</p>
+        <button class="pledge-form__btn" data-bind="click: useCustomPledge">Make your pledge</button>
       </div>
     </div>
   </div>
@@ -132,7 +132,7 @@ sectionName: charter
   </ul>
 </div>
 
-<p>[Want to take your support further? Is there something you're already doing which you can pledge to help the Charter? Why not Join an Action group?]</p>
+<p>Now that you have made your pledge, would you be interested in working collaboratively with others as part of an action group?</p>
 
 {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
 </script>
