@@ -1,7 +1,7 @@
 .step {
   @include cf();
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 
   &__list {
     margin: 0;
@@ -11,8 +11,26 @@
   }
 
   &__item {
-    margin: 0;
-    padding: 0 10px 0 0;
+    margin: 0 10px 0 0;
+    padding: 6px 0 0 0;
     display: inline-block;
+    border: 1px solid $brand-f;
+    border-radius: 20px;
+    background: white;
+    height: 36px;
+    width: 36px;
+    color: #111;
+    text-decoration: none;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    &.active {
+      color: $brand-d;
+      font-family: $font-headline;
+      font-weight: $font-headline-weight;
+    }
   }
 }

@@ -44,7 +44,21 @@ sectionName: charter
         </form>
 
         <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
-          <!-- ko template: { name: 'step-3' } --><!-- /ko -->
+          <h2 class="h2">Thank you for making a pledge.</h2>
+          <p>We will be in touch shortly to see if/ how we can help support you in achieving your pledge, for example finding the organisation which will benefit most from your pledge.</p>
+          <p>As an extra thank you we’ve created a special version of the Charter which features your pledge, so you can share it with your family, friends, colleagues and contacts. You can download your personalised Charter at any time from the link we’ve sent to your email address.</p>
+
+          <div class="charter-social">
+            <ul class="charter-social__list">
+              <li class="charter-social__item">Download your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Print your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Share your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+            </ul>
+          </div>
+
+          <p>Now that you have made your pledge, would you be interested in working collaboratively with others as part of an action group?</p>
+
+          {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
         </div>
       </div>
 
@@ -58,7 +72,7 @@ sectionName: charter
 
       <h2 class="h2">Thank you!</h2>
       <p>Thank you to the organisations and companies who have already pledged their support to the Manchester Homelessness Charter.</p>
-      <p>Coming soon</p>
+      <p>Coming soon.</p>
     </div>
   </div>
 </div>
@@ -75,14 +89,14 @@ sectionName: charter
       <div class="pledge-select">
         <ul class="pledge-select__list" data-bind="foreach: examplePledges">
           <li class="pledge-select__item">
-            <button class="pledge-select__btn" data-bind="text: description, click: selectExamplePledge"></button>
+            <button class="btn pledge-select__btn" data-bind="text: description, click: selectExamplePledge"></button>
           </li>
         </ul>
         <h3 class="h3">Have something else to offer? Write your own pledge.</h3>
         <label class="pledge-form__label hide-screen" for="customtype">Write your own</label>
         <textarea class="pledge-form__textarea" placeholder="Write your own custom pledge" data-bind="textInput: customPledge"></textarea>
         <p>(If you’re a little unsure what to pledge, leave this section blank and we’ll be in touch to give you a helping hand)</p>
-        <button class="pledge-form__btn" data-bind="click: useCustomPledge">Make your pledge</button>
+        <button class="btn pledge-form__btn" data-bind="click: useCustomPledge">Make your pledge</button>
       </div>
     </div>
   </div>
@@ -98,7 +112,7 @@ sectionName: charter
 
 <span>pledge to support the Manchester Homeless Charter by...</span>
 
-<textarea style="margin-top: 1rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
+<textarea style="margin-top: 2rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
 
 <ul class="pledge-form__list">
   <li class="pledge-form__item">
@@ -106,33 +120,14 @@ sectionName: charter
     <input class="pledge-form__input pledge-form__input--inline" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
   </li>
   <li class="pledge-form__item">
-    <label class="pledge-form__label" for="email">Email *</label>
+    <label class="pledge-form__label" for="email">Email * <span style="display: block; margin-top: 5px; font-size: 14px">(Street Support will never share your email with a 3rd party.)</span></label>
     <input class="pledge-form__input pledge-form__input--inline" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
-    <p>(Street Support will never share your email with a 3rd party.)</p>
   </li>
   <li class="pledge-form__item">
-    <label class="pledge-form__label" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
+    <label class="pledge-form__label pledge-form__label--large" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
     <input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
   </li>
 </ul>
 
-<button class="pledge-form__btn" data-bind="click: $parent.submitPledge">Confirm your pledge</button>
-</script>
-
-<script type="text/html" id="step-3">
-<h2 class="h2">Thank you for making a pledge.</h2>
-<p>We will be in touch shortly to see if/ how we can help support you in achieving your pledge, for example finding the organisation which will benefit most from your pledge.</p>
-<p>As an extra thank you we’ve created a special version of the Charter which features your pledge, so you can share it with your family, friends, colleagues and contacts. You can download your personalised Charter at any time from the link we’ve sent to [YOUR EMAIL ADDRESS].</p>
-
-<div class="charter-social">
-  <ul class="charter-social__list">
-    <li class="charter-social__item">Download your charter <img data-src="holder.js/44x44?text=Icon" /></li>
-    <li class="charter-social__item">Print your charter <img data-src="holder.js/44x44?text=Icon" /></li>
-    <li class="charter-social__item">Share your charter <img data-src="holder.js/44x44?text=Icon" /></li>
-  </ul>
-</div>
-
-<p>Now that you have made your pledge, would you be interested in working collaboratively with others as part of an action group?</p>
-
-{{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
+<button class="btn pledge-form__btn" data-bind="click: $parent.submitPledge">Confirm your pledge</button>
 </script>

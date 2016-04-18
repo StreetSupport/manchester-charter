@@ -13,6 +13,13 @@
 
     @include mq($from: m) {
       display: inline-block;
+      width: 200px;
+    }
+
+    &--large {
+      @include mq($from: m) {
+        width: 380px;
+      }
     }
   }
 
@@ -29,6 +36,7 @@
       @include mq($from: m) {
         display: inline;
         width: 200px;
+        margin-top: 0;
       }
     }
   }
@@ -52,9 +60,28 @@
   &__item {
     margin: 0 0 5px 0;
     padding: 0;
+
+    & > * {
+      vertical-align: top;
+    }
   }
 
   &__btn {
-    margin: 10px 0;    
+    font-family: $font-primary;
+    font-weight: $font-primary-weight;
+    border: 1px solid #a1a1a1;
+    background: #f5f5f5;
+    color: #111;
+    padding: 4px 8px;
+    margin: 20px 0;
+    text-align: left;
+  }
+
+  .validationMessage {
+    display: block;
+    color: $brand-g;
+    margin-bottom: 10px;
+    font-family: $font-headline;
+    font-weight: $font-headline-weight;    
   }
 }
