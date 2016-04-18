@@ -89,11 +89,26 @@ sectionName: charter
 
             <button class="pledge-form__btn" data-bind="click: submitPledge">Submit</button>
           </div>
-
-          <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
-            step 3 confirmation tba
-          </div>
         </form>
+
+        <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
+          <h2 class="h2">Thank you! Your Pledge has been submitted</h2>
+          <p>[It will be sent for approval and you will be sent / we will get in touch / when it is approved]</p>
+          <h3 class="h3">[We've created your own version of the Charter with your Pledge]</h3>
+          <p>An email has been sent to [YOUR EMAIL ADDRESS] where you can download your charter.</p>
+
+          <div class="charter-social">
+            <ul class="charter-social__list">
+              <li class="charter-social__item">Download your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Print your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Share your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+            </ul>
+          </div>
+
+          <p>[Want to take your support further? Is there something you're already doing which you can pledge to help the Charter? Why not Join an Action group?]</p>
+
+          {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
+        </div>
       </div>
 
       <h2 class="h2">[How else can you help?]</h2>

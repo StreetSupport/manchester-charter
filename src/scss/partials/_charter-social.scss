@@ -11,5 +11,10 @@
     margin: 0 0 10px 0;
     padding: 0;
     display: block;
+
+    @include mq($from: l) {
+      display: inline-block;
+      margin-right: 20px;
+    }    
   }
 }
