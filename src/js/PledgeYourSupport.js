@@ -58,6 +58,7 @@ let PledgeYourSupport = function () {
     self.formModel = ko.validatedObservable({
       firstName: ko.observable().extend({ required: true }),
       lastName: ko.observable().extend({ required: true }),
+      supporterCategory: ko.observable(),
       pledge: ko.observable().extend({ required: true }),
       organisation: ko.observable(),
       email: ko.observable().extend({ required: true, email: true }),
@@ -83,10 +84,15 @@ let PledgeYourSupport = function () {
     setActiveSection(1)
   }
 
+  self.accordionOpened = (el, context) => {
+    self.formModel().supporterCategory(el.innerHTML)
+  }
+
   let buildFormData = () => {
     return {
       firstName: self.formModel().firstName(),
       lastName: self.formModel().lastName(),
+      supporterCategory: self.formModel().supporterCategory(),
       email: self.formModel().email(),
       organisation: self.formModel().organisation(),
       isOptedIn: self.formModel().isOptedIn(),
@@ -102,9 +108,14 @@ let PledgeYourSupport = function () {
       .post(endpoint, data)
       .then((result) => {
         browser.loaded()
-        setActiveSection(3)
-      }, (error) => {
-
+        if (result.status === 400) {
+          setActiveSection(2)
+        }
+        if (result.status === 201) {
+          setActiveSection(3)
+        }
+      }, () => {
+        browser.redirect('/500.html')
       })
   }
 
