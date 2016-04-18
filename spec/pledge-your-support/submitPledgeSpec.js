@@ -36,7 +36,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
       .returns({
         then: (success, error) => {
           success({
-            'status': 201
+            'statusCode': 201
           })
         }
       })

@@ -25,7 +25,7 @@ describe('Pledge Your Support - Submit Pledge - Server returns bad request', () 
       .returns({
         then: (success, error) => {
           success({
-            'status': 400
+            'statusCode': 400
           })
         }
       })

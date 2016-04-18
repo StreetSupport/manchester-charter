@@ -108,10 +108,10 @@ let PledgeYourSupport = function () {
       .post(endpoint, data)
       .then((result) => {
         browser.loaded()
-        if (result.status === 400) {
+        if (result.statusCode === 400) {
           setActiveSection(2)
         }
-        if (result.status === 201) {
+        if (result.statusCode === 201) {
           setActiveSection(3)
         }
       }, () => {
