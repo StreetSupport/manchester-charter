@@ -2,6 +2,7 @@
 
 import { getSupporterCategories } from './examplePledges'
 import ko from 'knockout'
+require('knockout.validation') // No variable here is deliberate!
 
 var browser = require('./browser')
 var ajax = require('./ajax')
@@ -48,11 +49,13 @@ let PledgeYourSupport = function () {
   }
 
   self.init = () => {
-    self.pledge = ko.observable()
-    self.firstName = ko.observable()
-    self.lastName = ko.observable()
-    self.email = ko.observable()
-    self.isOptedIn = ko.observable()
+    self.formModel = ko.validatedObservable({
+      pledge: ko.observable(),
+      firstName: ko.observable(),
+      lastName: ko.observable(),
+      email: ko.observable(),
+      isOptedIn: ko.observable()
+    })
 
     self.supporterCategories = getSupporterCategories()
       .map((sc) => new SupporterCategory(sc, self))
@@ -63,7 +66,7 @@ let PledgeYourSupport = function () {
   }
 
   self.pledgeSelected = (pledge) => {
-    self.pledge(pledge)
+    self.formModel().pledge(pledge)
     setActiveSection(2)
   }
 
@@ -71,11 +74,11 @@ let PledgeYourSupport = function () {
     browser.loading()
     let endpoint = api.makeAPledge
     let data = {
-      firstName: self.firstName(),
-      lastName: self.lastName(),
-      email: self.email(),
-      isOptedIn: self.isOptedIn(),
-      pledge: self.pledge()
+      firstName: self.formModel().firstName(),
+      lastName: self.formModel().lastName(),
+      email: self.formModel().email(),
+      isOptedIn: self.formModel().isOptedIn(),
+      pledge: self.formModel().pledge()
     }
     ajax
       .post(endpoint, data)

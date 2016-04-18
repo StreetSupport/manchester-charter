@@ -36,11 +36,11 @@ describe('Pledge Your Support - Submit Pledge', () => {
           })
         }
       })
-    sut.firstName('first name')
-    sut.lastName('last name')
-    sut.email('test@email.com')
-    sut.isOptedIn(true)
-    sut.pledge('my pledge')
+    sut.formModel().firstName('first name')
+    sut.formModel().lastName('last name')
+    sut.formModel().email('test@email.com')
+    sut.formModel().isOptedIn(true)
+    sut.formModel().pledge('my pledge')
     sut.submitPledge()
   })
 

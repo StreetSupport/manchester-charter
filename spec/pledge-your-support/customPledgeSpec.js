@@ -14,6 +14,6 @@ describe('Pledge Your Support - Custom Pledge', () => {
   })
 
   it('- Should populate pledge with custom pledge', () => {
-    expect(sut.pledge()).toEqual('my custom pledge')
+    expect(sut.formModel().pledge()).toEqual('my custom pledge')
   })
 })

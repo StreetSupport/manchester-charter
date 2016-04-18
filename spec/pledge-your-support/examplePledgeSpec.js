@@ -19,7 +19,7 @@ describe('Pledge Your Support', () => {
     })
 
     it('- Should populate pledge with example pledge', () => {
-      expect(sut.pledge()).toEqual(sut.supporterCategories[2].examplePledges[1].description)
+      expect(sut.formModel().pledge()).toEqual(sut.supporterCategories[2].examplePledges[1].description)
     })
 
     it('- Should set Section 1 as inactive', () => {
