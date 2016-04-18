@@ -21,6 +21,9 @@
     width: 100px;
     height: 80px;
     display: block;
+    background-color: #a8a8a8;
+    text-align: center;
+    padding-top: 30px;
 
     @include mq($from: m) {
       display: table-cell;
