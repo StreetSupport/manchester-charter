@@ -3,6 +3,10 @@
 import { getSupporterCategories } from './examplePledges'
 import ko from 'knockout'
 
+var browser = require('./browser')
+var ajax = require('./ajax')
+var api = require('./api-endpoints')
+
 let ExamplePledge = function (data, listener) {
   var self = this
   self.description = data
@@ -59,7 +63,21 @@ let PledgeYourSupport = function () {
   }
 
   self.submitPledge = () => {
-    setActiveSection(3)
+    browser.loading()
+    let endpoint = api.makeAPledge
+    let data = {
+      pledge: self.pledge()
+    }
+    console.log(endpoint)
+    console.log(data)
+    ajax
+      .post(endpoint, data)
+      .then((result) => {
+        setActiveSection(3)
+        browser.loaded()
+      }, (error) => {
+
+      })
   }
 
   self.init()
