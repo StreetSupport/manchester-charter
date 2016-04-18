@@ -44,7 +44,21 @@ sectionName: charter
         </form>
 
         <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
-          <!-- ko template: { name: 'step-3' } --><!-- /ko -->
+          <h2 class="h2">Thank you for making a pledge.</h2>
+          <p>We will be in touch shortly to see if/ how we can help support you in achieving your pledge, for example finding the organisation which will benefit most from your pledge.</p>
+          <p>As an extra thank you we’ve created a special version of the Charter which features your pledge, so you can share it with your family, friends, colleagues and contacts. You can download your personalised Charter at any time from the link we’ve sent to your email address.</p>
+
+          <div class="charter-social">
+            <ul class="charter-social__list">
+              <li class="charter-social__item">Download your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Print your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Share your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+            </ul>
+          </div>
+
+          <p>Now that you have made your pledge, would you be interested in working collaboratively with others as part of an action group?</p>
+
+          {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
         </div>
       </div>
 
@@ -58,7 +72,7 @@ sectionName: charter
 
       <h2 class="h2">Thank you!</h2>
       <p>Thank you to the organisations and companies who have already pledged their support to the Manchester Homelessness Charter.</p>
-      <p>Coming soon</p>
+      <p>Coming soon.</p>
     </div>
   </div>
 </div>
@@ -98,7 +112,7 @@ sectionName: charter
 
 <span>pledge to support the Manchester Homeless Charter by...</span>
 
-<textarea style="margin-top: 1rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
+<textarea style="margin-top: 2rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
 
 <ul class="pledge-form__list">
   <li class="pledge-form__item">
@@ -117,22 +131,4 @@ sectionName: charter
 </ul>
 
 <button class="btn pledge-form__btn" data-bind="click: $parent.submitPledge">Confirm your pledge</button>
-</script>
-
-<script type="text/html" id="step-3">
-<h2 class="h2">Thank you for making a pledge.</h2>
-<p>We will be in touch shortly to see if/ how we can help support you in achieving your pledge, for example finding the organisation which will benefit most from your pledge.</p>
-<p>As an extra thank you we’ve created a special version of the Charter which features your pledge, so you can share it with your family, friends, colleagues and contacts. You can download your personalised Charter at any time from the link we’ve sent to your email address.</p>
-
-<div class="charter-social">
-  <ul class="charter-social__list">
-    <li class="charter-social__item">Download your charter <img data-src="holder.js/44x44?text=Icon" /></li>
-    <li class="charter-social__item">Print your charter <img data-src="holder.js/44x44?text=Icon" /></li>
-    <li class="charter-social__item">Share your charter <img data-src="holder.js/44x44?text=Icon" /></li>
-  </ul>
-</div>
-
-<p>Now that you have made your pledge, would you be interested in working collaboratively with others as part of an action group?</p>
-
-{{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
 </script>
