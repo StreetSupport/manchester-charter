@@ -43,6 +43,19 @@ var showError = function (fieldName, message) {
   insertAfter(refNode, errorNode)
 }
 
+var scrollTo = function (selector) {
+  let findPos = (obj) => {
+    var curtop = 0
+    if (obj.offsetParent) {
+      do {
+        curtop += obj.offsetTop
+      } while (obj === obj.offsetParent)
+      return [curtop]
+    }
+  }
+  window.scroll(0, findPos(document.querySelector(selector)))
+}
+
 var trackEvent = function (src, action, description) {
   ga('send', 'event', src, action, description)
 }
@@ -53,5 +66,6 @@ module.exports = {
   loaded: loaded,
   trackEvent: trackEvent,
   getInputField: getInputField,
-  showError: showError
+  showError: showError,
+  scrollTo: scrollTo
 }

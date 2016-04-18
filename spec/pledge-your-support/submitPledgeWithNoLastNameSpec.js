@@ -7,26 +7,34 @@ let Model = require('../../src/js/PledgeYourSupport')
 
 var sinon = require('sinon')
 var ajax = require('../../src/js/ajax')
+var validation = require('../../src/js/validation')
 
 describe('Pledge Your Support - Submit Pledge - No Last Name', () => {
   var ajaxPostStub
+  var validationShowErrorsStub
   var sut
 
   beforeEach(() => {
     sut = new Model()
     ajaxPostStub = sinon.stub(ajax, 'post')
+    validationShowErrorsStub = sinon.stub(validation, 'showErrors')
 
     sut.formModel().firstName('first name')
     sut.formModel().lastName('')
     sut.formModel().email('test@email.com')
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
-    sut.formModel().pledge('my pledge')
+    sut.formModel().pledge('pledge')
     sut.submitPledge()
   })
 
   afterEach(() => {
     ajax.post.restore()
+    validation.showErrors.restore()
+  })
+
+  it('- Should show errors', () => {
+    expect(validationShowErrorsStub.calledOnce).toBeFalsy()
   })
 
   it('- Should not post pledge to API', () => {

@@ -6,13 +6,14 @@
 let Model = require('../../src/js/PledgeYourSupport')
 
 var sinon = require('sinon')
-var browser = require('../../src/js/browser')
 var ajax = require('../../src/js/ajax')
 var api = require('../../src/js/api-endpoints')
+var browser = require('../../src/js/browser')
 
 describe('Pledge Your Support - Submit Pledge', () => {
   var browserLoadingStub
   var browserLoadedStub
+  var browserScrollToStub
   var ajaxPostStub
   var sut
 
@@ -20,6 +21,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
     sut = new Model()
     browserLoadingStub = sinon.stub(browser, 'loading')
     browserLoadedStub = sinon.stub(browser, 'loaded')
+    browserScrollToStub = sinon.stub(browser, 'scrollTo')
     let expectedPledgeData = {
       firstName: 'first name',
       lastName: 'last name',
@@ -49,6 +51,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
   afterEach(() => {
     browser.loading.restore()
     browser.loaded.restore()
+    browser.scrollTo.restore()
     ajax.post.restore()
   })
 
@@ -74,5 +77,9 @@ describe('Pledge Your Support - Submit Pledge', () => {
 
   it('- Should set Section 3 as active', () => {
     expect(sut.section3.isActive()).toBeTruthy()
+  })
+
+  it('- Should set scroll to top of section', () => {
+    expect(browserScrollToStub.withArgs('js-pledge').calledOnce).toBeFalsy()
   })
 })
