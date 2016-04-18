@@ -15,6 +15,11 @@
     @include mq($from: l) {
       display: inline-block;
       margin-right: 20px;
-    }    
+    }
+
+    img {
+      margin-left: 10px;
+      vertical-align: middle;
+    }
   }
 }
