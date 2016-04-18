@@ -3,7 +3,7 @@ title: Join an Action Group
 description: Join an action group to work with others to end homelessness in Manchester
 layout: default.hbs
 permalink: false
-appName: home
+appName: joinActionGroup
 sectionName: charter
 ---
 
@@ -42,25 +42,16 @@ sectionName: charter
         </div>
 
         <form action="" class="pledge-form js-pledge-form">
-          <div class="pledge-section pledge-section--1" style="display: block;">
+          <div class="pledge-section pledge-section--1" data-bind="css: { active: section1.isActive() }">
             <p>Please select the action group you wish to join:</p>
             <div class="action-select">
-              <ul class="action-select__list">
-                <li class="action-select__item">
+              <ul class="action-select__list" data-bind="foreach: actionGroups">
+                <li class="action-select__item" data-bind="click: selectActionGroup">
                   <span class="action-select__logo">
                     <img data-src="holder.js/100px100p?text=Logo" />
                   </span>
                   <span class="action-select__summary">
-                    <h3 class="h3 action-select__name">Mental Health</h3>
-                    <p class="action-select__description">[A short sentence or keywords about the group]</p>
-                  </span>
-                </li>
-                <li class="action-select__item">
-                  <span class="action-select__logo">
-                    <img data-src="holder.js/100px100p?text=Logo" />
-                  </span>
-                  <span class="action-select__summary">
-                    <h3 class="h3 action-select__name">Another</h3>
+                    <h3 class="h3 action-select__name" data-bind="text: name"></h3>
                     <p class="action-select__description">[A short sentence or keywords about the group]</p>
                   </span>
                 </li>
@@ -68,14 +59,14 @@ sectionName: charter
               <p>If there is an issue not listed here, which you think worthy of an action group please email your suggestions to <a href="mailto:actiongroups@streetsupport.net">actiongroups@streetsupport.net</a>.</p>
             </div>
           </div>
-          <div class="pledge-section pledge-section--2" style="display: block;">
+          <div class="pledge-section pledge-section--2" data-bind="css: { active: section2.isActive() }, with: formModel">
             <ul class="action-select__list">
               <li class="action-select__item">
                 <span class="action-select__logo">
                   <img data-src="holder.js/100px100p?text=Logo" />
                 </span>
                 <span class="action-select__summary">
-                  <h3 class="h3 action-select__name">[GROUP NAME]</h3>
+                  <h3 class="h3 action-select__name" data-bind="text: actionGroup"></h3>
                 </span>
               </li>
             </ul>
@@ -110,7 +101,7 @@ sectionName: charter
           </div>
         </form>
 
-        <div class="pledge-section pledge-section--3" style="display: block;">
+        <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
           <h2 class="h2">Thank you for your enquiry</h2>
           <p>Thanks for offering to be part of the action groups. The group host will be in touch shortly with more information.</p>
 
