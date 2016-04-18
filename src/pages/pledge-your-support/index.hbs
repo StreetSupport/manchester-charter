@@ -74,14 +74,14 @@ sectionName: charter
       <div class="pledge-select">
         <ul class="pledge-select__list" data-bind="foreach: examplePledges">
           <li class="pledge-select__item">
-            <button class="pledge-select__btn" data-bind="text: description, click: selectExamplePledge"></button>
+            <button class="btn pledge-form__btn" data-bind="text: description, click: selectExamplePledge"></button>
           </li>
         </ul>
         <h3 class="h3">Can't see yours? Add your own</h3>
         <label class="pledge-form__label hide-screen" for="customtype">Add your own</label>
         <textarea class="pledge-form__textarea" placeholder="Add your own custom Pledge" data-bind="textInput: customPledge"></textarea>
         <p>[If you're not sure what pledge works best for you, leave this blank and we'll be in touch]</p>
-        <button class="pledge-form__btn" data-bind="click: useCustomPledge">Add your pledge</button>
+        <button class="btn pledge-form__btn" data-bind="click: useCustomPledge">Add your pledge</button>
       </div>
     </div>
   </div>
@@ -115,7 +115,7 @@ sectionName: charter
   </li>
 </ul>
 
-<button class="pledge-form__btn" data-bind="click: $parent.submitPledge">Submit</button>
+<button class="btn pledge-form__btn" data-bind="click: $parent.submitPledge">Submit</button>
 </script>
 
 <script type="text/html" id="step-3">
