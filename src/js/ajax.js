@@ -36,7 +36,7 @@ var makeRequest = function (options) {
   var req = new XMLHttpRequest()
   req.open(options.method, options.url, true)
 
-  if (Object.keys(options.headers).length === 0) {
+  if (options.headers === undefined) {
     options.headers = {
       'content-type': 'application/json'
     }
