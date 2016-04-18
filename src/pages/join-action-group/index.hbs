@@ -31,18 +31,98 @@ sectionName: charter
       <h2 class="h2">What does it involve?</h2>
       <p>Once you have selected which action group will best benefit from your experience, you will be contacted by the group Chairperson. The Chairperson will be responsible for keeping the group focussed and organising meetings.  On average we expect each group to meet once a month, with actions progressed between meetings, but this will depend on the people who join each group.</p>
 
-      <h2 class="h2">Action Goups</h2>
-      <p>Please select the action group you wish to join:</p>
-      <ul>
-        <li>Mental Health</li>
-        <li>Employability</li>
-        <li>Substandard Accommodation</li>
-        <li>Women's Direct Access</li>
-        <li>Evening Offer</li>
-        <li>Emergency Accommodation</li>
-        <li>Presenting as homeless at the town hall</li>
-        <li>Street Giving and Begging</li>
-      </ul>
-      <p>If there is an issue not listed here, which you think worthy of an action group please email your suggestions to <a href="mailto:actiongroups@streetsupport.net">actiongroups@streetsupport.net</a>.
+      <div class="pledge js-pledge">
+        <h2 class="h2">Action Groups</h2>
+
+        <div class="step">
+          <ol class="step__list">
+            <li class="step__item" data-bind="css: { active: section1.isActive() }"><a href="#" data-bind="click: setSection1Active">1</a></li>
+            <li class="step__item" data-bind="css: { active: section2.isActive() }">2</li>
+          </ol>
+        </div>
+
+        <form action="" class="pledge-form js-pledge-form">
+          <div class="pledge-section pledge-section--1" style="display: block;">
+            <p>Please select the action group you wish to join:</p>
+            <div class="action-select">
+              <ul class="action-select__list">
+                <li class="action-select__item">
+                  <span class="action-select__logo">
+                    <img data-src="holder.js/100px100p?text=Logo" />
+                  </span>
+                  <span class="action-select__summary">
+                    <h3 class="h3 action-select__name">Mental Health</h3>
+                    <p class="action-select__description">[A short sentence or keywords about the group]</p>
+                  </span>
+                </li>
+                <li class="action-select__item">
+                  <span class="action-select__logo">
+                    <img data-src="holder.js/100px100p?text=Logo" />
+                  </span>
+                  <span class="action-select__summary">
+                    <h3 class="h3 action-select__name">Another</h3>
+                    <p class="action-select__description">[A short sentence or keywords about the group]</p>
+                  </span>
+                </li>
+              </ul>
+              <p>If there is an issue not listed here, which you think worthy of an action group please email your suggestions to <a href="mailto:actiongroups@streetsupport.net">actiongroups@streetsupport.net</a>.</p>
+            </div>
+          </div>
+          <div class="pledge-section pledge-section--2" style="display: block;">
+            <ul class="action-select__list">
+              <li class="action-select__item">
+                <span class="action-select__logo">
+                  <img data-src="holder.js/100px100p?text=Logo" />
+                </span>
+                <span class="action-select__summary">
+                  <h3 class="h3 action-select__name">[GROUP NAME]</h3>
+                </span>
+              </li>
+            </ul>
+            <p>[A longer explanation about the group, location, hours of operation, previous achievements, and other similar groups]</p>
+
+            <h3 class="h3 pledge__heading--inline">I</h3>
+            <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
+            <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
+            <label class="pledge-form__label hide-screen" for="lastName">Last Name *</label>
+            <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
+
+            <span>pledge to support the Action Group by...</span>
+
+            <textarea style="margin-top: 2rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
+
+            <ul class="pledge-form__list">
+              <li class="pledge-form__item">
+                <label class="pledge-form__label" for="organisation">Organisation/Business Name (if applicable)</label>
+                <input class="pledge-form__input pledge-form__input--inline" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
+              </li>
+              <li class="pledge-form__item">
+                <label class="pledge-form__label" for="email">Email * <span style="display: block; margin-top: 5px; font-size: 14px">(Street Support will never share your email with a 3rd party.)</span></label>
+                <input class="pledge-form__input pledge-form__input--inline" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
+              </li>
+              <li class="pledge-form__item">
+                <label class="pledge-form__label pledge-form__label--large" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
+                <input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
+              </li>
+            </ul>
+
+            <button class="btn pledge-form__btn" data-bind="click: $parent.submitPledge">Confirm joining the Action Group</button>
+          </div>
+        </form>
+
+        <div class="pledge-section pledge-section--3" style="display: block;">
+          <h2 class="h2">Thank you for ...</h2>
+          <p>...</p>
+          <p>...</p>
+
+          <div class="charter-social">
+            <ul class="charter-social__list">
+              <li class="charter-social__item">Download your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Print your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Share your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+            </ul>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
