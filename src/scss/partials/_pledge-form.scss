@@ -77,11 +77,11 @@
     text-align: left;
   }
 
-  .validationMessage {
+  .form__error {
     display: block;
     color: $brand-g;
     margin-bottom: 10px;
     font-family: $font-headline;
-    font-weight: $font-headline-weight;    
+    font-weight: $font-headline-weight;
   }
 }
