@@ -49,6 +49,11 @@ let PledgeYourSupport = function () {
 
   self.init = () => {
     self.pledge = ko.observable()
+    self.firstName = ko.observable()
+    self.lastName = ko.observable()
+    self.email = ko.observable()
+    self.isOptedIn = ko.observable()
+
     self.supporterCategories = getSupporterCategories()
       .map((sc) => new SupporterCategory(sc, self))
     self.section1 = new Section()
@@ -66,15 +71,17 @@ let PledgeYourSupport = function () {
     browser.loading()
     let endpoint = api.makeAPledge
     let data = {
+      firstName: self.firstName(),
+      lastName: self.lastName(),
+      email: self.email(),
+      isOptedIn: self.isOptedIn(),
       pledge: self.pledge()
     }
-    console.log(endpoint)
-    console.log(data)
     ajax
       .post(endpoint, data)
       .then((result) => {
-        setActiveSection(3)
         browser.loaded()
+        setActiveSection(3)
       }, (error) => {
 
       })

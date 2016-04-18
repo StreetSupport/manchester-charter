@@ -21,6 +21,10 @@ describe('Pledge Your Support - Submit Pledge', () => {
     browserLoadingStub = sinon.stub(browser, 'loading')
     browserLoadedStub = sinon.stub(browser, 'loaded')
     let expectedPledgeData = {
+      firstName: 'first name',
+      lastName: 'last name',
+      email: 'test@email.com',
+      isOptedIn: true,
       pledge: 'my pledge'
     }
     ajaxPostStub = sinon.stub(ajax, 'post')
@@ -32,6 +36,10 @@ describe('Pledge Your Support - Submit Pledge', () => {
           })
         }
       })
+    sut.firstName('first name')
+    sut.lastName('last name')
+    sut.email('test@email.com')
+    sut.isOptedIn(true)
     sut.pledge('my pledge')
     sut.submitPledge()
   })
