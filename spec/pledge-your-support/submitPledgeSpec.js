@@ -23,6 +23,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
     let expectedPledgeData = {
       firstName: 'first name',
       lastName: 'last name',
+      organisation: 'organisation',
       email: 'test@email.com',
       isOptedIn: true,
       pledge: 'my pledge'
@@ -39,6 +40,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
     sut.formModel().firstName('first name')
     sut.formModel().lastName('last name')
     sut.formModel().email('test@email.com')
+    sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
     sut.formModel().pledge('my pledge')
     sut.submitPledge()

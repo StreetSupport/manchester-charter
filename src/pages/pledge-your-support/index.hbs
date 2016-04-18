@@ -24,14 +24,15 @@ sectionName: charter
       <p>[Opening text about pledging and how it makes a difference. Choose a Pledge or create your own / Create your own version of the Charter with your Pledge and share etc]</p>
 
       <div class="pledge js-pledge">
+        <!-- ko ifnot: section3.isActive() -->
         <h2 class="h2">Make a Pledge</h2>
         <div class="step">
           <ol class="step__list">
-            <li class="step__item"><a href="#">1</a></li>
-            <li class="step__item"><a href="#">2</a></li>
+            <li class="step__item" data-bind="css: { active: section1.isActive() }"><a href="#" data-bind="click: setSection1Active">1</a></li>
+            <li class="step__item" data-bind="css: { active: section2.isActive() }">2</li>
           </ol>
         </div>
-
+        <!-- /ko -->
         <form action="" class="pledge-form js-pledge-form">
           <div class="pledge-section pledge-section--1" data-bind="css: { active: section1.isActive() }">
             <p>I/We Pledge to support the Manchester Homelessness Charter</p>
@@ -59,13 +60,13 @@ sectionName: charter
             </div>
           </div>
 
-          <div class="pledge-section pledge-section--2" data-bind="css: { active: section2.isActive() }">
+          <div class="pledge-section pledge-section--2" data-bind="css: { active: section2.isActive() }, with: formModel">
             <h3 class="h3 pledge__heading--inline">I,</h3>
 
             <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
-    				<input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *"></input>
+    				<input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
             <label class="pledge-form__label hide-screen" for="lastName">Last Name *</label>
-    				<input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *"></input>
+    				<input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
 
             <span>pledge to support the Manchester Homeless Charter by:</span>
 
@@ -74,20 +75,20 @@ sectionName: charter
             <ul class="pledge-form__list">
               <li class="pledge-form__item">
                 <label class="pledge-form__label" for="organisation">Organisation Name</label>
-        				<input class="pledge-form__input pledge-form__input--inline" type="text" id="organisation" name="organisation" placeholder="Organisation Name"></input>
+        				<input class="pledge-form__input pledge-form__input--inline" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
               </li>
               <li class="pledge-form__item">
                 <label class="pledge-form__label" for="email">Email *</label>
-        				<input class="pledge-form__input pledge-form__input--inline" type="text" id="email" name="email" placeholder="Email Address"></input>
-                <p>(We will never share your email ever)</p>
+        				<input class="pledge-form__input pledge-form__input--inline" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
+                <p>(We will never share your email)</p>
               </li>
               <li class="pledge-form__item">
                 <label class="pledge-form__label" for="subscribe">Receive email updates about the Charter?</label>
-        				<input class="pledge-form__checkbox" type="checkbox" name="subscribe" value="subscribe">
+        				<input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
               </li>
             </ul>
 
-            <button class="pledge-form__btn" data-bind="click: submitPledge">Submit</button>
+            <button class="pledge-form__btn" data-bind="click: $parent.submitPledge">Submit</button>
           </div>
 
           <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">

@@ -53,6 +53,7 @@ let PledgeYourSupport = function () {
       pledge: ko.observable(),
       firstName: ko.observable(),
       lastName: ko.observable(),
+      organisation: ko.observable(),
       email: ko.observable(),
       isOptedIn: ko.observable()
     })
@@ -67,7 +68,12 @@ let PledgeYourSupport = function () {
 
   self.pledgeSelected = (pledge) => {
     self.formModel().pledge(pledge)
+    console.log(self.formModel().pledge())
     setActiveSection(2)
+  }
+
+  self.setSection1Active = () => {
+    setActiveSection(1)
   }
 
   self.submitPledge = () => {
@@ -77,6 +83,7 @@ let PledgeYourSupport = function () {
       firstName: self.formModel().firstName(),
       lastName: self.formModel().lastName(),
       email: self.formModel().email(),
+      organisation: self.formModel().organisation(),
       isOptedIn: self.formModel().isOptedIn(),
       pledge: self.formModel().pledge()
     }
