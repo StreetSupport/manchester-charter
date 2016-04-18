@@ -87,14 +87,14 @@ let PledgeYourSupport = function () {
       isOptedIn: self.formModel().isOptedIn(),
       pledge: self.formModel().pledge()
     }
-    ajax
-      .post(endpoint, data)
-      .then((result) => {
+    // ajax
+    //   .post(endpoint, data)
+    //   .then((result) => {
         browser.loaded()
         setActiveSection(3)
-      }, (error) => {
+      // }, (error) => {
 
-      })
+      // })
   }
 
   self.init()
