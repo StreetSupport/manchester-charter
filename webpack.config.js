@@ -21,7 +21,8 @@ module.exports = {
   entry: {
     home: __dirname + '/src/js/app-home',
     blog: __dirname + '/src/js/app-blog',
-    pledgeYourSupport: __dirname + '/src/js/app-pledgeYourSupport'
+    pledgeYourSupport: __dirname + '/src/js/app-pledgeYourSupport',
+    joinActionGroup: __dirname + '/src/js/app-joinActionGroup'
   },
   output: {
     path: path.join(__dirname, '/_dist/assets/js/'),
