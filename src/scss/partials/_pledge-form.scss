@@ -13,6 +13,13 @@
 
     @include mq($from: m) {
       display: inline-block;
+      width: 200px;
+    }
+
+    &--large {
+      @include mq($from: m) {
+        width: 380px;
+      }
     }
   }
 
@@ -29,6 +36,8 @@
       @include mq($from: m) {
         display: inline;
         width: 200px;
+        margin-top: 0;
+        vertical-align: top;
       }
     }
   }
@@ -61,7 +70,7 @@
     background: #f5f5f5;
     color: #111;
     padding: 4px 8px;
-    margin: 0;
+    margin: 20px 0;
     text-align: left;
   }
 }
