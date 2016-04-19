@@ -21,8 +21,8 @@ sectionName: charter
         </ol>
       </div>
 
-      <p>Organisation, business or individual? Everyone can make a difference to homelessness in Manchester.  Please show your dedication to the Charter by making a pledge to share skills and resources which will benefit people who are homeless.</p>
-      <p>Make your pledge by completing the form, you can either pick one of the example pledges, or you can create your own.  Once you’ve made your pledge we will look to help you put it into action.</p>
+      <p>Organisation, business or individual? Everyone can make a difference to homelessness in Manchester. Please show your dedication to the Charter by making a pledge to share your skills and resources to benefit people who are homeless.</p>
+      <p>Make your pledge by completing the form, you can either pick one of the example pledges, or you can create your own. Once you’ve made your pledge we will look to help you put it into action.</p>
 
       <div class="pledge js-pledge">
         <!-- ko ifnot: section3.isActive() -->
@@ -45,7 +45,7 @@ sectionName: charter
 
         <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
           <h2 class="h2">Thank you for making a pledge.</h2>
-          <p>We will be in touch shortly to see if/ how we can help support you in achieving your pledge, for example finding the organisation which will benefit most from your pledge.</p>
+          <p>We will be in touch shortly to see if/ how we can help support you in achieving your pledge.</p>
           <p>As an extra thank you we’ve created a special version of the Charter which features your pledge, so you can share it with your family, friends, colleagues and contacts. You can download your personalised Charter at any time from the link we’ve sent to your email address.</p>
 
           <div class="charter-social">
@@ -79,7 +79,8 @@ sectionName: charter
 
 
 <script type="text/html" id="step-1">
-<p>I pledge to support the Manchester Homelessness Charter as...</p>
+<p>I pledge to support the Manchester Homelessness Charter.</p>
+<h3 class="h3">Please select the option that best describes you below...</h3>
 <div class="accordion js-accordion" data-bind="foreach: supporterCategories">
   <button class="h3 accordion__header js-header">
     <span data-bind="text: name"></span>
@@ -88,17 +89,17 @@ sectionName: charter
   </button>
   <div class="accordion__item js-item">
     <div class="accordion__inner">
-      <h3 class="h3">By (please select or write your pledge)</h3>
+      <h3 class="h3">Please write a pledge...</h3>
       <div class="pledge-select">
+        <label class="pledge-form__label hide-screen" for="customtype">Your pledge</label>
+        <textarea class="pledge-form__textarea" placeholder="Write your own pledge" data-bind="textInput: customPledge"></textarea>
+        <h3 class="h3">Or select one of the examples below...</h3>
         <ul class="pledge-select__list" data-bind="foreach: examplePledges">
           <li class="pledge-select__item">
             <button class="btn pledge-select__btn" data-bind="text: description, click: selectExamplePledge"></button>
           </li>
         </ul>
-        <h3 class="h3">Have something else to offer? Write your own pledge.</h3>
-        <label class="pledge-form__label hide-screen" for="customtype">Write your own</label>
-        <textarea class="pledge-form__textarea" placeholder="Write your own custom pledge" data-bind="textInput: customPledge"></textarea>
-        <p>(If you’re a little unsure what to pledge, leave this section blank and we’ll be in touch to give you a helping hand)</p>
+        <p>TODO Add the option for I dont know what to do</p> 
         <button class="btn pledge-form__btn" data-bind="click: useCustomPledge">Make your pledge</button>
       </div>
     </div>

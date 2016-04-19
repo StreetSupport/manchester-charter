@@ -1,21 +1,29 @@
 export function getSupporterCategories () {
   return [{
-    'name': 'A Person with experience of homelessness',
+    'name': 'I have experienced homelessness',
     'listOrder': 1,
     'examplePledges': [
-      'Joining an action group to co-design services.',
+      'Joining an action group to design homelessness services.',
       'Volunteering to help a local organisation.',
-      'Sharing my story to inform others about homelessness.',
-      'Becoming an ambassador for the charter.',
-      'Sharing feedback on my experiences of using services.'
+      'Being an ambassador for the Charter.',
+      'Sharing my experiences of using services.',
+      'Sharing my story to inform others about homelessness.'
     ]
-  }, {
-    'name': 'A Business',
+  },{
+    'name': 'I am an individual that wants to help',
+    'listOrder': 1,
+    'examplePledges': [
+      'Making a donation to Big Change Manchester.',
+      'Registering as a volunteer on Street Support',
+      'Asking my employer to pledge to support the Charter'
+    ]
+  },{
+    'name': 'I represent a business',
     'listOrder': 1,
     'examplePledges': [
       'Offering employment opportunities through entry level jobs.',
       'Offering skills and resources to local organisations.',
-      'Informing my staff about homelessness and alternative giving.',
+      'Informing our staff about homelessness and alternative giving.',
       'Raising money for local organisations.',
       'Donating to the Big Change campaign.',
       'Helping with marketing to raise awareness of the charter.',
@@ -23,7 +31,7 @@ export function getSupporterCategories () {
       'Ensuring our facilities are accessible to homeless people.'
     ]
   }, {
-    'name': 'A Service Provider',
+    'name': 'I represent a service provider',
     'listOrder': 1,
     'examplePledges': [
       'Reviewing our services in line with the charter vision and values.',
@@ -36,7 +44,7 @@ export function getSupporterCategories () {
       'Committing to a \'no wrong door\' policy.'
     ]
   }, {
-    'name': 'A member of the Public Sector',
+    'name': 'I am a public sector decision maker',
     'listOrder': 1,
     'examplePledges': [
       'Ensuring our facilities are accessible to people who are homeless.',
@@ -47,7 +55,7 @@ export function getSupporterCategories () {
       'Including homeless people in meetings.'
     ]
   }, {
-    'name': 'A member of a community or faith-based groups',
+    'name': 'I am part of a community or faith-based group',
     'listOrder': 1,
     'examplePledges': [
       'Providing emergency accommodation for rough sleepers all year round.',
@@ -56,7 +64,7 @@ export function getSupporterCategories () {
       'Providing housing - supported housing or host families.'
     ]
   }, {
-    'name': 'A person from an educational organisation',
+    'name': 'I represent an educational organisation',
     'listOrder': 1,
     'examplePledges': [
       'Making a donation to Big Change Manchester.',
@@ -64,13 +72,6 @@ export function getSupporterCategories () {
       'Providing student placements to increase capacity and innovation.',
       'Developing work placements and employment opportunities.',
       'Providing research capacity to evaluate the impact of the charter.'
-    ]
-  }, {
-    'name': 'An individual',
-    'listOrder': 1,
-    'examplePledges': [
-      'Making a donation to Big Change Manchester.',
-      'Registering as a volunteer on Street Support'
     ]
   }]
 }
