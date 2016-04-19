@@ -1,6 +1,10 @@
 .split {
   @include cf();
 
+  .block__content & {
+    margin: 40px 0;
+  }
+
   &__element {
     @include cf();
 
