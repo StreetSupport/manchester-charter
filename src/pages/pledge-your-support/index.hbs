@@ -81,7 +81,11 @@ sectionName: charter
 <script type="text/html" id="step-1">
 <p>I pledge to support the Manchester Homelessness Charter as...</p>
 <div class="accordion js-accordion" data-bind="foreach: supporterCategories">
-  <button class="h3 accordion__header js-header" data-bind="text: name"></button>
+  <button class="h3 accordion__header js-header">
+    <span data-bind="text: name"></span>
+    <svg class="svg-plus-dims accordion__icon accordion__icon--open"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svgsprite.svg#plus"></use></svg>
+    <svg class="svg-minus-dims accordion__icon accordion__icon--close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svgsprite.svg#minus"></use></svg>
+  </button>
   <div class="accordion__item js-item">
     <div class="accordion__inner">
       <h3 class="h3">By (please select or write your pledge)</h3>
