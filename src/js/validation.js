@@ -1,6 +1,6 @@
 var initialise = function (koValidation) {
   koValidation.init({
-    insertMessages: false,
+    insertMessages: true,
     decorateInputElement: true,
     parseInputAttributes: true,
     errorMessageClass: 'form__error',

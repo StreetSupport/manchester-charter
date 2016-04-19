@@ -46,17 +46,17 @@ sectionName: charter
         <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
           <h2 class="h2">Thank you for making a pledge.</h2>
           <p>We will be in touch shortly to see if/ how we can help support you in achieving your pledge.</p>
-          <p>As an extra thank you we’ve created a special version of the Charter which features your pledge, so you can share it with your family, friends, colleagues and contacts. You can download your personalised Charter at any time from the link we’ve sent to your email address.</p>
+          <p>As an extra thank you we’ve created a special version of the Charter which features your pledge, so you can share it with your family, friends, colleagues and contacts, to encourage them to support it too. You can also download your personalised Charter at any time from the link we’ve sent to your email address.</p>
 
           <div class="charter-social">
             <ul class="charter-social__list">
-              <li class="charter-social__item">Download your charter <img data-src="holder.js/44x44?text=Icon" /></li>
-              <li class="charter-social__item">Print your charter <img data-src="holder.js/44x44?text=Icon" /></li>
-              <li class="charter-social__item">Share your charter <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Download your pledge <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Print your pledge <img data-src="holder.js/44x44?text=Icon" /></li>
+              <li class="charter-social__item">Share the charter <img data-src="holder.js/44x44?text=Icon" /></li>
             </ul>
           </div>
 
-          <p>Now that you have made your pledge, would you be interested in working collaboratively with others as part of an action group?</p>
+          <p>Now that you have made a pledge, would you be interested in working collaboratively with others to tackle some key issues, as part of an action group?</p>
 
           {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
         </div>
@@ -95,17 +95,17 @@ sectionName: charter
   </button>
   <div class="accordion__item js-item">
     <div class="accordion__inner">
-      <h3 class="h3">Please write a pledge&hellip;</h3>
       <div class="pledge-select">
-        <label class="pledge-form__label hide-screen" for="customtype">Your pledge</label>
-        <textarea class="pledge-form__textarea" placeholder="Write your own pledge" data-bind="textInput: customPledge"></textarea>
-        <button class="btn pledge-form__btn" data-bind="click: useCustomPledge">Make your pledge</button>
-        <h3 class="h3">Or select one of the examples below&hellip;</h3>
+        <h3 class="h3">Please select a pledge from the suggestions below:</h3>
         <ul class="pledge-select__list" data-bind="foreach: examplePledges">
           <li class="pledge-select__item">
             <button class="btn pledge-select__btn" data-bind="text: description, click: selectExamplePledge"></button>
           </li>
         </ul>
+        <h3 class="h3">Or write your own pledge:</h3>
+        <label class="pledge-form__label hide-screen" for="customtype">Your pledge</label>
+        <textarea class="pledge-form__textarea" placeholder="Write your own pledge" data-bind="textInput: customPledge"></textarea>
+        <button class="btn pledge-form__btn" data-bind="click: useCustomPledge">Make your pledge</button>
       </div>
     </div>
   </div>
