@@ -17,7 +17,7 @@ export function getSupporterCategories () {
       'Making a donation to Big Change Manchester.',
       'Registering as a volunteer on Street Support',
       'Asking my employer to pledge to support the Charter',
-      'Becoming more informed about homelessness, and what services are available',
+      'Learning what services are available and how i can help',
       'Including my name on the charter supporters database.'
     ]
   },{
