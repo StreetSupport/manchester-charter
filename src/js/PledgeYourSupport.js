@@ -88,7 +88,7 @@ let PledgeYourSupport = function () {
   }
 
   self.accordionOpened = (el, context) => {
-    self.formModel().supporterCategory(el.innerHTML)
+    self.formModel().supporterCategory(el.childNodes[1].innerHTML)
   }
 
   let buildFormData = () => {
