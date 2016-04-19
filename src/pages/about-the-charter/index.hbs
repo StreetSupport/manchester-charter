@@ -10,7 +10,7 @@ sectionName: charter
 <div class="block">
   <div class="container">
     <h1 class="h1 block__header">Manchester Homelessness Charter</h1>
-    <h2 class="h2 block__subHeader">About the Charter</h2>
+    <h2 class="h2 block__sub-header">About the Charter</h2>
   </div>
 </div>
 
@@ -28,15 +28,27 @@ sectionName: charter
   <div class="container">
     <div class="block__content">
       <h2 class="h2">Collaboration and the Charter</h2>
-      <img class="block__promo block__promo--right" data-src="holder.js/320x150?text=Promo Image" />
-      <p>Although there are many hardworking organisations and individuals dedicated to supporting people who are homeless, homelessness in Manchester is a growing challenge. The Manchester Homelessness Partnership grew from the thought that joining forces would help us all to achieve our vision of a homelessness free future.</p>
-      <p>In 2015 we invited people who are homeless in the city, and organisations working to reduce homelessness, to share their experiences, key challenges and concerns. The Charter is the outcome of all these events, workshops, focus groups and conferences, drawing on best practice nationally and internationally.</p>
+      <div class="split">
+        <div class="split__element">
+          <p>Although there are many hardworking organisations and individuals dedicated to supporting people who are homeless, homelessness in Manchester is a growing challenge. The Manchester Homelessness Partnership grew from the thought that joining forces would help us all to achieve our vision of a homelessness free future.</p>
+          <p>In 2015 we invited people who are homeless in the city, and organisations working to reduce homelessness, to share their experiences, key challenges and concerns. The Charter is the outcome of all these events, workshops, focus groups and conferences, drawing on best practice nationally and internationally.</p>
+        </div>
+        <div class="split__element">
+          <img data-src="holder.js/100px300?text=Image" />
+        </div>
+      </div>
 
       <h2 class="h2">How will this create change?</h2>
-      <img class="block__promo block__promo--right" data-src="holder.js/320x150?text=Promo Image" />
-      <p>The Charter gives us a shared vision for the future and brings together different people to deal with homelessness in practical ways.</p>
-      <p>In recognition that organisations and individuals have differing experiences and capabilities to help people who are homeless, there are two ways to show support for the Charter. Firstly, by making a pledge to share skills and resources which will help tackle homelessness. Secondly, by joining one of the action groups set up to tackle priority issues, such as mental health provision, employability and substandard accommodation.</p>
-      <p>We believe together we can banish homelessness from our city, with every pledge and act from the action groups taking us one step closer.</p>
+      <div class="split">
+        <div class="split__element">
+          <p>The Charter gives us a shared vision for the future and brings together different people to deal with homelessness in practical ways.</p>
+          <p>In recognition that organisations and individuals have differing experiences and capabilities to help people who are homeless, there are two ways to show support for the Charter. Firstly, by making a pledge to share skills and resources which will help tackle homelessness. Secondly, by joining one of the action groups set up to tackle priority issues, such as mental health provision, employability and substandard accommodation.</p>
+          <p>We believe together we can banish homelessness from our city, with every pledge and act from the action groups taking us one step closer.</p>
+        </div>
+        <div class="split__element">
+          <img data-src="holder.js/100px300?text=Image" />
+        </div>
+      </div>
 
       <h2 class="h2">Who has been involved?</h2>
       <p>The Charter has grown from collaboration and consultation with people who have experienced homelessness, charities, community and faith organisations, the council, businesses and other interested partners.</p>
@@ -50,9 +62,12 @@ sectionName: charter
         <li><strong>Jenny Osborne</strong> MCC Rough Sleepers Team</li>
         <li><strong>Viv Slack</strong> Street Support Network</li>
       </ul>
-      {{>cta brand="e" link="/read-the-charter/" icon="read" name="Read the <span class=\"line-break\"></span> Charter"}}
-      {{>cta brand="e" link="/pledge-your-support/" icon="pledge" name="Pledge your <span class=\"line-break\"></span> Support"}}
-      {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
+      
+      <div class="block__cta block__cta--inline block__cta--3">
+        {{>cta brand="e" link="/read-the-charter/" icon="read" name="Read the <span class=\"line-break\"></span> Charter"}}
+        {{>cta brand="e" link="/pledge-your-support/" icon="pledge" name="Pledge your <span class=\"line-break\"></span> Support"}}
+        {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
+      </div>
     </div>
   </div>
 </div>
