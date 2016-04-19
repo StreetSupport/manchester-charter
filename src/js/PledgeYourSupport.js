@@ -116,7 +116,7 @@ let PledgeYourSupport = function () {
         }
         if (result.statusCode === 201) {
           setActiveSection(3)
-          self.viewPledgeUrl('view.html?id=' + result.data.Id)
+          self.viewPledgeUrl('view.html?id=' + result.data.id)
         }
       }, () => {
         browser.redirect('/500.html')
