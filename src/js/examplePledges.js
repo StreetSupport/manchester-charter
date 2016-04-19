@@ -7,7 +7,8 @@ export function getSupporterCategories () {
       'Volunteering to help a local organisation.',
       'Being an ambassador for the Charter.',
       'Sharing my experiences of using services.',
-      'Sharing my story to inform others about homelessness.'
+      'Sharing my story to inform others about homelessness.',
+      'Including my name on the charter supporters database.'
     ]
   },{
     'name': 'I am an individual that wants to help',
@@ -15,7 +16,9 @@ export function getSupporterCategories () {
     'examplePledges': [
       'Making a donation to Big Change Manchester.',
       'Registering as a volunteer on Street Support',
-      'Asking my employer to pledge to support the Charter'
+      'Asking my employer to pledge to support the Charter',
+      'Learning what services are available and how i can help',
+      'Including my name on the charter supporters database.'
     ]
   },{
     'name': 'I represent a business',
@@ -28,7 +31,8 @@ export function getSupporterCategories () {
       'Donating to the Big Change campaign.',
       'Helping with marketing to raise awareness of the charter.',
       'Helping to make it easier to open a bank account.',
-      'Ensuring our facilities are accessible to homeless people.'
+      'Ensuring our facilities are accessible to homeless people.',
+      'Including my name on the charter supporters database.'
     ]
   }, {
     'name': 'I represent a service provider',
@@ -41,7 +45,8 @@ export function getSupporterCategories () {
       'Regularly invite feedback and listen to your service users.',
       'Providing evening services.',
       'Increasing turn around time in hostels so more rooms are available.',
-      'Committing to a \'no wrong door\' policy.'
+      'Committing to a \'no wrong door\' policy.',
+      'Including my name on the charter supporters database.'
     ]
   }, {
     'name': 'I am a public sector decision maker',
@@ -52,7 +57,8 @@ export function getSupporterCategories () {
       'Training our staff on the charter and the rights of homeless people.',
       'Providing training opportunities.',
       'Ensuring key decision makers visit services.',
-      'Including homeless people in meetings.'
+      'Including homeless people in meetings.',
+      'Including my name on the charter supporters database.'
     ]
   }, {
     'name': 'I am part of a community or faith-based group',
@@ -61,7 +67,8 @@ export function getSupporterCategories () {
       'Providing emergency accommodation for rough sleepers all year round.',
       'Informing my community about homelessness and alternative giving.',
       'Donating or fundraising for local organisations.',
-      'Providing housing - supported housing or host families.'
+      'Providing housing - supported housing or host families.',
+      'Including my name on the charter supporters database.'
     ]
   }, {
     'name': 'I represent an educational organisation',
@@ -71,7 +78,8 @@ export function getSupporterCategories () {
       'Developing staff and students homelessness ambassadors.',
       'Providing student placements to increase capacity and innovation.',
       'Developing work placements and employment opportunities.',
-      'Providing research capacity to evaluate the impact of the charter.'
+      'Providing research capacity to evaluate the impact of the charter.',
+      'Including my name on the charter supporters database.'
     ]
   }]
 }

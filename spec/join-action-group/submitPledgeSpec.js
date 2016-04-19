@@ -3,14 +3,14 @@
 */
 'use strict'
 
-let Model = require('../../src/js/PledgeYourSupport')
+let Model = require('../../src/js/JoinActionGroup')
 
 var sinon = require('sinon')
 var ajax = require('../../src/js/ajax')
 var api = require('../../src/js/api-endpoints')
 var browser = require('../../src/js/browser')
 
-describe('Pledge Your Support - Submit Pledge', () => {
+describe('Join Action Group - Submit', () => {
   var browserLoadingStub
   var browserLoadedStub
   var browserScrollToStub
@@ -25,7 +25,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
     let expectedPledgeData = {
       firstName: 'first name',
       lastName: 'last name',
-      supporterCategory: 'supporter category',
+      actionGroup: 'action group',
       organisation: 'organisation',
       email: 'test@email.com',
       isOptedIn: true,
@@ -36,17 +36,14 @@ describe('Pledge Your Support - Submit Pledge', () => {
       .returns({
         then: (success, error) => {
           success({
-            'statusCode': 201,
-            'data': {
-              'Id': 'pledge-id'
-            }
+            'statusCode': 201
           })
         }
       })
     sut.formModel().firstName('first name')
     sut.formModel().lastName('last name')
     sut.formModel().email('test@email.com')
-    sut.formModel().supporterCategory('supporter category')
+    sut.formModel().actionGroup('action group')
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
     sut.formModel().pledge('my pledge')
@@ -86,9 +83,5 @@ describe('Pledge Your Support - Submit Pledge', () => {
 
   it('- Should set scroll to top of section', () => {
     expect(browserScrollToStub.withArgs('js-pledge').calledOnce).toBeFalsy()
-  })
-
-  it('- Should set viewPledgeUrl', () => {
-    expect(sut.viewPledgeUrl()).toEqual('view.html?id=pledge-id')
   })
 })

@@ -22,6 +22,7 @@ module.exports = {
     home: __dirname + '/src/js/app-home',
     blog: __dirname + '/src/js/app-blog',
     pledgeYourSupport: __dirname + '/src/js/app-pledgeYourSupport',
+    viewYourPledge: __dirname + '/src/js/app-viewYourPledge',
     joinActionGroup: __dirname + '/src/js/app-joinActionGroup'
   },
   output: {

@@ -31,7 +31,9 @@ let SupporterCategory = function (data, listener) {
     self.listener.pledgeSelected(pledge)
   }
   self.useCustomPledge = () => {
-    self.listener.pledgeSelected(self.customPledge())
+    if (self.customPledge().length > 0) {
+      self.listener.pledgeSelected(self.customPledge())
+    }
   }
 }
 
@@ -72,6 +74,7 @@ let PledgeYourSupport = function () {
     self.section2 = new Section()
     self.section3 = new Section()
     self.activeSection = ko.observable(-1)
+    self.viewPledgeUrl = ko.observable()
     setActiveSection(1)
   }
 
@@ -113,6 +116,7 @@ let PledgeYourSupport = function () {
         }
         if (result.statusCode === 201) {
           setActiveSection(3)
+          self.viewPledgeUrl('view.html?id=' + result.data.Id)
         }
       }, () => {
         browser.redirect('/500.html')
