@@ -79,8 +79,14 @@ sectionName: charter
 
 
 <script type="text/html" id="step-1">
-<p>I pledge to support the Manchester Homelessness Charter.</p>
-<h3 class="h3">Please select the option that best describes you below...</h3>
+<div data-bind="with: formModel">
+  <h3 class="h3 pledge__heading--inline">I</h3>
+  <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
+  <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
+  <label class="pledge-form__label hide-screen" for="lastName">Last Name *</label>
+  <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input> <span> pledge to support the Manchester Homelessness Charter by&hellip;</span>
+</div>
+<h3 class="h3">Please select the option that best describes you below&hellip;</h3>
 <div class="accordion js-accordion" data-bind="foreach: supporterCategories">
   <button class="h3 accordion__header js-header">
     <span data-bind="text: name"></span>
@@ -89,18 +95,17 @@ sectionName: charter
   </button>
   <div class="accordion__item js-item">
     <div class="accordion__inner">
-      <h3 class="h3">Please write a pledge...</h3>
+      <h3 class="h3">Please write a pledge&hellip;</h3>
       <div class="pledge-select">
         <label class="pledge-form__label hide-screen" for="customtype">Your pledge</label>
         <textarea class="pledge-form__textarea" placeholder="Write your own pledge" data-bind="textInput: customPledge"></textarea>
-        <h3 class="h3">Or select one of the examples below...</h3>
+        <button class="btn pledge-form__btn" data-bind="click: useCustomPledge">Make your pledge</button>
+        <h3 class="h3">Or select one of the examples below&hellip;</h3>
         <ul class="pledge-select__list" data-bind="foreach: examplePledges">
           <li class="pledge-select__item">
             <button class="btn pledge-select__btn" data-bind="text: description, click: selectExamplePledge"></button>
           </li>
         </ul>
-        <p>TODO Add the option for I dont know what to do</p>
-        <button class="btn pledge-form__btn" data-bind="click: useCustomPledge">Make your pledge</button>
       </div>
     </div>
   </div>
@@ -114,7 +119,7 @@ sectionName: charter
 <label class="pledge-form__label hide-screen" for="lastName">Last Name *</label>
 <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
 
-<span>pledge to support the Manchester Homeless Charter by...</span>
+<span>pledge to support the Manchester Homeless Charter by&hellip;</span>
 
 <textarea style="margin-top: 2rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
 

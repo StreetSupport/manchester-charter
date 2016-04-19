@@ -31,7 +31,9 @@ let SupporterCategory = function (data, listener) {
     self.listener.pledgeSelected(pledge)
   }
   self.useCustomPledge = () => {
-    self.listener.pledgeSelected(self.customPledge())
+    if(self.customPledge().length > 0) {
+      self.listener.pledgeSelected(self.customPledge())
+    }
   }
 }
 

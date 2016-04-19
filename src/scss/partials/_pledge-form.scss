@@ -77,6 +77,10 @@
     text-align: left;
   }
 
+  .form__input--error {
+    border: 1px solid $brand-g;
+  }
+
   .form__error {
     display: block;
     color: $brand-g;

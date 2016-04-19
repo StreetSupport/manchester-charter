@@ -43,3 +43,36 @@ describe('Pledge Your Support - Custom Pledge', () => {
     expect(browserScrollToStub.withArgs('js-pledge').calledOnce).toBeFalsy()
   })
 })
+
+
+describe('Pledge Your Support - Custom Pledge - no custom pledge', () => {
+  var sut
+  var browserScrollToStub
+
+  beforeEach(() => {
+    browserScrollToStub = sinon.stub(browser, 'scrollTo')
+    sut = new Model()
+    sut.supporterCategories[2].customPledge('')
+    sut.supporterCategories[2].useCustomPledge()
+  })
+
+  afterEach(() => {
+    browser.scrollTo.restore()
+  })
+
+  it('- Should set Section 1 as active', () => {
+    expect(sut.section1.isActive()).toBeTruthy()
+  })
+
+  it('- Should set Section 2 as active', () => {
+    expect(sut.section2.isActive()).toBeFalsy()
+  })
+
+  it('- Should set Section 3 as inactive', () => {
+    expect(sut.section3.isActive()).toBeFalsy()
+  })
+
+  it('- Should set scroll to top of section', () => {
+    expect(browserScrollToStub.withArgs('js-pledge').calledOnce).toBeFalsy()
+  })
+})
