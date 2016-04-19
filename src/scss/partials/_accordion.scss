@@ -9,13 +9,14 @@
     background-color: $brand-d;
     color: #fff;
     margin: 0;
-    padding: 15px;
+    padding: 15px 40px 15px 15px;
     border: 0;
     border-bottom: 1px solid #fff;
     appearance: none;
     width: 100%;
     outline: none;
     text-align: left;
+    position: relative;
 
     &.is-active {
       border-bottom: 0;
@@ -33,9 +34,12 @@
   }
 
   &__icon {
-    float: right;
+    position: absolute;
+    right: 10px;
+    top: 50%;
     height: 20px;
     width: 20px;
+    margin-top: -10px;
 
     &--open {
       display: block;
