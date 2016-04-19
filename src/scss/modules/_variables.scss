@@ -71,7 +71,7 @@ $susy: (
   container: $site-container,
   gutters: $grid-gutter,
   global-box-sizing: border-box,
-  gutter-position: split,
+  gutter-position: after,
   debug: (
     image: $grid-debug
   )
