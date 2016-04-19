@@ -44,7 +44,6 @@ describe('Pledge Your Support - Custom Pledge', () => {
   })
 })
 
-
 describe('Pledge Your Support - Custom Pledge - no custom pledge', () => {
   var sut
   var browserScrollToStub
