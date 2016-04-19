@@ -31,7 +31,6 @@ let ViewYourPledge = function () {
       .get(api.pledges + '/' + pledgeId)
       .then((result) => {
         if (result.statusCode === 200) {
-          console.log(result)
           self.firstName(result.data.firstName)
           self.lastName(result.data.lastName)
           if (result.data.organisation !== null) {
