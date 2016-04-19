@@ -33,7 +33,7 @@ let ViewYourPledge = function () {
         if (result.statusCode === 200) {
           self.firstName(result.data.firstName)
           self.lastName(result.data.lastName)
-          if (result.data.organisation.length > 0) {
+          if (result.data.organisation !== null) {
             self.organisationText(' of ' + result.data.organisation)
           }
           self.pledge(result.data.pledge)

@@ -38,7 +38,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
           success({
             'statusCode': 201,
             'data': {
-              'Id': 'pledge-id'
+              'id': 'pledge-id'
             }
           })
         }
