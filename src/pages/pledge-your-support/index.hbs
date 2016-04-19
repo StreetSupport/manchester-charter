@@ -56,7 +56,7 @@ sectionName: charter
 
           <div class="charter-social">
             <ul class="charter-social__list">
-              <li class="charter-social__item"><a data-bind="attr: { href: viewPledgeUrl }">View your pledge <img data-src="holder.js/44x44?text=Icon" /></a></li>
+              <li class="charter-social__item"><a data-bind="attr: { href: viewPledgeUrl }">View my pledge <img data-src="holder.js/44x44?text=Icon" /></a></li>
               <li class="charter-social__item">Share the charter <img data-src="holder.js/44x44?text=Icon" /></li>
             </ul>
           </div>
@@ -90,9 +90,9 @@ sectionName: charter
   <label class="pledge-form__label hide-screen" for="firstName">First Name</label>
   <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name" data-bind="textInput: firstName"></input>
   <label class="pledge-form__label hide-screen" for="lastName">Last Name</label>
-  <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name" data-bind="textInput: lastName"></input> <span> pledge to support the Manchester Homelessness Charter by&hellip;</span>
+  <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name" data-bind="textInput: lastName"></input> <span> pledge to support the Manchester Homelessness Charter.</span>
 </div>
-<h3 class="h3">Please select the option that best describes you below:</h3>
+<h3 class="h3">Please select the option that best describes you:</h3>
 <div class="accordion js-accordion" data-bind="foreach: supporterCategories">
   <button class="h3 accordion__header js-header">
     <span data-bind="text: name"></span>
@@ -102,7 +102,7 @@ sectionName: charter
   <div class="accordion__item js-item">
     <div class="accordion__inner">
       <div class="pledge-select">
-        <h3 class="h3">Please select a pledge from the suggestions below:</h3>
+        <h3 class="h3">Please select a pledge from the suggestions:</h3>
         <ul class="pledge-select__list" data-bind="foreach: examplePledges">
           <li class="pledge-select__item">
             <button class="btn pledge-select__btn" data-bind="text: description, click: selectExamplePledge"></button>
@@ -120,7 +120,7 @@ sectionName: charter
 
 <script type="text/html" id="step-2">
 
-<h3 class="h3">Confirm your pledge by completing the details below:</h3>
+<h3 class="h3">Confirm your pledge by completing your contact details (you can also edit your pledge):</h3>
 <h3 class="h3 pledge__heading--inline">I</h3>
 <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
 <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
