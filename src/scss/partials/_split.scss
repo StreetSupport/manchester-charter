@@ -7,9 +7,15 @@
 
   &__element {
     @include cf();
+    margin-bottom: 20px;
 
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    
     @include mq($from: m) {
       @include span(4 of $grid-column);
+      margin-bottom: 0;
 
       &:last-of-type {
         @include last();
