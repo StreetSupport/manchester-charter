@@ -7,20 +7,27 @@ appName: viewYourPledge
 sectionName: charter
 ---
 
-<div class="block">
-  <div class="container block__inner">
-    <div class="block__content">
-      <h1 class="h1" style="text-align: center">Manchester Homelessness Charter</h1>
-      <h2 class="h2" style="text-align: center">View Your Pledge</h2>
+<div class="block block--header">
+  <div class="container">
+    <h1 class="h1 block__header">Manchester Homelessness Charter</h1>
+    <h2 class="h2 block__subHeader">View your Pledge</h2>
+  </div>
+</div>
 
-      <div class="breadcrumbs container">
-        <ol class="breadcrumbs__list">
-          <li class="breadcrumbs__item"><a href="https://streetsupport.net/">Home</a></li>
-          <li class="breadcrumbs__item"><a href="/">Charter</a></li>
-          <li class="breadcrumbs__item"><a href="/pledge-your-support">Pledge your Support</a></li>
-          <li class="breadcrumbs__item">View your Pledge</li>
-        </ol>
-      </div>
+<div class="block block--breadcrumbs">
+  <div class="container">
+    <ol class="breadcrumbs__list">
+      <li class="breadcrumbs__item"><a href="https://streetsupport.net/">Home</a></li>
+      <li class="breadcrumbs__item"><a href="/">Charter</a></li>
+      <li class="breadcrumbs__item"><a href="/pledge-your-support">Pledge your Support</a></li>
+      <li class="breadcrumbs__item">View your Pledge</li>
+    </ol>
+  </div>
+</div>
+
+<div class="block">
+  <div class="container">
+    <div class="block__content">
       <!-- ko if: pledgeHasLoaded -->
         <!-- ko template: { name: 'pledge-details' } --><!-- /ko -->
       <!-- /ko -->
