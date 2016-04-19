@@ -29,7 +29,7 @@ describe('View Your Pledge - No Organisation', () => {
             'data': {
               'firstName': 'first name',
               'lastName': 'last name',
-              'organisation': '',
+              'organisation': null,
               'creationDate': '2016-04-11T11:04:55.8600000Z',
               'pledge': 'my pledge description'
             }
