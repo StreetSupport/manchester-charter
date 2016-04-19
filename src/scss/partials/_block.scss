@@ -50,6 +50,7 @@
     &--3 {
       @include mq($from: xs) {
         .cta:last-of-type {
+          @include span(4 of $grid-column);  // Reset last style
           @include push(2 of $grid-column);
         }
       }
@@ -60,7 +61,8 @@
         }
 
         .cta:last-of-type {
-          @include push(0 of $grid-column);
+          @include span(2 of $grid-column);  // Reset last style
+          @include push(0 of $grid-column); // Reset push style
         }
       }
     }
