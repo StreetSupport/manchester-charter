@@ -7,7 +7,7 @@ appName: home
 sectionName: charter
 ---
 
-<div class="block block--header">
+<div class="block">
   <div class="container">
     <h1 class="h1 block__header">Manchester Homelessness Charter</h1>
     <h2 class="h2 block__subHeader">Read the Charter</h2>
@@ -27,8 +27,8 @@ sectionName: charter
 <div class="block block--pullout">
   <div class="block__primary">
     <div class="container">
-    <h2 class="h1 standout">Vision:</h2>
-    <p>To end homelessness in Manchester</p>
+    <h2 class="standout">Vision:</h2>
+    <h3 class="h1">To end homelessness in Manchester</h3>
     </div>
   </div>
 
@@ -44,22 +44,26 @@ sectionName: charter
     <div class="block__content">
       {{> charter}}
 
+      {{> divider}}
+
       <h2 class="h2">Take Action</h2>
       <p>Everyone has a role to play in improving outcomes for homeless people. If you wish to adopt the vision and values of the Manchester Homelessness Charter, you should demonstrate your commitment by doing the following:</p>
 
-      <div class="split" style="margin: 40px 0;">
+      <div class="split">
         <div class="split__element">
-          <h2 class="h3" style="margin-top: 0;">Pledge your support</h2>
+          <h2 class="h3">Pledge your support</h2>
           <p>Make a pledge to share your skills or resources for the benefit of people who are homeless.</p>
           {{>cta brand="e" link="/pledge-your-support/" icon="pledge" name="Pledge your <span class=\"line-break\"></span> Support"}}
         </div>
 
         <div class="split__element">
-          <h2 class="h3" style="margin-top: 0;">Join an action group</h2>
+          <h2 class="h3">Join an action group</h2>
           <p>Work in partnership on a priority issue to change how homelessness is tackled in the city.</p>
           {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
         </div>
       </div>
+
+      {{> divider}}
 
       <div class="charter-social">
         <ul class="charter-social__list">
@@ -68,6 +72,8 @@ sectionName: charter
           <li class="charter-social__item">Share this charter <img data-src="holder.js/44x44?text=Icon" /></li>
         </ul>
       </div>
+
+      {{> divider}}
 
       <p>The Manchester Homelessness Charter has been co-created by people who are homeless in Manchester, and organisations who provide support to overcome the challenges of homelessness.</p>
 

@@ -10,13 +10,6 @@ body {
   font-weight: $font-headline-weight;
   margin: 0 0 20px 0;
   line-height: 1.5;
-
-  &.standout {
-    text-transform: uppercase;
-    font-size: 52px;
-    margin-bottom: 0;
-    line-height: 1.1;
-  }
 }
 
 .h1 {
@@ -29,6 +22,14 @@ body {
 
 .h3 {
   font-size: 16px;
+}
+
+.standout {
+  font-family: $font-headline;
+  font-weight: $font-headline-weight;  
+  text-transform: uppercase;
+  font-size: 52px;
+  margin: 0;
 }
 
 p {
