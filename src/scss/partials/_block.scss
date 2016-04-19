@@ -73,7 +73,7 @@
 
   &__secondary {
     background-color: $brand-n;
-    padding: 30px 0;    
+    padding: 30px 0;
   }
 
   // Variants
@@ -114,6 +114,9 @@
   &--pullout {
     color: #fff;
 
+    .h1,
+    .h2,
+    .h3,
     p {
       margin: 0;
     }
