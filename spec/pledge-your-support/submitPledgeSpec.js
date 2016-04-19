@@ -36,7 +36,10 @@ describe('Pledge Your Support - Submit Pledge', () => {
       .returns({
         then: (success, error) => {
           success({
-            'statusCode': 201
+            'statusCode': 201,
+            'data': {
+              'Id': 'pledge-id'
+            }
           })
         }
       })
@@ -83,5 +86,9 @@ describe('Pledge Your Support - Submit Pledge', () => {
 
   it('- Should set scroll to top of section', () => {
     expect(browserScrollToStub.withArgs('js-pledge').calledOnce).toBeFalsy()
+  })
+
+  it('- Should set viewPledgeUrl', () => {
+    expect(sut.viewPledgeUrl()).toEqual('view.html?id=pledge-id')
   })
 })
