@@ -14,7 +14,10 @@ describe('Pledge Your Support - Select supporter category', () => {
   beforeEach(() => {
     sinon.stub(browser, 'scrollTo')
     sut = new Model()
-    sut.accordionOpened({ innerHTML: 'supporter category' }, { })
+    sut.accordionOpened({ childNodes: [
+      'text',
+      { innerHTML: 'supporter category' }
+    ] }, { })
   })
 
   afterEach(() => {
