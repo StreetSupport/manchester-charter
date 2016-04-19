@@ -33,14 +33,6 @@ var get = function (url, headers) {
 var makeRequest = function (options) {
   var deferred = Q.defer()
 
-    deferred.resolve({
-      'status': 'created',
-      'statusCode': 201,
-      'data': {}
-    })
-
-  return deferred
-
   var req = new XMLHttpRequest()
   req.open(options.method, options.url, true)
 

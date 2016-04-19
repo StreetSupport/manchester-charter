@@ -21,6 +21,20 @@ sectionName: charter
           <li class="breadcrumbs__item">View your Pledge</li>
         </ol>
       </div>
+      <!-- ko if: pledgeHasLoaded -->
+        <!-- ko template: { name: 'pledge-details' } --><!-- /ko -->
+      <!-- /ko -->
+
+      {{> charter}}
+
     </div>
   </div>
 </div>
+
+
+<script type="text/html" id="pledge-details">
+<p>I, <span data-bind="text: firstName"></span> <span data-bind="text: lastName"></span><span data-bind="text: organisationText"></span>, pledge to support the Manchester Homelessness Charter by <span data-bind="text: pledge"></span>.</p>
+<p>Pledged on: <span data-bind="text: creationDate"></span></p>
+</script>
+
+{{> loading-anim }}
