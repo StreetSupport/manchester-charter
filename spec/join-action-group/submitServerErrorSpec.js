@@ -39,7 +39,6 @@ describe('Join Action Group - Submit - Server returns bad request', () => {
     sut.formModel().firstName('first name')
     sut.formModel().lastName('last name')
     sut.formModel().email('test@email.com')
-    sut.formModel().actionGroup('action group')
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
     sut.formModel().pledge('my pledge')

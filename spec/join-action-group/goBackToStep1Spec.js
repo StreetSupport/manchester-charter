@@ -15,6 +15,8 @@ describe('Join Action Group - Go back to step 1', () => {
   var browserScrollToStub
 
   beforeEach(() => {
+    sinon.stub(browser, 'loading')
+    sinon.stub(browser, 'loaded')
     browserScrollToStub = sinon.stub(browser, 'scrollTo')
     sinon.stub(ajax, 'get')
       .withArgs(api.actionGroups)
@@ -32,6 +34,8 @@ describe('Join Action Group - Go back to step 1', () => {
     sut.setSection1Active()
   })
   afterEach(() => {
+    browser.loading.restore()
+    browser.loaded.restore()
     browser.scrollTo.restore()
     ajax.get.restore()
   })

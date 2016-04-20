@@ -63,12 +63,15 @@ function Model () {
     self.section3 = new Section()
     self.activeSection = ko.observable(-1)
 
+    browser.loading()
+
     ajax
       .get(api.actionGroups)
       .then((result) => {
         let actionGroups = result.data
           .map((g) => new ActionGroup(g, self))
         self.actionGroups(actionGroups)
+        browser.loaded()
       }, () => {
         browser.redirect('/500.html')
       })
@@ -80,18 +83,18 @@ function Model () {
     return {
       firstName: self.formModel().firstName(),
       lastName: self.formModel().lastName(),
-      actionGroup: self.formModel().actionGroup(),
       email: self.formModel().email(),
       organisation: self.formModel().organisation(),
       isOptedIn: self.formModel().isOptedIn(),
-      pledge: self.formModel().pledge()
+      message: self.formModel().pledge()
     }
   }
 
   let submitForm = () => {
     browser.loading()
-    let endpoint = api.makeAPledge
+    let endpoint = api.actionGroups + '/' + self.formModel().actionGroup() + '/joining-enquiries'
     let data = buildFormData()
+
     ajax
       .post(endpoint, data)
       .then((result) => {

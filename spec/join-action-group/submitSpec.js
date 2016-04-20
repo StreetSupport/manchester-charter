@@ -39,14 +39,13 @@ describe('Join Action Group - Submit', () => {
     let expectedPayloadData = {
       firstName: 'first name',
       lastName: 'last name',
-      actionGroup: groupData[1].id,
-      organisation: 'organisation',
       email: 'test@email.com',
+      organisation: 'organisation',
       isOptedIn: true,
-      pledge: 'my pledge'
+      message: 'my message'
     }
     ajaxPostStub = sinon.stub(ajax, 'post')
-      .withArgs(api.makeAPledge, expectedPayloadData)
+      .withArgs(api.actionGroups + '/' + groupData[1].id + '/joining-enquiries', expectedPayloadData)
       .returns({
         then: (success, error) => {
           success({
@@ -60,9 +59,13 @@ describe('Join Action Group - Submit', () => {
     sut.formModel().firstName('first name')
     sut.formModel().lastName('last name')
     sut.formModel().email('test@email.com')
-    sut.formModel().pledge('my pledge')
+    sut.formModel().pledge('my message')
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
+
+    browserLoadingStub.reset()
+    browserLoadedStub.reset()
+
     sut.submitPledge()
   })
 
