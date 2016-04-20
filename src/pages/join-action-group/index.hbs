@@ -1,5 +1,5 @@
 ---
-title: Join an Action Group
+title: Join a Manchester Homelessness Action Group
 description: Join an action group to work collaboratively to end homelessness in Manchester
 layout: default.hbs
 permalink: false
@@ -87,20 +87,20 @@ sectionName: charter
               <span>We’d love to know more about you. How can you contribute to this action group? Do you have any super powers, special skills or relevant experience? How much time can you commit to the action group? Do you have any questions you’d like us to answer? (The chairperson of this group will be in touch with more information.)</span>
               <div class="pledge-form__input-field">
                 <textarea style="margin-top: 2rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
-              <div>
+              </div>
               <ul class="pledge-form__list">
 
                 <li class="pledge-form__item">
                   <label class="pledge-form__label" for="firstName">First Name *</label>
                   <div class="pledge-form__input-field--inline">
                     <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
-                  <div>
+                  </div>
                 </li>
                 <li class="pledge-form__item">
                   <label class="pledge-form__label" for="lastName">Last Name *</label>
                   <div class="pledge-form__input-field--inline">
                     <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
-                  <div>
+                  </div>
                 </li>
                 <li class="pledge-form__item">
                   <label class="pledge-form__label" for="organisation">Organisation/Business Name (if applicable)</label>
@@ -110,7 +110,7 @@ sectionName: charter
                   <label class="pledge-form__label" for="email">Email * <span style="display: block; margin-top: 5px; font-size: 14px">(Street Support will never share your email with a 3rd party.)</span></label>
                   <div class="pledge-form__input-field--inline">
                     <input class="pledge-form__input pledge-form__input--inline" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
-                  <div>
+                  </div>
                 </li>
                 <li class="pledge-form__item">
                   <label class="pledge-form__label pledge-form__label--large" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
@@ -126,6 +126,11 @@ sectionName: charter
         <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
           <h2 class="h2">Thank you for your interest</h2>
           <p>Thank you for offering to be part of this action group. The chairperson for this group will be in touch with more information.</p>
+          <div class="charter-social">
+            <ul class="charter-social__list">
+              <li class="charter-social__item">Encourage your friends to join the Action Groups {{> social-share }}</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
