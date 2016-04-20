@@ -31,6 +31,10 @@
       &:last-of-type {
         margin-bottom: 0;
       }
+
+      .btn {
+        margin-bottom: 0;
+      }
     }
 
     a {
@@ -139,10 +143,6 @@
   &--priority {
     position: relative;
     z-index: 10;
-
-    .block__content .split {
-      margin-bottom: 0;
-    }
   }
 
   &--pullup {
