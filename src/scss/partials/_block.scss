@@ -52,10 +52,14 @@
 
   &__cta {
     @include cf();
-    padding: 30px 0 0 0;
+    padding: 10px 0 0 0;
 
-    &--inline {
-      padding: 10px 0 40px 0;
+    &--incopy {
+      padding-bottom: 20px;
+
+      @include mq($from: m) {
+        padding-bottom: 40px;
+      }
     }
 
     &--3 {
