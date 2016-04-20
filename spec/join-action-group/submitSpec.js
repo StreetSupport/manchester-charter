@@ -62,6 +62,7 @@ describe('Join Action Group - Submit', () => {
     sut.formModel().pledge('my message')
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
+    sut.actionGroups()[1].selectActionGroup()
 
     browserLoadingStub.reset()
     browserLoadedStub.reset()

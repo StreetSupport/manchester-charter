@@ -11,8 +11,9 @@ let ActionGroup = function (data, listener) {
   var self = this
   self.id = data.id
   self.name = data.name
+  self.description = data.description
   self.selectActionGroup = () => {
-    listener.actionGroupSelected(self.id)
+    listener.actionGroupSelected(self)
   }
 }
 
@@ -38,19 +39,19 @@ function Model () {
     setActiveSection(1)
   }
 
-  self.actionGroupSelected = (actionGroupName) => {
-    self.formModel().actionGroup(actionGroupName)
+  self.actionGroupSelected = (actionGroup) => {
+    self.selectedActionGroup(actionGroup)
     setActiveSection(2)
   }
 
   self.init = () => {
     self.actionGroups = ko.observableArray()
+    self.selectedActionGroup = ko.observable()
 
     validation.initialise(ko.validation)
     self.formModel = ko.validatedObservable({
       firstName: ko.observable().extend({ required: true }),
       lastName: ko.observable().extend({ required: true }),
-      actionGroup: ko.observable(),
       pledge: ko.observable().extend({ required: true }),
       organisation: ko.observable(),
       email: ko.observable().extend({ required: true, email: true }),
@@ -92,7 +93,7 @@ function Model () {
 
   let submitForm = () => {
     browser.loading()
-    let endpoint = api.actionGroups + '/' + self.formModel().actionGroup() + '/joining-enquiries'
+    let endpoint = api.actionGroups + '/' + self.selectedActionGroup().id + '/joining-enquiries'
     let data = buildFormData()
 
     ajax
