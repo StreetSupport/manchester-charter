@@ -42,6 +42,7 @@ describe('Join Action Group - Submit - Server returns 500', () => {
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
     sut.formModel().pledge('my pledge')
+    sut.actionGroups()[1].selectActionGroup()
     sut.submitPledge()
   })
 
