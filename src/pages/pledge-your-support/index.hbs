@@ -32,6 +32,7 @@ sectionName: charter
       <p>Make your pledge by completing the form - you can either pick one of the example pledges, or you can create your own. Once you’ve made your pledge, we can help you put it into action.</p>
 
       <div class="pledge js-pledge">
+        {{> loading-anim }}
         <!-- ko ifnot: section3.isActive() -->
         <h2 class="h2">Make a Pledge</h2>
         <div class="step">
@@ -149,5 +150,3 @@ sectionName: charter
 
 <button class="btn pledge-form__btn" data-bind="click: $parent.submitPledge">Confirm your pledge</button>
 </script>
-
-{{> loading-anim }}
