@@ -42,7 +42,7 @@ describe('Join Action Group - Submit - No First Name', () => {
 
     sut = new Model()
     sut.actionGroups()[1].selectActionGroup()
-    sut.formModel().lastName('last name')
+    sut.formModel().firstName('first name')
     sut.formModel().email('test@email.com')
     sut.formModel().pledge('my message')
     sut.formModel().organisation('organisation')

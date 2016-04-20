@@ -12,7 +12,7 @@ var browser = require('../../src/js/browser')
 var validation = require('../../src/js/validation')
 import { getGroupData } from './getGroupData'
 
-describe('Join Action Group - Submit - No First Name', () => {
+describe('Join Action Group - Submit - Invalid Email', () => {
   var browserLoadingStub
   var browserLoadedStub
   var validationShowErrorsStub
@@ -42,8 +42,9 @@ describe('Join Action Group - Submit - No First Name', () => {
 
     sut = new Model()
     sut.actionGroups()[1].selectActionGroup()
+    sut.formModel().firstName('first name')
     sut.formModel().lastName('last name')
-    sut.formModel().email('test@email.com')
+    sut.formModel().email('invalid email')
     sut.formModel().pledge('my message')
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
