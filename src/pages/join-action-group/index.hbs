@@ -34,7 +34,7 @@ sectionName: charter
       <p>By joining an action group you’ll have the opportunity to make use of your skills and experience, build strong networks with people who have the same dedication to ending homelessness, and be part of a team which leads the way in tackling key issues.</p>
 
       <h2 class="h2">What does it involve?</h2>
-      <p>Once you have selected which action group will benefit most from your experience, you will be contacted by the group Chairperson to discuss details. The Chairperson will be responsible for keeping the group focussed and organising meetings. Each group will decide together how they feel it is most effective to work together, but on average we expect each group to meet once a month.</p>
+      <p>Once you have selected an action group you feel will benefit from your experience, you will be contacted by the group Chairperson to discuss details. The Chairperson will be responsible for keeping the group focussed and organising meetings. Each group will decide themselves how to work effectively, but we expect each group to meet no more than once a month.</p>
 
       <div class="pledge js-pledge">
         <h2 class="h2">Join an Action Group</h2>
@@ -57,7 +57,7 @@ sectionName: charter
                   </span>
                   <span class="action-select__summary">
                     <h3 class="h3 action-select__name" data-bind="text: name"></h3>
-                    <p class="action-select__description">[TODO A short sentence about the group]</p>
+                    <p class="action-select__description">[TODO A short sentence about this group]</p>
                   </span>
                 </li>
               </ul>
@@ -72,23 +72,28 @@ sectionName: charter
                 </span>
                 <span class="action-select__summary">
                   <h3 class="h3 action-select__name" data-bind="text: actionGroup"></h3>
+                  <p>TODO Short sentence about this action group</p>
                 </span>
               </li>
             </ul>
 
-            <h3 class="h3 pledge__heading--inline">I</h3>
-            <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
-            <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
-            <label class="pledge-form__label hide-screen" for="lastName">Last Name *</label>
-            <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
+            <p>TODO More information about this group</p>
 
-            <span>would like to be part of the [ACTION GROUP NAME] action group.</span>
+            <h2 class="h2">Register your interest</h2>
 
             <span>We’d love to know more about you. How can you contribute to this action group? Do you have any super powers, special skills or relevant experience? How much time can you commit to the action group? Do you have any questions you’d like us to answer? (The chairperson of this group will be in touch with more information.)</span>
-
             <textarea style="margin-top: 2rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
 
             <ul class="pledge-form__list">
+
+              <li class="pledge-form__item">
+                <label class="pledge-form__label" for="firstName">First Name *</label>
+                <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
+              </li>
+              <li class="pledge-form__item">
+                <label class="pledge-form__label" for="lastName">Last Name *</label>
+                <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
+              </li>
               <li class="pledge-form__item">
                 <label class="pledge-form__label" for="organisation">Organisation/Business Name (if applicable)</label>
                 <input class="pledge-form__input pledge-form__input--inline" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
@@ -103,13 +108,13 @@ sectionName: charter
               </li>
             </ul>
 
-            <button class="btn pledge-form__btn" data-bind="click: $parent.submitPledge">Join the Action Group</button>
+            <button class="btn pledge-form__btn" data-bind="click: $parent.submitPledge">Register my interest</button>
           </div>
         </form>
 
         <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
-          <h2 class="h2">Thank you for your commitment</h2>
-          <p>Thank you for offering to be part of this action group. The chairperson for this group will be in touch shortly with more information.</p>
+          <h2 class="h2">Thank you for your interest</h2>
+          <p>Thank you for offering to be part of this action group. The chairperson for this group will be in touch with more information.</p>
         </div>
       </div>
     </div>
