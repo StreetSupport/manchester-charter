@@ -1,5 +1,5 @@
 /*
-  global describe, beforeEach, afterEach, it, expect
+  global describe, beforeEach, afterEach, it, expecta
 */
 'use strict'
 
@@ -14,7 +14,6 @@ var browser = require('../../src/js/browser')
 describe('View Your Pledge - Not Found', () => {
   var browserLoadingStub
   var browserRedirectStub
-  var sut
 
   beforeEach(() => {
     browserLoadingStub = sinon.stub(browser, 'loading')
@@ -31,7 +30,8 @@ describe('View Your Pledge - Not Found', () => {
     sinon.stub(getParams, 'parameter')
       .withArgs('id')
       .returns('my-pledge-id')
-    sut = new Model()
+
+    let sut = new Model()
   })
 
   afterEach(() => {

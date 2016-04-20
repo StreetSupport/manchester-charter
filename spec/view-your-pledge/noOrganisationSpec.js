@@ -12,15 +12,12 @@ var getParams = require('../../src/js/getUrlParam')
 var browser = require('../../src/js/browser')
 
 describe('View Your Pledge - No Organisation', () => {
-  var browserLoadingStub
-  var browserLoadedStub
-  var ajaxGetStub
   var sut
 
   beforeEach(() => {
-    browserLoadingStub = sinon.stub(browser, 'loading')
-    browserLoadedStub = sinon.stub(browser, 'loaded')
-    ajaxGetStub = sinon.stub(ajax, 'get')
+    sinon.stub(browser, 'loading')
+    sinon.stub(browser, 'loaded')
+    sinon.stub(ajax, 'get')
       .withArgs(api.pledges + '/my-pledge-id')
       .returns({
         then: (success, error) => {
