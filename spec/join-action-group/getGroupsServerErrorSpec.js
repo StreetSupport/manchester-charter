@@ -6,9 +6,7 @@
 let Model = require('../../src/js/JoinActionGroup')
 var sinon = require('sinon')
 var browser = require('../../src/js/browser')
-var api = require('../../src/js/api-endpoints')
 var ajax = require('../../src/js/ajax')
-import { getGroupData } from './getGroupData'
 
 describe('Join Action Group - Server returns bad request', () => {
   var browserRedirectStub
