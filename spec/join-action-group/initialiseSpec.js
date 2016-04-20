@@ -83,6 +83,10 @@ describe('Join Action Group', () => {
     expect(sut.actionGroups()[0].description).toEqual('first action group description')
   })
 
+  it('- Should map synopsis', () => {
+    expect(sut.actionGroups()[0].synopsis).toEqual('first action group synopsis')
+  })
+
   it('- Should show browser loaded', () => {
     expect(browserLoadedStub.calledAfter(ajaxGetStub)).toBeTruthy()
   })

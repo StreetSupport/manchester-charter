@@ -12,6 +12,7 @@ let ActionGroup = function (data, listener) {
   self.id = data.id
   self.name = data.name
   self.description = data.description
+  self.synopsis = data.synopsis
   self.selectActionGroup = () => {
     listener.actionGroupSelected(self)
   }
