@@ -57,7 +57,7 @@ sectionName: charter
                   </span>
                   <span class="action-select__summary">
                     <h3 class="h3 action-select__name" data-bind="text: name"></h3>
-                    <p class="action-select__description" data-bind="text: description"></p>
+                    <p class="action-select__description" data-bind="text: synopsis"></p>
                   </span>
                 </li>
               </ul>
@@ -73,12 +73,12 @@ sectionName: charter
                   </span>
                   <span class="action-select__summary">
                     <h3 class="h3 action-select__name" data-bind="text: name"></h3>
-                    <p data-bind="text: description"></p>
+                    <p data-bind="text: synopsis"></p>
                   </span>
                 </li>
               </ul>
 
-              <p>TODO More information about this group</p>
+              <p data-bind="text: description"></p>
             </div>
             <div data-bind="with: formModel">
               <h2 class="h2">Register your interest</h2>
