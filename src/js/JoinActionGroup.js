@@ -69,7 +69,9 @@ function Model () {
         let actionGroups = result.data
           .map((g) => new ActionGroup(g, self))
         self.actionGroups(actionGroups)
-      }, () => { })
+      }, () => {
+        browser.redirect('/500.html')
+      })
 
     setActiveSection(1)
   }
