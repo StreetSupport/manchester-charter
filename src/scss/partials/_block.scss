@@ -142,6 +142,10 @@
 
     .block__content .split {
       margin-bottom: 0;
+
+      @include mq($from: l) {
+        margin-bottom: 40px;
+      }
     }
   }
 
