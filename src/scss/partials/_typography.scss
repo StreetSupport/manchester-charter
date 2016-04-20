@@ -24,9 +24,13 @@ body {
   font-size: 16px;
 }
 
+.small {
+  font-size: 13px;
+}
+
 .standout {
   font-family: $font-headline;
-  font-weight: $font-headline-weight;  
+  font-weight: $font-headline-weight;
   text-transform: uppercase;
   font-size: 52px;
   margin: 0;

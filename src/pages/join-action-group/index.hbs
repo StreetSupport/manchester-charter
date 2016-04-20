@@ -85,17 +85,22 @@ sectionName: charter
               <h2 class="h2">Register your interest</h2>
 
               <span>We’d love to know more about you. How can you contribute to this action group? Do you have any super powers, special skills or relevant experience? How much time can you commit to the action group? Do you have any questions you’d like us to answer? (The chairperson of this group will be in touch with more information.)</span>
-              <textarea style="margin-top: 2rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
-
+              <div class="pledge-form__input-field">
+                <textarea style="margin-top: 2rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
+              <div>
               <ul class="pledge-form__list">
 
                 <li class="pledge-form__item">
                   <label class="pledge-form__label" for="firstName">First Name *</label>
-                  <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
+                  <div class="pledge-form__input-field--inline">
+                    <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
+                  <div>
                 </li>
                 <li class="pledge-form__item">
                   <label class="pledge-form__label" for="lastName">Last Name *</label>
-                  <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
+                  <div class="pledge-form__input-field--inline">
+                    <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
+                  <div>
                 </li>
                 <li class="pledge-form__item">
                   <label class="pledge-form__label" for="organisation">Organisation/Business Name (if applicable)</label>
@@ -103,7 +108,9 @@ sectionName: charter
                 </li>
                 <li class="pledge-form__item">
                   <label class="pledge-form__label" for="email">Email * <span style="display: block; margin-top: 5px; font-size: 14px">(Street Support will never share your email with a 3rd party.)</span></label>
-                  <input class="pledge-form__input pledge-form__input--inline" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
+                  <div class="pledge-form__input-field--inline">
+                    <input class="pledge-form__input pledge-form__input--inline" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
+                  <div>
                 </li>
                 <li class="pledge-form__item">
                   <label class="pledge-form__label pledge-form__label--large" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>

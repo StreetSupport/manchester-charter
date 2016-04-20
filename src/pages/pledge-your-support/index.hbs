@@ -90,7 +90,7 @@ sectionName: charter
 <div data-bind="with: formModel">
   <h3 class="h3 pledge__heading--inline">I</h3>
   <label class="pledge-form__label hide-screen" for="firstName">First Name</label>
-  <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name" data-bind="textInput: firstName"></input>
+    <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name" data-bind="textInput: firstName"></input>
   <label class="pledge-form__label hide-screen" for="lastName">Last Name</label>
   <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name" data-bind="textInput: lastName"></input> <span> pledge to support the Manchester Homelessness Charter.</span>
 </div>
@@ -125,13 +125,19 @@ sectionName: charter
 <h3 class="h3">Confirm your pledge by completing your contact details (you can also edit your pledge):</h3>
 <h3 class="h3 pledge__heading--inline">I</h3>
 <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
-<input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
+<div class="pledge-form__input-field--inline">
+  <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
+</div>
 <label class="pledge-form__label hide-screen" for="lastName">Last Name *</label>
+<div class="pledge-form__input-field--inline">
 <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
+</div>
 
 <span>pledge to support the Manchester Homeless Charter by</span>
 
+<div class="pledge-form__input-field">
 <textarea style="margin-top: 2rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
+</div>
 
 <ul class="pledge-form__list">
   <li class="pledge-form__item">
@@ -140,7 +146,9 @@ sectionName: charter
   </li>
   <li class="pledge-form__item">
     <label class="pledge-form__label" for="email">Email * <span style="display: block; margin-top: 5px; font-size: 14px">(Street Support will never share your email with a 3rd party.)</span></label>
-    <input class="pledge-form__input pledge-form__input--inline" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
+    <div class="pledge-form__input-field--inline">
+      <input class="pledge-form__input pledge-form__input--inline" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
+    </div>
   </li>
   <li class="pledge-form__item">
     <label class="pledge-form__label pledge-form__label--large" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>

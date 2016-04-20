@@ -22,6 +22,15 @@
       }
     }
   }
+  &__input-field {
+    display: block;
+    position: relative;
+
+    &--inline {
+      display: inline-block;
+      position: relative;
+    }
+  }
 
   &__input {
     padding: 5px;
@@ -87,5 +96,13 @@
     margin-bottom: 10px;
     font-family: $font-headline;
     font-weight: $font-headline-weight;
+  }
+
+  &__input--inline + .form__error,
+  &__textarea + .form__error {
+    position: absolute;
+    right: 2px;
+    top: -1.4em;
+    @extend .small;
   }
 }
