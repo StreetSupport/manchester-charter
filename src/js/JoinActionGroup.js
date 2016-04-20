@@ -7,11 +7,12 @@ var api = require('./api-endpoints')
 var browser = require('./browser')
 var validation = require('./validation')
 
-let ActionGroup = function (name, listener) {
+let ActionGroup = function (data, listener) {
   var self = this
-  self.name = name
+  self.id = data.id
+  self.name = data.name
   self.selectActionGroup = () => {
-    listener.actionGroupSelected(self.name)
+    listener.actionGroupSelected(self.id)
   }
 }
 
@@ -43,16 +44,7 @@ function Model () {
   }
 
   self.init = () => {
-    self.actionGroups = [
-      'Mental Health',
-      'Employability',
-      'Substandard Accommodation',
-      'Women\'s Direct Access',
-      'Evening Offer',
-      'Emergency Accommodation',
-      'Presenting as homeless at the town hall',
-      'Street Giving and Begging'
-    ].map(ag => new ActionGroup(ag, self))
+    self.actionGroups = ko.observableArray()
 
     validation.initialise(ko.validation)
     self.formModel = ko.validatedObservable({
@@ -70,6 +62,20 @@ function Model () {
     self.section2 = new Section()
     self.section3 = new Section()
     self.activeSection = ko.observable(-1)
+
+    browser.loading()
+
+    ajax
+      .get(api.actionGroups)
+      .then((result) => {
+        let actionGroups = result.data
+          .map((g) => new ActionGroup(g, self))
+        self.actionGroups(actionGroups)
+        browser.loaded()
+      }, () => {
+        browser.redirect('/500.html')
+      })
+
     setActiveSection(1)
   }
 
@@ -77,18 +83,18 @@ function Model () {
     return {
       firstName: self.formModel().firstName(),
       lastName: self.formModel().lastName(),
-      actionGroup: self.formModel().actionGroup(),
       email: self.formModel().email(),
       organisation: self.formModel().organisation(),
       isOptedIn: self.formModel().isOptedIn(),
-      pledge: self.formModel().pledge()
+      message: self.formModel().pledge()
     }
   }
 
   let submitForm = () => {
     browser.loading()
-    let endpoint = api.makeAPledge
+    let endpoint = api.actionGroups + '/' + self.formModel().actionGroup() + '/joining-enquiries'
     let data = buildFormData()
+
     ajax
       .post(endpoint, data)
       .then((result) => {

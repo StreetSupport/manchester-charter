@@ -4,43 +4,30 @@
 'use strict'
 
 let Model = require('../../src/js/JoinActionGroup')
-
 var sinon = require('sinon')
-var ajax = require('../../src/js/ajax')
 var browser = require('../../src/js/browser')
+var ajax = require('../../src/js/ajax')
 
-describe('Join Action Group - Submit - Server returns bad request', () => {
+describe('Join Action Group - Server returns bad request', () => {
   var browserRedirectStub
   var sut
 
   beforeEach(() => {
-    sut = new Model()
     sinon.stub(browser, 'loading')
-    sinon.stub(browser, 'loaded')
-    sinon.stub(browser, 'scrollTo')
     browserRedirectStub = sinon.stub(browser, 'redirect')
-    sinon.stub(ajax, 'post')
+    sinon.stub(ajax, 'get')
       .returns({
         then: (success, error) => {
           error({ })
         }
       })
-    sut.formModel().firstName('first name')
-    sut.formModel().lastName('last name')
-    sut.formModel().email('test@email.com')
-    sut.formModel().actionGroup('action group')
-    sut.formModel().organisation('organisation')
-    sut.formModel().isOptedIn(true)
-    sut.formModel().pledge('my pledge')
-    sut.submitPledge()
+    sut = new Model()
   })
 
   afterEach(() => {
     browser.loading.restore()
-    browser.loaded.restore()
-    browser.scrollTo.restore()
     browser.redirect.restore()
-    ajax.post.restore()
+    ajax.get.restore()
   })
 
   it('- Should redirect to 500 page', () => {

@@ -6,11 +6,12 @@
 let Model = require('../../src/js/JoinActionGroup')
 
 var sinon = require('sinon')
-var ajax = require('../../src/js/ajax')
 var api = require('../../src/js/api-endpoints')
+var ajax = require('../../src/js/ajax')
 var browser = require('../../src/js/browser')
+import { getGroupData } from './getGroupData'
 
-describe('Join Action Group - Submit', () => {
+describe('Join Action Group - Submit - Server returns bad request', () => {
   var browserLoadingStub
   var browserLoadedStub
   var browserScrollToStub
@@ -18,35 +19,39 @@ describe('Join Action Group - Submit', () => {
   var sut
 
   beforeEach(() => {
-    sut = new Model()
     browserLoadingStub = sinon.stub(browser, 'loading')
     browserLoadedStub = sinon.stub(browser, 'loaded')
     browserScrollToStub = sinon.stub(browser, 'scrollTo')
-    let expectedPledgeData = {
-      firstName: 'first name',
-      lastName: 'last name',
-      actionGroup: 'action group',
-      organisation: 'organisation',
-      email: 'test@email.com',
-      isOptedIn: true,
-      pledge: 'my pledge'
-    }
-    ajaxPostStub = sinon.stub(ajax, 'post')
-      .withArgs(api.makeAPledge, expectedPledgeData)
+    sinon.stub(ajax, 'get')
+      .withArgs(api.actionGroups)
       .returns({
-        then: (success, error) => {
+        then: function (success, error) {
           success({
-            'statusCode': 201
+            'status': 'ok',
+            'data': getGroupData()
           })
         }
       })
+    ajaxPostStub = sinon.stub(ajax, 'post')
+      .returns({
+        then: (success, error) => {
+          success({
+            'statusCode': 400
+          })
+        }
+      })
+
+    sut = new Model()
     sut.formModel().firstName('first name')
     sut.formModel().lastName('last name')
     sut.formModel().email('test@email.com')
-    sut.formModel().actionGroup('action group')
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
     sut.formModel().pledge('my pledge')
+
+    browserLoadingStub.reset()
+    browserLoadedStub.reset()
+
     sut.submitPledge()
   })
 
@@ -54,6 +59,7 @@ describe('Join Action Group - Submit', () => {
     browser.loading.restore()
     browser.loaded.restore()
     browser.scrollTo.restore()
+    ajax.get.restore()
     ajax.post.restore()
   })
 
@@ -73,12 +79,12 @@ describe('Join Action Group - Submit', () => {
     expect(sut.section1.isActive()).toBeFalsy()
   })
 
-  it('- Should set Section 2 as inactive', () => {
-    expect(sut.section2.isActive()).toBeFalsy()
+  it('- Should set Section 2 as active', () => {
+    expect(sut.section2.isActive()).toBeTruthy()
   })
 
-  it('- Should set Section 3 as active', () => {
-    expect(sut.section3.isActive()).toBeTruthy()
+  it('- Should set Section 3 as inactive', () => {
+    expect(sut.section3.isActive()).toBeFalsy()
   })
 
   it('- Should set scroll to top of section', () => {
