@@ -1,0 +1,118 @@
+.superhero {
+	&__copy {
+		margin-bottom: 40px;
+
+		@include mq($from: m) {
+			margin-top: -60%;
+		}
+
+		@include mq($from: l) {
+			margin-top: 0px;
+			margin-bottom: 0px;
+			@include span(4 of $grid-column);
+		}
+	}
+
+	&__image {
+		@include mq($from: l) {
+			@include span(4 of $grid-column);
+			@include last();
+		}
+	}
+
+	&__header {
+		color: #fff !important;
+		text-align: center;
+		margin-top: -20px;
+		margin-bottom: 80px;
+
+		@include mq($from: xs) {
+			margin-top: -60px;
+		}
+
+		@include mq($from: m) {
+		//	margin-left: 40px;
+		}
+
+		@include mq($from: l) {
+			text-align: left;
+			color: $brand-h !important;
+			margin: 0 0 20px 0;
+		}
+	}
+
+	&__container {
+		width: 100%;
+		height: 0;
+		padding-bottom: 100%;
+		position: relative;
+
+		@include mq($from: l) {
+		//	margin-left: 40px;
+		}
+
+		svg {
+			border-radius: 100%;
+			border: 2px solid $brand-f;
+			position: absolute;
+			height: 120%;
+			width: 120%;
+			left: -10%;
+			top: 0%;
+
+			@include mq($from: xs) {
+				top: -20%;
+			}
+
+			@include mq($from: s) {
+				top: -20%;
+			}
+
+			@include mq($from: m) {
+				height: 90%;
+				width: 90%;
+				left: 5%;
+				top: -40%;
+			}
+
+			@include mq($from: l) {
+				height: 100%;
+				width: 100%;
+				left: 0;
+				top: 0;
+			}
+		}
+	}
+
+	&__overlay {
+		position: absolute;
+		height: 120%;
+		width: 120%;
+		left: -10%;
+		top: 0%;
+		z-index: 9;
+		background: linear-gradient(transparent, black);
+		border-radius: 100%;
+		opacity: 0.9;
+
+		@include mq($from: xs) {
+			top: -20%;
+		}
+
+		@include mq($from: s) {
+			top: -20%;
+		}
+
+		@include mq($from: m) {
+			height: 90%;
+			width: 90%;
+			left: 5%;
+			top: -40%;
+			opacity: 0.5;
+		}
+
+		@include mq($from: l) {
+			display: none;
+		}
+	}
+}
