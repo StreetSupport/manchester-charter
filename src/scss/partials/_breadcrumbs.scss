@@ -7,8 +7,14 @@
 
   &__item {
     margin: 0;
-    padding: 0 10px 0 0;
+    padding: 0 6px 0 0;
     display: inline-block;
+    color: #fff;
+
+    a {
+      color: $brand-e;
+      text-decoration: none;
+    }
 
     &:last-of-type:after {
       content: none;
@@ -17,6 +23,7 @@
     &:after {
       content:'\3E';
       margin-left: 10px;
+      color: $brand-e;
     }
   }
 }
