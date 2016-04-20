@@ -48,6 +48,7 @@ describe('Join Action Group - Submit - Server returns bad request', () => {
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
     sut.formModel().pledge('my pledge')
+    sut.actionGroups()[1].selectActionGroup()
 
     browserLoadingStub.reset()
     browserLoadedStub.reset()

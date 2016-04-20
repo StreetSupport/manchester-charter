@@ -57,58 +57,61 @@ sectionName: charter
                   </span>
                   <span class="action-select__summary">
                     <h3 class="h3 action-select__name" data-bind="text: name"></h3>
-                    <p class="action-select__description">[TODO A short sentence about this group]</p>
+                    <p class="action-select__description" data-bind="text: description"></p>
                   </span>
                 </li>
               </ul>
               <p>If there is an issue not listed here, which you think worthy of an action group please email your suggestions to <a href="mailto:actiongroups@streetsupport.net">actiongroups@streetsupport.net</a>.</p>
             </div>
           </div>
-          <div class="pledge-section pledge-section--2" data-bind="css: { active: section2.isActive() }, with: formModel">
-            <ul class="action-select__list">
-              <li class="action-select__item">
-                <span class="action-select__logo">
-                  Logo
-                </span>
-                <span class="action-select__summary">
-                  <h3 class="h3 action-select__name" data-bind="text: actionGroup"></h3>
-                  <p>TODO Short sentence about this action group</p>
-                </span>
-              </li>
-            </ul>
+          <div class="pledge-section pledge-section--2" data-bind="css: { active: section2.isActive() }">
+            <div data-bind="with: selectedActionGroup">
+              <ul class="action-select__list">
+                <li class="action-select__item">
+                  <span class="action-select__logo">
+                    Logo
+                  </span>
+                  <span class="action-select__summary">
+                    <h3 class="h3 action-select__name" data-bind="text: name"></h3>
+                    <p data-bind="text: description"></p>
+                  </span>
+                </li>
+              </ul>
 
-            <p>TODO More information about this group</p>
+              <p>TODO More information about this group</p>
+            </div>
+            <div data-bind="with: formModel">
+              <h2 class="h2">Register your interest</h2>
 
-            <h2 class="h2">Register your interest</h2>
+              <span>We’d love to know more about you. How can you contribute to this action group? Do you have any super powers, special skills or relevant experience? How much time can you commit to the action group? Do you have any questions you’d like us to answer? (The chairperson of this group will be in touch with more information.)</span>
+              <textarea style="margin-top: 2rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
 
-            <span>We’d love to know more about you. How can you contribute to this action group? Do you have any super powers, special skills or relevant experience? How much time can you commit to the action group? Do you have any questions you’d like us to answer? (The chairperson of this group will be in touch with more information.)</span>
-            <textarea style="margin-top: 2rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
+              <ul class="pledge-form__list">
 
-            <ul class="pledge-form__list">
+                <li class="pledge-form__item">
+                  <label class="pledge-form__label" for="firstName">First Name *</label>
+                  <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
+                </li>
+                <li class="pledge-form__item">
+                  <label class="pledge-form__label" for="lastName">Last Name *</label>
+                  <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
+                </li>
+                <li class="pledge-form__item">
+                  <label class="pledge-form__label" for="organisation">Organisation/Business Name (if applicable)</label>
+                  <input class="pledge-form__input pledge-form__input--inline" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
+                </li>
+                <li class="pledge-form__item">
+                  <label class="pledge-form__label" for="email">Email * <span style="display: block; margin-top: 5px; font-size: 14px">(Street Support will never share your email with a 3rd party.)</span></label>
+                  <input class="pledge-form__input pledge-form__input--inline" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
+                </li>
+                <li class="pledge-form__item">
+                  <label class="pledge-form__label pledge-form__label--large" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
+                  <input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
+                </li>
+              </ul>
 
-              <li class="pledge-form__item">
-                <label class="pledge-form__label" for="firstName">First Name *</label>
-                <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
-              </li>
-              <li class="pledge-form__item">
-                <label class="pledge-form__label" for="lastName">Last Name *</label>
-                <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
-              </li>
-              <li class="pledge-form__item">
-                <label class="pledge-form__label" for="organisation">Organisation/Business Name (if applicable)</label>
-                <input class="pledge-form__input pledge-form__input--inline" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
-              </li>
-              <li class="pledge-form__item">
-                <label class="pledge-form__label" for="email">Email * <span style="display: block; margin-top: 5px; font-size: 14px">(Street Support will never share your email with a 3rd party.)</span></label>
-                <input class="pledge-form__input pledge-form__input--inline" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
-              </li>
-              <li class="pledge-form__item">
-                <label class="pledge-form__label pledge-form__label--large" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
-                <input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
-              </li>
-            </ul>
-
-            <button class="btn pledge-form__btn" data-bind="click: $parent.submitPledge">Register my interest</button>
+              <button class="btn pledge-form__btn" data-bind="click: $parent.submitPledge">Register my interest</button>
+            </div>
           </div>
         </form>
 
@@ -120,3 +123,5 @@ sectionName: charter
     </div>
   </div>
 </div>
+
+{{> loading-anim }}
