@@ -131,6 +131,10 @@ let PledgeYourSupport = function () {
     }
   }
 
+  self.viewMyPledge = () => {
+    browser.injectHiddenIFrame('.js-pledge', self.viewPledgeUrl())
+  }
+
   self.init()
 }
 

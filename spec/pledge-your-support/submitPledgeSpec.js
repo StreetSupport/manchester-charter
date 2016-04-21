@@ -14,6 +14,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
   var browserLoadingStub
   var browserLoadedStub
   var browserScrollToStub
+  var browserInjectIFrameStub
   var ajaxPostStub
   var sut
 
@@ -22,6 +23,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
     browserLoadingStub = sinon.stub(browser, 'loading')
     browserLoadedStub = sinon.stub(browser, 'loaded')
     browserScrollToStub = sinon.stub(browser, 'scrollTo')
+    browserInjectIFrameStub = sinon.stub(browser, 'injectHiddenIFrame')
     let expectedPledgeData = {
       firstName: 'first name',
       lastName: 'last name',
@@ -57,6 +59,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
     browser.loading.restore()
     browser.loaded.restore()
     browser.scrollTo.restore()
+    browser.injectHiddenIFrame.restore()
     ajax.post.restore()
   })
 
@@ -88,7 +91,13 @@ describe('Pledge Your Support - Submit Pledge', () => {
     expect(browserScrollToStub.withArgs('js-pledge').calledOnce).toBeFalsy()
   })
 
-  it('- Should set viewPledgeUrl', () => {
-    expect(sut.viewPledgeUrl()).toEqual('view.html?id=pledge-id')
+  describe('- Print my pledge', () => {
+    beforeEach(() => {
+      sut.viewMyPledge()
+    })
+
+    it('- Should inject iframe', () => {
+      expect(browserInjectIFrameStub.withArgs('.js-pledge', 'view.html?id=pledge-id').calledAfter(browserLoadedStub)).toBeTruthy()
+    })
   })
 })
