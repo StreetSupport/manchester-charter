@@ -3,7 +3,7 @@
   text-align: center;
 
   &__inner {
-    @include mq($from: l) {
+    @include mq($from: m) {
       @include span(6 of $grid-column);
       @include push(1 of $grid-column);
     }
@@ -17,7 +17,7 @@
     border-radius: 5px;
   }
 
-  &__copy {
+  &__copy { 
     display: block;
 
 
