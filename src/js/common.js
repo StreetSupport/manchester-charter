@@ -6,10 +6,6 @@ import 'feature.js'
 import nav from './nav.js'
 // import analytics from './analytics.js'
 
-// jQuery test
-console.log('testing if jquery is loaded globally:')
-console.log($)
-
 // Cuts the mustard check to add js class
 if ('querySelector' in document && 'addEventListener' in window) {
   var html = document.querySelector('html')
