@@ -1,14 +1,40 @@
 .pledge {
-  background-color: #e8e8e8;
-  padding: 10px 20px;
-  margin: 0 0 20px 0;
-  position: relative;
+  @include cf();
+  text-align: center;
 
-  &__heading {
+  &__inner {
+    @include mq($from: l) {
+      @include span(6 of $grid-column);
+      @include push(1 of $grid-column);
+    }
+  }
+
+  &__highlight {
+    margin-bottom: 20px;
+    padding: 20px 0;
+    color: $brand-m;
+    background-color: $brand-e;
+    border-radius: 5px;
+  }
+
+  &__copy {
+    display: block;
+
+
     &--inline {
-      @include mq($from: m) {
-        display: inline;
-      }
+      display: inline;
+    }
+  }
+
+  &__accordion {
+    .accordion__header {
+      border-bottom: 0;
+      margin-bottom: 5px;
+    }
+
+    .accordion__item {
+      text-align: left;
+      color: $brand-m;
     }
   }
 }
