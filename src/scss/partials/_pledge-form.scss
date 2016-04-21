@@ -5,7 +5,6 @@
     display: block;
     margin-right: 10px;
     margin-bottom: 10px;
-
 /*
     min-width: 160px;
 
@@ -40,6 +39,11 @@
     border: 1px solid $brand-f;
     border-radius: 5px;
     padding: 10px;
+    color: $brand-m;
+
+    .pledge-form__item & {
+      width: 100%;
+    }
 
     &--inline {
       width: 100%;
@@ -73,7 +77,6 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
-    border: 1px solid red;
     text-align: left;
 
     @include mq($from: m) {
@@ -83,11 +86,26 @@
   }
 
   &__item {
-    margin: 0 0 5px 0;
+    margin: 30px 0 30px 0;
     padding: 0;
 
-    & > * {
-      vertical-align: top;
+    .pledge__copy {
+      margin-top: 10px;
+    }
+
+    &--checkbox {
+      @include cf();
+      position: relative;
+
+      .pledge-form__checkbox {
+        position: absolute;
+        top: 4px;
+        left: 0;
+      }
+
+      .pledge-form__label {
+        padding-left: 30px;
+      }
     }
   }
 
@@ -95,6 +113,7 @@
     text-align: center;
   }
 
+  /* TODO: UPDATE THIS SECTION */
   .form__input--error {
     border: 1px solid $brand-g;
   }

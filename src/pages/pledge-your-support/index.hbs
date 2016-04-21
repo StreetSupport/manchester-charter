@@ -172,19 +172,24 @@ sectionName: charter
   <ul class="pledge-form__list">
     <li class="pledge-form__item">
       <label class="pledge-form__label" for="organisation">Organisation/Business Name (if applicable)</label>
-      <input class="pledge-form__input pledge-form__input--inline" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
+      <input class="pledge-form__input pledge-form__input" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
     </li>
     <li class="pledge-form__item">
-      <label class="pledge-form__label" for="email">Email * <span style="display: block; margin-top: 5px; font-size: 14px">(Street Support will never share your email with a 3rd party.)</span></label>
-      <div class="pledge-form__input-field--inline">
-        <input class="pledge-form__input pledge-form__input--inline" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
+      <label class="pledge-form__label" for="email">Email *</label>
+      <div class="pledge-form__input-field">
+        <input class="pledge-form__input pledge-form__input" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
       </div>
+      <span class="pledge__copy small">(Street Support will never share your email with a 3rd party.)</span>
     </li>
-    <li class="pledge-form__item">
-      <label class="pledge-form__label pledge-form__label--large" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
+    <li class="pledge-form__item pledge-form__item--checkbox">
       <input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
+      <label class="pledge-form__label pledge-form__label" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
     </li>
   </ul>
 
-  <button class="btn pledge-form__btn" data-bind="click: $parent.submitPledge">Confirm your pledge</button>
+  <div class="pledge-form__next">
+    <button class="btn btn--brand-e" data-bind="click: $parent.submitPledge">
+      <span class="btn__text">Confirm your pledge</span>
+    </button>
+  </div>
 </script>
