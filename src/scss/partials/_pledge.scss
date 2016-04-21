@@ -17,7 +17,7 @@
     border-radius: 5px;
   }
 
-  &__copy {  
+  &__copy {
     display: block;
 
 
@@ -36,5 +36,26 @@
       text-align: left;
       color: $brand-m;
     }
+  }
+
+  &__social {
+    margin: 40px 0;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  &__cta {
+    position: relative;
+    height: 250px;
+
+    .cta {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+
   }
 }

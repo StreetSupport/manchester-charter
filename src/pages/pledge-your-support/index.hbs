@@ -63,11 +63,11 @@ sectionName: charter
         </div>
 
         <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
-          <h2 class="h2">Thank you for making a pledge.</h2>
+          <h2 class="h1">Thank you for making a pledge.</h2>
           <p>We will be in touch shortly to see if/ how we can help support you in achieving your pledge.</p>
           <p>As an extra thank you we’ve created a special version of the Charter which features your pledge, so you can share it with your family, friends, colleagues and contacts, to encourage them to support it too. You can also download your personalised Charter at any time from the link we’ve sent to your email address.</p>
 
-          <div class="charter-social">
+          <div class="charter-social pledge__social">
             <ul class="charter-social__list">
               <li class="charter-social__item">
                 <a data-bind="click: viewMyPledge">Print my pledge <img data-src="holder.js/44x44?text=Icon" /></a></li>
@@ -77,7 +77,9 @@ sectionName: charter
 
           <p>Now that you have made a pledge, would you be interested in working alongside others to tackle some key issues, as part of an action group?</p>
 
-          {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
+          <div class="block__cta pledge__cta">
+            {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
+          </div>
         </div>
       </div>
     </div>
