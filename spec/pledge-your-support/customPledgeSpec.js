@@ -51,7 +51,6 @@ describe('Pledge Your Support - Custom Pledge - no custom pledge', () => {
   beforeEach(() => {
     browserScrollToStub = sinon.stub(browser, 'scrollTo')
     sut = new Model()
-    sut.supporterCategories[2].customPledge('')
     sut.supporterCategories[2].useCustomPledge()
   })
 

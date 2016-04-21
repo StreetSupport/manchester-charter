@@ -31,4 +31,8 @@
     width: 34px;
     vertical-align: middle;
   }
+
+  @media print {
+    & { display: none }
+  }
 }

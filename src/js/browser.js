@@ -24,25 +24,6 @@ var loaded = function () {
   getLoader().stop()
 }
 
-var getInputField = function (fieldName) {
-  // checkboxes should return boolean
-  return document
-    .querySelector('[name=${fieldName}')
-    .value
-}
-
-var showError = function (fieldName, message) {
-  let insertAfter = (referenceNode, newNode) => {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling)
-  }
-
-  let refNode = document.querySelector('[name=${fieldName}')
-  let errorNode = document.createElement('span')
-  errorNode.innerHTML = message
-  errorNode.className = 'input-error'
-  insertAfter(refNode, errorNode)
-}
-
 var scrollTo = function (selector) {
   let findPos = (obj) => {
     var curtop = 0
@@ -60,12 +41,24 @@ var trackEvent = function (src, action, description) {
   ga('send', 'event', src, action, description)
 }
 
+var print = function () {
+  window.print()
+}
+
+var injectHiddenIFrame = function (precedingElementSelector, pageUrl) {
+  var precedingElement = document.querySelector(precedingElementSelector)
+  var iFrame = document.createElement('iFrame')
+  iFrame.setAttribute('style', 'display: none')
+  iFrame.setAttribute('src', pageUrl)
+  precedingElement.appendChild(iFrame)
+}
+
 module.exports = {
   redirect: redirect,
   loading: loading,
   loaded: loaded,
   trackEvent: trackEvent,
-  getInputField: getInputField,
-  showError: showError,
-  scrollTo: scrollTo
+  scrollTo: scrollTo,
+  print: print,
+  injectHiddenIFrame: injectHiddenIFrame
 }

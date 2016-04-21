@@ -4,7 +4,7 @@ description: View your Pledge to the Manchester Homelessness Charter
 layout: default.hbs
 permalink: false
 appName: viewYourPledge
-sectionName: charter
+sectionName: view-charter
 ---
 
 <div class="block block--breadcrumbs">
@@ -27,7 +27,7 @@ sectionName: charter
 
 <div class="block">
   <div class="container">
-    <div class="block__content">
+    <div id="js-my-pledge" class="block__content">
       <!-- ko if: pledgeHasLoaded -->
         <!-- ko template: { name: 'pledge-details' } --><!-- /ko -->
       <!-- /ko -->
