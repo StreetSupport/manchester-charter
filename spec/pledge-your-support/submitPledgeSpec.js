@@ -97,7 +97,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
     })
 
     it('- Should inject iframe', () => {
-      expect(browserInjectIFrameStub.withArgs('.js-pledge', 'view.html?id=pledge-id').calledAfter(browserLoadedStub)).toBeTruthy()
+      expect(browserInjectIFrameStub.withArgs('.js-pledge', 'view/?id=pledge-id').calledAfter(browserLoadedStub)).toBeTruthy()
     })
   })
 })
