@@ -17,7 +17,7 @@ gulp.task('watch', () => {
   gulp.watch(config.paths.img + '{,**/}*.{png,jpg,gif,svg}', ['img'])
   gulp.watch(config.paths.icons + '**/*.svg', ['svgsprite'])
   gulp.watch([config.paths.fonts + '**/*', config.paths.files + '**/*'], ['copy'])
-  gulp.watch([config.paths.layouts + '**/*.hbs', config.paths.pages + '**/*.hbs', config.paths.partials + '**/*.hbs'], ['metalsmith'])
+  gulp.watch([config.paths.data + '**/*.json', config.paths.layouts + '**/*.hbs', config.paths.pages + '**/*.hbs', config.paths.partials + '**/*.hbs'], ['metalsmith'])
 })
 
 // jsdev Watch task
@@ -27,10 +27,10 @@ gulp.task('jsdevwatch', () => {
 })
 
 // Build website, either with development or minified assets and run server with live reloading
-gulp.task('default', callback => {
+gulp.task('default', (callback) => {
   runSequence(
     'jasmine',
-    'jslint',
+    'standardlint',
     'clean',
     'metalsmith',
     ['htmlmin', 'svgsprite', 'scss', 'webpack', 'img', 'copy'],
@@ -40,10 +40,10 @@ gulp.task('default', callback => {
 })
 
 // Build website, either with development or minified assets depending on flag
-gulp.task('deploy', callback => {
+gulp.task('deploy', (callback) => {
   runSequence(
     'jasmine',
-    'jslint',
+    'standardlint',
     'clean',
     'metalsmith',
     ['htmlmin', 'svgsprite', 'scss', 'webpack', 'img', 'copy'],
@@ -53,21 +53,21 @@ gulp.task('deploy', callback => {
 })
 
 // Run tests and watch js/spec files
-gulp.task('jsdev', callback => {
+gulp.task('jsdev', (callback) => {
   runSequence(
     'jasmine',
-    'jslint',
-    'specsjslint',
+    'standardlint',
+    'specsstandardlintlint',
     'jsdevwatch',
     callback
   )
 })
 
 // Run the audit task to check code standards
-gulp.task('auditcode', callback => {
+gulp.task('auditcode', (callback) => {
   runSequence(
     'scsslint',
-    'jslint',
+    'standardlint',
     callback
   )
 })
