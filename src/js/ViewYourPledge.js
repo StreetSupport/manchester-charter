@@ -39,6 +39,7 @@ let ViewYourPledge = function () {
           self.pledge(result.data.pledge)
           self.creationDate(parseDate(result.data.creationDate))
           self.pledgeHasLoaded(true)
+          browser.print()
         }
         if (result.statusCode === 404) {
           browser.redirect('/404.html')

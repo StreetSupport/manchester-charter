@@ -14,12 +14,14 @@ var browser = require('../../src/js/browser')
 describe('View Your Pledge', () => {
   var browserLoadingStub
   var browserLoadedStub
+  var browserPrintStub
   var ajaxGetStub
   var sut
 
   beforeEach(() => {
     browserLoadingStub = sinon.stub(browser, 'loading')
     browserLoadedStub = sinon.stub(browser, 'loaded')
+    browserPrintStub = sinon.stub(browser, 'print')
     ajaxGetStub = sinon.stub(ajax, 'get')
       .withArgs(api.pledges + '/my-pledge-id')
       .returns({
@@ -45,6 +47,7 @@ describe('View Your Pledge', () => {
   afterEach(() => {
     browser.loading.restore()
     browser.loaded.restore()
+    browser.print.restore()
     ajax.get.restore()
     getParams.parameter.restore()
   })
@@ -59,6 +62,10 @@ describe('View Your Pledge', () => {
 
   it('- Should show it has loaded', () => {
     expect(browserLoadedStub.calledAfter(ajaxGetStub)).toBeTruthy()
+  })
+
+  it('- Should open print dialog', () => {
+    expect(browserPrintStub.calledAfter(ajaxGetStub)).toBeTruthy()
   })
 
   it('- Should set first name', () => {

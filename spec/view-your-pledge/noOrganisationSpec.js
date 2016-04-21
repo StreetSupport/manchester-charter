@@ -17,6 +17,7 @@ describe('View Your Pledge - No Organisation', () => {
   beforeEach(() => {
     sinon.stub(browser, 'loading')
     sinon.stub(browser, 'loaded')
+    sinon.stub(browser, 'print')
     sinon.stub(ajax, 'get')
       .withArgs(api.pledges + '/my-pledge-id')
       .returns({
