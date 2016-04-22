@@ -45,7 +45,7 @@ let ViewYourPledge = function () {
           browser.redirect('/404.html')
         }
         browser.loaded()
-      }, (error) => {
+      }, () => {
 
       })
   }

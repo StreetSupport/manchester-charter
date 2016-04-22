@@ -1,3 +1,3 @@
-/* global feature */
+/* global */
 
 import './common'

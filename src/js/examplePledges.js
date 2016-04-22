@@ -10,7 +10,7 @@ export function getSupporterCategories () {
       'Sharing my story to inform others about homelessness.',
       'Including my name on the charter supporters database.'
     ]
-  },{
+  }, {
     'name': 'I am an individual that wants to help',
     'listOrder': 1,
     'examplePledges': [
@@ -20,7 +20,7 @@ export function getSupporterCategories () {
       'Learning what services are available and how i can help',
       'Including my name on the charter supporters database.'
     ]
-  },{
+  }, {
     'name': 'I represent a business',
     'listOrder': 1,
     'examplePledges': [
