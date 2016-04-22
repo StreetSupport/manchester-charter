@@ -63,6 +63,20 @@
       }
     }
 
+    &--grid {
+      @include mq($from: m) {
+        .cta {
+          &:last-of-type {
+            @include span(2 of $grid-column);
+          }
+
+          &:nth-of-type(4n) {
+            @include last();
+          }
+        }
+      }
+    }    
+
     &--2 {
       @include mq($from: m) {
         .cta:first-of-type {
