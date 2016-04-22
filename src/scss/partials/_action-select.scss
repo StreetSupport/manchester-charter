@@ -10,15 +10,33 @@
   &__item {
     margin: 0 0 10px 0;
     display: block;
-    background: $brand-e;
+    background-color: $brand-e;
     padding: 30px 15px;
     border-radius: 5px;
 
     @include mq($from: m) {
       display: table;
       width: 100%;
-      text-align: left;
       padding: 0;
+    }
+
+    &--step2 {
+      background-color: transparent;
+      margin-bottom: 40px;
+
+      @include mq($from: m) {
+        text-align: left;
+      }
+    }
+  }
+
+  &__btn {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+
+    @include mq($from: m) {
+      text-align: left;
     }
   }
 
@@ -29,11 +47,12 @@
     background-color: #a8a8a8;
     color: $brand-m;
     text-align: center;
-    padding-top: 60px;
-    border-radius: 5px 0 0 5px;    
+    padding-top: 30px;
 
     @include mq($from: m) {
       display: table-cell;
+      padding-top: 60px;
+      border-radius: 5px 0 0 5px;
     }
   }
 
@@ -46,16 +65,37 @@
       display: table-cell;
       margin-top: 0;
       padding: 30px;
+
+      .action-select__item--step2 & {
+        padding-top: 0;
+      }
     }
   }
 
   &__name {
     margin-top: 0;
     color: $brand-h !important;
+
+    .action-select__item--step2 & {
+      color: #fff !important;
+    }
+  }
+
+  &__synopsis {
+    color: $brand-m;
+
+    .action-select__item--step2 & {
+      color: #fff;
+    }
   }
 
   &__description {
-    color: $brand-m;
+    text-align: left;
+    margin-bottom: 40px;
   }
 
+  &__detail {
+    text-align: left;
+    margin-top: 40px;
+  }
 }

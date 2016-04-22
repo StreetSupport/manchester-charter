@@ -68,14 +68,16 @@ sectionName: charter
               <h3 class="h3">Please select the action group you are interested in joining:</h3>
               <div class="action-select">
                 <ul class="action-select__list" data-bind="foreach: actionGroups">
-                  <li class="action-select__item" data-bind="click: selectActionGroup">
-                    <span class="action-select__logo">
-                      Logo TBA
-                    </span>
-                    <span class="action-select__summary">
-                      <h3 class="h2 action-select__name" data-bind="text: name"></h3>
-                      <p class="action-select__description" data-bind="text: synopsis"></p>
-                    </span>
+                  <li class="action-select__item">
+                    <button class="btn action-select__btn" data-bind="click: selectActionGroup">
+                      <span class="action-select__logo">
+                        Logo TBA
+                      </span>
+                      <span class="action-select__summary">
+                        <h3 class="h2 action-select__name" data-bind="text: name"></h3>
+                        <p class="action-select__synopsis" data-bind="text: synopsis"></p>
+                      </span>
+                    </a>
                   </li>
                 </ul>
                 <p>If there is an issue not listed here, which you think worthy of an action group please email your suggestions to <a href="mailto:actiongroups@streetsupport.net">actiongroups@streetsupport.net</a>.</p>
@@ -83,58 +85,65 @@ sectionName: charter
             </div>
             <div class="pledge-section pledge-section--2" data-bind="css: { active: section2.isActive() }">
               <div data-bind="with: selectedActionGroup">
-                <ul class="action-select__list">
-                  <li class="action-select__item">
-                    <span class="action-select__logo">
-                      Logo
-                    </span>
-                    <span class="action-select__summary">
-                      <h3 class="h3 action-select__name" data-bind="text: name"></h3>
-                      <p data-bind="text: synopsis"></p>
-                    </span>
-                  </li>
-                </ul>
-
-                <p data-bind="text: description"></p>
-              </div>
-              <div data-bind="with: formModel">
-                <h2 class="h2">Register your interest</h2>
-
-                <span>We’d love to know more about you. How can you contribute to this action group? Do you have lived experience, relevant skills, or professional expertise? How much time can you commit? Do you have any questions you’d like us to answer? (The chairperson of this group will be in touch.)</span>
-                <div class="pledge-form__input-field">
-                  <textarea style="margin-top: 2rem;" class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
+                <div class="action-select__item action-select__item--step2">
+                  <span class="action-select__logo">
+                    Logo TBA
+                  </span>
+                  <span class="action-select__summary">
+                    <h3 class="h2 action-select__name" data-bind="text: name"></h3>
+                    <p class="action-select__synopsis" data-bind="text: synopsis"></p>
+                  </span>
                 </div>
-                <ul class="pledge-form__list">
 
+                <div class="action-select__description">
+                  <p data-bind="text: description"></p>
+                </div>
+              </div>
+              <div class="action-select__detail" data-bind="with: formModel">
+                <h2 class="h2">Register your interest</h2>
+                <div class="action-select__description">
+                  <p>We’d love to know more about you. How can you contribute to this action group? Do you have lived experience, relevant skills, or professional expertise? How much time can you commit? Do you have any questions you’d like us to answer? (The chairperson of this group will be in touch.)</p>
+                </div>
+
+                <div class="pledge-form__input-field">
+                  <textarea class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge" placeholder="Please write about you"></textarea>
+                </div>
+
+                <ul class="pledge-form__list">
                   <li class="pledge-form__item">
                     <label class="pledge-form__label" for="firstName">First Name *</label>
-                    <div class="pledge-form__input-field--inline">
-                      <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
+                    <div class="pledge-form__input-field">
+                      <input class="pledge-form__input pledge-form__input" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
                     </div>
                   </li>
                   <li class="pledge-form__item">
                     <label class="pledge-form__label" for="lastName">Last Name *</label>
-                    <div class="pledge-form__input-field--inline">
-                      <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
+                    <div class="pledge-form__input-field">
+                      <input class="pledge-form__input pledge-form__input" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
                     </div>
                   </li>
                   <li class="pledge-form__item">
                     <label class="pledge-form__label" for="organisation">Organisation/Business Name (if applicable)</label>
-                    <input class="pledge-form__input pledge-form__input--inline" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
+                    <input class="pledge-form__input pledge-form__input" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
                   </li>
                   <li class="pledge-form__item">
-                    <label class="pledge-form__label" for="email">Email * <span style="display: block; margin-top: 5px; font-size: 14px">(Street Support will never share your email with a 3rd party.)</span></label>
-                    <div class="pledge-form__input-field--inline">
-                      <input class="pledge-form__input pledge-form__input--inline" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
+                    <label class="pledge-form__label" for="email">Email *</label>
+                    <div class="pledge-form__input-field">
+                      <input class="pledge-form__input pledge-form__input" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
                     </div>
+                    <span class="pledge__copy small">(Street Support will never share your email with a 3rd party.)</span>
                   </li>
-                  <li class="pledge-form__item">
-                    <label class="pledge-form__label pledge-form__label--large" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
+                  <li class="pledge-form__item pledge-form__item--checkbox">
                     <input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
+                    <label class="pledge-form__label pledge-form__label" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
                   </li>
                 </ul>
 
-                <button class="btn pledge-form__btn" data-bind="click: $parent.submitPledge">Register my interest</button>
+                <div class="pledge-form__next">
+                  <button class="btn btn--brand-e" data-bind="click: $parent.submitPledge">
+                    <span class="btn__text">Register my interest</span>
+                  </button>
+                </div>                
               </div>
             </div>
           </form>
