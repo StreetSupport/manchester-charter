@@ -128,7 +128,7 @@
   }
 
   &--promo {
-    @include mq($from: l) {
+    @include mq($from: m) {
       text-align: center;
     }
   }
