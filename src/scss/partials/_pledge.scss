@@ -1,6 +1,7 @@
 .pledge {
   @include cf();
   text-align: center;
+  position: relative;
 
   &__inner {
     @include mq($from: m) {
