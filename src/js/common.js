@@ -1,4 +1,4 @@
-/* global $ */
+/* global */
 
 import Holder from 'holderjs'
 import Svg4everybody from 'svg4everybody'
