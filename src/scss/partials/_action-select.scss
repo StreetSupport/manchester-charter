@@ -2,28 +2,35 @@
   @include cf();
 
   &__list {
-    margin: 0 0 40px 0;
+    margin: 20px 0 40px 0;
     padding: 0;
     list-style-type: none;
   }
 
   &__item {
     margin: 0 0 10px 0;
-    padding: 0;
     display: block;
+    background: $brand-e;
+    padding: 30px 15px;
+    border-radius: 5px;
 
     @include mq($from: m) {
       display: table;
+      width: 100%;
+      text-align: left;
+      padding: 0;
     }
   }
 
   &__logo {
-    width: 100px;
+    width: 120px;
     height: 80px;
-    display: block;
+    display: inline-block;
     background-color: #a8a8a8;
+    color: $brand-m;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 60px;
+    border-radius: 5px 0 0 5px;    
 
     @include mq($from: m) {
       display: table-cell;
@@ -37,17 +44,18 @@
 
     @include mq($from: m) {
       display: table-cell;
-      padding-left: 20px;
       margin-top: 0;
+      padding: 30px;
     }
   }
 
   &__name {
     margin-top: 0;
+    color: $brand-h !important;
   }
 
   &__description {
-
+    color: $brand-m;
   }
 
 }
