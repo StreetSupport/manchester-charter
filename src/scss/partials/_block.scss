@@ -117,6 +117,23 @@
     }
   }
 
+  &--subpage-header {
+    padding-bottom: 0px;
+
+    @include mq($from: m) {
+      padding-top: 40px;
+      padding-bottom: 0px;
+    }
+
+    .block__header {
+      color: $brand-h;
+    }
+
+    .block__sub-header {
+      color: $brand-m;
+    }
+  }
+
   &--highlight {
     background: linear-gradient($brand-b, $brand-c);
     color: #fff;
