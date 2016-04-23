@@ -59,15 +59,15 @@
     visibility: hidden;
     transition: max-height 250ms, visibility 250ms, opacity 250ms;
 
-    a {
-      color: $brand-c;
-    }
-
     &.is-active {
       max-height: 300rem;
       opacity: 1;
       visibility: visible;
     }
+
+    a {
+      color: $brand-c;
+    }    
   }
 
   &__inner {
