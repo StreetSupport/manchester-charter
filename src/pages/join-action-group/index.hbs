@@ -70,9 +70,6 @@ sectionName: charter
                 <ul class="action-select__list" data-bind="foreach: actionGroups">
                   <li class="action-select__item">
                     <button class="btn action-select__btn" data-bind="click: selectActionGroup">
-                      <span class="action-select__logo">
-                        Group logo
-                      </span>
                       <span class="action-select__summary">
                         <h3 class="h2 action-select__name" data-bind="text: name"></h3>
                         <p class="action-select__synopsis" data-bind="text: synopsis"></p>
@@ -86,9 +83,6 @@ sectionName: charter
             <div class="pledge-section pledge-section--2" data-bind="css: { active: section2.isActive() }">
               <div data-bind="with: selectedActionGroup">
                 <div class="action-select__item action-select__item--step2">
-                  <span class="action-select__logo">
-                    Logo TBA
-                  </span>
                   <span class="action-select__summary">
                     <h3 class="h2 action-select__name" data-bind="text: name"></h3>
                     <p class="action-select__synopsis" data-bind="text: synopsis"></p>
