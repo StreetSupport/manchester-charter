@@ -43,7 +43,7 @@ sectionName: charter
       <div class="pledge js-pledge">
         {{> loading-anim }}
         <div class="pledge__inner">
-          <!-- ko ifnot: section3.isActive() -->
+          <!-- ko ifnot: section4.isActive() -->
           <h2 class="h1">Make a Pledge</h2>
           <div class="step">
             <ol class="step__list">
@@ -62,7 +62,7 @@ sectionName: charter
           </form>
         </div>
 
-        <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
+        <div class="pledge-section pledge-section--3" data-bind="css: { active: section4.isActive() }">
           <h2 class="h1">Thank you for making a pledge.</h2>
           <p>We will be in touch shortly to see if/ how we can help support you in achieving your pledge.</p>
           <p>As an extra thank you we’ve created a special version of the Charter which features your pledge. By sharing it with your family, friends, colleagues and contacts you can encourage them to support the Charter too.</p>
@@ -152,6 +152,7 @@ sectionName: charter
 </script>
 
 <script type="text/html" id="step-2">
+  <!-- ko if $parent.formIsSubmitting() -->
   <h3 class="h3">Confirm your pledge by completing your contact details (you can also edit your pledge):</h3>
   <div class="pledge__highlight">
     <span class="h3 pledge__copy--inline">I</span>
@@ -193,4 +194,5 @@ sectionName: charter
       <span class="btn__text">Confirm your pledge</span>
     </button>
   </div>
+  <!-- /ko -->
 </script>
