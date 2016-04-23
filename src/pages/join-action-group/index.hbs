@@ -33,7 +33,7 @@ sectionName: charter
       {{> divider}}
 
       <h2 class="h2">Who can join an action group?</h2>
-      <p>We are looking for a range of people from different backgrounds to work together on solutions to these important challenges. The groups will include people with lived experience, and those who have relevant skills or professional expertise. If you are interested in any of the action groups, please let us know.</p>
+      <p>We are looking for a range of people from different backgrounds to work together on solutions to these important challenges. The groups will include people who have experienced homelessness, as well as those who have relevant skills or professional expertise. If you are interested in any of the action groups please get in touch.</p>
 
       {{> divider}}
 
@@ -43,7 +43,7 @@ sectionName: charter
       {{> divider}}
 
       <h2 class="h2">How will the groups work?</h2>
-      <p>Once you have identified an action group that you feel will benefit from your experience, you will be contacted by the group Chairperson to discuss details. The Chairperson will be responsible for keeping the group focussed and organising meetings. Each group will decide themselves how to work effectively, but we expect each group to meet no more than once a month.</p>
+      <p>Once you have identified an action group that will benefit from your experience, you will be contacted by the group Chairperson who will be responsible for keeping the team focussed and organising meetings. Each group will decide themselves how to work effectively, but we expect no more than one meeting a month.</p>
     </div>
   </div>
 </div>
@@ -54,6 +54,7 @@ sectionName: charter
       <div class="pledge js-pledge">
         {{> loading-anim }}
         <div class="pledge__inner">
+          <!-- ko ifnot: section4.isActive() -->
           <h2 class="h1">Join an Action Group</h2>
 
           <div class="step">
@@ -62,7 +63,7 @@ sectionName: charter
               <li class="step__item" data-bind="css: { active: section2.isActive() }">2</li>
             </ol>
           </div>
-
+          <!-- /ko -->
           <form action="" class="pledge-form js-pledge-form">
             <div class="pledge-section pledge-section--1" data-bind="css: { active: section1.isActive() }">
               <h3 class="h3">Please select the action group you are interested in joining:</h3>
@@ -70,9 +71,6 @@ sectionName: charter
                 <ul class="action-select__list" data-bind="foreach: actionGroups">
                   <li class="action-select__item">
                     <button class="btn action-select__btn" data-bind="click: selectActionGroup">
-                      <span class="action-select__logo">
-                        Logo TBA
-                      </span>
                       <span class="action-select__summary">
                         <h3 class="h2 action-select__name" data-bind="text: name"></h3>
                         <p class="action-select__synopsis" data-bind="text: synopsis"></p>
@@ -86,27 +84,20 @@ sectionName: charter
             <div class="pledge-section pledge-section--2" data-bind="css: { active: section2.isActive() }">
               <div data-bind="with: selectedActionGroup">
                 <div class="action-select__item action-select__item--step2">
-                  <span class="action-select__logo">
-                    Logo TBA
-                  </span>
                   <span class="action-select__summary">
                     <h3 class="h2 action-select__name" data-bind="text: name"></h3>
                     <p class="action-select__synopsis" data-bind="text: synopsis"></p>
                   </span>
                 </div>
-
-                <div class="action-select__description">
-                  <p data-bind="text: description"></p>
-                </div>
               </div>
               <div class="action-select__detail" data-bind="with: formModel">
-                <h2 class="h2">Register your interest</h2>
+                <h2 class="h2">Introduce yourself</h2>
                 <div class="action-select__description">
-                  <p>We’d love to know more about you. How can you contribute to this action group? Do you have lived experience, relevant skills, or professional expertise? How much time can you commit? Do you have any questions you’d like us to answer? (The chairperson of this group will be in touch.)</p>
+                  <p>We’d love to know more about you. How can you contribute to this action group? Have you ever been homeless? Do you have any relevant skills or professional experience? How much time can you commit? Do you have any questions you’d like us to answer? (The Chairperson of this action group will be in touch).</p>
                 </div>
 
                 <div class="pledge-form__input-field">
-                  <textarea class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge" placeholder="Please write about you"></textarea>
+                  <textarea class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge" placeholder="Please write about your experience"></textarea>
                 </div>
 
                 <ul class="pledge-form__list">
@@ -148,12 +139,13 @@ sectionName: charter
             </div>
           </form>
 
-          <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
+          <div class="pledge-section pledge-section--3" data-bind="css: { active: section4.isActive() }">
             <h2 class="h2">Thank you for your interest</h2>
-            <p>Thank you for offering to be part of this action group. The chairperson for this group will be in touch with more information.</p>
+            <p>Thank you for offering to be part of this action group. The Chairperson for this group will be in touch shortly with more information.</p>
+            <p>Please encourage your friends and colleagues to join an action group, so their skills and experience can help end homelessness too.</p>
             <div class="charter-social">
               <ul class="charter-social__list">
-                <li class="charter-social__item">Encourage your friends to join the Action Groups {{> social-share }}</li>
+                <li class="charter-social__item">Encourage your friends to join an Action Group {{> social-share }}</li>
               </ul>
             </div>
           </div>

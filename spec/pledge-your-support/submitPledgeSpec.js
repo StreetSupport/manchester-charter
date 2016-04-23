@@ -16,6 +16,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
   var browserScrollToStub
   var browserInjectIFrameStub
   var ajaxPostStub
+  var setActiveSectionSpy
   var sut
 
   beforeEach(() => {
@@ -45,6 +46,8 @@ describe('Pledge Your Support - Submit Pledge', () => {
           })
         }
       })
+    setActiveSectionSpy = sinon.spy(sut, 'setActiveSection')
+
     sut.formModel().firstName('first name')
     sut.formModel().lastName('last name')
     sut.formModel().email('test@email.com')
@@ -61,10 +64,15 @@ describe('Pledge Your Support - Submit Pledge', () => {
     browser.scrollTo.restore()
     browser.injectHiddenIFrame.restore()
     ajax.post.restore()
+    sut.setActiveSection.restore()
   })
 
   it('- Should notify user it is loading', () => {
     expect(browserLoadingStub.calledOnce).toBeTruthy()
+  })
+
+  it('- Should set Section 3 as active', () => {
+    expect(setActiveSectionSpy.getCall(0).args[0]).toEqual(3)
   })
 
   it('- Should post pledge to API', () => {
@@ -75,16 +83,8 @@ describe('Pledge Your Support - Submit Pledge', () => {
     expect(browserLoadedStub.calledAfter(ajaxPostStub)).toBeTruthy()
   })
 
-  it('- Should set Section 1 as inactive', () => {
-    expect(sut.section1.isActive()).toBeFalsy()
-  })
-
-  it('- Should set Section 2 as inactive', () => {
-    expect(sut.section2.isActive()).toBeFalsy()
-  })
-
-  it('- Should set Section 3 as active', () => {
-    expect(sut.section3.isActive()).toBeTruthy()
+  it('- Should set Section 4 as active', () => {
+    expect(setActiveSectionSpy.getCall(1).args[0]).toEqual(4)
   })
 
   it('- Should set scroll to top of section', () => {
