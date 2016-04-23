@@ -16,6 +16,7 @@ describe('Join Action Group - Submit', () => {
   var browserLoadedStub
   var browserScrollToStub
   var ajaxPostStub
+  var setActiveSectionSpy
   var sut
 
   beforeEach(() => {
@@ -55,7 +56,6 @@ describe('Join Action Group - Submit', () => {
       })
 
     sut = new Model()
-    sut.actionGroups()[1].selectActionGroup()
     sut.formModel().firstName('first name')
     sut.formModel().lastName('last name')
     sut.formModel().email('test@email.com')
@@ -66,6 +66,7 @@ describe('Join Action Group - Submit', () => {
 
     browserLoadingStub.reset()
     browserLoadedStub.reset()
+    setActiveSectionSpy = sinon.stub(sut, 'setActiveSection')
 
     sut.submitPledge()
   })
@@ -82,6 +83,10 @@ describe('Join Action Group - Submit', () => {
     expect(browserLoadingStub.calledOnce).toBeTruthy()
   })
 
+  it('- Should set Section 3 as active', () => {
+    expect(setActiveSectionSpy.getCall(0).args[0]).toEqual(3)
+  })
+
   it('- Should post pledge to API', () => {
     expect(ajaxPostStub.calledOnce).toBeTruthy()
   })
@@ -90,16 +95,8 @@ describe('Join Action Group - Submit', () => {
     expect(browserLoadedStub.calledAfter(ajaxPostStub)).toBeTruthy()
   })
 
-  it('- Should set Section 1 as inactive', () => {
-    expect(sut.section1.isActive()).toBeFalsy()
-  })
-
-  it('- Should set Section 2 as inactive', () => {
-    expect(sut.section2.isActive()).toBeFalsy()
-  })
-
-  it('- Should set Section 3 as active', () => {
-    expect(sut.section3.isActive()).toBeTruthy()
+  it('- Should set Section 4 as active', () => {
+    expect(setActiveSectionSpy.getCall(1).args[0]).toEqual(4)
   })
 
   it('- Should set scroll to top of section', () => {
