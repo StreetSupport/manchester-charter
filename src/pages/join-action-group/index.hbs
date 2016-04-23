@@ -54,6 +54,7 @@ sectionName: charter
       <div class="pledge js-pledge">
         {{> loading-anim }}
         <div class="pledge__inner">
+          <!-- ko ifnot: section3.isActive() -->
           <h2 class="h1">Join an Action Group</h2>
 
           <div class="step">
@@ -62,7 +63,7 @@ sectionName: charter
               <li class="step__item" data-bind="css: { active: section2.isActive() }">2</li>
             </ol>
           </div>
-
+          <!-- /ko -->
           <form action="" class="pledge-form js-pledge-form">
             <div class="pledge-section pledge-section--1" data-bind="css: { active: section1.isActive() }">
               <h3 class="h3">Please select the action group you are interested in joining:</h3>
