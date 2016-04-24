@@ -97,28 +97,29 @@ sectionName: charter
                 </div>
 
                 <div class="pledge-form__input-field">
-                  <textarea class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge" placeholder="Please write about your experience"></textarea>
+                  <label class="pledge-form__label hide-screen" for="pledge">Please write about your experience *</label>
+                  <textarea class="pledge-form__textarea pledge-form__textarea--join-action-group" id="pledge" name="pledge" data-bind="textInput: pledge" placeholder="Please write about your experience *"></textarea>
                 </div>
 
                 <ul class="pledge-form__list">
                   <li class="pledge-form__item">
-                    <label class="pledge-form__label" for="firstName">First Name *</label>
+                    <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
                     <div class="pledge-form__input-field">
                       <input class="pledge-form__input pledge-form__input" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
                     </div>
                   </li>
                   <li class="pledge-form__item">
-                    <label class="pledge-form__label" for="lastName">Last Name *</label>
+                    <label class="pledge-form__label hide-screen" for="lastName">Last Name *</label>
                     <div class="pledge-form__input-field">
                       <input class="pledge-form__input pledge-form__input" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
                     </div>
                   </li>
                   <li class="pledge-form__item">
-                    <label class="pledge-form__label" for="organisation">Organisation/Business Name (if applicable)</label>
+                    <label class="pledge-form__label hide-screen" for="organisation">Organisation/Business Name (if applicable)</label>
                     <input class="pledge-form__input pledge-form__input" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
                   </li>
                   <li class="pledge-form__item">
-                    <label class="pledge-form__label" for="email">Email *</label>
+                    <label class="pledge-form__label hide-screen" for="email">Email *</label>
                     <div class="pledge-form__input-field">
                       <input class="pledge-form__input pledge-form__input" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
                     </div>

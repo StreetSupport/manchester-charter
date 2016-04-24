@@ -19,6 +19,7 @@
         display: inline;
         width: 200px;
         margin-top: 0;
+      }
     }
   }
 
@@ -63,6 +64,10 @@
     border-radius: 5px;
     padding: 10px;
     color: $brand-m;
+
+    &--join-action-group {
+      margin-bottom: 0px;
+    }
   }
 
   &__list {
@@ -105,19 +110,26 @@
     text-align: center;
   }
 
-  /* TODO: UPDATE THIS SECTION */
   .form__input--error {
     border: 1px solid $brand-g;
+    margin-top: 25px;
   }
 
   .form__error {
     display: block;
-    color: $brand-g;
+    color: $brand-i;
     margin-bottom: 10px;
     font-family: $font-headline;
     font-weight: $font-headline-weight;
   }
+  .pledge__highlight .form__error {
+    color: $brand-g;
+    @include mq($from: m) {
+      top: -2.1em;
+    }
+  }
 
+  &__input + .form__error,
   &__input--inline + .form__error,
   &__textarea + .form__error {
     position: absolute;
