@@ -27,7 +27,7 @@ function Model () {
   var self = this
 
   self.setActiveSection = (sectionIndex) => {
-    let sections = [self.section1, self.section2, self.section3]
+    let sections = [self.section1, self.section2, self.section3, self.section4]
     sections.forEach((s) => s.isActive(false))
     sections[sectionIndex - 1].isActive(true)
     if (self.activeSection() > 0) {
@@ -63,6 +63,7 @@ function Model () {
     self.section1 = new Section()
     self.section2 = new Section()
     self.section3 = new Section()
+    self.section4 = new Section()
     self.activeSection = ko.observable(-1)
 
     browser.loading()
