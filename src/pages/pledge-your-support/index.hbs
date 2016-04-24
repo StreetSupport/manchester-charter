@@ -114,10 +114,14 @@ sectionName: charter
 <script type="text/html" id="step-1">
   <div class="pledge__highlight" data-bind="with: formModel">
     <span class="h3 pledge__copy--inline">I</span>
-    <label class="pledge-form__label hide-screen" for="firstName">First Name</label>
-    <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name" data-bind="textInput: firstName"></input>
-    <label class="pledge-form__label hide-screen" for="lastName">Last Name</label>
-    <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name" data-bind="textInput: lastName"></input>
+    <div class="pledge-form__input-field pledge-form__input-field--inline">
+      <label class="pledge-form__label hide-screen" for="firstName">First Name</label>
+      <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name" data-bind="textInput: firstName"></input>
+    </div>
+    <div class="pledge-form__input-field pledge-form__input-field--inline">
+      <label class="pledge-form__label hide-screen" for="lastName">Last Name</label>
+      <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name" data-bind="textInput: lastName"></input>
+    </div>
     <span class="pledge__copy">pledge to support the Manchester Homelessness Charter.</span>
   </div>
   <h3 class="h3">Please select the option that best describes you:</h3>

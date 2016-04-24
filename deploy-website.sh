@@ -14,12 +14,12 @@ if [[ $TRAVIS_BRANCH == 'develop' ]]
 fi
 if [[ $TRAVIS_BRANCH == 'staging' ]]
   then
-    APIENVIRONMENT=1
+    APIENVIRONMENT=2
     AZURE_WEBSITE=$STAGING_AZURE_WEBSITE
 fi
 if [[ $TRAVIS_BRANCH == 'release' ]]
   then
-    APIENVIRONMENT=1
+    APIENVIRONMENT=3
     AZURE_WEBSITE=$LIVE_AZURE_WEBSITE
 fi
 
