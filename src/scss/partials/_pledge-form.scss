@@ -5,28 +5,20 @@
     display: block;
     margin-right: 10px;
     margin-bottom: 10px;
-/*
-    min-width: 160px;
-
-    @include mq($from: m) {
-      display: inline-block;
-      width: 200px;
-    }
-
-    &--large {
-      @include mq($from: m) {
-        width: 380px;
-      }
-    }
-    */
   }
   &__input-field {
     display: block;
     position: relative;
 
     &--inline {
-      display: inline-block;
-      position: relative;
+      width: 100%;
+      margin: 10px 0px;
+      display: block;
+
+      @include mq($from: m) {
+        display: inline;
+        width: 200px;
+        margin-top: 0;
     }
   }
 
@@ -39,7 +31,7 @@
     border: 1px solid $brand-f;
     border-radius: 5px;
     padding: 10px;
-    color: $brand-m;  
+    color: $brand-m;
 
     .pledge-form__item & {
       width: 100%;
@@ -47,7 +39,7 @@
 
     &--inline {
       width: 100%;
-      margin: 10px 5px;
+      margin: 10px 0px;
       display: block;
 
       @include mq($from: m) {
