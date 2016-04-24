@@ -26,8 +26,8 @@ let Section = function () {
 function Model () {
   var self = this
 
-  let setActiveSection = (sectionIndex) => {
-    let sections = [self.section1, self.section2, self.section3]
+  self.setActiveSection = (sectionIndex) => {
+    let sections = [self.section1, self.section2, self.section3, self.section4]
     sections.forEach((s) => s.isActive(false))
     sections[sectionIndex - 1].isActive(true)
     if (self.activeSection() > 0) {
@@ -37,12 +37,12 @@ function Model () {
   }
 
   self.setSection1Active = () => {
-    setActiveSection(1)
+    self.setActiveSection(1)
   }
 
   self.actionGroupSelected = (actionGroup) => {
     self.selectedActionGroup(actionGroup)
-    setActiveSection(2)
+    self.setActiveSection(2)
   }
 
   self.init = () => {
@@ -63,6 +63,7 @@ function Model () {
     self.section1 = new Section()
     self.section2 = new Section()
     self.section3 = new Section()
+    self.section4 = new Section()
     self.activeSection = ko.observable(-1)
 
     browser.loading()
@@ -78,7 +79,7 @@ function Model () {
         browser.redirect('/500.html')
       })
 
-    setActiveSection(1)
+    self.setActiveSection(1)
   }
 
   let buildFormData = () => {
@@ -94,6 +95,8 @@ function Model () {
 
   let submitForm = () => {
     browser.loading()
+    self.setActiveSection(3)
+
     let endpoint = api.actionGroups + '/' + self.selectedActionGroup().id + '/joining-enquiries'
     let data = buildFormData()
 
@@ -102,10 +105,10 @@ function Model () {
       .then((result) => {
         browser.loaded()
         if (result.statusCode === 400) {
-          setActiveSection(2)
+          self.setActiveSection(2)
         }
         if (result.statusCode === 201) {
-          setActiveSection(3)
+          self.setActiveSection(4)
         }
       }, () => {
         browser.redirect('/500.html')

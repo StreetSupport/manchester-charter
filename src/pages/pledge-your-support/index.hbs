@@ -1,6 +1,6 @@
 ---
 title: Pledge your Support to the Manchester Homelessness Charter
-description: Pledge your support to the Manchester Homelessness Charter
+description: Pledge to take action to help end homelessness in Manchester
 layout: default.hbs
 permalink: false
 appName: pledgeYourSupport
@@ -17,10 +17,10 @@ sectionName: charter
   </div>
 </div>
 
-<div class="block">
+<div class="block block--subpage-header">
   <div class="container">
-    <h1 class="h1 block__header">Manchester Homelessness Charter</h1>
-    <h2 class="h2 block__sub-header">Pledge your Support</h2>
+    <h1 class="h1 block__header">Pledge your Support</h1>
+    <p class="h2 block__sub-header">Manchester Homelessness Charter</p>
   </div>
 </div>
 
@@ -32,7 +32,7 @@ sectionName: charter
 
       {{> divider}}
 
-      <p>Make your pledge by completing the form - you can either pick one of the example pledges, or you can create your own. Once you’ve made your pledge, we can help you put it into action.</p>
+      <p>Make your pledge by completing the form - you can either pick one of the example pledges, or you can create your own. Once you’ve made your pledge, we will look to help you put it into action.</p>
     </div>
   </div>
 </div>
@@ -43,7 +43,7 @@ sectionName: charter
       <div class="pledge js-pledge">
         {{> loading-anim }}
         <div class="pledge__inner">
-          <!-- ko ifnot: section3.isActive() -->
+          <!-- ko ifnot: section4.isActive() -->
           <h2 class="h1">Make a Pledge</h2>
           <div class="step">
             <ol class="step__list">
@@ -62,12 +62,12 @@ sectionName: charter
           </form>
         </div>
 
-        <div class="pledge-section pledge-section--3" data-bind="css: { active: section3.isActive() }">
-          <h2 class="h2">Thank you for making a pledge.</h2>
+        <div class="pledge-section pledge-section--3" data-bind="css: { active: section4.isActive() }">
+          <h2 class="h1">Thank you for making a pledge.</h2>
           <p>We will be in touch shortly to see if/ how we can help support you in achieving your pledge.</p>
-          <p>As an extra thank you we’ve created a special version of the Charter which features your pledge, so you can share it with your family, friends, colleagues and contacts, to encourage them to support it too. You can also download your personalised Charter at any time from the link we’ve sent to your email address.</p>
+          <p>As an extra thank you we’ve created a special version of the Charter which features your pledge. By sharing it with your family, friends, colleagues and contacts you can encourage them to support the Charter too.</p>
 
-          <div class="charter-social">
+          <div class="charter-social pledge__social">
             <ul class="charter-social__list">
               <li class="charter-social__item">
                 <a data-bind="click: viewMyPledge">Print my pledge <img data-src="holder.js/44x44?text=Icon" /></a></li>
@@ -75,9 +75,11 @@ sectionName: charter
             </ul>
           </div>
 
-          <p>Now that you have made a pledge, would you be interested in working alongside others to tackle some key issues, as part of an action group?</p>
+          <p>Now you have made a pledge which will help end homelessness, are you also interested in being part of a team to tackle key issues?</p>
 
-          {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
+          <div class="block__cta pledge__cta">
+            {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
+          </div>
         </div>
       </div>
     </div>
@@ -89,7 +91,6 @@ sectionName: charter
     <div class="block__content">
       <h2 class="h2">Thank you!</h2>
       <p>Thank you to the organisations and companies who have already pledged their support to the Manchester Homelessness Charter.</p>
-      <p>Coming soon.</p>
     </div>
   </div>
 </div>
@@ -129,7 +130,7 @@ sectionName: charter
     <div class="accordion__item js-item">
       <div class="accordion__inner">
         <div class="pledge-select">
-          <h3 class="h3">Please select a pledge from the suggestions:</h3>
+          <h3 class="h3">My pledge is to (please select a pledge below):</h3>
           <ul class="pledge-select__list" data-bind="foreach: examplePledges">
             <li class="pledge-select__item">
               <a href="#" data-bind="text: description, click: selectExamplePledge"></a>
@@ -151,18 +152,19 @@ sectionName: charter
 </script>
 
 <script type="text/html" id="step-2">
+  <!-- ko if $parent.formIsSubmitting() -->
   <h3 class="h3">Confirm your pledge by completing your contact details (you can also edit your pledge):</h3>
   <div class="pledge__highlight">
     <span class="h3 pledge__copy--inline">I</span>
     <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
-    <div class="pledge-form__input-field--inline">
+    <div class="pledge-form__input-field pledge-form__input-field--inline">
       <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
     </div>
     <label class="pledge-form__label hide-screen" for="lastName">Last Name *</label>
-    <div class="pledge-form__input-field--inline">
+    <div class="pledge-form__input-field pledge-form__input-field--inline">
       <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
     </div>
-    <span class="pledge__copy">pledge to support the Manchester Homelessness Charter.</span>
+    <span class="pledge__copy">pledge to support the Manchester Homelessness Charter. I pledge to...</span>
   </div>
 
   <div class="pledge-form__input-field">
@@ -171,19 +173,18 @@ sectionName: charter
 
   <ul class="pledge-form__list">
     <li class="pledge-form__item">
-      <label class="pledge-form__label" for="organisation">Organisation/Business Name (if applicable)</label>
-      <input class="pledge-form__input pledge-form__input" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
+      <label class="pledge-form__label hide-screen" for="organisation">Organisation/Business Name (if applicable)</label>
+      <input class="pledge-form__input" type="text" id="organisation" name="organisation" placeholder="Organisation/Business Name (if applicable)" data-bind="textInput: organisation"></input>
     </li>
     <li class="pledge-form__item">
-      <label class="pledge-form__label" for="email">Email *</label>
+      <label class="pledge-form__label hide-screen" for="email">Email Address *</label>
       <div class="pledge-form__input-field">
-        <input class="pledge-form__input pledge-form__input" type="text" id="email" name="email" placeholder="Email Address" data-bind="textInput: email"></input>
+        <input class="pledge-form__input" type="text" id="email" name="email" placeholder="Email Address *" data-bind="textInput: email"></input>
       </div>
-      <span class="pledge__copy small">(Street Support will never share your email with a 3rd party.)</span>
     </li>
     <li class="pledge-form__item pledge-form__item--checkbox">
       <input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
-      <label class="pledge-form__label pledge-form__label" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
+      <label class="pledge-form__label" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
     </li>
   </ul>
 
@@ -192,4 +193,5 @@ sectionName: charter
       <span class="btn__text">Confirm your pledge</span>
     </button>
   </div>
+  <!-- /ko -->
 </script>

@@ -1,6 +1,7 @@
 .pledge {
   @include cf();
   text-align: center;
+  position: relative;
 
   &__inner {
     @include mq($from: m) {
@@ -11,13 +12,13 @@
 
   &__highlight {
     margin-bottom: 20px;
-    padding: 20px 0;
+    padding: 20px 5px;
     color: $brand-m;
     background-color: $brand-e;
     border-radius: 5px;
   }
 
-  &__copy {  
+  &__copy {
     display: block;
 
 
@@ -36,5 +37,26 @@
       text-align: left;
       color: $brand-m;
     }
+  }
+
+  &__social {
+    margin: 40px 0;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  &__cta {
+    position: relative;
+    height: 250px;
+
+    .cta {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+
   }
 }

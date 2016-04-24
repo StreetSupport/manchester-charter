@@ -53,12 +53,40 @@
   &__cta {
     @include cf();
     padding: 10px 0 0 0;
+    text-align: center;
 
     &--incopy {
       padding-bottom: 20px;
 
       @include mq($from: m) {
         padding-bottom: 40px;
+      }
+    }
+
+    &--grid {
+      @include mq($from: m) {
+        .cta {
+          &:last-of-type {
+            @include span(2 of $grid-column);
+          }
+
+          &:nth-of-type(4n) {
+            @include last();
+          }
+        }
+      }
+    }
+
+    &--2 {
+      @include mq($from: m) {
+        .cta:first-of-type {
+          @include push(2 of $grid-column);
+        }
+
+        .cta:last-of-type {
+          @include span(2 of $grid-column);  // Reset last style
+          @include push(0 of $grid-column); // Reset push style
+        }
       }
     }
 
@@ -112,8 +140,25 @@
     padding-bottom: 50px;
 
     @include mq($from: m) {
-      padding-top: 100px;
-      padding-bottom: 100px;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+
+  &--subpage-header {
+    padding-bottom: 0px;
+
+    @include mq($from: m) {
+      padding-top: 40px;
+      padding-bottom: 0px;
+    }
+
+    .block__header {
+      color: $brand-h;
+    }
+
+    .block__sub-header {
+      color: $brand-m;
     }
   }
 
@@ -122,54 +167,15 @@
     color: #fff;
 
     .h1,
-    .h2 {
+    .h2,
+    a {
       color: #fff;
     }
   }
 
   &--promo {
-    @include mq($from: l) {
+    @include mq($from: m) {
       text-align: center;
-    }
-  }
-
-  &--pullout {
-    color: #fff;
-
-    .h1,
-    .h2,
-    .h3,
-    p {
-      margin: 0;
-    }
-  }
-
-  &--priority {
-    position: relative;
-    z-index: 10;
-  }
-
-  &--pullup {
-    @include mq($from: xl) {
-      margin-top: -120px;
-      padding: 60px 0 40px 0;
-    }
-  }
-
-  &--superhero {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    margin-top: -120px;
-    overflow: hidden;
-    width: 100%;
-
-    @include mq($from: l) {
-      margin-top: 0px;
-
-      .block__content {
-        margin-top: 40px;
-    		margin-bottom: 40px;
-    	}
     }
   }
 }

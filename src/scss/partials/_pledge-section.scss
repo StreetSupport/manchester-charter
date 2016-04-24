@@ -5,4 +5,10 @@
   &.active {
     display: block;
   }
+
+  &--3 {
+    &.active {
+
+    }
+  }
 }

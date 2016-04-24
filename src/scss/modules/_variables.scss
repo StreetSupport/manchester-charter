@@ -32,7 +32,7 @@ $mq-static-breakpoint: l;
 // -----------------------------
 
 $base-font-size: 16px; // Recommended to not change this
-$site-container: rem(980px);
+$site-container: rem(1000px);
 $site-gutter: rem(16px);
 $grid-gutter: .25; // Quarter of column width
 $grid-column: 8;
@@ -60,9 +60,11 @@ $font-primary-weight: 300;
 $font-headline: 'museo-sans-rounded', sans-serif;
 $font-headline-weight: 500;
 
-// Misc
+// Header & Nav
+$header-top: 117px;
+$header-height: 84px;
+$header-margin: 84px;
 $nav-width: 220px;
-$header-height: 117px;
 
 // Default Grid Options
 // -----------------------------

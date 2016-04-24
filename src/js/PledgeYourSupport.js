@@ -45,8 +45,8 @@ let Section = function () {
 let PledgeYourSupport = function () {
   var self = this
 
-  let setActiveSection = (sectionIndex) => {
-    let sections = [self.section1, self.section2, self.section3]
+  self.setActiveSection = (sectionIndex) => {
+    let sections = [self.section1, self.section2, self.section3, self.section4]
     sections.forEach((s) => s.isActive(false))
     sections[sectionIndex - 1].isActive(true)
     if (self.activeSection() > 0) {
@@ -73,18 +73,19 @@ let PledgeYourSupport = function () {
     self.section1 = new Section()
     self.section2 = new Section()
     self.section3 = new Section()
+    self.section4 = new Section()
     self.activeSection = ko.observable(-1)
     self.viewPledgeUrl = ko.observable()
-    setActiveSection(1)
+    self.setActiveSection(1)
   }
 
   self.pledgeSelected = (pledge) => {
     self.formModel().pledge(pledge)
-    setActiveSection(2)
+    self.setActiveSection(2)
   }
 
   self.setSection1Active = () => {
-    setActiveSection(1)
+    self.setActiveSection(1)
   }
 
   self.accordionOpened = (el, context) => {
@@ -105,6 +106,7 @@ let PledgeYourSupport = function () {
 
   let submitForm = () => {
     browser.loading()
+    self.setActiveSection(3)
     let endpoint = api.makeAPledge
     let data = buildFormData()
     ajax
@@ -112,11 +114,11 @@ let PledgeYourSupport = function () {
       .then((result) => {
         browser.loaded()
         if (result.statusCode === 400) {
-          setActiveSection(2)
+          self.setActiveSection(2)
         }
         if (result.statusCode === 201) {
-          setActiveSection(3)
-          self.viewPledgeUrl('view.html?id=' + result.data.id)
+          self.setActiveSection(4)
+          self.viewPledgeUrl('view/?id=' + result.data.id)
         }
       }, () => {
         browser.redirect('/500.html')
