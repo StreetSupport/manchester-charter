@@ -1,13 +1,10 @@
 // Active section
-// TODO: Tidy this!
 @include mq($from: l) {
-  .section-charter {
-    .nav__item--charter {
-      background-color: $brand-i;
+  .nav__item--active {
+    background-color: $brand-i;
 
-      .nav__list--sub-list {
-        display: block;
-      }
+    .nav__list--sub-list {
+      display: block;
     }
   }
 }
