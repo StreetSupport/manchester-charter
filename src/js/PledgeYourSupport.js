@@ -121,7 +121,7 @@ let PledgeYourSupport = function () {
           self.viewPledgeUrl('view/?id=' + result.data.id)
         }
       }, () => {
-        browser.redirect('/500.html')
+        browser.redirect('/500/')
       })
   }
 

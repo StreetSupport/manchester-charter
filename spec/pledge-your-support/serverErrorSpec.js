@@ -44,6 +44,6 @@ describe('Pledge Your Support - Submit Pledge - Server returns bad request', () 
   })
 
   it('- Should redirect to 500 page', () => {
-    expect(browserRedirectStub.withArgs('/500.html').calledOnce).toBeTruthy()
+    expect(browserRedirectStub.withArgs('/500/').calledOnce).toBeTruthy()
   })
 })
