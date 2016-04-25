@@ -1,17 +1,3 @@
-// Active section
-// TODO: Tidy this!
-@include mq($from: l) {
-  .section-charter {
-    .nav__item--charter {
-      background-color: $brand-i;
-
-      .nav__list--sub-list {
-        display: block;
-      }
-    }
-  }
-}
-
 .nav {
   &__container {
     position: fixed;
@@ -157,6 +143,15 @@
       }
     }
 
+    @include mq($from: l) {
+      &--active {
+        background-color: $brand-i;
+
+        .nav__list--sub-list {
+          display: block;
+        }
+      }
+    }
 
     a {
       color: inherit;
