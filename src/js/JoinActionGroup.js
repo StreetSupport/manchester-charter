@@ -76,7 +76,7 @@ function Model () {
         self.actionGroups(actionGroups)
         browser.loaded()
       }, () => {
-        browser.redirect('/500.html')
+        browser.redirect('/500/')
       })
 
     self.setActiveSection(1)
@@ -111,7 +111,7 @@ function Model () {
           self.setActiveSection(4)
         }
       }, () => {
-        browser.redirect('/500.html')
+        browser.redirect('/500/')
       })
   }
 

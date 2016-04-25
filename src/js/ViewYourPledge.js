@@ -42,7 +42,7 @@ let ViewYourPledge = function () {
           browser.print()
         }
         if (result.statusCode === 404) {
-          browser.redirect('/404.html')
+          browser.redirect('/404/')
         }
         browser.loaded()
       }, () => {
