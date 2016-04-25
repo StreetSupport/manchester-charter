@@ -13,6 +13,7 @@ function p (addr) {
 
 module.exports = {
   pledges: p('/v1/approved-charter-supporters'),
+  totalPledges: p('/v1/approved-charter-supporters/total'),
   makeAPledge: p('/v1/charter-supporters'),
   actionGroups: p('/v1/action-groups')
 }
