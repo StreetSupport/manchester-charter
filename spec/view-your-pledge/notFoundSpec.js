@@ -31,7 +31,7 @@ describe('View Your Pledge - Not Found', () => {
       .withArgs('id')
       .returns('my-pledge-id')
 
-    let sut = new Model()
+    let sut = new Model() // eslint-disable-line
   })
 
   afterEach(() => {

@@ -10,7 +10,6 @@ var ajax = require('../../src/js/ajax')
 
 describe('Join Action Group - Server returns bad request', () => {
   var browserRedirectStub
-  var sut
 
   beforeEach(() => {
     sinon.stub(browser, 'loading')
@@ -21,7 +20,7 @@ describe('Join Action Group - Server returns bad request', () => {
           error({ })
         }
       })
-    sut = new Model()
+    let sut = new Model() // eslint-disable-line
   })
 
   afterEach(() => {
@@ -31,6 +30,6 @@ describe('Join Action Group - Server returns bad request', () => {
   })
 
   it('- Should redirect to 500 page', () => {
-    expect(browserRedirectStub.withArgs('/500.html').calledOnce).toBeTruthy()
+    expect(browserRedirectStub.withArgs('/500/').calledOnce).toBeTruthy()
   })
 })

@@ -48,6 +48,6 @@ describe('Show Pledges', () => {
   })
 
   it('should redirect to 500 page', () => {
-    expect(browserRedirectStub.withArgs('500.html').calledOnce).toBeTruthy()
+    expect(browserRedirectStub.withArgs('/500/').calledOnce).toBeTruthy()
   })
 })

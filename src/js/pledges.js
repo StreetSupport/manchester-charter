@@ -24,7 +24,7 @@ let Pledges = function () {
         self.pledges = result.data.map((p) => mapPledge(p))
         browser.loaded()
       }, () => {
-        browser.redirect('500.html')
+        browser.redirect('/500/')
       })
   }
 
