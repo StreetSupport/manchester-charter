@@ -71,7 +71,13 @@ sectionName: charter
             <ul class="charter-social__list">
               <li class="charter-social__item">
                 <a data-bind="click: viewMyPledge" class="btn btn--brand-e"><span class="btn__text">Print my pledge</span></a></li>
-              <li class="charter-social__item">Encourage others to pledge their support {{> social-share }}</li>
+              <li class="charter-social__item">
+                Encourage others to pledge their support:
+                <div class="social-share">
+                  <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="https://charter.streetsupport.net" data-bind="attr: { data-text: shareText }" data-via="streetsupportuk" data-dnt="true">Tweet</a>
+                  <div class="fb-share-button" data-href="https://charter.streetsupport.net" data-layout="button"></div>
+                </div>
+              </li>
             </ul>
           </div>
 
@@ -102,10 +108,10 @@ sectionName: charter
       <p>Making a pledge is only one way you can support people who are homeless.  You can join an action group, or explore the other ways you can tackle homelessness in our city:</p>
 
       <div class="block__cta">
-        {{>cta brand="e" link="https://streetsupport.net/give-items.html" icon="give" name="Give"}}
-        {{>cta brand="e" link="https://streetsupport.net/volunteer.html" icon="volunteer" name="Volunteer"}}
-        {{>cta brand="e" link="https://streetsupport.net/donate.html" icon="donate" name="Donate"}}
-        {{>cta brand="e" link="https://streetsupport.net/sponsor.html" icon="partnerships" name="Partnerships"}}
+        {{>cta brand="e" link="https://streetsupport.net/give-help/give-items/" icon="give" name="Give"}}
+        {{>cta brand="e" link="https://streetsupport.net/give-help/volunteer/" icon="volunteer" name="Volunteer"}}
+        {{>cta brand="e" link="https://streetsupport.net/give-help/donate/" icon="donate" name="Donate"}}
+        {{>cta brand="e" link="https://streetsupport.net/give-help/sponsor/" icon="partnerships" name="Partnerships"}}
       </div>
     </div>
   </div>

@@ -56,6 +56,6 @@ describe('Join Action Group - Submit - Server returns 500', () => {
   })
 
   it('- Should redirect to 500 page', () => {
-    expect(browserRedirectStub.withArgs('/500.html').calledOnce).toBeTruthy()
+    expect(browserRedirectStub.withArgs('/500/').calledOnce).toBeTruthy()
   })
 })

@@ -10,7 +10,7 @@ var ajax = require('../../src/js/ajax')
 var api = require('../../src/js/api-endpoints')
 var browser = require('../../src/js/browser')
 
-describe('Pledge Your Support - Submit Pledge', () => {
+describe('Pledge Your Support - Submit Pledge - Server Error on Retrieving Total Pledges', () => {
   var browserLoadingStub
   var browserLoadedStub
   var browserScrollToStub
@@ -51,12 +51,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
       .withArgs(api.totalPledges)
       .returns({
         then: (success, error) => {
-          success({
-            'statusCode': 200,
-            'data': {
-              'total': '20'
-            }
-          })
+          error({ })
         }
       })
     setActiveSectionSpy = sinon.spy(sut, 'setActiveSection')
@@ -81,41 +76,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
     sut.setActiveSection.restore()
   })
 
-  it('- Should notify user it is loading', () => {
-    expect(browserLoadingStub.calledOnce).toBeTruthy()
-  })
-
-  it('- Should set Section 3 as active', () => {
-    expect(setActiveSectionSpy.getCall(0).args[0]).toEqual(3)
-  })
-
-  it('- Should post pledge to API', () => {
-    expect(ajaxPostStub.calledOnce).toBeTruthy()
-  })
-
-  it('- Should notify user it has loaded', () => {
-    expect(browserLoadedStub.calledAfter(ajaxPostStub)).toBeTruthy()
-  })
-
-  it('- Should set Section 4 as active', () => {
-    expect(setActiveSectionSpy.getCall(1).args[0]).toEqual(4)
-  })
-
-  it('- Should set scroll to top of section', () => {
-    expect(browserScrollToStub.withArgs('js-pledge').calledOnce).toBeFalsy()
-  })
-
-  it('- Should set share text to include total pledges so far', () => {
-    expect(sut.shareText()).toEqual('I\'ve joined 20 others and pledged my support of the Manchester Homelessness Charter! Will you?')
-  })
-
-  describe('- Print my pledge', () => {
-    beforeEach(() => {
-      sut.viewMyPledge()
-    })
-
-    it('- Should inject iframe', () => {
-      expect(browserInjectIFrameStub.withArgs('.js-pledge', 'view/?id=pledge-id').calledAfter(browserLoadedStub)).toBeTruthy()
-    })
+  it('- Should set share text without total pledges so far', () => {
+    expect(sut.shareText()).toEqual('I\'ve just pledged to help end homelessness in Manchester. Show your support and make a pledge.')
   })
 })
