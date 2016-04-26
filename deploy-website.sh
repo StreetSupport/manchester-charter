@@ -20,7 +20,7 @@ fi
 if [[ $TRAVIS_BRANCH == 'release' ]]
   then
     APIENVIRONMENT=3
-    AZURE_WEBSITE=$LIVE_AZURE_WEBSITE
+    AZURE_WEBSITE=$PROD_AZURE_WEBSITE
 fi
 
 # Get the commit details
