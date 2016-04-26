@@ -71,7 +71,13 @@ sectionName: charter
             <ul class="charter-social__list">
               <li class="charter-social__item">
                 <a data-bind="click: viewMyPledge" class="btn btn--brand-e"><span class="btn__text">Print my pledge</span></a></li>
-              <li class="charter-social__item">Encourage others to pledge their support {{> social-share }}</li>
+              <li class="charter-social__item">
+                Encourage others to pledge their support:
+                <div class="social-share">
+                  <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="https://charter.streetsupport.net" data-bind="attr: { data-text: shareText }" data-via="streetsupportuk" data-dnt="true">Tweet</a>
+                  <div class="fb-share-button" data-href="https://charter.streetsupport.net" data-layout="button"></div>
+                </div>
+              </li>
             </ul>
           </div>
 

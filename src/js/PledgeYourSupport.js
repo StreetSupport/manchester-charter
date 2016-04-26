@@ -74,6 +74,7 @@ let PledgeYourSupport = function () {
     self.section2 = new Section()
     self.section3 = new Section()
     self.section4 = new Section()
+    self.shareText = ko.observable()
     self.activeSection = ko.observable(-1)
     self.viewPledgeUrl = ko.observable()
     self.setActiveSection(1)
@@ -104,6 +105,21 @@ let PledgeYourSupport = function () {
     }
   }
 
+  let setShareText = () => {
+    let defaultText = 'I\'ve just pledged to help end homelessness in Manchester. Show your support and make a pledge.'
+    ajax
+      .get(api.totalPledges)
+      .then((result) => {
+        let total = result.data.total
+        let text = total >= 20
+          ? 'I\'ve joined ' + result.data.total + ' others and pledged my support of the Manchester Homelessness Charter! Will you?'
+          : defaultText
+        self.shareText(text)
+      }, () => {
+        self.shareText(defaultText)
+      })
+  }
+
   let submitForm = () => {
     browser.loading()
     self.setActiveSection(3)
@@ -119,6 +135,7 @@ let PledgeYourSupport = function () {
         if (result.statusCode === 201) {
           self.setActiveSection(4)
           self.viewPledgeUrl('view/?id=' + result.data.id)
+          setShareText()
         }
       }, () => {
         browser.redirect('/500/')
