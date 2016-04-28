@@ -33,6 +33,13 @@
     }
   }
 
+  .take-action__element & {
+    @include mq($from: xs) {
+    margin-left: 25%;
+    margin-bottom: -220px;
+    }
+  }
+
   &:hover {
     .btn__overlay {
       opacity: 1;
