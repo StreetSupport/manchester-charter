@@ -74,7 +74,7 @@ sectionName: charter
               <li class="charter-social__item">
                 Encourage others to pledge their support:
                 <div class="social-share">
-                  <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="https://charter.streetsupport.net" data-bind="attr: { data-text: shareText }" data-via="streetsupportuk" data-dnt="true">Tweet</a>
+                  <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="https://charter.streetsupport.net" data-bind="attr: { 'data-text': shareText }" data-via="streetsupportuk" data-dnt="true">Tweet</a>
                   <div class="fb-share-button" data-href="https://charter.streetsupport.net" data-layout="button"></div>
                 </div>
               </li>
@@ -179,6 +179,7 @@ sectionName: charter
 
   <div class="pledge-form__input-field">
     <textarea class="pledge-form__textarea" id="pledge" name="pledge" data-bind="textInput: pledge"></textarea>
+    <a class="small pledge-form__back-button" data-bind="click: $parent.setSection1Active">< Select a different pledge</a>
   </div>
 
   <ul class="pledge-form__list">

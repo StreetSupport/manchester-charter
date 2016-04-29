@@ -23,6 +23,11 @@
     }
   }
 
+  &__back-button {
+    float: right;
+    padding-bottom: 20px;
+  }
+
   &__input {
     padding: 5px;
     display: block;
@@ -64,10 +69,6 @@
     border-radius: 5px;
     padding: 10px;
     color: $brand-m;
-
-    &--join-action-group {
-      margin-bottom: 0px;
-    }
   }
 
   &__list {
