@@ -1,0 +1,29 @@
+.take-action {
+  text-align: center;
+  &__heading {
+  }
+  &__element {
+    background: linear-gradient($brand-b, $brand-c);
+    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
+
+    @include mq($from: xs) {
+      padding: 20px 20px 120px 20px;
+      margin-bottom: 130px!important;
+      &:last-of-type {
+        margin-bottom: 80px!important;
+      }
+    }
+
+    @include mq($from: m) {
+      padding: 20px 20px 120px 20px;
+      margin-bottom: 80px!important;
+    }
+  }
+  &__element__title {
+    color: $brand-e!important;
+  }
+  &__element__text {
+    color: white!important;
+  }
+}
