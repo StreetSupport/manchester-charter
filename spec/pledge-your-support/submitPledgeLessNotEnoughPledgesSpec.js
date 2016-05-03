@@ -11,20 +11,13 @@ var api = require('../../src/js/api-endpoints')
 var browser = require('../../src/js/browser')
 
 describe('Pledge Your Support - Submit Pledge - Not Enough Pledges', () => {
-  var browserLoadingStub
-  var browserLoadedStub
-  var browserScrollToStub
-  var browserInjectIFrameStub
-  var ajaxPostStub
-  var ajaxGetStub
-  var setActiveSectionSpy
   var sut
 
   beforeEach(() => {
     sut = new Model()
-    browserLoadingStub = sinon.stub(browser, 'loading')
-    browserLoadedStub = sinon.stub(browser, 'loaded')
-    browserScrollToStub = sinon.stub(browser, 'scrollTo')
+    sinon.stub(browser, 'loading')
+    sinon.stub(browser, 'loaded')
+    sinon.stub(browser, 'scrollTo')
     let expectedPledgeData = {
       firstName: 'first name',
       lastName: 'last name',
@@ -34,7 +27,7 @@ describe('Pledge Your Support - Submit Pledge - Not Enough Pledges', () => {
       isOptedIn: true,
       pledge: 'my pledge'
     }
-    ajaxPostStub = sinon.stub(ajax, 'post')
+    sinon.stub(ajax, 'post')
       .withArgs(api.makeAPledge, expectedPledgeData)
       .returns({
         then: (success, error) => {
@@ -46,7 +39,7 @@ describe('Pledge Your Support - Submit Pledge - Not Enough Pledges', () => {
           })
         }
       })
-    ajaxGetStub = sinon.stub(ajax, 'get')
+    sinon.stub(ajax, 'get')
       .withArgs(api.totalPledges)
       .returns({
         then: (success, error) => {
@@ -58,7 +51,7 @@ describe('Pledge Your Support - Submit Pledge - Not Enough Pledges', () => {
           })
         }
       })
-    setActiveSectionSpy = sinon.spy(sut, 'setActiveSection')
+    sinon.spy(sut, 'setActiveSection')
 
     sut.formModel().firstName('first name')
     sut.formModel().lastName('last name')

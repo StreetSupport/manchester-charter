@@ -14,9 +14,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
   var browserLoadingStub
   var browserLoadedStub
   var browserScrollToStub
-  var browserInjectIFrameStub
   var ajaxPostStub
-  var ajaxGetStub
   var setActiveSectionSpy
   var sut
 
@@ -46,7 +44,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
           })
         }
       })
-    ajaxGetStub = sinon.stub(ajax, 'get')
+    sinon.stub(ajax, 'get')
       .withArgs(api.totalPledges)
       .returns({
         then: (success, error) => {
