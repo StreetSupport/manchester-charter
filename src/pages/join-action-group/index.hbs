@@ -146,13 +146,13 @@ page: joinactiongroup
             <h2 class="h2">Thank you for your interest</h2>
             <p>Thank you for offering to be part of this action group. The Chairperson for this group will be in touch shortly with more information.</p>
             <p>Please encourage your friends and colleagues to join an action group, so their skills and experience can help end homelessness too.</p>
+
             <div class="charter-social">
-              <ul class="charter-social__list">
-                <li class="charter-social__item">Encourage your friends to join an Action Group:
-                <div class="social-share">
-                  <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="https://charter.streetsupport.net/join-action-group/" data-text="I am using my skills and experience to help end homelessness in Manchester. Show your support and join an action group to tackle key issues." data-via="streetsupportuk" data-dnt="true">Tweet</a>
-                  <div class="fb-share-button" data-href="https://charter.streetsupport.net" data-layout="button"></div>
-                </div>
+              <ul class="charter-social__list charter-social__list--action-group">
+                <li class="charter-social__item charter-social__item--share">
+                  {{> facebook urlToShare="https://charter.streetsupport.net/read-the-charter/" pageTitle="Read the Manchester Homelessness Charter" pageDescription="Read the Manchester Homelessness Charter - a vision to end homelessness in Manchester." }}
+                  {{> twitter urlToShare="https://charter.streetsupport.net/read-the-charter/" tweet="Read how Manchester is working together to end homelessness with the Homelessness Charter." }}
+                  <h3 class="charter-social__title">Share</h3>
                 </li>
               </ul>
             </div>

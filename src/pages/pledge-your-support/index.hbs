@@ -68,16 +68,18 @@ page: pledgeyoursupport
           <p>We will be in touch shortly to see if/ how we can help support you in achieving your pledge.</p>
           <p>As an extra thank you we’ve created a special version of the Charter which features your pledge. By sharing it with your family, friends, colleagues and contacts you can encourage them to support the Charter too.</p>
 
-          <div class="charter-social pledge__social">
-            <ul class="charter-social__list">
+          <div class="charter-social">
+            <ul class="charter-social__list charter-social__list--pledge">
               <li class="charter-social__item">
-                <a data-bind="click: viewMyPledge" class="btn btn--brand-e"><span class="btn__text">Print my pledge</span></a></li>
-              <li class="charter-social__item">
-                Encourage others to pledge their support:
-                <div class="social-share">
-                  <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="https://charter.streetsupport.net" data-bind="attr: { 'data-text': shareText }" data-via="streetsupportuk" data-dnt="true">Tweet</a>
-                  <div class="fb-share-button" data-href="https://charter.streetsupport.net" data-layout="button"></div>
-                </div>
+                <a href="/manchester-homelessness-charter.pdf">
+                  {{>icon name="download" class="charter-social__icon charter-social__icon--download" }}
+                </a>
+                <h3 class="charter-social__title">Download</h3>
+              </li>
+              <li class="charter-social__item charter-social__item--share">
+                {{> facebook urlToShare="https://charter.streetsupport.net/read-the-charter/" pageTitle="Read the Manchester Homelessness Charter" pageDescription="Read the Manchester Homelessness Charter - a vision to end homelessness in Manchester." }}
+                {{> twitter urlToShare="https://charter.streetsupport.net/read-the-charter/" tweet="Read how Manchester is working together to end homelessness with the Homelessness Charter." }}
+                <h3 class="charter-social__title">Share</h3>
               </li>
             </ul>
           </div>
@@ -195,9 +197,17 @@ page: pledgeyoursupport
       </div>
       <span class="pledge__copy small">(Street Support will never share your email with a 3rd party.)</span>
     </li>
+    <li class="pledge-form__item">
+      <label class="pledge-form__label hide-screen" for="postcode">Your Postcode</label>
+      <input class="pledge-form__input" type="text" id="postcode" name="postcode" placeholder="Your postcode" data-bind="textInput: postcode"></input>
+    </li>
     <li class="pledge-form__item pledge-form__item--checkbox">
       <input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
       <label class="pledge-form__label" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
+    </li>
+    <li class="pledge-form__item pledge-form__item--checkbox">
+      <input class="pledge-form__checkbox" type="checkbox" name="isAnonymousPledge" data-bind="checked: isAnonymousPledge">
+      <label class="pledge-form__label" for="isAnonymousPledge">Select to hide your Pledge</label>
     </li>
   </ul>
 

@@ -14,9 +14,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
   var browserLoadingStub
   var browserLoadedStub
   var browserScrollToStub
-  var browserInjectIFrameStub
   var ajaxPostStub
-  var ajaxGetStub
   var setActiveSectionSpy
   var sut
 
@@ -25,7 +23,6 @@ describe('Pledge Your Support - Submit Pledge', () => {
     browserLoadingStub = sinon.stub(browser, 'loading')
     browserLoadedStub = sinon.stub(browser, 'loaded')
     browserScrollToStub = sinon.stub(browser, 'scrollTo')
-    browserInjectIFrameStub = sinon.stub(browser, 'injectHiddenIFrame')
     let expectedPledgeData = {
       firstName: 'first name',
       lastName: 'last name',
@@ -33,7 +30,9 @@ describe('Pledge Your Support - Submit Pledge', () => {
       organisation: 'organisation',
       email: 'test@email.com',
       isOptedIn: true,
-      pledge: 'my pledge'
+      pledge: 'my pledge',
+      isAnonymousPledge: true,
+      postcode: 'postcode'
     }
     ajaxPostStub = sinon.stub(ajax, 'post')
       .withArgs(api.makeAPledge, expectedPledgeData)
@@ -47,7 +46,7 @@ describe('Pledge Your Support - Submit Pledge', () => {
           })
         }
       })
-    ajaxGetStub = sinon.stub(ajax, 'get')
+    sinon.stub(ajax, 'get')
       .withArgs(api.totalPledges)
       .returns({
         then: (success, error) => {
@@ -68,6 +67,8 @@ describe('Pledge Your Support - Submit Pledge', () => {
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
     sut.formModel().pledge('my pledge')
+    sut.formModel().isAnonymousPledge(true)
+    sut.formModel().postcode('postcode')
     sut.submitPledge()
   })
 
@@ -75,7 +76,6 @@ describe('Pledge Your Support - Submit Pledge', () => {
     browser.loading.restore()
     browser.loaded.restore()
     browser.scrollTo.restore()
-    browser.injectHiddenIFrame.restore()
     ajax.post.restore()
     ajax.get.restore()
     sut.setActiveSection.restore()
@@ -107,15 +107,5 @@ describe('Pledge Your Support - Submit Pledge', () => {
 
   it('- Should set share text to include total pledges so far', () => {
     expect(sut.shareText()).toEqual('I\'ve joined 20 others and pledged my support of the Manchester Homelessness Charter! Will you?')
-  })
-
-  describe('- Print my pledge', () => {
-    beforeEach(() => {
-      sut.viewMyPledge()
-    })
-
-    it('- Should inject iframe', () => {
-      expect(browserInjectIFrameStub.withArgs('.js-pledge', 'view/?id=pledge-id').calledAfter(browserLoadedStub)).toBeTruthy()
-    })
   })
 })
