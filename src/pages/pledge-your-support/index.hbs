@@ -197,9 +197,17 @@ page: pledgeyoursupport
       </div>
       <span class="pledge__copy small">(Street Support will never share your email with a 3rd party.)</span>
     </li>
+    <li class="pledge-form__item">
+      <label class="pledge-form__label hide-screen" for="postcode">Your Postcode</label>
+      <input class="pledge-form__input" type="text" id="postcode" name="postcode" placeholder="Your postcode" data-bind="textInput: postcode"></input>
+    </li>
     <li class="pledge-form__item pledge-form__item--checkbox">
       <input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
       <label class="pledge-form__label" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
+    </li>
+    <li class="pledge-form__item pledge-form__item--checkbox">
+      <input class="pledge-form__checkbox" type="checkbox" name="isAnonymousPledge" data-bind="checked: isAnonymousPledge">
+      <label class="pledge-form__label" for="isAnonymousPledge">Select to hide your Pledge</label>
     </li>
   </ul>
 

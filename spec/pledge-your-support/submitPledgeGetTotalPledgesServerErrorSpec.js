@@ -25,7 +25,9 @@ describe('Pledge Your Support - Submit Pledge - Server Error on Retrieving Total
       organisation: 'organisation',
       email: 'test@email.com',
       isOptedIn: true,
-      pledge: 'my pledge'
+      pledge: 'my pledge',
+      isAnonymousPledge: true,
+      postcode: 'postcode'
     }
     sinon.stub(ajax, 'post')
       .withArgs(api.makeAPledge, expectedPledgeData)
@@ -55,6 +57,8 @@ describe('Pledge Your Support - Submit Pledge - Server Error on Retrieving Total
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
     sut.formModel().pledge('my pledge')
+    sut.formModel().isAnonymousPledge(true)
+    sut.formModel().postcode('postcode')
     sut.submitPledge()
   })
 

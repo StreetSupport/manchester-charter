@@ -30,7 +30,9 @@ describe('Pledge Your Support - Submit Pledge', () => {
       organisation: 'organisation',
       email: 'test@email.com',
       isOptedIn: true,
-      pledge: 'my pledge'
+      pledge: 'my pledge',
+      isAnonymousPledge: true,
+      postcode: 'postcode'
     }
     ajaxPostStub = sinon.stub(ajax, 'post')
       .withArgs(api.makeAPledge, expectedPledgeData)
@@ -65,6 +67,8 @@ describe('Pledge Your Support - Submit Pledge', () => {
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
     sut.formModel().pledge('my pledge')
+    sut.formModel().isAnonymousPledge(true)
+    sut.formModel().postcode('postcode')
     sut.submitPledge()
   })
 

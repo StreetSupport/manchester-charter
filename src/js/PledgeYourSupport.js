@@ -64,7 +64,9 @@ let PledgeYourSupport = function () {
       pledge: ko.observable().extend({ required: true }),
       organisation: ko.observable(),
       email: ko.observable().extend({ required: true, email: true }),
-      isOptedIn: ko.observable()
+      isOptedIn: ko.observable(),
+      isAnonymousPledge: ko.observable(),
+      postcode: ko.observable()
     })
     self.fieldErrors = validation.getValidationGroup(ko.validation, self.formModel)
 
@@ -100,7 +102,9 @@ let PledgeYourSupport = function () {
       email: self.formModel().email(),
       organisation: self.formModel().organisation(),
       isOptedIn: self.formModel().isOptedIn(),
-      pledge: self.formModel().pledge()
+      pledge: self.formModel().pledge(),
+      isAnonymousPledge: self.formModel().isAnonymousPledge(),
+      postcode: self.formModel().postcode()
     }
   }
 
