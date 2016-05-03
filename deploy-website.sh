@@ -30,7 +30,7 @@ if [[ $TRAVIS_BRANCH == 'develop' ]] || [[ $TRAVIS_BRANCH == 'uat' ]]
     rm robots.txt
     cat > robots.txt << EOF
     User-agent: *
-    Disallow: \/
+    # Disallow: \/
     EOF
 
     echo "robots.txt rewritten to:"
