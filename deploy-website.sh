@@ -29,7 +29,7 @@ if [[ $TRAVIS_BRANCH == 'develop' ]] || [[ $TRAVIS_BRANCH == 'uat' ]]
     cd src/files
     rm robots.txt
     cat > robots.txt << EOF
-    User-agent: *
+    User-agent: \*
     # Disallow: \/
     EOF
 
