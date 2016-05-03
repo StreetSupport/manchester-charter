@@ -76,7 +76,6 @@ let PledgeYourSupport = function () {
     self.section4 = new Section()
     self.shareText = ko.observable()
     self.activeSection = ko.observable(-1)
-    self.viewPledgeUrl = ko.observable()
     self.setActiveSection(1)
   }
 
@@ -134,7 +133,6 @@ let PledgeYourSupport = function () {
         }
         if (result.statusCode === 201) {
           self.setActiveSection(4)
-          self.viewPledgeUrl('view/?id=' + result.data.id)
           setShareText()
         }
       }, () => {
@@ -148,10 +146,6 @@ let PledgeYourSupport = function () {
     } else {
       self.fieldErrors.showAllMessages()
     }
-  }
-
-  self.viewMyPledge = () => {
-    browser.injectHiddenIFrame('.js-pledge', self.viewPledgeUrl())
   }
 
   self.init()

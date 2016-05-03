@@ -25,7 +25,6 @@ describe('Pledge Your Support - Submit Pledge - Not Enough Pledges', () => {
     browserLoadingStub = sinon.stub(browser, 'loading')
     browserLoadedStub = sinon.stub(browser, 'loaded')
     browserScrollToStub = sinon.stub(browser, 'scrollTo')
-    browserInjectIFrameStub = sinon.stub(browser, 'injectHiddenIFrame')
     let expectedPledgeData = {
       firstName: 'first name',
       lastName: 'last name',
@@ -75,7 +74,6 @@ describe('Pledge Your Support - Submit Pledge - Not Enough Pledges', () => {
     browser.loading.restore()
     browser.loaded.restore()
     browser.scrollTo.restore()
-    browser.injectHiddenIFrame.restore()
     ajax.post.restore()
     ajax.get.restore()
     sut.setActiveSection.restore()
