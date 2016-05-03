@@ -30,7 +30,7 @@ if [[ $TRAVIS_BRANCH == 'develop' ]] || [[ $TRAVIS_BRANCH == 'uat' ]]
     rm robots.txt
     cat > robots.txt << EOF
     User-agent: *
-    Disallow: /
+    Disallow: \/
     EOF
 
     echo "robots.txt rewritten to:"
@@ -38,8 +38,6 @@ if [[ $TRAVIS_BRANCH == 'develop' ]] || [[ $TRAVIS_BRANCH == 'uat' ]]
 
     cd ../../
 fi
-
-
 
 # Get the commit details
 THE_COMMIT=`git rev-parse HEAD`
