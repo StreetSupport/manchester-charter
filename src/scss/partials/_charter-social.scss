@@ -5,21 +5,49 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    @include cf();
+
+    @include mq($from: m) {
+      @include pre(1 of 5)
+      @include post(1 of 5)
+    }
   }
 
   &__item {
     margin: 0 0 10px 0;
     padding: 0;
     display: block;
+    text-align: center;
 
-    @include mq($from: l) {
-      display: inline-block;
-      margin-right: 20px;
+    @include mq($from: m) {
+      @include span(1 of 3);
     }
 
-    img {
-      margin-left: 10px;
-      vertical-align: middle;
+    &--share {
+      @include mq($from: m) {
+        @include span(last 2 of 3);
+        text-align: left;
+      }
     }
+  }
+
+  &__icon {
+    height: 52px;
+    width: 52px;
+
+    .charter-social__item--share & {
+      margin: 0 2em;
+
+      &--twitter {
+        @include mq($from: m) {
+          margin: 0 6.4em 0 3.1em;
+        }
+      }
+    }
+  }
+
+  &__title {
+    clear: both;
+    text-align: center;
   }
 }

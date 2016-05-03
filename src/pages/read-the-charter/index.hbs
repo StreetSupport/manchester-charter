@@ -5,7 +5,7 @@ layout: default.hbs
 permalink: false
 appName: home
 section: charter
-page: readthecharter 
+page: readthecharter
 ---
 
 <div class="block block--breadcrumbs">
@@ -70,11 +70,17 @@ page: readthecharter
 
       <div class="charter-social">
         <ul class="charter-social__list">
-          <li class="charter-social__item"><a href="/manchester-homelessness-charter.pdf" class="btn btn--brand-d">
-            <span class="btn__text">Download the charter</span>
-          </a></li>
-          {{!-- <li class="charter-social__item">Print this charter</li> --}}
-          <li class="charter-social__item">Share the charter: {{> social-share }}</li>
+          <li class="charter-social__item">
+            <a href="/manchester-homelessness-charter.pdf">
+              {{>icon name="download" class="charter-social__icon charter-social__icon--download" }}
+            </a>
+            <h3 class="charter-social__title">Download</h3>
+          </li>
+          <li class="charter-social__item charter-social__item--share">
+            {{> twitter urlToShare="https://charter.streetsupport.net/read-the-charter/" tweet="Read how Manchester is working together to end homelessness with the Manchester Homelessness Charter." }}
+            {{> facebook urlToShare="https://charter.streetsupport.net/read-the-charter/" pageTitle="" pageDescription="" }}
+            <h3 class="charter-social__title">Share</h3>
+          </li>
         </ul>
       </div>
 
