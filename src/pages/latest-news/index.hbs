@@ -1,0 +1,59 @@
+---
+title: Latest News
+description: Latest News from the Manchester Homelessness Charter
+layout: default.hbs
+permalink: false
+appName: latestnews
+section: charter
+page: latestnews
+---
+
+<div class="block block--breadcrumbs">
+  <div class="container">
+    <ol class="breadcrumbs__list">
+      <li class="breadcrumbs__item"><a href="https://streetsupport.net/">Home</a></li>
+      <li class="breadcrumbs__item"><a href="/">Charter</a></li>
+      <li class="breadcrumbs__item">Latest News</li>
+    </ol>
+  </div>
+</div>
+
+<div class="block block--subpage-header">
+  <div class="container">
+    <h1 class="h1 block__header">Latest News</h1>
+    <p class="h2 block__sub-header">News and Updates on the Manchester Homelessness Charter</p>
+  </div>
+</div>
+
+<div class="block">
+  <div class="container">
+    <div class="block__content">
+      <div>
+        <h2 class="h2">News</h2>
+        <p>Since the official Charter launch, many organisations, businesses and individuals have shown their commitment to end homelessness by making a pledge or joining action groups. We expect to see a lot of progress in the coming weeks, so please keep spreading the word!</p>
+      </div>
+      {{> divider}}
+      <!-- ko template: { name: 'recent-pledges' } --><!-- /ko -->
+      {{> divider}}
+      <div class="block__cta block__cta--3">
+        {{>cta brand="e" link="/read-the-charter/" icon="read" name="Read the <span class=\"line-break\"></span> Charter"}}
+        {{>cta brand="e" link="/pledge-your-support/" icon="pledge" name="Pledge your <span class=\"line-break\"></span> Support"}}
+        {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/html" id="recent-pledges">
+<div class="recent-pledges">
+  <h2 class="h2">Recent Pledges</h2>
+  {{> loading-anim }}
+  <p>There have been <span data-bind="text: totalPledges"></span> pledges made so far in support of the Charter. Here are some of the recent pledges made:</p>
+  <ol class="recent-pledges__list" data-bind="foreach: pledges">
+    <li class="recent-pledges__item">
+      <p class="recent-pledges__pledge h3">I pledge to <span data-bind="text: message"></span></p>
+      <p><span class="recent-pledges__signature" data-bind="text: signature"></span> - <span class="recent-pledges__creation-date" data-bind="text: creationDate"></span></p>
+    </li>
+  </ol>
+</div>
+</script>
