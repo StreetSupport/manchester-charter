@@ -11,21 +11,13 @@ var api = require('../../src/js/api-endpoints')
 var browser = require('../../src/js/browser')
 
 describe('Pledge Your Support - Submit Pledge - Not Enough Pledges', () => {
-  var browserLoadingStub
-  var browserLoadedStub
-  var browserScrollToStub
-  var browserInjectIFrameStub
-  var ajaxPostStub
-  var ajaxGetStub
-  var setActiveSectionSpy
   var sut
 
   beforeEach(() => {
     sut = new Model()
-    browserLoadingStub = sinon.stub(browser, 'loading')
-    browserLoadedStub = sinon.stub(browser, 'loaded')
-    browserScrollToStub = sinon.stub(browser, 'scrollTo')
-    browserInjectIFrameStub = sinon.stub(browser, 'injectHiddenIFrame')
+    sinon.stub(browser, 'loading')
+    sinon.stub(browser, 'loaded')
+    sinon.stub(browser, 'scrollTo')
     let expectedPledgeData = {
       firstName: 'first name',
       lastName: 'last name',
@@ -33,9 +25,11 @@ describe('Pledge Your Support - Submit Pledge - Not Enough Pledges', () => {
       organisation: 'organisation',
       email: 'test@email.com',
       isOptedIn: true,
-      pledge: 'my pledge'
+      pledge: 'my pledge',
+      isAnonymousPledge: true,
+      postcode: 'postcode'
     }
-    ajaxPostStub = sinon.stub(ajax, 'post')
+    sinon.stub(ajax, 'post')
       .withArgs(api.makeAPledge, expectedPledgeData)
       .returns({
         then: (success, error) => {
@@ -47,7 +41,7 @@ describe('Pledge Your Support - Submit Pledge - Not Enough Pledges', () => {
           })
         }
       })
-    ajaxGetStub = sinon.stub(ajax, 'get')
+    sinon.stub(ajax, 'get')
       .withArgs(api.totalPledges)
       .returns({
         then: (success, error) => {
@@ -59,7 +53,7 @@ describe('Pledge Your Support - Submit Pledge - Not Enough Pledges', () => {
           })
         }
       })
-    setActiveSectionSpy = sinon.spy(sut, 'setActiveSection')
+    sinon.spy(sut, 'setActiveSection')
 
     sut.formModel().firstName('first name')
     sut.formModel().lastName('last name')
@@ -68,6 +62,8 @@ describe('Pledge Your Support - Submit Pledge - Not Enough Pledges', () => {
     sut.formModel().organisation('organisation')
     sut.formModel().isOptedIn(true)
     sut.formModel().pledge('my pledge')
+    sut.formModel().isAnonymousPledge(true)
+    sut.formModel().postcode('postcode')
     sut.submitPledge()
   })
 
@@ -75,7 +71,6 @@ describe('Pledge Your Support - Submit Pledge - Not Enough Pledges', () => {
     browser.loading.restore()
     browser.loaded.restore()
     browser.scrollTo.restore()
-    browser.injectHiddenIFrame.restore()
     ajax.post.restore()
     ajax.get.restore()
     sut.setActiveSection.restore()

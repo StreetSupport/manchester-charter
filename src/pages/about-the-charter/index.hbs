@@ -4,7 +4,8 @@ description: About the Manchester Homelessness Charter
 layout: default.hbs
 permalink: false
 appName: home
-sectionName: charter
+section: charter
+page: aboutthecharter
 ---
 
 <div class="block block--breadcrumbs">
@@ -61,7 +62,7 @@ sectionName: charter
       </ul>
         </div>
         <div class="split__element partnership">
-          <svg class="svg-partnershipLogo-dims partnership__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svgsprite.svg#partnershipLogo"></use></svg>
+          {{>icon name="partnershipLogo" class="partnership__icon" }}
         </div>
       </div>
 
