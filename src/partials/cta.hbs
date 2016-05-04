@@ -1,11 +1,11 @@
 <span class="cta">
   <a class="btn btn--brand-{{brand}}" href="{{link}}">
     {{#if icon}}
-      <span class="btn__icon">
+      <span class="btn__icon btn__icon--{{this.icon}}">
         {{>icon name=this.icon}}
         <span class="btn__overlay"></span>
       </span>
-    {{/if}}    
+    {{/if}}
     <span class="btn__text">{{{name}}}</span>
   </a>
   {{#if label}}
