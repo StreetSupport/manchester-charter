@@ -33,7 +33,7 @@ page: pledgeyoursupport
 
       {{> divider}}
 
-      <p>Make your pledge by completing the form - you can either pick one of the example pledges, or you can create your own. Once you’ve made your pledge, we will look to help you put it into action.</p>
+      <p>Make your pledge by completing the form - you can either write your own pledge, or pick one of the examples. Once you’ve made your pledge, we will look to help you put it into action.</p>
     </div>
   </div>
 </div>
@@ -66,11 +66,11 @@ page: pledgeyoursupport
         <div class="pledge-section pledge-section--3" data-bind="css: { active: section4.isActive() }">
           <h2 class="h1">Thank you for making a pledge.</h2>
           <p>We will be in touch shortly about your pledge. If we can support you in achieving your pledge then please let us know. In the meantime, please share the charter with your networks, so that together we can End Homelessness in Manchester!</p>
-          
+
           <div class="charter-social">
             <ul class="charter-social__list charter-social__list--pledge">
               <li class="charter-social__item">
-                <a href="/manchester-homelessness-charter.pdf">
+                <a href="/manchester-homelessness-charter.pdf" target="_blank" rel="noopener noreferrer">
                   {{>icon name="download" class="charter-social__icon charter-social__icon--download" }}
                 </a>
                 <h3 class="charter-social__title">Download</h3>
@@ -83,7 +83,7 @@ page: pledgeyoursupport
             </ul>
           </div>
 
-          <p>Now you have made a pledge, find out more about the teams being formed to tackle key issues?</p>
+          <p>Now you have made a pledge, find out more about the teams being formed to tackle key issues.</p>
 
           <div class="block__cta pledge__cta">
             {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
@@ -98,7 +98,8 @@ page: pledgeyoursupport
   <div class="container">
     <div class="block__content">
       <h2 class="h2">Working together</h2>
-      <p>Thank you to the organisations and companies who have already pledged their support to the Manchester Homelessness Charter.</p>
+      <p>Thank you to all the organisations and companies who have already pledged their support to the Manchester Homelessness Charter.</p>
+      <!--Link to charter news page -->
     </div>
   </div>
 </div>
@@ -134,29 +135,30 @@ page: pledgeyoursupport
   </div>
   <h3 class="h3">Please select the option that best describes you:</h3>
   <div class="accordion pledge__accordion js-accordion" data-bind="foreach: supporterCategories">
-    <button class="h3 accordion__header js-header">
+    <button data-bind="attr: { 'id': id }" class="h3 accordion__header js-header">
       <span data-bind="text: name"></span>
-      <svg class="svg-plus-dims accordion__icon accordion__icon--open"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svgsprite.svg#plus"></use></svg>
-      <svg class="svg-minus-dims accordion__icon accordion__icon--close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svgsprite.svg#minus"></use></svg>
+      {{>icon name="plus" class="accordion__icon accordion__icon--open" }}
+      {{>icon name="minus" class="accordion__icon accordion__icon--close" }}
     </button>
     <div class="accordion__item js-item">
       <div class="accordion__inner">
         <div class="pledge-select">
-          <h3 class="h3">My pledge is to (please select a pledge below):</h3>
-          <ul class="pledge-select__list" data-bind="foreach: examplePledges">
-            <li class="pledge-select__item">
-              <a href="#" data-bind="text: description, click: selectExamplePledge"></a>
-            </li>
-          </ul>
-          <h3 class="h3">Or write your own pledge:</h3>
+          <h3 class="h3">My pledge is to...</h3>
           <label class="pledge-form__label hide-screen" for="customtype">Your pledge</label>
           <textarea class="pledge-form__textarea" placeholder="Write your own pledge" data-bind="textInput: customPledge"></textarea>
-
           <div class="pledge-form__next">
             <button class="btn btn--brand-e" data-bind="click: useCustomPledge">
               <span class="btn__text">Make your pledge</span>
             </button>
           </div>
+
+          <h3 class="h3">Or select a pledge from the list below:</h3>
+          <ul class="pledge-select__list" data-bind="foreach: examplePledges">
+            <li class="pledge-select__item">
+              <a href="#" data-bind="text: description, click: selectExamplePledge"></a>
+            </li>
+          </ul>
+
         </div>
       </div>
     </div>
