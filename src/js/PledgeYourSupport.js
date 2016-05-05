@@ -26,6 +26,7 @@ let SupporterCategory = function (data, listener) {
   self.examplePledges = data.examplePledges
     .map((p) => new ExamplePledge(p, self))
   self.customPledge = ko.observable()
+  self.id = data.name.replace(/ /g, '-').toLowerCase()
 
   self.pledgeSelected = (pledge) => {
     self.listener.pledgeSelected(pledge)
@@ -92,6 +93,8 @@ let PledgeYourSupport = function () {
 
   self.accordionOpened = (el, context) => {
     self.formModel().supporterCategory(el.childNodes[1].innerHTML)
+    let category = '#' + el.childNodes[1].parentNode.id
+    browser.jumpTo(category)
   }
 
   let buildFormData = () => {

@@ -24,17 +24,30 @@ var loaded = function () {
   getLoader().stop()
 }
 
+var jumpTo = function (id) {
+  var self = this
+  self.id = id
+  let gotoElement = () => {
+    window.location.href = self.id
+  }
+  setTimeout(gotoElement, 250)
+}
+
 var scrollTo = function (selector) {
   let findPos = (obj) => {
     var curtop = 0
     if (obj.offsetParent) {
+      console.log('offsetParent')
+      console.log(obj.offsetParent)
       do {
         curtop += obj.offsetTop
+        console.log('curtop: ' + curtop)
       } while (obj === obj.offsetParent)
       return [curtop]
     }
   }
-  window.scroll(0, findPos(document.querySelector(selector)))
+  let element = document.querySelector(selector)
+  window.scroll(0, findPos(element))
 }
 
 var trackEvent = function (src, action, description) {
@@ -51,5 +64,6 @@ module.exports = {
   loaded: loaded,
   trackEvent: trackEvent,
   scrollTo: scrollTo,
+  jumpTo: jumpTo,
   print: print
 }
