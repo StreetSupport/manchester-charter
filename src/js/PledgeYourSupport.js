@@ -26,7 +26,7 @@ let SupporterCategory = function (data, listener) {
   self.examplePledges = data.examplePledges
     .map((p) => new ExamplePledge(p, self))
   self.customPledge = ko.observable()
-  self.id = data.name.replace(' ', '-').toLowerCase()
+  self.id = data.name.replace(/ /g, '-').toLowerCase()
 
   self.pledgeSelected = (pledge) => {
     self.listener.pledgeSelected(pledge)
