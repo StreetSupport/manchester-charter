@@ -134,10 +134,10 @@ page: pledgeyoursupport
   </div>
   <h3 class="h3">Please select the option that best describes you:</h3>
   <div class="accordion pledge__accordion js-accordion" data-bind="foreach: supporterCategories">
-    <button class="h3 accordion__header js-header">
+    <button data-bind="attr: { 'id': id }" class="h3 accordion__header js-header">
       <span data-bind="text: name"></span>
-      <svg class="svg-plus-dims accordion__icon accordion__icon--open"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svgsprite.svg#plus"></use></svg>
-      <svg class="svg-minus-dims accordion__icon accordion__icon--close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svgsprite.svg#minus"></use></svg>
+      {{>icon name="plus" class="accordion__icon accordion__icon--open" }}
+      {{>icon name="minus" class="accordion__icon accordion__icon--close" }}
     </button>
     <div class="accordion__item js-item">
       <div class="accordion__inner">
