@@ -24,8 +24,7 @@ describe('Pledge Your Support - Select supporter category', () => {
             id: 'kaplaah!'
           }
         }
-      ],
-
+      ]
     }, { })
   })
 
