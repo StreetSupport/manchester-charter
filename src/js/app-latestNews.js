@@ -39,23 +39,22 @@ let Model = function () {
     .get(api.totalPledges)
     .then((result) => {
       let total = result.data.total
-      if(total > 3) {
+      if (total > 6) {
         self.totalPledges(result.data.total)
       }
       self.totalLoaded = true
       self.loadedSomeData()
-    }, (error) => {
+    }, () => {
       browser.redirect('/500')
     })
 
   ajax
-    .get(api.pledges)
+    .get(api.pledges + "?sort-by=creationDate&sort-direction=desc&limit=6")
     .then((result) => {
       self.pledges(result.data.map((p) => new Pledge(p)))
-      console.log(self.pledges())
       self.pledgesLoaded = true
       self.loadedSomeData()
-    }, (error) => {
+    }, () => {
       browser.redirect('/500')
     })
 }
