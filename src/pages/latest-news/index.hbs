@@ -33,7 +33,7 @@ page: latestnews
         <p>Since the official Charter launch, many organisations, businesses and individuals have shown their commitment to end homelessness by making a pledge or joining action groups. We expect to see a lot of progress in the coming weeks, so please keep spreading the word!</p>
       </div>
       {{> divider}}
-      <!-- ko if: pledges.length > 0 -->
+      <!-- ko if: hasPledges -->
       <!-- ko template: { name: 'recent-pledges' } --><!-- /ko -->
       <!-- /ko -->
       <div class="block__cta block__cta--3">

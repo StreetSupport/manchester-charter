@@ -23,6 +23,9 @@ let Model = function () {
   let self = this
   self.totalPledges = ko.observable('lots of')
   self.pledges = ko.observableArray()
+  self.hasPledges = ko.computed(() => {
+    return self.pledges().length > 0
+  }, self)
 
   browser.loading()
 
