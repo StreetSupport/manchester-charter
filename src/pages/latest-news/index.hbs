@@ -33,8 +33,9 @@ page: latestnews
         <p>Since the official Charter launch, many organisations, businesses and individuals have shown their commitment to end homelessness by making a pledge or joining action groups. We expect to see a lot of progress in the coming weeks, so please keep spreading the word!</p>
       </div>
       {{> divider}}
+      <!-- ko if: hasPledges -->
       <!-- ko template: { name: 'recent-pledges' } --><!-- /ko -->
-      {{> divider}}
+      <!-- /ko -->
       <div class="block__cta block__cta--3">
         {{>cta brand="e" link="/read-the-charter/" icon="read" name="Read the <span class=\"line-break\"></span> Charter"}}
         {{>cta brand="e" link="/pledge-your-support/" icon="pledge" name="Pledge your <span class=\"line-break\"></span> Support"}}
@@ -51,9 +52,10 @@ page: latestnews
   <p>There have been <span data-bind="text: totalPledges"></span> pledges made so far in support of the Charter. Here are some of the recent pledges made:</p>
   <ol class="recent-pledges__list" data-bind="foreach: pledges">
     <li class="recent-pledges__item">
-      <p class="recent-pledges__pledge">I pledge to <span data-bind="text: message"></span></p>
+      <p class="recent-pledges__pledge">I pledge to <span data-bind="html: message"></span></p>
       <p class="recent-pledges__author"><span class="recent-pledges__signature" data-bind="text: signature"></span> - <span class="recent-pledges__creation-date" data-bind="text: creationDate"></span></p>
     </li>
   </ol>
 </div>
+{{> divider}}
 </script>
