@@ -48,7 +48,9 @@ page: joinactiongroup
         {{> loading-anim }}
         <div class="pledge__inner">
           <!-- ko ifnot: section4.isActive() -->
-          <h2 class="h1">Join an Action Group</h2>
+          <div class="pledge__heading">
+            <h2 class="h1 pledge__header">Join an Action Group</h2>
+          </div>
 
           <div class="step">
             <ol class="step__list">
@@ -84,7 +86,7 @@ page: joinactiongroup
                 </div>
               </div>
               <div class="action-select__detail" data-bind="with: formModel">
-                <h2 class="h2">Introduce yourself</h2>
+                <h2 class="h3">Introduce yourself</h2>
                 <div class="action-select__description">
                   <p>We’d love to know more about you. How can you contribute to this action group? Have you ever been homeless? Do you have any relevant skills or professional experience? How much time can you commit? Do you have any questions you’d like us to answer?</p>
                   <p>(The Chairperson of this action group will be in touch with more information.)</p>

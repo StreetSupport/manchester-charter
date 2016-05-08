@@ -21,9 +21,33 @@
   &__copy {
     display: block;
 
-
     &--inline {
       display: inline;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+
+    &:before,
+    &:after {
+      background-color: #fff;
+      content: '\a0';
+      flex-grow: 1;
+      height: 1px;
+      position: relative;
+      top: 28px;
+    }
+
+    &:before {
+      margin-right: 20px;
+    }
+
+    &:after {
+      margin-left: 20px;
     }
   }
 
@@ -57,6 +81,5 @@
       bottom: 0;
       transform: translateX(-50%);
     }
-
   }
 }
