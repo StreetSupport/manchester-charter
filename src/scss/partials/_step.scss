@@ -11,26 +11,50 @@
   }
 
   &__item {
-    margin: 0 10px 0 0;
-    padding: 6px 0 0 0;
+    margin: 0 0 0 20px;
+    padding: 7px 0 0 0;
     display: inline-block;
-    border: 1px solid $brand-f;
     border-radius: 20px;
-    background: white;
+    background-color: #fff;
+    color: $brand-m;
     height: 36px;
     width: 36px;
-    color: #111;
     text-decoration: none;
+    font-family: $font-headline;
+    font-weight: $font-headline-weight;
+    position: relative;
+    z-index: 2;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 4px;
+      background-color: #fff;
+      position: absolute;
+      z-index: -1;
+      left: -68%;
+      top: 17px;
+    }
+
+    &:first-child {
+      &::after {
+        content: none;
+      }
+    }
+
+    &.active {
+      background-color: $brand-d;
+      color: #fff;
+
+      &::after {
+        background-color: $brand-d;
+      }
+    }
 
     a {
       color: inherit;
       text-decoration: none;
-    }
-
-    &.active {
-      color: $brand-d;
-      font-family: $font-headline;
-      font-weight: $font-headline-weight;
+      display: block;
     }
   }
 }
