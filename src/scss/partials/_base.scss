@@ -22,6 +22,17 @@ body {
   font-size: $base-font-size;
 }
 
+@include mq($until: m) {
+  html,
+  body {
+    &.is-active {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+  }
+}
+
 // Make sure embeds and iframes fit their responsive containers
 embed,
 iframe,
