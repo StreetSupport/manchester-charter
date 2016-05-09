@@ -48,7 +48,9 @@ page: joinactiongroup
         {{> loading-anim }}
         <div class="pledge__inner">
           <!-- ko ifnot: section4.isActive() -->
-          <h2 class="h1">Join an Action Group</h2>
+          <div class="pledge__heading">
+            <h2 class="h1 pledge__header">Join an Action Group</h2>
+          </div>
 
           <div class="step">
             <ol class="step__list">
@@ -84,29 +86,29 @@ page: joinactiongroup
                 </div>
               </div>
               <div class="action-select__detail" data-bind="with: formModel">
-                <h2 class="h2">Introduce yourself</h2>
+                <h2 class="h3">Introduce yourself</h2>
                 <div class="action-select__description">
                   <p>We’d love to know more about you. How can you contribute to this action group? Have you ever been homeless? Do you have any relevant skills or professional experience? How much time can you commit? Do you have any questions you’d like us to answer?</p>
                   <p>(The Chairperson of this action group will be in touch with more information.)</p>
                 </div>
 
                 <div class="pledge-form__input-field">
-                  <label class="pledge-form__label hide-screen" for="pledge">Please write about your experience *</label>
-                  <textarea class="pledge-form__textarea pledge-form__textarea--join-action-group" id="pledge" name="pledge" data-bind="textInput: pledge" placeholder="Please write about your experience *"></textarea>
+                  <label class="pledge-form__label hide-screen" for="pledge">Please write about your experience (required)</label>
+                  <textarea class="pledge-form__textarea pledge-form__textarea--join-action-group" id="pledge" name="pledge" data-bind="textInput: pledge" placeholder="Please write about your experience (required)"></textarea>
                   <a class="small pledge-form__back-button" data-bind="click: $parent.setSection1Active">Select a different action group</a>
                 </div>
 
                 <ul class="pledge-form__list">
                   <li class="pledge-form__item">
-                    <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
+                    <label class="pledge-form__label hide-screen" for="firstName">First Name (required)</label>
                     <div class="pledge-form__input-field">
-                      <input class="pledge-form__input pledge-form__input" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
+                      <input class="pledge-form__input pledge-form__input" type="text" id="firstName" name="firstName" placeholder="First Name (required)" data-bind="textInput: firstName"></input>
                     </div>
                   </li>
                   <li class="pledge-form__item">
-                    <label class="pledge-form__label hide-screen" for="lastName">Last Name *</label>
+                    <label class="pledge-form__label hide-screen" for="lastName">Last Name (required)</label>
                     <div class="pledge-form__input-field">
-                      <input class="pledge-form__input pledge-form__input" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
+                      <input class="pledge-form__input pledge-form__input" type="text" id="lastName" name="lastName" placeholder="Last Name (required)" data-bind="textInput: lastName"></input>
                     </div>
                   </li>
                   <li class="pledge-form__item">
@@ -114,9 +116,9 @@ page: joinactiongroup
                     <input class="pledge-form__input pledge-form__input" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
                   </li>
                   <li class="pledge-form__item">
-                    <label class="pledge-form__label hide-screen" for="email">Email *</label>
+                    <label class="pledge-form__label hide-screen" for="email">Email (required)</label>
                     <div class="pledge-form__input-field">
-                      <input class="pledge-form__input pledge-form__input" type="text" id="email" name="email" placeholder="Email Address *" data-bind="textInput: email"></input>
+                      <input class="pledge-form__input pledge-form__input" type="text" id="email" name="email" placeholder="Email Address (required)" data-bind="textInput: email"></input>
                     </div>
                     <span class="pledge__copy small">(Street Support will never share your email with a 3rd party.)</span>
                   </li>

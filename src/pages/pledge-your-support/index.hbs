@@ -45,7 +45,7 @@ page: pledgeyoursupport
         {{> loading-anim }}
         <div class="pledge__inner">
           <!-- ko ifnot: section4.isActive() -->
-          <h2 class="h1">Make a Pledge</h2>
+          <h2 class="h1 pledge__header">Make a Pledge</h2>
           <div class="step">
             <ol class="step__list">
               <li class="step__item" data-bind="css: { active: section1.isActive() }"><a href="#" data-bind="click: setSection1Active">1</a></li>
@@ -170,13 +170,13 @@ page: pledgeyoursupport
   <h3 class="h3">Confirm your pledge by completing your contact details (you can also edit your pledge):</h3>
   <div class="pledge__highlight">
     <span class="h3 pledge__copy--inline">I</span>
-    <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
+    <label class="pledge-form__label hide-screen" for="firstName">First Name (required)</label>
     <div class="pledge-form__input-field pledge-form__input-field--inline">
-      <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
+      <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name (required)" data-bind="textInput: firstName"></input>
     </div>
-    <label class="pledge-form__label hide-screen" for="lastName">Last Name *</label>
+    <label class="pledge-form__label hide-screen" for="lastName">Last Name (required)</label>
     <div class="pledge-form__input-field pledge-form__input-field--inline">
-      <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
+      <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name (required)" data-bind="textInput: lastName"></input>
     </div>
     <span class="pledge__copy">pledge to support the Manchester Homelessness Charter. I pledge to...</span>
   </div>
@@ -192,9 +192,9 @@ page: pledgeyoursupport
       <input class="pledge-form__input" type="text" id="organisation" name="organisation" placeholder="Organisation/Business Name (if applicable)" data-bind="textInput: organisation"></input>
     </li>
     <li class="pledge-form__item">
-      <label class="pledge-form__label hide-screen" for="email">Email Address *</label>
+      <label class="pledge-form__label hide-screen" for="email">Email Address (required)</label>
       <div class="pledge-form__input-field">
-        <input class="pledge-form__input" type="text" id="email" name="email" placeholder="Email Address *" data-bind="textInput: email"></input>
+        <input class="pledge-form__input" type="text" id="email" name="email" placeholder="Email Address (required)" data-bind="textInput: email"></input>
       </div>
       <span class="pledge__copy small">(Street Support will never share your email with a 3rd party.)</span>
     </li>
