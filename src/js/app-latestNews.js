@@ -52,7 +52,7 @@ let Model = function () {
     })
 
   ajax
-    .get(api.pledges + "?sort-by=creationDate&sort-direction=desc&limit=6")
+    .get(api.pledges + '?sort-by=creationDate&sort-direction=desc&limit=20')
     .then((result) => {
       self.pledges(result.data.map((p) => new Pledge(p)))
       self.pledgesLoaded = true
