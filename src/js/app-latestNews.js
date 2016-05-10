@@ -42,7 +42,7 @@ let Model = function () {
     .get(api.totalPledges)
     .then((result) => {
       let total = result.data.total
-      if (total > 6) {
+      if (total >= 5) {
         self.totalPledges(result.data.total)
       }
       self.totalLoaded = true
