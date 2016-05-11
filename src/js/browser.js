@@ -37,11 +37,8 @@ var scrollTo = function (selector) {
   let findPos = (obj) => {
     var curtop = 0
     if (obj.offsetParent) {
-      console.log('offsetParent')
-      console.log(obj.offsetParent)
       do {
         curtop += obj.offsetTop
-        console.log('curtop: ' + curtop)
       } while (obj === obj.offsetParent)
       return [curtop]
     }
