@@ -9,7 +9,6 @@ let ko = require('knockout')
 let moment = require('moment')
 
 let Pledge = function (data) {
-  console.log(data)
   let self = this
   let pledge = data.pledge
   self.message = pledge.charAt(0).toLowerCase() + pledge.substring(1)
