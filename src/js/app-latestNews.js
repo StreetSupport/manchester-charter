@@ -10,8 +10,11 @@ let moment = require('moment')
 
 let Pledge = function (data) {
   let self = this
+  let pledgePrefix = data.organisation !== null && data.organisation.length > 0
+    ? 'We pledge to '
+    : 'I pledge to '
   let pledge = data.pledge
-  self.message = pledge.charAt(0).toLowerCase() + pledge.substring(1)
+  self.message = pledgePrefix + pledge.charAt(0).toLowerCase() + pledge.substring(1)
   self.creationDate = moment(data.creationDate).format('Do MMMM YYYY')
   self.signature = data.organisation !== null && data.organisation.length > 0
     ? data.organisation
