@@ -41,7 +41,7 @@ let Model = function () {
     .get(api.totalPledges)
     .then((result) => {
       let total = result.data.total
-      if (total > 6) {
+      if (total >= 5) {
         self.totalPledges(result.data.total)
       }
       self.totalLoaded = true
@@ -51,7 +51,7 @@ let Model = function () {
     })
 
   ajax
-    .get(api.pledges + "?sort-by=creationDate&sort-direction=desc&limit=6")
+    .get(api.pledges + '?sort-by=creationDate&sort-direction=desc&limit=20')
     .then((result) => {
       self.pledges(result.data.map((p) => new Pledge(p)))
       self.pledgesLoaded = true
