@@ -9,10 +9,12 @@ let ko = require('knockout')
 let moment = require('moment')
 
 let Pledge = function (data) {
-  console.log(data)
   let self = this
+  let pledgePrefix = data.organisation !== null && data.organisation.length > 0
+    ? 'We pledge to '
+    : 'I pledge to '
   let pledge = data.pledge
-  self.message = pledge.charAt(0).toLowerCase() + pledge.substring(1)
+  self.message = pledgePrefix + pledge.charAt(0).toLowerCase() + pledge.substring(1)
   self.creationDate = moment(data.creationDate).format('Do MMMM YYYY')
   self.signature = data.organisation !== null && data.organisation.length > 0
     ? data.organisation
@@ -42,7 +44,7 @@ let Model = function () {
     .get(api.totalPledges)
     .then((result) => {
       let total = result.data.total
-      if (total > 6) {
+      if (total >= 5) {
         self.totalPledges(result.data.total)
       }
       self.totalLoaded = true
