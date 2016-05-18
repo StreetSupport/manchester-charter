@@ -23,16 +23,22 @@ let Pledge = function (data) {
 
 let Model = function () {
   let self = this
-  self.totalPledges = ko.observable('lots of')
-  self.pledges = ko.observableArray()
-  self.hasPledges = ko.computed(() => {
-    return self.pledges().length > 0
-  }, self)
 
-  browser.loading()
+  self.init = () => {
+    self.totalPledges = ko.observable('lots of')
+    self.pledges = ko.observableArray()
+    self.hasPledges = ko.computed(() => {
+      return self.pledges().length > 0
+    }, self)
 
-  self.totalLoaded = false
-  self.pledgesLoaded = false
+    browser.loading()
+
+    self.totalLoaded = false
+    self.pledgesLoaded = false
+
+    self.loadPledges()
+    self.getTotal()
+  }
 
   self.loadedSomeData = () => {
     if (self.totalLoaded && self.pledgesLoaded) {
@@ -40,7 +46,23 @@ let Model = function () {
     }
   }
 
-  ajax
+  self.loadPledges = () => {
+    ajax
+    .get(api.pledges + '?sort-by=creationDate&sort-direction=desc&limit=20')
+    .then((result) => {
+      let pledges = result.data
+        .sort((a, b) => a.isFeatured < b.isFeatured)
+        .map((p) => new Pledge(p))
+      self.pledges(pledges)
+      self.pledgesLoaded = true
+      self.loadedSomeData()
+    }, () => {
+      browser.redirect('/500')
+    })
+  }
+
+  self.getTotal = () => {
+    ajax
     .get(api.totalPledges)
     .then((result) => {
       let total = result.data.total
@@ -52,16 +74,9 @@ let Model = function () {
     }, () => {
       browser.redirect('/500')
     })
+  }
 
-  ajax
-    .get(api.pledges + '?sort-by=creationDate&sort-direction=desc&limit=20')
-    .then((result) => {
-      self.pledges(result.data.map((p) => new Pledge(p)))
-      self.pledgesLoaded = true
-      self.loadedSomeData()
-    }, () => {
-      browser.redirect('/500')
-    })
+  self.init()
 }
 
 ko.applyBindings(new Model())
