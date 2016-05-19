@@ -155,7 +155,7 @@ page: pledgeyoursupport
           <h3 class="h3">Or select a pledge from the list below:</h3>
           <ul class="pledge-select__list" data-bind="foreach: examplePledges">
             <li class="pledge-select__item">
-              <a href="#" data-bind="text: description, click: selectExamplePledge"></a>
+              <a href="#" class="pledge-select__link" data-bind="text: description, click: selectExamplePledge"></a>
             </li>
           </ul>
 
@@ -203,12 +203,16 @@ page: pledgeyoursupport
       <input class="pledge-form__input" type="text" id="postcode" name="postcode" placeholder="Your postcode" data-bind="textInput: postcode"></input>
     </li>
     <li class="pledge-form__item pledge-form__item--checkbox">
-      <input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
-      <label class="pledge-form__label" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
+      <label class="pledge-form__label" for="subscribe">
+        <input class="pledge-form__checkbox" type="checkbox" name="subscribe" id="subscribe" data-bind="checked: isOptedIn">
+        Select to receive email updates from Street Support about homelessness and the Charter
+      </label>
     </li>
     <li class="pledge-form__item pledge-form__item--checkbox">
-      <input class="pledge-form__checkbox" type="checkbox" name="isAnonymousPledge" data-bind="checked: isAnonymousPledge">
-      <label class="pledge-form__label" for="isAnonymousPledge">Select to hide your Pledge</label>
+      <label class="pledge-form__label" for="isAnonymousPledge">
+        <input class="pledge-form__checkbox" type="checkbox" name="isAnonymousPledge" id="isAnonymousPledge" data-bind="checked: isAnonymousPledge">
+        Select to hide your Pledge
+      </label>
     </li>
   </ul>
 

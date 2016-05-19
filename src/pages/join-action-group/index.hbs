@@ -61,8 +61,9 @@ page: joinactiongroup
           <!-- /ko -->
           <form action="" class="pledge-form js-pledge-form">
             <div class="pledge-section pledge-section--1" data-bind="css: { active: section1.isActive() }">
-              <h3 class="h3">Please select the action group you are interested in joining:</h3>
+              <h3 class="h3">Please select the action group you are interested in joining.</h3>
               <div class="action-select">
+                <p><small>If there is an issue not listed here which you think worthy of an action group, please email your suggestions to <a href="mailto:actiongroups@streetsupport.net">actiongroups@streetsupport.net</a>.</small></p>
                 <ul class="action-select__list" data-bind="foreach: actionGroups">
                   <li class="action-select__item">
                     <button class="btn action-select__btn" data-bind="click: selectActionGroup">
@@ -73,7 +74,6 @@ page: joinactiongroup
                     </a>
                   </li>
                 </ul>
-                <p>If there is an issue not listed here, which you think worthy of an action group please email your suggestions to <a href="mailto:actiongroups@streetsupport.net">actiongroups@streetsupport.net</a>.</p>
               </div>
             </div>
             <div class="pledge-section pledge-section--2" data-bind="css: { active: section2.isActive() }">
@@ -123,8 +123,10 @@ page: joinactiongroup
                     <span class="pledge__copy small">(Street Support will never share your email with a 3rd party.)</span>
                   </li>
                   <li class="pledge-form__item pledge-form__item--checkbox">
-                    <input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
-                    <label class="pledge-form__label pledge-form__label" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
+                    <label class="pledge-form__label pledge-form__label" for="subscribe">
+                      <input class="pledge-form__checkbox" type="checkbox" name="subscribe" id="subscribe" data-bind="checked: isOptedIn">
+                      Select to receive email updates from Street Support about homelessness and the Charter
+                    </label>
                   </li>
                 </ul>
 
