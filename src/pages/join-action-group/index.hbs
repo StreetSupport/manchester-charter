@@ -4,22 +4,25 @@ description: Join an action group to work collaboratively to end homelessness in
 layout: default.hbs
 permalink: false
 appName: joinActionGroup
-sectionName: charter
+section: charter
+page: joinactiongroup
 ---
+
+{{>loading-anim }}
 
 <div class="block block--breadcrumbs">
   <div class="container">
     <ol class="breadcrumbs__list">
       <li class="breadcrumbs__item"><a href="https://streetsupport.net/">Home</a></li>
       <li class="breadcrumbs__item"><a href="/">Charter</a></li>
-      <li class="breadcrumbs__item">Join an Action Group</li>
+      <li class="breadcrumbs__item">Action Groups</li>
     </ol>
   </div>
 </div>
 
 <div class="block block--subpage-header">
   <div class="container">
-    <h1 class="h1 block__header">Join an Action Group</h1>
+    <h1 class="h1 block__header">Action Groups</h1>
     <p class="h2 block__sub-header">Manchester Homelessness Charter</p>
   </div>
 </div>
@@ -28,22 +31,14 @@ sectionName: charter
   <div class="container">
     <div class="block__content">
       <h2 class="h2">What is an action group?</h2>
-      <p>Eight action groups have been created as a result of speaking to people experiencing homeless and organisations which are working hard to overcome their challenges. Each action group will concentrate on one key issue, such as mental health, employment or emergency accommodation.</p>
+      <p>The 8 action groups will each tackle a key challenge that people experiencing homelessness regularly face, such as access to mental health support, emergency accommodation, and employment. Each group will include people who have experienced homelessness, as well as those who have relevant skills or professional expertise.</p>
 
       {{> divider}}
 
-      <h2 class="h2">Who can join an action group?</h2>
-      <p>We are looking for a range of people from different backgrounds to work together on solutions to these important challenges. The groups will include people who have experienced homelessness, as well as those who have relevant skills or professional expertise. If you are interested in any of the action groups please get in touch.</p>
+      <h2 class="h2">How will the action groups work?</h2>
+      <p>Each group will decide how they want to work together, but we expect no more than one meeting a month. The groups will feedback progress to the charter driving group at least every 3 months, and we will publish regular updates on this website.</p>
+      <p>If you feel there is an action group that might benefit from your experience, please submit your details, and the group Chairperson will be in touch with more information.</p>
 
-      {{> divider}}
-
-      <h2 class="h2">Why join an action group?</h2>
-      <p>By joining an action group you’ll have the opportunity to make use of your skills and experience, build strong networks with people who have the same dedication to ending homelessness, and be part of a team which leads the way in tackling key issues.</p>
-
-      {{> divider}}
-
-      <h2 class="h2">How will the groups work?</h2>
-      <p>Once you have identified an action group that will benefit from your experience, you will be contacted by the group Chairperson who will be responsible for keeping the team focussed and organising meetings. Each group will decide themselves how to work effectively, but we expect no more than one meeting a month.</p>
     </div>
   </div>
 </div>
@@ -52,10 +47,11 @@ sectionName: charter
   <div class="container">
     <div class="block__content">
       <div class="pledge js-pledge">
-        {{> loading-anim }}
         <div class="pledge__inner">
           <!-- ko ifnot: section4.isActive() -->
-          <h2 class="h1">Join an Action Group</h2>
+          <div class="pledge__heading">
+            <h2 class="h1 pledge__header">Join an Action Group</h2>
+          </div>
 
           <div class="step">
             <ol class="step__list">
@@ -66,8 +62,9 @@ sectionName: charter
           <!-- /ko -->
           <form action="" class="pledge-form js-pledge-form">
             <div class="pledge-section pledge-section--1" data-bind="css: { active: section1.isActive() }">
-              <h3 class="h3">Please select the action group you are interested in joining:</h3>
+              <h3 class="h3">Please select the action group you are interested in joining.</h3>
               <div class="action-select">
+                <p><small>If there is an issue not listed here which you think worthy of an action group, please email your suggestions to <a href="mailto:actiongroups@streetsupport.net">actiongroups@streetsupport.net</a>.</small></p>
                 <ul class="action-select__list" data-bind="foreach: actionGroups">
                   <li class="action-select__item">
                     <button class="btn action-select__btn" data-bind="click: selectActionGroup">
@@ -78,7 +75,6 @@ sectionName: charter
                     </a>
                   </li>
                 </ul>
-                <p>If there is an issue not listed here, which you think worthy of an action group please email your suggestions to <a href="mailto:actiongroups@streetsupport.net">actiongroups@streetsupport.net</a>.</p>
               </div>
             </div>
             <div class="pledge-section pledge-section--2" data-bind="css: { active: section2.isActive() }">
@@ -91,28 +87,29 @@ sectionName: charter
                 </div>
               </div>
               <div class="action-select__detail" data-bind="with: formModel">
-                <h2 class="h2">Introduce yourself</h2>
+                <h2 class="h3">Introduce yourself</h2>
                 <div class="action-select__description">
-                  <p>We’d love to know more about you. How can you contribute to this action group? Have you ever been homeless? Do you have any relevant skills or professional experience? How much time can you commit? Do you have any questions you’d like us to answer? (The Chairperson of this action group will be in touch).</p>
+                  <p>We’d love to know more about you. How can you contribute to this action group? Have you ever been homeless? Do you have any relevant skills or professional experience? How much time can you commit? Do you have any questions you’d like us to answer?</p>
+                  <p>(The Chairperson of this action group will be in touch with more information.)</p>
                 </div>
 
                 <div class="pledge-form__input-field">
-                  <label class="pledge-form__label hide-screen" for="pledge">Please write about your experience *</label>
-                  <textarea class="pledge-form__textarea pledge-form__textarea--join-action-group" id="pledge" name="pledge" data-bind="textInput: pledge" placeholder="Please write about your experience *"></textarea>
-                  <a class="small pledge-form__back-button" data-bind="click: $parent.setSection1Active">< Select a different pledge</a>
+                  <label class="pledge-form__label hide-screen" for="pledge">Please write about your experience (required)</label>
+                  <textarea class="pledge-form__textarea pledge-form__textarea--join-action-group" id="pledge" name="pledge" data-bind="textInput: pledge" placeholder="Please write about your experience (required)"></textarea>
+                  <a class="small pledge-form__back-button" data-bind="click: $parent.setSection1Active">Select a different action group</a>
                 </div>
 
                 <ul class="pledge-form__list">
                   <li class="pledge-form__item">
-                    <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
+                    <label class="pledge-form__label hide-screen" for="firstName">First Name (required)</label>
                     <div class="pledge-form__input-field">
-                      <input class="pledge-form__input pledge-form__input" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
+                      <input class="pledge-form__input pledge-form__input" type="text" id="firstName" name="firstName" placeholder="First Name (required)" data-bind="textInput: firstName"></input>
                     </div>
                   </li>
                   <li class="pledge-form__item">
-                    <label class="pledge-form__label hide-screen" for="lastName">Last Name *</label>
+                    <label class="pledge-form__label hide-screen" for="lastName">Last Name (required)</label>
                     <div class="pledge-form__input-field">
-                      <input class="pledge-form__input pledge-form__input" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
+                      <input class="pledge-form__input pledge-form__input" type="text" id="lastName" name="lastName" placeholder="Last Name (required)" data-bind="textInput: lastName"></input>
                     </div>
                   </li>
                   <li class="pledge-form__item">
@@ -120,15 +117,17 @@ sectionName: charter
                     <input class="pledge-form__input pledge-form__input" type="text" id="organisation" name="organisation" placeholder="Organisation Name" data-bind="textInput: organisation"></input>
                   </li>
                   <li class="pledge-form__item">
-                    <label class="pledge-form__label hide-screen" for="email">Email *</label>
+                    <label class="pledge-form__label hide-screen" for="email">Email (required)</label>
                     <div class="pledge-form__input-field">
-                      <input class="pledge-form__input pledge-form__input" type="text" id="email" name="email" placeholder="Email Address *" data-bind="textInput: email"></input>
+                      <input class="pledge-form__input pledge-form__input" type="text" id="email" name="email" placeholder="Email Address (required)" data-bind="textInput: email"></input>
                     </div>
                     <span class="pledge__copy small">(Street Support will never share your email with a 3rd party.)</span>
                   </li>
                   <li class="pledge-form__item pledge-form__item--checkbox">
-                    <input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
-                    <label class="pledge-form__label pledge-form__label" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
+                    <label class="pledge-form__label pledge-form__label" for="subscribe">
+                      <input class="pledge-form__checkbox" type="checkbox" name="subscribe" id="subscribe" data-bind="checked: isOptedIn">
+                      Select to receive email updates from Street Support about homelessness and the Charter
+                    </label>
                   </li>
                 </ul>
 
@@ -145,13 +144,13 @@ sectionName: charter
             <h2 class="h2">Thank you for your interest</h2>
             <p>Thank you for offering to be part of this action group. The Chairperson for this group will be in touch shortly with more information.</p>
             <p>Please encourage your friends and colleagues to join an action group, so their skills and experience can help end homelessness too.</p>
+
             <div class="charter-social">
-              <ul class="charter-social__list">
-                <li class="charter-social__item">Encourage your friends to join an Action Group:
-                <div class="social-share">
-                  <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="https://charter.streetsupport.net/join-action-group/" data-text="I am using my skills and experience to help end homelessness in Manchester. Show your support and join an action group to tackle key issues." data-via="streetsupportuk" data-dnt="true">Tweet</a>
-                  <div class="fb-share-button" data-href="https://charter.streetsupport.net" data-layout="button"></div>
-                </div>
+              <ul class="charter-social__list charter-social__list--action-group">
+                <li class="charter-social__item charter-social__item--share">
+                  {{> facebook urlToShare="https://charter.streetsupport.net/read-the-charter/" pageTitle="Read the Manchester Homelessness Charter" pageDescription="Read the Manchester Homelessness Charter - a vision to end homelessness in Manchester." }}
+                  {{> twitter urlToShare="https://charter.streetsupport.net/read-the-charter/" tweet="Read how Manchester is working together to end homelessness with the Homelessness Charter." }}
+                  <h3 class="charter-social__title">Share</h3>
                 </li>
               </ul>
             </div>

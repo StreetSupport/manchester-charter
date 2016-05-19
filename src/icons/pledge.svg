@@ -1,29 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="289px" height="206.8px" viewBox="0 0 289 206.8" enable-background="new 0 0 289 206.8" xml:space="preserve">
-<g display="none">
-	<defs>
-		<path id="SVGID_1_" d="M0,206V11.3C0,5.1,5.1,0,11.3,0h266.3c6.3,0,11.3,5.1,11.3,11.3V206H0z"/>
-	</defs>
-	<clipPath id="SVGID_2_" display="inline">
-		<use xlink:href="#SVGID_1_"  overflow="visible"/>
-	</clipPath>
-	<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="144.5" y1="276" x2="144.5" y2="-5.978109e-09">
-		<stop  offset="0.3164" style="stop-color:#FFFFFF"/>
-		<stop  offset="1" style="stop-color:#ADE1F9"/>
-	</linearGradient>
-	<path display="inline" clip-path="url(#SVGID_2_)" fill="url(#SVGID_3_)" d="M277.7,276H11.3C5.1,276,0,270.9,0,264.7V11.3
-		C0,5.1,5.1,0,11.3,0h266.3c6.3,0,11.3,5.1,11.3,11.3v253.3C289,270.9,283.9,276,277.7,276z"/>
-</g>
+<svg version="1.1" id="pledge" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 166.3341 156.25" enable-background="new 0 0 166.3341 156.25" xml:space="preserve">
+<path fill="#005777" d="M112.1074,156.25H7.4225C3.3232,156.25,0,152.9268,0,148.8275V7.4225C0,3.3232,3.3232,0,7.4225,0h104.6849
+	c4.0993,0,7.4225,3.3232,7.4225,7.4225v141.405C119.5299,152.9268,116.2068,156.25,112.1074,156.25z"/>
+<rect x="6.3555" y="7.2956" fill="#FFFFFF" width="106" height="142"/>
+<rect x="16.8555" y="24.2956" fill="#939598" width="49.5" height="6.5"/>
+<rect x="16.8555" y="93.6289" fill="#939598" width="49.5" height="6.5"/>
+<rect x="16.8555" y="43.7956" fill="#939598" width="21.7285" height="6.5"/>
+<rect x="16.8555" y="77.7123" fill="#939598" width="13.5156" height="6.5"/>
+<rect x="86.8555" y="77.7123" fill="#939598" width="13.5156" height="6.5"/>
+<rect x="36.8555" y="77.7123" fill="#939598" width="42.6068" height="6.5"/>
+<rect x="45.9912" y="43.7956" fill="#939598" width="21.7285" height="6.5"/>
+<rect x="73.9912" y="43.7956" fill="#939598" width="27.6475" height="6.5"/>
+<rect x="74.0273" y="24.2956" fill="#939598" width="27.3281" height="6.5"/>
+<rect x="55.4355" y="61.0456" fill="#939598" width="45.9199" height="6.5"/>
+<rect x="17.4355" y="61.0456" fill="#939598" width="32.4629" height="6.5"/>
+<polyline fill="none" stroke="#00ADEE" stroke-width="2" stroke-miterlimit="10" points="16.3555,133.6289 27.6888,115.9623 
+	34.6888,127.9623 43.0221,118.9623 50.0221,128.2956 59.0221,121.6289 69.6888,128.6289 "/>
+<path opacity="0.43" fill="#002B3C" d="M112.1074,0h-53.752v156.25h53.752c4.0994,0,7.4225-3.3232,7.4225-7.4225V7.4225
+	C119.53,3.3232,116.2068,0,112.1074,0z"/>
 <g>
 	<g>
-		<path fill="#C04598" d="M169.1,83.4c5.6-14.9-3-40.6-23.5-41.6c-0.3,0-0.3,0-0.7,0c-0.3,0-0.3,0-0.7,0
-			c-20.5,1-28.7,26.8-23.5,41.6c1.3,4,6.6,14.2,12.9,26.1c-11.9,21.1-21.5,36-21.5,36l10.6,24.1c0,0,10.9-19.2,22.1-39.7
-			c11.2,20.5,22.1,39.7,22.1,39.7l10.6-24.1c0,0-9.6-14.9-21.5-36C162.5,97.3,167.8,87.4,169.1,83.4z M145,89.1
-			c-6.3-11.6-10.9-20.8-10.9-23.5c0-7.3,8.6-8.3,10.9-8.3c2.6,0.3,10.9,1.3,10.9,8.3C155.9,67.9,151.3,77.5,145,89.1z"/>
+		
+			<rect x="70.9993" y="80.6348" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -30.315 110.3444)" fill="#FFCA05" width="94.081" height="22.2617"/>
+		
+			<rect x="149.5694" y="43.8953" transform="matrix(0.7071 -0.7071 0.7071 0.7071 6.4242 125.5618)" fill="#F69A7E" width="10.42" height="22.2617"/>
+		<polygon fill="#FFDCAD" points="76.9142,132.8913 92.6556,132.8913 76.9142,117.1499 		"/>
+		<polygon fill="#48484A" points="76.9142,132.8913 82.341,132.8913 76.9142,127.4645 		"/>
 	</g>
-	<path fill="#C070AD" d="M144.6,88.2c-6.1-11.2-10.5-20.1-10.5-22.6c0-6.9,7.7-8.1,10.5-8.2V41.8c-0.1,0-0.1,0-0.2,0
-		c-20.5,1-28.7,26.8-23.5,41.6c1.3,4,6.6,14.2,12.9,26.1c-11.9,21.1-21.5,36-21.5,36l10.6,24.1c0,0,10.6-18.7,21.7-38.8V88.2z"/>
+	<polygon fill="#E6BC81" points="76.9411,132.8913 92.6556,132.8913 84.7984,125.0341 	"/>
+	
+		<rect x="74.9415" y="90.1519" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -31.9479 114.287)" fill="#F9A51A" width="94.081" height="11.1118"/>
+	<polygon fill="#323031" points="76.9411,132.8913 82.3411,132.8913 79.6411,130.1914 	"/>
+	
+		<rect x="153.5115" y="53.4124" transform="matrix(0.7071 -0.7071 0.7071 0.7071 4.7916 129.5044)" fill="#EC1C24" width="10.4199" height="11.1118"/>
 </g>
 </svg>

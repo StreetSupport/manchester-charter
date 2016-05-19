@@ -23,6 +23,19 @@ if [[ $TRAVIS_BRANCH == 'release' ]]
     AZURE_WEBSITE=$PROD_AZURE_WEBSITE_W_EUR
 fi
 
+# block robots if not live
+if [[ $TRAVIS_BRANCH == 'develop' ]] || [[ $TRAVIS_BRANCH == 'uat' ]]
+  then
+    cd src/files
+    echo "User-agent: *" > robots.txt
+    echo "Disallow /" >> robots.txt
+
+    echo "robots.txt rewritten to:"
+    cat robots.txt
+
+    cd ../../
+fi
+
 # Get the commit details
 THE_COMMIT=`git rev-parse HEAD`
 

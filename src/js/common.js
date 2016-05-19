@@ -4,7 +4,7 @@ import Holder from 'holderjs'
 import Svg4everybody from 'svg4everybody'
 import 'feature.js'
 import nav from './nav.js'
-// import analytics from './analytics.js'
+import analytics from './analytics.js'
 
 // Cuts the mustard check to add js class
 if ('querySelector' in document && 'addEventListener' in window) {
@@ -13,7 +13,7 @@ if ('querySelector' in document && 'addEventListener' in window) {
   html.classList.add('js')
 
   nav.init()
-  // analytics.init()
+  analytics.init()
 
   // Check if we need fastclick
   if ('touchAction' in document.body.style) {

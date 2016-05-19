@@ -1,0 +1,42 @@
+.recent-pledges {
+  position: relative;
+  @include cf();
+
+  &__list {
+    padding: 0;
+    margin: 20px 0px;
+  }
+
+  &__item {
+    list-style: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    @include mq($from: m) {
+      @include pre(1 of $grid-column);
+      @include post(1 of $grid-column);
+    }
+  }
+
+  &__pledge {
+    margin-bottom: 10px;
+    font-size: 20px;
+    &:before {
+      content: open-quote
+    }
+    &:after {
+      content: close-quote
+    }
+  }
+
+  &__author {
+    margin-top: 0;
+  }
+
+  &__signature {
+    font-weight: bold;
+  }
+
+  &__creation-date {
+    font-style: italic
+  }
+}

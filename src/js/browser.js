@@ -1,5 +1,5 @@
 /*
-  global ga
+  global ga, document
 */
 
 var Spinner = require('spin.js')
@@ -9,6 +9,7 @@ var redirect = function (url) {
 }
 
 var loaderAnim
+
 var getLoader = function () {
   if (loaderAnim === undefined) {
     loaderAnim = new Spinner()
@@ -16,12 +17,27 @@ var getLoader = function () {
   return loaderAnim
 }
 
+let getBody = () => {
+  return document.getElementsByTagName('body')[0]
+}
+
 var loading = function () {
+  getBody().className += ' page-loading'
   getLoader().spin(document.getElementById('spin'))
 }
 
 var loaded = function () {
+  getBody().className = getBody().className.replace('page-loading', '')
   getLoader().stop()
+}
+
+var jumpTo = function (id) {
+  var self = this
+  self.id = id
+  let gotoElement = () => {
+    window.location.href = self.id
+  }
+  setTimeout(gotoElement, 250)
 }
 
 var scrollTo = function (selector) {
@@ -34,7 +50,8 @@ var scrollTo = function (selector) {
       return [curtop]
     }
   }
-  window.scroll(0, findPos(document.querySelector(selector)))
+  let element = document.querySelector(selector)
+  window.scroll(0, findPos(element))
 }
 
 var trackEvent = function (src, action, description) {
@@ -45,20 +62,12 @@ var print = function () {
   window.print()
 }
 
-var injectHiddenIFrame = function (precedingElementSelector, pageUrl) {
-  var precedingElement = document.querySelector(precedingElementSelector)
-  var iFrame = document.createElement('iFrame')
-  iFrame.setAttribute('style', 'display: none')
-  iFrame.setAttribute('src', pageUrl)
-  precedingElement.appendChild(iFrame)
-}
-
 module.exports = {
   redirect: redirect,
   loading: loading,
   loaded: loaded,
   trackEvent: trackEvent,
   scrollTo: scrollTo,
-  print: print,
-  injectHiddenIFrame: injectHiddenIFrame
+  jumpTo: jumpTo,
+  print: print
 }

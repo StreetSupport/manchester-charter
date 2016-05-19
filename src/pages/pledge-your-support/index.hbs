@@ -1,11 +1,14 @@
 ---
 title: Pledge your Support to the Manchester Homelessness Charter
-description: Pledge to take action to help end homelessness in Manchester
+description: Pledge to take action to support the Manchester Homelessness Charter
 layout: default.hbs
 permalink: false
 appName: pledgeYourSupport
-sectionName: charter
+section: charter
+page: pledgeyoursupport
 ---
+
+{{> loading-anim }}
 
 <div class="block block--breadcrumbs">
   <div class="container">
@@ -28,11 +31,11 @@ sectionName: charter
   <div class="container">
     <div class="block__content">
       <p>Organisation, business or individual? Everyone can make a difference to homelessness in Manchester.</p>
-      <p>You can show your dedication to the Charter by making a pledge to offer your skills and resources to benefit people experiencing homelessness.</p>
+      <p>You can show your dedication to the Charter by making a pledge to do something towards ending homelessness using your unique skills and resources.</p>
 
       {{> divider}}
 
-      <p>Make your pledge by completing the form - you can either pick one of the example pledges, or you can create your own. Once you’ve made your pledge, we will look to help you put it into action.</p>
+      <p>Make your pledge by completing the form - you can either write your own pledge, or pick one of the examples. Once you’ve made your pledge, we will look to help you put it into action.</p>
     </div>
   </div>
 </div>
@@ -41,10 +44,9 @@ sectionName: charter
   <div class="container">
     <div class="block__content">
       <div class="pledge js-pledge">
-        {{> loading-anim }}
         <div class="pledge__inner">
           <!-- ko ifnot: section4.isActive() -->
-          <h2 class="h1">Make a Pledge</h2>
+          <h2 class="h1 pledge__header">Make a Pledge</h2>
           <div class="step">
             <ol class="step__list">
               <li class="step__item" data-bind="css: { active: section1.isActive() }"><a href="#" data-bind="click: setSection1Active">1</a></li>
@@ -64,24 +66,25 @@ sectionName: charter
 
         <div class="pledge-section pledge-section--3" data-bind="css: { active: section4.isActive() }">
           <h2 class="h1">Thank you for making a pledge.</h2>
-          <p>We will be in touch shortly to see if/ how we can help support you in achieving your pledge.</p>
-          <p>As an extra thank you we’ve created a special version of the Charter which features your pledge. By sharing it with your family, friends, colleagues and contacts you can encourage them to support the Charter too.</p>
+          <p>We will be in touch shortly about your pledge. If we can support you in achieving your pledge then please let us know. In the meantime, please share the charter with your networks, so that together we can End Homelessness in Manchester!</p>
 
-          <div class="charter-social pledge__social">
-            <ul class="charter-social__list">
+          <div class="charter-social">
+            <ul class="charter-social__list charter-social__list--pledge">
               <li class="charter-social__item">
-                <a data-bind="click: viewMyPledge" class="btn btn--brand-e"><span class="btn__text">Print my pledge</span></a></li>
-              <li class="charter-social__item">
-                Encourage others to pledge their support:
-                <div class="social-share">
-                  <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="https://charter.streetsupport.net" data-bind="attr: { 'data-text': shareText }" data-via="streetsupportuk" data-dnt="true">Tweet</a>
-                  <div class="fb-share-button" data-href="https://charter.streetsupport.net" data-layout="button"></div>
-                </div>
+                <a href="/manchester-homelessness-charter.pdf" target="_blank" rel="noopener noreferrer">
+                  {{>icon name="download" class="charter-social__icon charter-social__icon--download" }}
+                </a>
+                <h3 class="charter-social__title">Download</h3>
+              </li>
+              <li class="charter-social__item charter-social__item--share">
+                {{> facebook urlToShare="https://charter.streetsupport.net/read-the-charter/" pageTitle="Read the Manchester Homelessness Charter" pageDescription="Read the Manchester Homelessness Charter - a vision to end homelessness in Manchester." }}
+                {{> twitter urlToShare="https://charter.streetsupport.net/read-the-charter/" tweet="Read how Manchester is working together to end homelessness with the Homelessness Charter." }}
+                <h3 class="charter-social__title">Share</h3>
               </li>
             </ul>
           </div>
 
-          <p>Now you have made a pledge which will help end homelessness, are you also interested in being part of a team to tackle key issues?</p>
+          <p>Now you have made a pledge, find out more about the teams being formed to tackle key issues.</p>
 
           <div class="block__cta pledge__cta">
             {{>cta brand="e" link="/join-action-group/" icon="join" name="Join an <span class=\"line-break\"></span> Action Group"}}
@@ -95,8 +98,9 @@ sectionName: charter
 <div class="block block--promo">
   <div class="container">
     <div class="block__content">
-      <h2 class="h2">Thank you!</h2>
-      <p>Thank you to the organisations and companies who have already pledged their support to the Manchester Homelessness Charter.</p>
+      <h2 class="h2">Working together</h2>
+      <p>Thank you to all the organisations and companies who have already pledged their support to the Manchester Homelessness Charter.</p>
+      <!--Link to charter news page -->
     </div>
   </div>
 </div>
@@ -110,8 +114,8 @@ sectionName: charter
       <div class="block__cta">
         {{>cta brand="e" link="https://streetsupport.net/give-help/give-items/" icon="give" name="Give"}}
         {{>cta brand="e" link="https://streetsupport.net/give-help/volunteer/" icon="volunteer" name="Volunteer"}}
-        {{>cta brand="e" link="https://streetsupport.net/give-help/donate/" icon="donate" name="Donate"}}
-        {{>cta brand="e" link="https://streetsupport.net/give-help/sponsor/" icon="partnerships" name="Partnerships"}}
+        {{>cta brand="e" link="https://streetsupport.net/give-help/donate/" icon="donate" name="Big Change"}}
+        {{>cta brand="e" link="https://streetsupport.net/give-help/sponsor/" icon="partnerships" name="Partnership"}}
       </div>
     </div>
   </div>
@@ -132,29 +136,30 @@ sectionName: charter
   </div>
   <h3 class="h3">Please select the option that best describes you:</h3>
   <div class="accordion pledge__accordion js-accordion" data-bind="foreach: supporterCategories">
-    <button class="h3 accordion__header js-header">
+    <button data-bind="attr: { 'id': id }" class="h3 accordion__header js-header">
       <span data-bind="text: name"></span>
-      <svg class="svg-plus-dims accordion__icon accordion__icon--open"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svgsprite.svg#plus"></use></svg>
-      <svg class="svg-minus-dims accordion__icon accordion__icon--close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svgsprite.svg#minus"></use></svg>
+      {{>icon name="plus" class="accordion__icon accordion__icon--open" }}
+      {{>icon name="minus" class="accordion__icon accordion__icon--close" }}
     </button>
     <div class="accordion__item js-item">
       <div class="accordion__inner">
         <div class="pledge-select">
-          <h3 class="h3">My pledge is to (please select a pledge below):</h3>
-          <ul class="pledge-select__list" data-bind="foreach: examplePledges">
-            <li class="pledge-select__item">
-              <a href="#" data-bind="text: description, click: selectExamplePledge"></a>
-            </li>
-          </ul>
-          <h3 class="h3">Or write your own pledge:</h3>
+          <h3 class="h3">My pledge is to...</h3>
           <label class="pledge-form__label hide-screen" for="customtype">Your pledge</label>
           <textarea class="pledge-form__textarea" placeholder="Write your own pledge" data-bind="textInput: customPledge"></textarea>
-
           <div class="pledge-form__next">
             <button class="btn btn--brand-e" data-bind="click: useCustomPledge">
               <span class="btn__text">Make your pledge</span>
             </button>
           </div>
+
+          <h3 class="h3">Or select a pledge from the list below:</h3>
+          <ul class="pledge-select__list" data-bind="foreach: examplePledges">
+            <li class="pledge-select__item">
+              <a href="#" class="pledge-select__link" data-bind="text: description, click: selectExamplePledge"></a>
+            </li>
+          </ul>
+
         </div>
       </div>
     </div>
@@ -166,13 +171,13 @@ sectionName: charter
   <h3 class="h3">Confirm your pledge by completing your contact details (you can also edit your pledge):</h3>
   <div class="pledge__highlight">
     <span class="h3 pledge__copy--inline">I</span>
-    <label class="pledge-form__label hide-screen" for="firstName">First Name *</label>
+    <label class="pledge-form__label hide-screen" for="firstName">First Name (required)</label>
     <div class="pledge-form__input-field pledge-form__input-field--inline">
-      <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name *" data-bind="textInput: firstName"></input>
+      <input class="pledge-form__input pledge-form__input--inline" type="text" id="firstName" name="firstName" placeholder="First Name (required)" data-bind="textInput: firstName"></input>
     </div>
-    <label class="pledge-form__label hide-screen" for="lastName">Last Name *</label>
+    <label class="pledge-form__label hide-screen" for="lastName">Last Name (required)</label>
     <div class="pledge-form__input-field pledge-form__input-field--inline">
-      <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name *" data-bind="textInput: lastName"></input>
+      <input class="pledge-form__input pledge-form__input--inline" type="text" id="lastName" name="lastName" placeholder="Last Name (required)" data-bind="textInput: lastName"></input>
     </div>
     <span class="pledge__copy">pledge to support the Manchester Homelessness Charter. I pledge to...</span>
   </div>
@@ -188,14 +193,27 @@ sectionName: charter
       <input class="pledge-form__input" type="text" id="organisation" name="organisation" placeholder="Organisation/Business Name (if applicable)" data-bind="textInput: organisation"></input>
     </li>
     <li class="pledge-form__item">
-      <label class="pledge-form__label hide-screen" for="email">Email Address *</label>
+      <label class="pledge-form__label hide-screen" for="email">Email Address (required)</label>
       <div class="pledge-form__input-field">
-        <input class="pledge-form__input" type="text" id="email" name="email" placeholder="Email Address *" data-bind="textInput: email"></input>
+        <input class="pledge-form__input" type="text" id="email" name="email" placeholder="Email Address (required)" data-bind="textInput: email"></input>
       </div>
+      <span class="pledge__copy small">(Street Support will never share your email with a 3rd party.)</span>
+    </li>
+    <li class="pledge-form__item">
+      <label class="pledge-form__label hide-screen" for="postcode">Your Postcode</label>
+      <input class="pledge-form__input" type="text" id="postcode" name="postcode" placeholder="Your postcode" data-bind="textInput: postcode"></input>
     </li>
     <li class="pledge-form__item pledge-form__item--checkbox">
-      <input class="pledge-form__checkbox" type="checkbox" name="subscribe" data-bind="checked: isOptedIn">
-      <label class="pledge-form__label" for="subscribe">Select to receive email updates from Street Support about homelessness and the Charter</label>
+      <label class="pledge-form__label" for="subscribe">
+        <input class="pledge-form__checkbox" type="checkbox" name="subscribe" id="subscribe" data-bind="checked: isOptedIn">
+        Select to receive email updates from Street Support about homelessness and the Charter
+      </label>
+    </li>
+    <li class="pledge-form__item pledge-form__item--checkbox">
+      <label class="pledge-form__label" for="isAnonymousPledge">
+        <input class="pledge-form__checkbox" type="checkbox" name="isAnonymousPledge" id="isAnonymousPledge" data-bind="checked: isAnonymousPledge">
+        Select to hide your Pledge
+      </label>
     </li>
   </ul>
 

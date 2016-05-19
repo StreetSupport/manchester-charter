@@ -26,6 +26,7 @@ let SupporterCategory = function (data, listener) {
   self.examplePledges = data.examplePledges
     .map((p) => new ExamplePledge(p, self))
   self.customPledge = ko.observable()
+  self.id = data.name.replace(/ /g, '-').toLowerCase()
 
   self.pledgeSelected = (pledge) => {
     self.listener.pledgeSelected(pledge)
@@ -64,7 +65,9 @@ let PledgeYourSupport = function () {
       pledge: ko.observable().extend({ required: true }),
       organisation: ko.observable(),
       email: ko.observable().extend({ required: true, email: true }),
-      isOptedIn: ko.observable()
+      isOptedIn: ko.observable(),
+      isAnonymousPledge: ko.observable(),
+      postcode: ko.observable()
     })
     self.fieldErrors = validation.getValidationGroup(ko.validation, self.formModel)
 
@@ -76,7 +79,6 @@ let PledgeYourSupport = function () {
     self.section4 = new Section()
     self.shareText = ko.observable()
     self.activeSection = ko.observable(-1)
-    self.viewPledgeUrl = ko.observable()
     self.setActiveSection(1)
   }
 
@@ -91,6 +93,8 @@ let PledgeYourSupport = function () {
 
   self.accordionOpened = (el, context) => {
     self.formModel().supporterCategory(el.childNodes[1].innerHTML)
+    let category = '#' + el.childNodes[1].parentNode.id
+    browser.jumpTo(category)
   }
 
   let buildFormData = () => {
@@ -101,7 +105,9 @@ let PledgeYourSupport = function () {
       email: self.formModel().email(),
       organisation: self.formModel().organisation(),
       isOptedIn: self.formModel().isOptedIn(),
-      pledge: self.formModel().pledge()
+      pledge: self.formModel().pledge(),
+      isAnonymousPledge: self.formModel().isAnonymousPledge(),
+      postcode: self.formModel().postcode()
     }
   }
 
@@ -134,7 +140,6 @@ let PledgeYourSupport = function () {
         }
         if (result.statusCode === 201) {
           self.setActiveSection(4)
-          self.viewPledgeUrl('view/?id=' + result.data.id)
           setShareText()
         }
       }, () => {
@@ -148,10 +153,6 @@ let PledgeYourSupport = function () {
     } else {
       self.fieldErrors.showAllMessages()
     }
-  }
-
-  self.viewMyPledge = () => {
-    browser.injectHiddenIFrame('.js-pledge', self.viewPledgeUrl())
   }
 
   self.init()
