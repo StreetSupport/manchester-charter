@@ -97,6 +97,9 @@ button {
   margin: 0;
 }
 
-a, button, input[type="submit"] {
+a,
+button,
+input[type='submit'],
+label {
   cursor: pointer;
 }
