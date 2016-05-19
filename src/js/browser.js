@@ -1,5 +1,5 @@
 /*
-  global ga
+  global ga, document
 */
 
 var Spinner = require('spin.js')
@@ -17,17 +17,17 @@ var getLoader = function () {
   return loaderAnim
 }
 
-let body = document.getElementsByTagName('body')[0]
+let getBody = () => {
+  return document.getElementsByTagName('body')[0]
+}
 
 var loading = function () {
-  body.className += ' page-loading'
-
+  getBody().className += ' page-loading'
   getLoader().spin(document.getElementById('spin'))
 }
 
 var loaded = function () {
-  body.className = body.className.replace('page-loading', '')
-
+  getBody().className = getBody().className.replace('page-loading', '')
   getLoader().stop()
 }
 
