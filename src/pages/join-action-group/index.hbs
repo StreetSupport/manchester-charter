@@ -8,6 +8,8 @@ section: charter
 page: joinactiongroup
 ---
 
+{{>loading-anim }}
+
 <div class="block block--breadcrumbs">
   <div class="container">
     <ol class="breadcrumbs__list">
@@ -45,7 +47,6 @@ page: joinactiongroup
   <div class="container">
     <div class="block__content">
       <div class="pledge js-pledge">
-        {{> loading-anim }}
         <div class="pledge__inner">
           <!-- ko ifnot: section4.isActive() -->
           <div class="pledge__heading">

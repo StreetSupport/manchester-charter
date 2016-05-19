@@ -9,6 +9,7 @@ var redirect = function (url) {
 }
 
 var loaderAnim
+
 var getLoader = function () {
   if (loaderAnim === undefined) {
     loaderAnim = new Spinner()
@@ -16,11 +17,17 @@ var getLoader = function () {
   return loaderAnim
 }
 
+let body = document.getElementsByTagName('body')[0]
+
 var loading = function () {
+  body.className += ' page-loading'
+
   getLoader().spin(document.getElementById('spin'))
 }
 
 var loaded = function () {
+  body.className = body.className.replace('page-loading', '')
+
   getLoader().stop()
 }
 

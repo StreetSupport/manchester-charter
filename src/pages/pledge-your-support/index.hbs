@@ -8,6 +8,8 @@ section: charter
 page: pledgeyoursupport
 ---
 
+{{> loading-anim }}
+
 <div class="block block--breadcrumbs">
   <div class="container">
     <ol class="breadcrumbs__list">
@@ -42,7 +44,6 @@ page: pledgeyoursupport
   <div class="container">
     <div class="block__content">
       <div class="pledge js-pledge">
-        {{> loading-anim }}
         <div class="pledge__inner">
           <!-- ko ifnot: section4.isActive() -->
           <h2 class="h1 pledge__header">Make a Pledge</h2>
