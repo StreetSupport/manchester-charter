@@ -1,5 +1,5 @@
 /*
-  global ga
+  global ga, document
 */
 
 var Spinner = require('spin.js')
@@ -9,6 +9,7 @@ var redirect = function (url) {
 }
 
 var loaderAnim
+
 var getLoader = function () {
   if (loaderAnim === undefined) {
     loaderAnim = new Spinner()
@@ -16,11 +17,17 @@ var getLoader = function () {
   return loaderAnim
 }
 
+let getBody = () => {
+  return document.getElementsByTagName('body')[0]
+}
+
 var loading = function () {
+  getBody().className += ' page-loading'
   getLoader().spin(document.getElementById('spin'))
 }
 
 var loaded = function () {
+  getBody().className = getBody().className.replace('page-loading', '')
   getLoader().stop()
 }
 

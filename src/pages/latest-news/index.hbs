@@ -8,6 +8,8 @@ section: charter
 page: latestnews
 ---
 
+{{> loading-anim }}
+
 <div class="block block--breadcrumbs">
   <div class="container">
     <ol class="breadcrumbs__list">
@@ -48,7 +50,6 @@ page: latestnews
 <script type="text/html" id="recent-pledges">
 <div class="recent-pledges">
   <h2 class="h2">Recent Pledges</h2>
-  {{> loading-anim }}
   <p>There have been <span data-bind="text: totalPledges"></span> pledges made so far in support of the Charter. Here are some of the recent pledges made:</p>
   <ol class="recent-pledges__list" data-bind="foreach: pledges">
     <li class="recent-pledges__item">
