@@ -18,7 +18,7 @@ describe('Invalid Action Group specified', () => {
     sinon.stub(browser, 'loading')
     sinon.stub(browser, 'loaded')
     sinon.stub(browser, 'setOnHistoryPop')
-    browserRedirectStub = sinon.stub(browser, 'redirect').withArgs('/500')
+    browserRedirectStub = sinon.stub(browser, 'redirect').withArgs('/404')
     sinon.stub(ajax, 'get')
       .withArgs(endpoints.actionGroups)
       .returns({
@@ -29,8 +29,7 @@ describe('Invalid Action Group specified', () => {
           })
         }
       })
-    sinon.stub(querystring, 'hashbang')
-      .returns('invalid-group')
+    sinon.stub(querystring, 'hashbang').returns('invalid-group')
 
     const model = new Model() // eslint-disable-line
   })

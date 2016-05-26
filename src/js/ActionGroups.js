@@ -53,9 +53,9 @@ function ActionGroups () {
         let groupSlug = querystring.hashbang()
 
         if (groupSlug.length > 0) {
-          let actionGroups = self.actionGroups().filter((ag) => ag.slug === groupSlug)
-          if (actionGroups.length === 0) browser.redirect('/404')
-          self.viewActionGroup(actionGroups[0])
+          let matchingActionGroups = self.actionGroups().filter((ag) => ag.slug === groupSlug)
+          if (matchingActionGroups.length === 0) browser.redirect('/404')
+          self.viewActionGroup(matchingActionGroups[0])
         }
       }, () => {
         browser.redirect('/500')

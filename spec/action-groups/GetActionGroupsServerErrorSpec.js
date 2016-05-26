@@ -43,6 +43,6 @@ describe('Get Action Groups Server Error', () => {
   })
 
   it('- Should redirect to 500', () => {
-    expect(browserRedirectStub.calledOnce).toBeFalsy()
+    expect(browserRedirectStub.calledOnce).toBeTruthy()
   })
 })
