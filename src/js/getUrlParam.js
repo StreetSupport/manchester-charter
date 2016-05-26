@@ -7,6 +7,18 @@ var getUrlParameter = function (name) {
   return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '))
 }
 
+var getHashBang = () => {
+  var regex = new RegExp('#!([^&#]*)')
+  var results = regex.exec(location.hash)
+  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '))
+}
+
+var buildHashbang = (hashbang) => {
+  return '#!' + hashbang
+}
+
 module.exports = {
-  parameter: getUrlParameter
+  parameter: getUrlParameter,
+  hashbang: getHashBang,
+  buildHashbang: buildHashbang
 }

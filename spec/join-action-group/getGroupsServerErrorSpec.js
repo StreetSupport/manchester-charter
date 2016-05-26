@@ -1,6 +1,7 @@
 /*
   global describe, beforeEach, afterEach, it, expect
 */
+
 'use strict'
 
 let Model = require('../../src/js/JoinActionGroup')

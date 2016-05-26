@@ -1,0 +1,71 @@
+---
+title: Manchester Homelessness Action Groups
+description: Learn more about the Action Group working collaboratively to end homelessness in Manchester
+layout: default.hbs
+permalink: false
+appName: actionGroups
+section: charter
+page: actionGroups
+---
+
+{{>loading-anim }}
+
+<div class="block block--breadcrumbs">
+  <div class="container">
+    <ol class="breadcrumbs__list">
+      <li class="breadcrumbs__item"><a href="https://streetsupport.net/">Home</a></li>
+      <li class="breadcrumbs__item"><a href="/">Charter</a></li>
+      <li class="breadcrumbs__item">Action Groups</li>
+    </ol>
+  </div>
+</div>
+
+<div class="block block--subpage-header">
+  <div class="container">
+    <h1 class="h1 block__header">Action Groups</h1>
+    <p class="h2 block__sub-header">Manchester Homelessness Charter</p>
+  </div>
+</div>
+
+<!-- ko ifnot: isShowingGroup -->
+<!-- ko template: { name: 'generic' } --><!-- /ko -->
+<!-- /ko -->
+<!-- ko if: isShowingGroup -->
+<!-- ko template: { name: 'action-group' } --><!-- /ko -->
+<!-- /ko -->
+
+<script type="text/html" id="generic">
+<div class="block">
+  <div class="container">
+    <div class="block__content">
+      <h2 class="h2">What is an action group?</h2>
+      <p>The 8 action groups will each tackle a key challenge that people experiencing homelessness regularly face, such as access to mental health support, emergency accommodation, and employment. Each group will include people who have experienced homelessness, as well as those who have relevant skills or professional expertise.</p>
+
+      {{> divider}}
+
+      <h2 class="h2">How will the action groups work?</h2>
+      <p>Each group will decide how they want to work together, but we expect no more than one meeting a month. The groups will feedback progress to the charter driving group at least every 3 months, and we will publish regular updates on this website.</p>
+      <p>If you feel there is an action group that might benefit from your experience, please submit your details, and the group Chairperson will be in touch with more information.</p>
+
+      <div data-bind="foreach: actionGroups">
+        <article data-bind="click: view">
+          <h1 data-bind="html: name" />
+          <p data-bind="html: synopsis" />
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+</script>
+
+<script type="text/html" id="action-group">
+<div class="block">
+  <div class="container">
+    <div class="block__content" data-bind="with: activeActionGroup">
+      <h1 data-bind="html: name"></h1>
+      <p data-bind="html: synopsis"></p>
+      <a class="btn btn--brand-e" data-bind="click: $parent.backToList"><span class="btn__text">Back to Action Groups</span></a>
+    </div>
+  </div>
+</div>
+</script>
