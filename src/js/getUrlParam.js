@@ -13,7 +13,12 @@ var getHashBang = () => {
   return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '))
 }
 
+var buildHashbang = (hashbang) => {
+  return '#!' + hashbang
+}
+
 module.exports = {
   parameter: getUrlParameter,
-  hashbang: getHashBang
+  hashbang: getHashBang,
+  buildHashbang: buildHashbang
 }

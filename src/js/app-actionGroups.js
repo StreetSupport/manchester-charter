@@ -2,12 +2,8 @@
 
 import './common'
 
-var queryString = require('./getUrlParam')
+var ko = require('knockout')
+var Model = require('./ActionGroups')
+var model = new Model()
 
-//console.log(queryString.hashbang())
-
-// var ko = require('knockout')
-// var Model = require('./JoinActionGroup')
-// var model = new Model()
-
-// ko.applyBindings(model)
+ko.applyBindings(model)
