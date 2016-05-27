@@ -9,6 +9,7 @@ var sinon = require('sinon')
 var ajax = require('../../src/js/ajax')
 var api = require('../../src/js/api-endpoints')
 var browser = require('../../src/js/browser')
+var querystring = require('../../src/js/getUrlParam')
 import { getGroupData } from './getGroupData'
 
 describe('Join Action Group - Submit', () => {
@@ -23,6 +24,9 @@ describe('Join Action Group - Submit', () => {
     browserLoadingStub = sinon.stub(browser, 'loading')
     browserLoadedStub = sinon.stub(browser, 'loaded')
     browserScrollToStub = sinon.stub(browser, 'scrollTo')
+    sinon.stub(browser, 'pushHistory')
+    sinon.stub(browser, 'setOnHistoryPop')
+    sinon.stub(querystring, 'hashbang').returns('')
 
     let groupData = getGroupData()
 
@@ -75,6 +79,9 @@ describe('Join Action Group - Submit', () => {
     browser.loading.restore()
     browser.loaded.restore()
     browser.scrollTo.restore()
+    browser.pushHistory.restore()
+    browser.setOnHistoryPop.restore()
+    querystring.hashbang.restore()
     ajax.post.restore()
     ajax.get.restore()
   })

@@ -8,6 +8,7 @@ let Model = require('../../src/js/JoinActionGroup')
 var sinon = require('sinon')
 var api = require('../../src/js/api-endpoints')
 var ajax = require('../../src/js/ajax')
+var querystring = require('../../src/js/getUrlParam')
 var browser = require('../../src/js/browser')
 import { getGroupData } from './getGroupData'
 
@@ -22,6 +23,9 @@ describe('Join Action Group - Submit - Server returns bad request', () => {
     browserLoadingStub = sinon.stub(browser, 'loading')
     browserLoadedStub = sinon.stub(browser, 'loaded')
     browserScrollToStub = sinon.stub(browser, 'scrollTo')
+    sinon.stub(browser, 'pushHistory')
+    sinon.stub(browser, 'setOnHistoryPop')
+    sinon.stub(querystring, 'hashbang').returns('')
     sinon.stub(ajax, 'get')
       .withArgs(api.actionGroups)
       .returns({
@@ -60,6 +64,9 @@ describe('Join Action Group - Submit - Server returns bad request', () => {
     browser.loading.restore()
     browser.loaded.restore()
     browser.scrollTo.restore()
+    browser.pushHistory.restore()
+    browser.setOnHistoryPop.restore()
+    querystring.hashbang.restore()
     ajax.get.restore()
     ajax.post.restore()
   })

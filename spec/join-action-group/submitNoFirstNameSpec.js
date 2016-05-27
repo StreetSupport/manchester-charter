@@ -10,6 +10,7 @@ var ajax = require('../../src/js/ajax')
 var api = require('../../src/js/api-endpoints')
 var browser = require('../../src/js/browser')
 var validation = require('../../src/js/validation')
+var querystring = require('../../src/js/getUrlParam')
 import { getGroupData } from './getGroupData'
 
 describe('Join Action Group - Submit - No First Name', () => {
@@ -23,6 +24,9 @@ describe('Join Action Group - Submit - No First Name', () => {
     browserLoadingStub = sinon.stub(browser, 'loading')
     browserLoadedStub = sinon.stub(browser, 'loaded')
     sinon.stub(browser, 'scrollTo')
+    sinon.stub(browser, 'pushHistory')
+    sinon.stub(browser, 'setOnHistoryPop')
+    sinon.stub(querystring, 'hashbang').returns('')
     validationShowErrorsStub = sinon.stub(validation, 'showErrors')
 
     let groupData = getGroupData()
@@ -58,7 +62,10 @@ describe('Join Action Group - Submit - No First Name', () => {
     browser.loading.restore()
     browser.loaded.restore()
     browser.scrollTo.restore()
+    browser.pushHistory.restore()
+    browser.setOnHistoryPop.restore()
     validation.showErrors.restore()
+    querystring.hashbang.restore()
     ajax.post.restore()
     ajax.get.restore()
   })
