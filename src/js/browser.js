@@ -1,5 +1,5 @@
 /*
-  global ga, document
+  global ga, document, history
 */
 
 var Spinner = require('spin.js')
@@ -40,6 +40,20 @@ var jumpTo = function (id) {
   setTimeout(gotoElement, 250)
 }
 
+let pushHistory = (stateObject, title, url) => {
+  history.pushState(stateObject, title, url)
+}
+
+let popHistory = () => {
+  history.back()
+}
+
+let setOnHistoryPop = (onPopCallback) => {
+  window.onpopstate = () => {
+    onPopCallback()
+  }
+}
+
 var scrollTo = function (selector) {
   let findPos = (obj) => {
     var curtop = 0
@@ -69,5 +83,8 @@ module.exports = {
   trackEvent: trackEvent,
   scrollTo: scrollTo,
   jumpTo: jumpTo,
-  print: print
+  print: print,
+  pushHistory: pushHistory,
+  popHistory: popHistory,
+  setOnHistoryPop: setOnHistoryPop
 }

@@ -48,10 +48,9 @@ let Model = function () {
 
   self.loadPledges = () => {
     ajax
-    .get(api.pledges + '?sort-by=creationDate&sort-direction=desc&limit=20')
+    .get(api.latestPledges + '?limit=20')
     .then((result) => {
       let pledges = result.data
-        .sort((a, b) => a.isFeatured < b.isFeatured)
         .map((p) => new Pledge(p))
       self.pledges(pledges)
       self.pledgesLoaded = true
