@@ -11,17 +11,17 @@ var ajax = require('../../src/js/ajax')
 var querystring = require('../../src/js/getUrlParam')
 import { getGroupData } from './getGroupData'
 
-describe('Join Action Group - Go back to step 1', () => {
+describe('Select Action Group to join', () => {
   var sut
-  var browserScrollToStub
+  var browserPushHistoryStub
 
   beforeEach(() => {
     sinon.stub(browser, 'loading')
     sinon.stub(browser, 'loaded')
-    browserScrollToStub = sinon.stub(browser, 'scrollTo')
-    sinon.stub(browser, 'pushHistory')
+    sinon.stub(browser, 'scrollTo')
     sinon.stub(browser, 'setOnHistoryPop')
     sinon.stub(querystring, 'hashbang').returns('')
+    browserPushHistoryStub = sinon.stub(browser, 'pushHistory')
     sinon.stub(ajax, 'get')
       .withArgs(api.actionGroups)
       .returns({
@@ -35,31 +35,30 @@ describe('Join Action Group - Go back to step 1', () => {
 
     sut = new Model()
     sut.actionGroups()[1].selectActionGroup()
-    sut.setSection1Active()
   })
   afterEach(() => {
     browser.loading.restore()
     browser.loaded.restore()
     browser.scrollTo.restore()
     browser.pushHistory.restore()
-    browser.setOnHistoryPop.restore()
     querystring.hashbang.restore()
+    browser.setOnHistoryPop.restore()
     ajax.get.restore()
   })
 
-  it('- Should set Section 1 as active', () => {
-    expect(sut.section1.isActive()).toBeTruthy()
+  it('- Should set address bar', () => {
+    expect(browserPushHistoryStub.withArgs({}, 'Women\'s Direct Access Action Group', '#!womens-direct-access').calledOnce).toBeTruthy()
   })
 
-  it('- Should set Section 2 as inactive', () => {
-    expect(sut.section2.isActive()).toBeFalsy()
+  it('- Should set Section 1 as inactive', () => {
+    expect(sut.section1.isActive()).toBeFalsy()
+  })
+
+  it('- Should set Section 2 as active', () => {
+    expect(sut.section2.isActive()).toBeTruthy()
   })
 
   it('- Should set Section 3 as inactive', () => {
     expect(sut.section3.isActive()).toBeFalsy()
-  })
-
-  it('- Should set scroll to top of section', () => {
-    expect(browserScrollToStub.withArgs('js-pledge').calledOnce).toBeFalsy()
   })
 })

@@ -5,6 +5,7 @@ require('knockout.validation') // No variable here is deliberate!
 var ajax = require('./ajax')
 var api = require('./api-endpoints')
 var browser = require('./browser')
+var querystring = require('./getUrlParam')
 var validation = require('./validation')
 
 let ActionGroup = function (data, listener) {
@@ -13,6 +14,7 @@ let ActionGroup = function (data, listener) {
   self.name = data.name
   self.description = data.description
   self.synopsis = data.synopsis
+  self.slug = data.name.toLowerCase().replace(/ /g, '-').replace('\'', '')
   self.selectActionGroup = () => {
     listener.actionGroupSelected(self)
   }
@@ -43,6 +45,8 @@ function Model () {
   self.actionGroupSelected = (actionGroup) => {
     self.selectedActionGroup(actionGroup)
     self.setActiveSection(2)
+    let hashbang = querystring.buildHashbang(actionGroup.slug)
+    browser.pushHistory({}, actionGroup.name + ' Action Group', hashbang)
   }
 
   self.init = () => {
@@ -74,12 +78,22 @@ function Model () {
         let actionGroups = result.data
           .map((g) => new ActionGroup(g, self))
         self.actionGroups(actionGroups)
+        browser.setOnHistoryPop(self.setSection1Active)
+
+        let hashbang = querystring.hashbang()
+        if (hashbang.length > 0) {
+          let matchingActionGroups = self.actionGroups().filter((ag) => ag.slug === hashbang)
+          if (matchingActionGroups.length === 0) browser.redirect('/404')
+          self.selectedActionGroup(matchingActionGroups[0])
+          self.setActiveSection(2)
+        } else {
+          self.setActiveSection(1)
+        }
+
         browser.loaded()
       }, () => {
         browser.redirect('/500/')
       })
-
-    self.setActiveSection(1)
   }
 
   let buildFormData = () => {
