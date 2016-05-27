@@ -8,6 +8,7 @@ var sinon = require('sinon')
 var validation = require('../../src/js/validation')
 var api = require('../../src/js/api-endpoints')
 var ajax = require('../../src/js/ajax')
+var querystring = require('../../src/js/getUrlParam')
 var browser = require('../../src/js/browser')
 import { getGroupData } from './getGroupData'
 
@@ -15,6 +16,7 @@ describe('Join Action Group', () => {
   var sut
   var browserLoadingStub
   var browserLoadedStub
+  var browserOnHistoryPopStub
   var validationInitStub
   var validationGetGroupStub
   var validationGroup
@@ -23,6 +25,9 @@ describe('Join Action Group', () => {
   beforeEach(() => {
     browserLoadingStub = sinon.stub(browser, 'loading')
     browserLoadedStub = sinon.stub(browser, 'loaded')
+    browserOnHistoryPopStub = sinon.stub(browser, 'setOnHistoryPop')
+    sinon.stub(querystring, 'hashbang').returns('')
+    sinon.stub(browser, 'pushHistory')
     validationInitStub = sinon.stub(validation, 'initialise')
     validationGroup = {
       'validation': 'group'
@@ -46,6 +51,9 @@ describe('Join Action Group', () => {
   afterEach(() => {
     browser.loading.restore()
     browser.loaded.restore()
+    browser.pushHistory.restore()
+    browser.setOnHistoryPop.restore()
+    querystring.hashbang.restore()
     validation.initialise.restore()
     validation.getValidationGroup.restore()
     ajax.get.restore()
@@ -85,6 +93,14 @@ describe('Join Action Group', () => {
 
   it('- Should map synopsis', () => {
     expect(sut.actionGroups()[0].synopsis).toEqual('first action group synopsis')
+  })
+
+  it('- Should set action slug', () => {
+    expect(sut.actionGroups()[1].slug).toEqual('womens-direct-access')
+  })
+
+  it('- Should set history on pop', () => {
+    expect(browserOnHistoryPopStub.withArgs(sut.setSection1Active).calledOnce).toBeTruthy()
   })
 
   it('- Should show browser loaded', () => {
