@@ -5,6 +5,13 @@ import Svg4everybody from 'svg4everybody'
 import 'feature.js'
 import nav from './nav.js'
 import analytics from './analytics.js'
+import webFontLoader from 'webfontloader'
+
+let loadWebFonts = () => {
+  webFontLoader.load({
+    custom: ['museo_sans_rounded300', 'museo_sans_rounded500']
+  })
+}
 
 // Cuts the mustard check to add js class
 if ('querySelector' in document && 'addEventListener' in window) {
@@ -28,9 +35,7 @@ if ('querySelector' in document && 'addEventListener' in window) {
     }, 'fastclick')
   }
 
-  // SVG support
   Svg4everybody()
-
-  // Run Holder
   Holder.run({})
+  loadWebFonts()
 }
