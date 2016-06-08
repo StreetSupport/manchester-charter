@@ -28,9 +28,6 @@ if ('querySelector' in document && 'addEventListener' in window) {
     }, 'fastclick')
   }
 
-  // SVG support
   Svg4everybody()
-
-  // Run Holder
   Holder.run({})
 }
