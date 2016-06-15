@@ -88,7 +88,7 @@ describe('Join Action Group', () => {
   })
 
   it('- Should map description and parse markdown', () => {
-    expect(sut.actionGroups()[0].description).toEqual('<p>first <strong>action group</strong> description</p>')
+    expect(sut.actionGroups()[0].description).toEqual('<p>first <strong>action group</strong> description</p>\n')
   })
 
   it('- Should map synopsis', () => {
