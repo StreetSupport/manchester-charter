@@ -15,6 +15,7 @@ let ActionGroup = function (data, listener) {
   self.name = data.name
   self.description = marked(data.description)
   self.synopsis = data.synopsis
+  self.newsUrl = data.newsUrl
   self.slug = data.name.toLowerCase().replace(/ /g, '-').replace('\'', '')
   self.selectActionGroup = () => {
     listener.actionGroupSelected(self)

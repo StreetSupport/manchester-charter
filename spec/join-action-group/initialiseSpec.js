@@ -95,6 +95,10 @@ describe('Join Action Group', () => {
     expect(sut.actionGroups()[0].synopsis).toEqual('first action group synopsis')
   })
 
+  it('- Should map newsUrl', () => {
+    expect(sut.actionGroups()[0].newsUrl).toEqual('http://news.streetsupport.net/')
+  })
+
   it('- Should set action slug', () => {
     expect(sut.actionGroups()[1].slug).toEqual('womens-direct-access')
   })
