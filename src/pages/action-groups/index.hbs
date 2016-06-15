@@ -51,6 +51,7 @@ page: actionGroups
         <article data-bind="click: view">
           <h1 data-bind="html: name" />
           <p data-bind="html: synopsis" />
+      <div data-bind="html: description"></div>
         </article>
       </div>
     </div>
@@ -64,6 +65,7 @@ page: actionGroups
     <div class="block__content" data-bind="with: activeActionGroup">
       <h1 data-bind="html: name"></h1>
       <p data-bind="html: synopsis"></p>
+      <div data-bind="html: description"></div>
       <a class="btn btn--brand-e" data-bind="click: $parent.backToList"><span class="btn__text">Back to Action Groups</span></a>
     </div>
   </div>

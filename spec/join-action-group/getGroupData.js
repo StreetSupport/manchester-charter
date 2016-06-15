@@ -4,7 +4,7 @@ export function getGroupData () {
       'id': '57166213e4b09686f6b2c886',
       'name': 'Substandard Accommodation',
       'synopsis': 'first action group synopsis',
-      'description': 'first action group description'
+      'description': 'first __action group__ description'
     },
     {
       'id': '57166227e4b09686f6b2c88a',

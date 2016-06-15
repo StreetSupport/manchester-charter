@@ -87,8 +87,8 @@ describe('Join Action Group', () => {
     expect(ajaxGetStub.calledOnce).toBeTruthy()
   })
 
-  it('- Should map description', () => {
-    expect(sut.actionGroups()[0].description).toEqual('first action group description')
+  it('- Should map description and parse markdown', () => {
+    expect(sut.actionGroups()[0].description).toEqual('<p>first <strong>action group</strong> description</p>')
   })
 
   it('- Should map synopsis', () => {
