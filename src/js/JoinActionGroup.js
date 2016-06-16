@@ -1,6 +1,7 @@
 'use strict'
 import ko from 'knockout'
 require('knockout.validation') // No variable here is deliberate!
+import marked from 'marked'
 
 var ajax = require('./ajax')
 var api = require('./api-endpoints')
@@ -12,8 +13,9 @@ let ActionGroup = function (data, listener) {
   var self = this
   self.id = data.id
   self.name = data.name
-  self.description = data.description
+  self.description = marked(data.description)
   self.synopsis = data.synopsis
+  self.newsUrl = data.newsUrl
   self.slug = data.name.toLowerCase().replace(/ /g, '-').replace('\'', '')
   self.selectActionGroup = () => {
     listener.actionGroupSelected(self)

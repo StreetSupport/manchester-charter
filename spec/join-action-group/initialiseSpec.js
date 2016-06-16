@@ -87,12 +87,16 @@ describe('Join Action Group', () => {
     expect(ajaxGetStub.calledOnce).toBeTruthy()
   })
 
-  it('- Should map description', () => {
-    expect(sut.actionGroups()[0].description).toEqual('first action group description')
+  it('- Should map description and parse markdown', () => {
+    expect(sut.actionGroups()[0].description).toEqual('<p>first <strong>action group</strong> description</p>\n')
   })
 
   it('- Should map synopsis', () => {
     expect(sut.actionGroups()[0].synopsis).toEqual('first action group synopsis')
+  })
+
+  it('- Should map newsUrl', () => {
+    expect(sut.actionGroups()[0].newsUrl).toEqual('http://news.streetsupport.net/')
   })
 
   it('- Should set action slug', () => {

@@ -20,7 +20,7 @@ module.exports = {
     pledgeYourSupport: __dirname + '/src/js/app-pledgeYourSupport',
     viewYourPledge: __dirname + '/src/js/app-viewYourPledge',
     joinActionGroup: __dirname + '/src/js/app-joinActionGroup',
-    latestNews: __dirname + '/src/js/app-latestNews',
+    progress: __dirname + '/src/js/app-latestNews',
     actionGroups: __dirname + '/src/js/app-actionGroups'
   },
   output: {
