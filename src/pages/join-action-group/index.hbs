@@ -67,12 +67,14 @@ page: joinactiongroup
                 <p><small>If there is an issue not listed here which you think worthy of an action group, please email your suggestions to <a href="mailto:actiongroups@streetsupport.net">actiongroups@streetsupport.net</a>.</small></p>
                 <ul class="action-select__list" data-bind="foreach: actionGroups">
                   <li class="action-select__item">
-                    <button class="btn action-select__btn" data-bind="click: selectActionGroup">
                       <span class="action-select__summary">
-                        <h3 class="h2 action-select__name" data-bind="text: name"></h3>
-                        <p class="action-select__synopsis" data-bind="text: synopsis"></p>
+                        <button class="btn action-select__btn" data-bind="click: selectActionGroup">
+                          <h3 class="h2 action-select__name" data-bind="text: name"></h3>
+                          <p class="action-select__synopsis" data-bind="text: synopsis"></p>
+                          <div class="action-select__description" data-bind="html: description"></div>
+                        </button>
+                        <a class="action-select__news-link" data-bind="attr: { href: newsUrl }">Read updates from this group</a>
                       </span>
-                    </a>
                   </li>
                 </ul>
               </div>
@@ -82,11 +84,6 @@ page: joinactiongroup
                 <div class="action-select__item action-select__item--step2">
                   <span class="action-select__summary">
                     <h3 class="h2 action-select__name" data-bind="text: name"></h3>
-                    <p class="action-select__synopsis" data-bind="text: synopsis"></p>
-                    <div class="action-select__description" data-bind="html: description"></div>
-                    <a class="action-select__news-link btn btn--brand-d" data-bind="attr: { href: newsUrl }">
-                      <span class="btn__text">Read about our progress</span>
-                    </a>
                   </span>
                 </div>
               </div>

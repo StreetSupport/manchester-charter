@@ -60,6 +60,7 @@
     display: block;
     vertical-align: top;
     margin-top: 10px;
+    text-align: left;
 
     @include mq($from: m) {
       display: table-cell;
@@ -84,20 +85,21 @@
 
   &__synopsis {
     color: $brand-m;
-
-    .action-select__item--step2 & {
-      color: #fff;
-    }
   }
 
   &__description {
     text-align: left;
-    margin-top: 20px;
+    margin: 20px 0;
     color: $brand-m;
+
+    .pledge-section--2 & {
+      color: #fff!important;
+    }
   }
 
   &__news-link {
     margin-bottom: 40px;
+    color: $brand-h!important;
   }
 
   &__detail {
