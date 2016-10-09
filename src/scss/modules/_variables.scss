@@ -98,6 +98,15 @@ $nav-width: 220px;
 $nav-sections: home findhelp givehelp charter about contact;
 $nav-pages: home findhelp emergencyhelp allorganisations givehelp giveitems volunteer offeritems donate partnership charter readthecharter pledgeyoursupport joinactiongroup aboutthecharter progress about contact;
 
+// z-indices
+$zIndex-modal: 200;
+$zIndex-loadingSpinner: 180; // see browser.js
+$zIndex-mobileNav: 160;
+$zIndex-navOverlay: 140;
+$zIndex-fixedHeader: 120;
+$zIndex-SubNav: 100;
+$zIndex-breadcrumb: 80;
+
 // Default Grid Options
 // -----------------------------
 
