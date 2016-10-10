@@ -12,6 +12,10 @@
   &__header {
     text-align: center;
     margin: 0;
+
+    &--story {
+      margin-bottom: 30px;
+    }
   }
 
   &__sub-header {
@@ -125,45 +129,27 @@
   &--breadcrumbs {
     padding-top: 6px !important;
     padding-bottom: 6px !important;
-    background-color: $brand-h;
+    background-color: rgba(black, 0.5);
+    position: absolute;
+    z-index: $zIndex-breadcrumb;
+    width: 100%;
 
     @media print {
       & { display: none }
     }
-  }
-
-  &--header {
-    background-image: url('../img/header-background.png');
-    background-repeat: repeat;
-    color: #fff;
-    padding-top: 50px;
-    padding-bottom: 50px;
 
     @include mq($from: m) {
-      padding-top: 80px;
-      padding-bottom: 80px;
-    }
-  }
+      top: $header-top + $header-height + $header-height;
 
-  &--subpage-header {
-    padding-bottom: 0px;
-
-    @include mq($from: m) {
-      padding-top: 40px;
-      padding-bottom: 0px;
-    }
-
-    .block__header {
-      color: $brand-h;
-    }
-
-    .block__sub-header {
-      color: $brand-m;
+      .section--nosubnav & {
+        top: $header-top + $header-height;
+      }
     }
   }
 
   &--highlight {
-    background: linear-gradient($brand-b, $brand-c);
+    background: $brand-c;
+    background: linear-gradient(to bottom, $brand-b, $brand-c);
     color: #fff;
 
     .h1,
@@ -178,4 +164,95 @@
       text-align: center;
     }
   }
+
+  &--requests-detail {
+    padding: 20px 0;
+    background: $brand-i;
+  }
+}
+
+.block--header {
+  background-image: url('../img/header-background.png');
+  background-repeat: repeat;
+  color: #fff;
+  padding-top: 120px;
+  padding-bottom: 50px;
+
+  @include mq($from: m) {
+    padding-top: 280px;
+    padding-bottom: 80px;
+  }
+}
+
+// Components
+.block__section {
+  @include cf;
+
+  margin-bottom: 40px;
+
+  &:first-of-type {
+    margin-top: 0px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 20px; // cater for site container
+  }
+
+  @include mq($from: m) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  &--about-your-donation {
+    margin-bottom: 20px;
+    @include mq($from: m) {
+      margin-bottom: 20px;
+      & + .block__section {
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+.block--subpage-header {
+  padding-top: 90px;
+  padding-bottom: 0px;
+
+  @include mq($from: m) {
+    padding-top: 250px;
+    padding-bottom: 0px;
+  }
+
+  .block__header {
+    color: $brand-h;
+    padding-top: 50px;
+
+    &.has-icon--left {
+      margin: 20px 0;
+      padding-left: 60px;
+      position: relative;
+      text-align: center;
+
+      @include mq($from: m) {
+        margin: 20px 0 10px;
+        padding-left: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  .block__sub-header {
+    color: $brand-m;
+
+    p:first-of-type {
+      margin-top: 0;
+    }
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.template--maybe-empty .block--home-promo {
+  padding-bottom: 0px!important;
 }
