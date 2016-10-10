@@ -1,3 +1,5 @@
+const stickyNavShrink = require('./navigation/sticky-nav-shrinker')
+
 var openElement = '.js-nav-open'
 var closeElement = '.js-nav-close'
 var overlayElement = '.js-nav-overlay'
@@ -16,6 +18,8 @@ var init = function () {
   document.querySelector(overlayElement).addEventListener('click', function (e) {
     close()
   })
+
+  stickyNavShrink.init()
 }
 
 var open = function () {
