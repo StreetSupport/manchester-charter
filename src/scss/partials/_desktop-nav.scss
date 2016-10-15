@@ -157,7 +157,6 @@ $normalPadding: 35px;
   }
 }
 
-
 // Active Subnav
 @include mq($from: m) {
   @each $section in $nav-sections {
@@ -181,7 +180,7 @@ $normalPadding: 35px;
     }
 
     .nav__item--#{$page} > a {
-      text-decoration: underline;
+      text-decoration: underline!important;
 
       @include mq($from: m) {
         background-color: $brand-i;
