@@ -94,7 +94,7 @@
 
     &--sub-list {
       list-style: none;
-      margin: 0 0 0 10px;
+      margin: 0;
       padding: 0;
     }
 
@@ -116,10 +116,16 @@
       ul {
         display: none;
       }
+
+      ul a {
+        color: $brand-k;
+      }
     }
 
     &--city-specific.is-active {
       border: none;
+      background: $brand-j;
+      color: $brand-k;
 
       ul {
         display: block;
@@ -132,9 +138,9 @@
 
     a {
       color: inherit;
+      text-decoration: none;
       display: block;
       padding: 10px;
-      text-decoration: none;
     }
   }
 
