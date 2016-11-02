@@ -181,11 +181,11 @@ $normalPadding: 35px;
     }
 
     .nav__item--#{$page} > a {
-      text-decoration: underline;
+      text-decoration: underline!important;
 
       @include mq($from: m) {
         background-color: $brand-i;
-        text-decoration: none;
+        text-decoration: none!important;
       }
     }
     .nav__item--sub-item.nav__item--#{$page} > a {
