@@ -60,6 +60,11 @@ page: progress
       <p class="recent-pledges__author"><span class="recent-pledges__signature" data-bind="html: signature"></span> - <span class="recent-pledges__creation-date" data-bind="text: creationDate"></span></p>
     </li>
   </ol>
+  <!-- ko if: moreAvailable -->
+  <div class="recent-pledges__more">
+    <button class="btn btn--brand-e" data-bind="click: loadNext"><span class="btn__text">View more</span></button>
+  </div>
+  <!-- /ko -->
 </div>
 {{> divider}}
 </script>
