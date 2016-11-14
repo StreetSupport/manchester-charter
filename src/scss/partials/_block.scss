@@ -113,6 +113,18 @@
         }
       }
     }
+
+    &--city-header {
+      @include mq($from: m) {
+        .cta {
+          @include span(1 of 2);
+        }
+
+        .cta:last-of-type {
+          @include last();
+        }
+      }
+    }
   }
 
   &__primary {
@@ -175,11 +187,24 @@
   background-image: url('../img/header-background.png');
   background-repeat: repeat;
   color: #fff;
-  padding-top: 120px;
+  padding-top: 160px;
   padding-bottom: 50px;
 
   @include mq($from: m) {
     padding-top: 280px;
+    padding-bottom: 80px;
+  }
+}
+
+.block--city-header {
+  background-image: url('../img/header-background.png');
+  background-repeat: repeat;
+  color: #fff;
+  padding-top: 120px;
+  padding-bottom: 50px;
+
+  @include mq($from: m) {
+    padding-top: 230px!important;
     padding-bottom: 80px;
   }
 }
@@ -238,6 +263,40 @@
         padding-left: 0;
         text-align: center;
       }
+
+      .block__header__icon {
+        @include size(50px);
+
+        position: absolute;
+        top: 40px;
+        left: 0;
+
+        @include mq($from: m) {
+          position: static;
+        }
+
+        &--big-change {
+          left: 50%;
+          margin-left: -90px;
+          @include mq($from: m) {
+            left: 0;
+            margin-left: 0;
+          }
+        }
+
+        &--give {
+          height: 110px;
+          width: 140px;
+          top: -40px;
+          right: 38px;
+
+          @include mq($from: m) {
+            margin-right: -28px;
+            margin-top: -30px;
+            vertical-align: middle;
+          }
+        }
+      }
     }
   }
 
@@ -251,6 +310,10 @@
       margin-bottom: 0;
     }
   }
+}
+
+.block--city-header .block__sub-header {
+  color: white!important;
 }
 
 .template--maybe-empty .block--home-promo {

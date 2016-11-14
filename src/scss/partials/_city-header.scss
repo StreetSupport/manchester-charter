@@ -1,0 +1,63 @@
+%manchester-header {
+  background-image: url('../img/header-background-manchester.png');
+
+  &:before {
+    height: 370px;
+    background-image: url('../img/manc-buildings.png');
+    background-position: 33% bottom;
+    background-repeat: no-repeat;
+  }
+}
+
+%leeds-header {
+  background-image: url('../img/header-background-leeds.png');
+
+  &:before {
+    height: 324px;
+    background-image: url('../img/leeds-buildings.png');
+    background-repeat: no-repeat;
+    background-position: 33% bottom;
+
+    @include mq($from: m) {
+    }
+  }
+}
+
+.city-header {
+  background-position: left bottom;
+  background-size: 940px;
+  position: relative;
+  height: 500px;
+  padding-bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:before {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 600px;
+    background-size: 600px;
+    left: 0px;
+    bottom: 18px;
+  }
+
+  & .container {
+    position: relative;
+    & .block__header {
+      color: $brand-k;
+    }
+  }
+}
+
+.manchester .city-header,
+.leeds .city-header--manchester {
+  @extend %manchester-header;
+}
+
+.leeds .city-header,
+.manchester .city-header--leeds {
+  @extend %leeds-header;
+}
