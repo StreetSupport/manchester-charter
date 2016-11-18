@@ -2,6 +2,7 @@
 import ko from 'knockout'
 require('knockout.validation') // No variable here is deliberate!
 import marked from 'marked'
+marked.setOptions({sanitize: true})
 
 var ajax = require('./ajax')
 var api = require('./api-endpoints')
