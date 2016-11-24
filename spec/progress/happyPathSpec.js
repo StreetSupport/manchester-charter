@@ -50,7 +50,7 @@ describe('View Pledges', () => {
   })
 
   it('- Should set pledges', () => {
-    expect(sut.pledges().length).toEqual(page1().embedded.pledges.length)
+    expect(sut.pledges().length).toEqual(page1().embedded.items.length)
     expect(sut.pledges()[0].signature).toEqual('Tamsin Sharp')
   })
 
@@ -64,7 +64,7 @@ describe('View Pledges', () => {
     })
 
     it('- Should concat pledges with next page', () => {
-      let total = page1().embedded.pledges.length + page2().embedded.pledges.length
+      let total = page1().embedded.items.length + page2().embedded.items.length
       expect(sut.pledges().length).toEqual(total)
       expect(sut.pledges()[total - 1].signature).toEqual('CityCo and Heart of Manchester Business Improvement District') // organisation signature
     })
@@ -83,7 +83,7 @@ const page1 = () => {
       'self': '/v2/approved-charter-supporters?index=0'
     },
     'embedded': {
-      'pledges': [
+      'items': [
         {
           'firstName': 'Tamsin',
           'lastName': 'Sharp',
@@ -138,7 +138,7 @@ const page2 = () => {
       'self': '/v2/approved-charter-supporters?index=5'
     },
     'embedded': {
-      'pledges': [
+      'items': [
         {
           'firstName': 'Colin',
           'lastName': 'Barson',
