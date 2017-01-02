@@ -8,8 +8,8 @@
 // Sass-mq & susy are from NPM
 
 @import "vendor/normalize";
-@import "sass-mq";
-@import "susy";
+@import "../../node_modules/sass-mq/sass-mq.scss";
+@import "../../node_modules/susy/susy.scss";
 
 // Street Support Base Partials
 
