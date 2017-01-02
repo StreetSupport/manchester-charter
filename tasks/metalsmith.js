@@ -5,6 +5,7 @@ import gulp from 'gulp'
 // Specific task modules
 import browserSync from 'browser-sync'
 import Metalsmith from 'metalsmith'
+import inPlace from 'metalsmith-in-place'
 
 // Metalsmith task
 gulp.task('metalsmith', function (callback) {
