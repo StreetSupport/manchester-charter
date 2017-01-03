@@ -16,16 +16,25 @@
     "data": "src/data/"
   },
   "autoprefixer": {
-    "browsers": ["last 3 versions", "safari 8", "ios 8", "android 4", "android 3"]
+    "browsers": [
+      "last 3 versions",
+      "safari 8",
+      "ios 8",
+      "android 4",
+      "android 3"
+    ]
   },
   "critical": {
-    "dimensions": [{
-      "width": "320",
-      "height": "480"
-    }, {
-      "width": "1200",
-      "height": "900"
-    }]
+    "dimensions": [
+      {
+        "width": "320",
+        "height": "480"
+      },
+      {
+        "width": "1200",
+        "height": "900"
+      }
+    ]
   },
   "metalsmith": {
     "plugins": {
@@ -33,21 +42,8 @@
         "directory": "./src/data/**/*.json"
       },
       "metalsmith-drafts": true,
-      "metalsmith-markdownit": {
-         "typographer": true,
-         "html": true
-       },
-       "metalsmith-permalinks": {
-         "pattern": "blog/:title"
-       },
-      "metalsmith-collections": {
-        "posts": {
-          "pattern": "blog/!(index).md"
-        }
-      },
-      "metalsmith-discover-helpers": {
-        "directory": "./src/helpers",
-        "pattern": "/\\.js$/"
+      "metalsmith-register-helpers": {
+        "directory": "./src/helpers"
       },
       "metalsmith-layouts": {
         "engine": "handlebars",
