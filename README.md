@@ -1,4 +1,4 @@
-# StreetSupport Website
+# Manchester Homelessnes Charter
 
 The website codebase for charter.streetsupport.net.
 
