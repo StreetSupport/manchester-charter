@@ -1,64 +1,36 @@
-# foley v0.4.3
+# Manchester Homelessnes Charter
 
-[![Build Status](https://travis-ci.org/fephil/foley.svg?branch=master)](https://travis-ci.org/fephil/foley)
-[![devDependency Status](https://david-dm.org/fephil/foley/dev-status.svg)](https://david-dm.org/fephil/foley#info=devDependencies)
-[![Dependency Status](https://david-dm.org/fephil/foley.svg)](https://david-dm.org/fephil/foley)
+The website codebase for charter.streetsupport.net.
 
-**A modern, opinionated frontend workflow for building a static website and blog.**
+## Git Branching
 
-* Author: [Phil Lennon](https://frontendphil.com)
-* Source: [github.com/fephil/foley](https://github.com/fephil/foley)
-* Issues and Suggestions: [github.com/fephil/foley/issues](https://github.com/fephil/foley/issues)
-* Download: [https://github.com/fephil/foley/releases](https://github.com/fephil/foley/releases)
-* Twitter: [@frontendphil](https://twitter.com/frontendphil)
-* Email: [enquiry@frontendphil.com](mailto:enquiry@frontendphil.com)
+Please work in the `develop` branch first, and use feature branches for significant pieces of work. Once the feature is completed, submit a pull request into `develop`. Travis CI automatically builds on each commit to `develop`, `uat` and `release`. The `release` branch automatically builds to: [http://charter.streetsupport.net](http://charter.streetsupport.net).
 
-***
+## Build Status
 
-## About
-
-Foley is an 'all-in-one' workflow designed to quickly build a static website and blog using the latest techniques in Frontend development. Use foley as a base and tailor to your specific needs.
-
-This workflow contains the following key features:
-
-* Gulp,
-* Metalsmith (with Handlebars templates, JSON Data, Blog & Markdown support)
-* Webpack with jQuery integration,
-* Babel with ES2015 support,
-* Standardjs linting,
-* Sass & PostCSS,
-* CSS Stylelint with SUIT ruleset,
-* Critical inlined CSS,
-* Sass-mq & Susy grid system,
-* Image minification,
-* SVG sprite,
-* HTML minification,
-* Easy to use with simple Gulp tasks & configuration from global files,
-
-Comments, suggestions & pull requests are always welcome. See the [issues list](https://github.com/fephil/foley/issues) for more information about future enhancements and changes.
+* develop - [![Build Status](https://travis-ci.org/StreetSupport/manchester-charter.svg?branch=develop)](https://travis-ci.org/StreetSupport/manchester-charter) [![Browser Tests](https://travis-ci.org/StreetSupport/charter-browser-tests.svg?branch=master)](https://travis-ci.org/StreetSupport/charter-browser-tests)
+* staging - [![Build Status](https://travis-ci.org/StreetSupport/manchester-charter.svg?branch=uat)](https://travis-ci.org/StreetSupport/manchester-charter)
+* release - [![Build Status](https://travis-ci.org/StreetSupport/manchester-charter.svg?branch=release)](https://travis-ci.org/StreetSupport/manchester-charter)
 
 ## Install
 
-Download the latest stable release from [GitHub](https://github.com/fephil/foley/releases). Once this has been done:
-
-* Install Node 4 LTS,
-* (Recommended) Run in Terminal: `npm i npm -g` (Update to latest NPM 3 version),
+* Install Node 6 LTS,
 * Run in Terminal: `npm i gulp-cli -g` (Gulp does not need to be installed globally),
-* Navigate to the workflow folder in command line Terminal,
+* In your command line terminal, navigate to the street support project folder,
 * Run: `npm i`.
 
-Please note that there are a large amount of development dependencies to install, due to the 'all in one' nature of this workflow. It could possibly take a long time to install all the required modules.
+See [https://github.com/fephil/garrus](https://github.com/fephil/garrus) for more information about the Frontend workflow.
 
 ### Optional Installs
 
-In your code editor of choice, the following plugins are recommended but not required. Note the plugin names might be slightly different depending on your editor.
+In your editor of choice, the following plugins are recommended but not required. Note the plugin names might be slightly different depending on your editor.
 
 * editorconfig,
+* tabs-to-spaces,
 * linter,
 * linter-handlebars,
 * linter-js-standard,
-* linter-stylelint,
-* tabs-to-spaces.
+* linter-stylelint.
 
 ## Usage
 
@@ -73,20 +45,46 @@ Run these tasks in your command line Terminal:
 * The `gulp` task builds the website, watches for changes and starts up a sever,
 * The `gulp deploy` task builds the website without watching for changes or running the server,
 * The `gulp auditcode` task runs various linting on the project source files,
-* The `gulp visualtest` task builds the website, starts up a sever and runs visual regression tests,
 * The `gulp jsdev` task only checks and builds javascript with associated tests,
 * The `--production` flag builds minified assets with no sourcemaps,
 * The `--debug` flag shows the files being created in each task (if the task has a pipe).
 
-More documentation is in progress.
+## Development
 
-## Credit
+### Workflow
 
-* Sample images from Unsplash,
-* Sample icons from the Street Support project.
+On running the default `gulp` task from the terminal, it will run tests and linting, build the site into the `/_dist/` directory, and then launch in your default browser. As you edit files in the `/src/` directory, the site will refresh automatically.
 
-## License
+### Pages
 
-MIT
+Each page of the site is found under the `/pages/` directory. Each page is represented by a handlebars file `index.hbs`, in a directory named after the page's url. In each `.hbs` file, meta data is entered to define the page:
 
-**Have a nice day!**
+* title: the page's title tag
+* description: the page's meta description
+* layout: the master layout file (found in `/layouts/`)
+* permalink: ???
+* jsBundle: the js bundle that will be loaded into the page. Bundles are defined in `/webpack.config.js` and each one points to a js file in `/src/js/`
+* section: the top level navigation item this page belongs to. See `/src/scss/modules/_variables.scss` for list of sections
+* page: the navigation item for this page. See `/src/scss/modules/_variables.scss` for list of pages
+* nosubnav: {true|false} if `true`, hide the sub navigation on the page
+
+Page templating is done using [Hogan](http://twitter.github.io/hogan.js/). Note: template parts need to be escaped eg:
+
+``` \{{myVariable}} ```
+
+[Knockout](http://knockoutjs.com/) data-binding is also used in some pages.
+
+### Javascript
+
+Page code-behinds are written in plain ol' Javascript, or use [Knockout](http://knockoutjs.com/). Knockout view models are found in `/js/models/` are mostly tested. [ES2015](https://babeljs.io/learn-es2015/) syntax is transpiled using [Babel](https://babeljs.io/).
+
+### Testing
+
+Tests reside in the `/spec` directory, and are written using [Jasmine](https://jasmine.github.io/) and [Sinon](http://sinonjs.org/). Please ensure any features submitted via pull request are covered by tests.
+
+A number of happy paths are covered by automated browsers tests at: [https://github.com/StreetSupport/charter-browser-tests](https://github.com/StreetSupport/charter-browser-tests).
+
+### Styling
+
+CSS styling is written in SCSS, based on [Susy](http://susy.oddbird.net/), in the [BEM](http://getbem.com/introduction/) style, and is auto-prefixed. Build with a mobile-first approach, using [sass-mq](https://github.com/sass-mq/sass-mq) for media queries.
+Each component's styles should reside in its own file. Avoid nesting of elements and modifiers (although there are many cases of nesting at the moment!).
