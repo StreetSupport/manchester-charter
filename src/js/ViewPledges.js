@@ -35,13 +35,23 @@ const Model = function () {
     browser.loading()
 
     self.loadNext()
+    self.loadTotal()
+  }
+
+  self.loadTotal = () => {
+    ajax
+      .get(api.latestStatistics)
+      .then((result) => {
+        self.totalPledges(result.data.totalPledges)
+      }, () => {
+        browser.redirect('/500')
+      })
   }
 
   self.loadNext = () => {
     ajax
     .get(self.nextUrl())
     .then((result) => {
-      self.totalPledges(result.data.total)
       let pledges = result.data.embedded.items
         .map((p) => new Pledge(p))
       self.pledges(self.pledges().concat(pledges))

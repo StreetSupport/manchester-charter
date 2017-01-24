@@ -20,6 +20,18 @@ describe('View Pledges', () => {
     sinon.stub(browser, 'loaded')
     ajaxGetStub = sinon.stub(ajax, 'get')
     ajaxGetStub
+      .withArgs(api.latestStatistics)
+      .returns({
+        then: (success, error) => {
+          success({
+            'statusCode': 200,
+            'data': {
+              'totalPledges': 142
+            }
+          })
+        }
+      })
+    ajaxGetStub
       .withArgs(api.pledgesHal)
       .returns({
         then: (success, error) => {
@@ -52,6 +64,10 @@ describe('View Pledges', () => {
   it('- Should set pledges', () => {
     expect(sut.pledges().length).toEqual(page1().embedded.items.length)
     expect(sut.pledges()[0].signature).toEqual('Tamsin Sharp')
+  })
+
+  it('- Should set total pledges', () => {
+    expect(sut.totalPledges()).toEqual(142)
   })
 
   it('- Should set moreAvailable to true', () => {

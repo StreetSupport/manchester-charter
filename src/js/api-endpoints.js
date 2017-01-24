@@ -16,5 +16,6 @@ module.exports = {
   pledges: p('/v1/approved-charter-supporters'),
   pledgesHal: p('/v2/approved-charter-supporters'),
   makeAPledge: p('/v1/charter-supporters'),
-  actionGroups: p('/v1/action-groups')
+  actionGroups: p('/v1/action-groups'),
+  latestStatistics: p('/v1/statistics/latest')
 }
