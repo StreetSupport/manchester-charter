@@ -13,7 +13,6 @@ let endpoints = require('../../src/js/api-endpoints')
 let querystring = require('../../src/js/getUrlParam')
 
 describe('Get Action Groups Server Error', () => {
-  let model = null
   let browserRedirectStub = null
 
   beforeEach(() => {
@@ -30,7 +29,7 @@ describe('Get Action Groups Server Error', () => {
         }
       })
 
-    model = new Model()
+  const model = new Model() // eslint-disable-line
   })
 
   afterEach(() => {
