@@ -80,7 +80,7 @@ describe('View Pledges', () => {
     })
 
     it('- Should concat pledges with next page', () => {
-      let total = page1()..items.length + page2().items.length
+      let total = page1().items.length + page2().items.length
       expect(sut.pledges().length).toEqual(total)
       expect(sut.pledges()[total - 1].signature).toEqual('CityCo and Heart of Manchester Business Improvement District') // organisation signature
     })
