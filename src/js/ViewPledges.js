@@ -52,7 +52,7 @@ const Model = function () {
     ajax
     .get(self.nextUrl())
     .then((result) => {
-      let pledges = result.data.embedded.items
+      let pledges = result.data.items
         .map((p) => new Pledge(p))
       self.pledges(self.pledges().concat(pledges))
       var next = result.data.links.next === null
