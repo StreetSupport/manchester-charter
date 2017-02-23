@@ -167,7 +167,7 @@ $normalPadding: 35px;
     .section--#{$section} .city-nav .nav__item--#{$section} {
       background-color: $brand-i;
 
-      .nav__list--sub-list {
+      .nav__list--sub-list, .nav__list--sub-sub-list {
         display: block;
       }
     }
