@@ -72,6 +72,9 @@ $normalPadding: 35px;
           padding: 12px 20px;
         }
       }
+      .nav__list--sub-sub-list {
+        display:none;
+      }
     }
   }
 }
@@ -109,7 +112,7 @@ $normalPadding: 35px;
       }
     }
 
-    .nav__list--sub-list {
+    .nav__list--sub-sub-list {
       display: none;
       position: absolute;
       z-index: $zIndex-SubNav;
@@ -164,7 +167,7 @@ $normalPadding: 35px;
     .section--#{$section} .city-nav .nav__item--#{$section} {
       background-color: $brand-i;
 
-      .nav__list--sub-list {
+      .nav__list--sub-list, .nav__list--sub-sub-list {
         display: block;
       }
     }
@@ -193,6 +196,10 @@ $normalPadding: 35px;
       @include mq($from: m) {
         background-color: white;
       }
+    }
+
+    .nav__item--#{$page} .nav__list--sub-sub-list {
+      display: block;
     }
   }
 }
