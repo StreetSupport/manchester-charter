@@ -1,16 +1,16 @@
-# Manchester Homelessnes Charter
+# Manchester Homelessness Charter
 
 The website codebase for charter.streetsupport.net.
-
-## Git Branching
-
-Please work in the `develop` branch first, and use feature branches for significant pieces of work. Once the feature is completed, submit a pull request into `develop`. Travis CI automatically builds on each commit to `develop`, `uat` and `release`. The `release` branch automatically builds to: [http://charter.streetsupport.net](http://charter.streetsupport.net).
 
 ## Build Status
 
 * develop - [![Build Status](https://travis-ci.org/StreetSupport/manchester-charter.svg?branch=develop)](https://travis-ci.org/StreetSupport/manchester-charter) [![Browser Tests](https://travis-ci.org/StreetSupport/charter-browser-tests.svg?branch=master)](https://travis-ci.org/StreetSupport/charter-browser-tests)
 * staging - [![Build Status](https://travis-ci.org/StreetSupport/manchester-charter.svg?branch=uat)](https://travis-ci.org/StreetSupport/manchester-charter)
 * release - [![Build Status](https://travis-ci.org/StreetSupport/manchester-charter.svg?branch=release)](https://travis-ci.org/StreetSupport/manchester-charter)
+
+## Git Branching
+
+Please work in the `develop` branch first, and use feature branches for significant pieces of work. Once the feature is completed, submit a pull request into `develop`. Travis CI automatically builds on each commit to `develop`, `uat` and `release`. The `release` branch automatically builds to: [http://charter.streetsupport.net](http://charter.streetsupport.net).
 
 ## Install
 
