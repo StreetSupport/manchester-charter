@@ -1,6 +1,9 @@
-/* global ga, location */
+/* global */
 
 var init = function (title) {
+  /*
+  VL 19/07/17: disabled custom analytics til iProspect give further instruction
+
   var i
   var el = document.getElementsByTagName('a')
 
@@ -48,6 +51,7 @@ var trackLink = function (el) {
     })
     setTimeout(redirect, 2000)
   }
+  */
 }
 
 module.exports = {
