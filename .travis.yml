@@ -9,7 +9,7 @@ cache:
 before_script:
 - npm install npm -g
 - npm install gulp-cli -g
-- chmod +x ./deploy-website.shq
+- chmod +x ./deploy-website.sh
 script: "./deploy-website.sh"
 env:
   global:
