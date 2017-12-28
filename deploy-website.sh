@@ -20,7 +20,7 @@ fi
 if [[ $TRAVIS_BRANCH == 'release' ]]
   then
     APIENVIRONMENT=3
-    AZURE_WEBSITE=$PROD_AZURE_WEBSITE_W_EUR
+    AZURE_WEBSITE=$PROD_AZURE_WEBSITE
 fi
 
 # block robots if not live
