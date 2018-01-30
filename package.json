@@ -76,7 +76,7 @@
     "knockout": "3.4.1",
     "knockout.validation": "2.0.3",
     "lodash": "4.17.4",
-    "marked": "0.3.6",
+    "marked": "0.3.9",
     "moment": "2.19.3",
     "q": "1.4.1",
     "spin.js": "2.3.2",
