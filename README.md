@@ -14,10 +14,10 @@ Please work in the `develop` branch first, and use feature branches for signific
 
 ## Install
 
-* Install Node 6 LTS,
+* Install Node 8 LTS,
 * Run in Terminal: `npm i gulp-cli -g` (Gulp does not need to be installed globally),
 * In your command line terminal, navigate to the street support project folder,
-* Run: `npm i`.
+* Run: `npm i` (if you receive errors pertaining to snyk - most likely on Windows - follow [these instructions](https://support.snyk.io/snyk-cli/snyk-protect-requires-the-patch-binary).
 
 See [https://github.com/fephil/garrus](https://github.com/fephil/garrus) for more information about the Frontend workflow.
 
