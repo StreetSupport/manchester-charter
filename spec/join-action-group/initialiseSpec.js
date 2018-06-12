@@ -23,6 +23,7 @@ describe('Join Action Group', () => {
   var ajaxGetStub
 
   beforeEach(() => {
+    sinon.stub(browser, 'scrollTo')
     browserLoadingStub = sinon.stub(browser, 'loading')
     browserLoadedStub = sinon.stub(browser, 'loaded')
     browserOnHistoryPopStub = sinon.stub(browser, 'setOnHistoryPop')
@@ -51,6 +52,7 @@ describe('Join Action Group', () => {
   afterEach(() => {
     browser.loading.restore()
     browser.loaded.restore()
+    browser.scrollTo.restore()
     browser.pushHistory.restore()
     browser.setOnHistoryPop.restore()
     querystring.hashbang.restore()
