@@ -19,6 +19,7 @@ describe('Action Group selected in url not found', () => {
   beforeEach(() => {
     sinon.stub(browser, 'loading')
     sinon.stub(browser, 'loaded')
+    sinon.stub(browser, 'scrollTo')
     sinon.stub(browser, 'setOnHistoryPop')
     sinon.stub(browser, 'pushHistory')
     browserRedirectStub = sinon.stub(browser, 'redirect')
@@ -46,6 +47,7 @@ describe('Action Group selected in url not found', () => {
     browser.loading.restore()
     browser.loaded.restore()
     browser.pushHistory.restore()
+    browser.scrollTo.restore()
     browser.setOnHistoryPop.restore()
     browser.redirect.restore()
     querystring.hashbang.restore()

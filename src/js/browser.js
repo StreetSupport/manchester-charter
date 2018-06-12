@@ -55,13 +55,36 @@ let setOnHistoryPop = (onPopCallback) => {
 }
 
 var scrollTo = function (selector) {
+  const mobileHeader = document.querySelector('.header--mobile')
+
+  const getDesktopHeaderHeight = () => {
+    const desktopHeader = document.querySelector('.sticky')
+    // const navSubList = document.querySelector('.nav__list--sub-list')
+    return desktopHeader.offsetHeight + 44 // navSubList.offsetHeight - doesn't return greater than 0!
+  }
+
+  const getMobileHeaderHeight = () => {
+    return mobileHeader.offsetHeight
+  }
+
+  const getIsMobile = () => {
+    const mobileHeaderDisplay = mobileHeader.currentStyle
+      ? mobileHeader.currentStyle.display
+      : getComputedStyle(mobileHeader, null).display
+    return mobileHeaderDisplay === 'block'
+  }
+
+  const currentHeaderHeight = getIsMobile()
+    ? getMobileHeaderHeight()
+    : getDesktopHeaderHeight()
+
   let findPos = (obj) => {
     var curtop = 0
     if (obj.offsetParent) {
       do {
         curtop += obj.offsetTop
       } while (obj === obj.offsetParent)
-      return [curtop]
+      return [curtop - currentHeaderHeight]
     }
   }
   let element = document.querySelector(selector)

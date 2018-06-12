@@ -35,10 +35,11 @@ function Model () {
     let sections = [self.section1, self.section2, self.section3, self.section4]
     sections.forEach((s) => s.isActive(false))
     sections[sectionIndex - 1].isActive(true)
+    self.activeSection(sectionIndex)
+    console.log(self.activeSection())
     if (self.activeSection() > 0) {
       browser.scrollTo('.js-pledge')
     }
-    self.activeSection(sectionIndex)
   }
 
   self.setSection1Active = () => {
