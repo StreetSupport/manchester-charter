@@ -1,20 +1,38 @@
-<div class="sticky">
-  <header class="header header--desktop">
-    <div class="container">
-      <h1 class="h3 header__title" role="banner">
-        <a href="https://streetsupport.net">{{>icon name="logo" class="icon"}} <span class="text">Street Support</span></a>
-      </h1>
-      <nav class="header__nav">
-        <ul class="nav__list">
-          {{> global-nav }}
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <nav class="city-nav">
-    <ul class="nav__list nav__list--city" data-city="manchester">
-      <li class="nav__item nav__item--manchester"><a href="https://streetsupport.net/manchester/">Manchester</a></li>
-      {{> manchester-nav }}
+<header class="header header--desktop">
+  <div class="container">
+    <h1 class="h3 header__title" role="banner">
+      <a href="https;//streetsupport.net/">{{>icon name="logo" class="icon"}} <span class="text">Street Support<br />Network</span></a>
+    </h1>
+    <nav class="header__nav">
+      <ul class="nav__list">
+        {{> header-nav }}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<nav class="hubs-nav">
+  <div class="container">
+    <ul class="nav__list nav__list--hub" data-city="bradford">
+      {{> bradford/nav }}
     </ul>
-  </nav>
-</div>
+    <ul class="nav__list nav__list--hub" data-city="bournemouth">
+      {{> bournemouth/nav }}
+    </ul>
+    <ul class="nav__list nav__list--hub" data-city="leeds">
+      {{> leeds/nav }}
+    </ul>
+    <ul class="nav__list nav__list--hub" data-city="liverpool">
+      {{> liverpool/nav }}
+    </ul>
+    <ul class="nav__list nav__list--hub" data-city="manchester">
+      {{> manchester/nav }}
+    </ul>
+    <ul class="nav__list nav__list--hub" data-city="portsmouth">
+      {{> portsmouth/nav }}
+    </ul>
+    <ul class="nav__list nav__list--hub" data-city="southampton">
+      {{> southampton/nav }}
+    </ul>
+  </div>
+</nav>
