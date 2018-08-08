@@ -6,25 +6,20 @@ const subNavActiveClass = 'sub-nav-is-active'
 const el = document.querySelectorAll('.js-nav-container, .js-nav-push, .js-nav-overlay, html, body')
 const linksWithSubNav = document.querySelectorAll('.nav--mobile .nav__item-link--has-sub-nav')
 const subNavBackButtons = document.querySelectorAll('.sub-list-back-btn')
-const locationNavLinks = document.querySelectorAll('.nav__item--locations .nav__list .nav__item')
-
-const browser = require('./browser')
 
 var init = function () {
-  document.querySelector(openElement).addEventListener('click', open)
-  document.querySelector(closeElement).addEventListener('click', close)
-  document.querySelector(overlayElement).addEventListener('click', close)
+  if (window.getComputedStyle(document.querySelector('.header__btn')).display === 'block') { // we're in mobile!
+    document.querySelector(openElement).addEventListener('click', open)
+    document.querySelector(closeElement).addEventListener('click', close)
+    document.querySelector(overlayElement).addEventListener('click', close)
 
-  for (let i = 0; i < linksWithSubNav.length; ++i) {
-    linksWithSubNav[i].addEventListener('click', openSubNav)
-  }
+    for (let i = 0; i < linksWithSubNav.length; ++i) {
+      linksWithSubNav[i].addEventListener('click', openSubNav)
+    }
 
-  for (let i = 0; i < subNavBackButtons.length; ++i) {
-    subNavBackButtons[i].addEventListener('click', closeSubNav)
-  }
-
-  for (let i = 0; i < locationNavLinks.length; ++i) {
-    locationNavLinks[i].addEventListener('click', setLocationId)
+    for (let i = 0; i < subNavBackButtons.length; ++i) {
+      subNavBackButtons[i].addEventListener('click', closeSubNav)
+    }
   }
 }
 
@@ -42,13 +37,6 @@ const closeSubNav = function (e) {
   for (let i = 0; i < el.length; ++i) {
     el[i].classList.remove(subNavActiveClass)
   }
-}
-
-const setLocationId = function (e) {
-  e.preventDefault()
-  console.log(e.target.parentNode.dataset.location)
-  const locationId = e.target.parentNode.dataset.location
-  browser.redirect(`/${locationId}/`)
 }
 
 var open = function () {
