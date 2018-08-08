@@ -1,6 +1,8 @@
 // Non outputted Sass
 
 @import "modules/functions";
+@import 'modules/generated-variables';
+@import 'modules/generated-location-nav-variables';
 @import "modules/variables";
 @import "modules/mixins";
 
@@ -23,7 +25,6 @@
 @import "partials/block";
 @import "partials/split";
 @import "partials/footer";
-@import "partials/desktop-nav";
 @import "partials/mobile-nav";
 @import "partials/accordion";
 @import "partials/breadcrumbs";

@@ -151,8 +151,7 @@
     }
 
     @include mq($from: m) {
-      top: $header-top + $header-height + $header-height;
-
+      margin-top: -5px;
       .section--nosubnav & {
         top: $header-top + $header-height;
       }
@@ -200,12 +199,13 @@
   background-image: url('../img/header-background.png');
   background-repeat: repeat;
   color: #fff;
-  padding-top: 120px;
+  padding-top: 0px;
   padding-bottom: 50px;
 
   @include mq($from: m) {
-    padding-top: 230px!important;
+    padding-top: 100px!important;
     padding-bottom: 80px;
+    margin-top: -5px;
   }
 }
 
