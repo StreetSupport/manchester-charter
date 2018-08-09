@@ -501,6 +501,11 @@ $columned-dropdown-column-count: 3;
         background: $brand-c;
         text-decoration: none;
       }
+
+      .nav__list--columned & {
+        width: 170px;
+        display: inline-block;
+      }
     
       &--location-item {
         height: $locations-nav-height;
