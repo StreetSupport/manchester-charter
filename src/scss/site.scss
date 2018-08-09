@@ -15,38 +15,37 @@
 
 // Street Support Base Partials
 
-@import 'partials/location-header';
-@import "partials/accordion";
 @import "partials/base";
-@import "partials/block";
-@import "partials/breadcrumbs";
-@import "partials/btn";
+@import "partials/svgsprite";
 @import "partials/city-header";
 @import "partials/container";
+@import "partials/typography";
+@import "partials/btn";
 @import "partials/cta";
-@import "partials/desktop-nav";
-@import "partials/divider";
+@import "partials/block";
+@import "partials/split";
 @import "partials/footer";
 @import "partials/mobile-nav";
-@import "partials/split";
-@import "partials/svgsprite";
-@import "partials/typography";
+@import "partials/accordion";
+@import "partials/breadcrumbs";
+@import "partials/divider";
 
 // Charter Specific Components
 
-@import "partials/action-select";
 @import "partials/block-charter"; // Specific charter block variants
-@import "partials/board-members";
-@import "partials/charter-list-reset";
-@import "partials/charter-social";
 @import "partials/charter-take-action";
-@import "partials/partnership";
-@import "partials/pledge-form";
-@import "partials/pledge-section";
-@import "partials/pledge-select";
-@import "partials/pledge";
-@import "partials/progress";
-@import "partials/social-share";
+@import "partials/charter-social";
+@import "partials/charter-list-reset";
 @import "partials/step";
-@import "partials/superhero";
+@import "partials/pledge";
+@import "partials/pledge-section";
+@import "partials/pledge-form";
 @import "partials/view-charter";
+@import "partials/pledge-select";
+@import "partials/action-select";
+@import "partials/superhero";
+@import "partials/social-share";
+@import "partials/partnership";
+@import "partials/progress";
+@import "partials/board-members";
+@import "partials/location-header";

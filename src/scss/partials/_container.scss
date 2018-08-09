@@ -4,12 +4,9 @@
   padding: 0 $site-gutter;
 
   &--location-header {
-    margin-left: inherit;
-    margin-right: inherit;
     padding-bottom: $site-gutter;
 
     @include mq($from: m) {
-      width: 100%;
       min-height: 200px;
     }
   }

@@ -160,7 +160,7 @@
     }
 
     @include mq($from: m) {
-      top: $header-top + $header-height + $header-height;
+      margin-top: -5px;
     }
   }
 
@@ -216,8 +216,8 @@
   background-image: url('../img/header-background.png');
   background-repeat: repeat-x;
   background-position: bottom;
-  padding-top: 60px!important;
-  padding-bottom: 100px!important;
+  padding-top: 60px;
+  padding-bottom: 100px;
 
   .block__header,
   .block__sub-header {
