@@ -36,7 +36,7 @@ function Model () {
     sections.forEach((s) => s.isActive(false))
     sections[sectionIndex - 1].isActive(true)
     self.activeSection(sectionIndex)
-    if (self.activeSection() > 0) {
+    if (self.activeSection() > 1) {
       browser.scrollTo('.js-pledge')
     }
   }
