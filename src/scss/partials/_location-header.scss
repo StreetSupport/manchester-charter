@@ -1,0 +1,46 @@
+.location-header {
+  background-position: right bottom;
+  background-size: 940px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mq($from: m) {
+    overflow-x: hidden;
+    &:before {
+      background-position: 66% bottom;
+      background-repeat: no-repeat;
+      background-size: 600px;
+      bottom: 2px;
+      content: ' ';
+      display: inline-block;
+      height: 250px;
+      left: 50%;
+      position: absolute;
+      width: 600px;
+    }
+  }
+  @include mq($from: xxl) {
+    &:before {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  & .container {
+    position: relative;
+  }
+}
+
+.location--manchester .location-header {
+  @include mq($from: m) {
+    &:before {
+      background-image: url('../img/locations/manchester.png');
+      background-size: 650px;
+      width: 650px;
+      height: 270px;
+    }
+  }
+}

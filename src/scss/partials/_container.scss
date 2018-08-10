@@ -1,9 +1,29 @@
 .container {
   @include container();
+
   padding: 0 $site-gutter;
 
-  &--city-header {
-    margin-left: inherit;
-    margin-right: inherit;
+  &--location-header {
+    padding-bottom: $site-gutter;
+
+    @include mq($from: m) {
+      min-height: 200px;
+    }
+  }
+
+  &--big-change-mcr {
+    padding: 0;
+
+    @include mq($from: m) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &--footer {
+    @include mq($from: m) {
+      display: flex;
+      align-items: flex-end;
+    }
   }
 }

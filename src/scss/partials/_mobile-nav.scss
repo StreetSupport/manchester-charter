@@ -151,6 +151,7 @@ $columned-dropdown-column-count: 3;
 
     &.sub-nav-is-active {
       transform: translate3d(-($nav-width), 0, 0) !important;
+      & .nav__group > .nav__item > a { border: none; }
     }
 
     .nav__push {
@@ -289,19 +290,24 @@ $columned-dropdown-column-count: 3;
       }
     }
 
-    .nav__item-link {
-      &--has-sub-nav {
-        &::after {
-          top: 1.6em;
-          right: 15px;
-          border-bottom: 5px solid transparent;
-          border-top: 5px solid transparent;
-          border-left: 5px solid $brand-k;
-        }
+    .nav__item-link--has-sub-nav {
+      padding-right: 35px;
+      position: relative;
+      &::after {
+        content: '';
+        width: 0; 
+        height: 0; 
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid $brand-k;
+        margin-left: 0.5em;
+        top: 1.6em;
+        position: absolute;
       }
-      &--hub-heading {
-        border-bottom: 1px solid $brand-m!important;
-      }
+    }
+
+    .nav__item-link--hub-heading {
+      border-bottom: 1px solid $brand-m!important;
     }
 
     @media print {
@@ -386,6 +392,10 @@ $columned-dropdown-column-count: 3;
         z-index: 900;
       }
     }
+    
+    .hub-nav-container {
+      margin: 0px!important;
+    }
 
     .nav__list {
       margin: 0px;
@@ -406,9 +416,9 @@ $columned-dropdown-column-count: 3;
     
       &--columned {
         @include mq($from: m) {
-          column-count: $columned-dropdown-column-count!important;
+          column-count: $columned-dropdown-column-count;
           width: 541px!important; // hack!
-          margin-left: -$columned-dropdown-item-width!important;
+          margin-left: -$columned-dropdown-item-width;
         }
       }
     
@@ -482,15 +492,19 @@ $columned-dropdown-column-count: 3;
     }
 
     .nav__item-link {
-      text-decoration: none!important;
       display: block;
       color: white;
       padding: 37px 10px;
       height: $desktop-header-height;
-
+    
       &:hover {
         background: $brand-c;
         text-decoration: none;
+      }
+
+      .nav__list--columned & {
+        width: 170px;
+        display: inline-block;
       }
     
       &--location-item {
