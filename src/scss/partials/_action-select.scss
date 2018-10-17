@@ -92,6 +92,10 @@
     margin: 20px 0;
     color: $brand-h;
 
+    a {
+      color: $brand-h;
+    }
+
     .pledge-section--2 & {
       color: #fff!important;
     }
