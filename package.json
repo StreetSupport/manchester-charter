@@ -80,7 +80,7 @@
     "q": "1.4.1",
     "spin.js": "2.3.2",
     "svg4everybody": "2.1.4",
-    "snyk": "^1.47.0"
+    "snyk": "^1.69.7"
   },
   "babel": {
     "presets": [
