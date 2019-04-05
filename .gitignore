@@ -22,9 +22,3 @@ backstop_data
 *.orig
 *sublime*
 test/visual/results
-src/partials/nav/header-locations.hbs
-src/data/cachebusting.json
-src/partials/nav/service-cats.hbs
-src/scss/modules/_generated-location-nav-variables.scss
-src/scss/modules/_generated-variables.scss
-src/scss/partials/_svgsprite.scss
