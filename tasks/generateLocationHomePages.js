@@ -18,7 +18,6 @@ gulp.task('l-get-cities', (callback) => {
 
 gulp.task('l-generate-location-hub-nav', () => {
   const srcFile = `${config.paths.partials}/nav/`
-  console.log(cities)
   const navOutput = cities
     .sort((a, b) => {
       if (a.name < b.name) return -1
