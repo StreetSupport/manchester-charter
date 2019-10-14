@@ -35,8 +35,8 @@
 
   .take-action__element & {
     @include mq($from: xs) {
-    margin-left: 25%;
-    margin-bottom: -220px;
+      margin-left: 25%;
+      margin-bottom: -220px;
     }
   }
 
@@ -50,6 +50,7 @@
   .btn {
     width: 100%;
     margin-bottom: 0;
+    text-decoration: none;
   }
 
   &__description {
