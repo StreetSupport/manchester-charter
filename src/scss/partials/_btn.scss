@@ -5,7 +5,7 @@
   appearance: none;
   display: inline-block;
   margin-bottom: 20px;
-  text-decoration: none;
+  text-decoration: none !important;
   text-align: center;
   outline: none;
   font-size: 16px;
@@ -22,7 +22,7 @@
   &__icon {
     width: 100%;
     display: block;
-    background: linear-gradient(#ADE1F9, #FFFFFF);
+    background: linear-gradient(#ade1f9, #ffffff);
     border-radius: 10px 10px 0 0;
     position: relative;
 
@@ -57,7 +57,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     opacity: 0;
     transition: opacity 250ms linear;
     border-radius: 10px 10px 0 0;
@@ -68,10 +68,10 @@
     .btn__text {
       background-color: $brand-d;
       color: #fff;
-      box-shadow: 0px 3px 0px 0px darken( $brand-d, 15% );
+      box-shadow: 0px 3px 0px 0px darken($brand-d, 15%);
 
       &:hover {
-        background-color: darken( $brand-d, 5% );
+        background-color: darken($brand-d, 5%);
       }
     }
   }
@@ -80,10 +80,10 @@
     .btn__text {
       background-color: $brand-e;
       color: $brand-m;
-      box-shadow: 0px 3px 0px 0px darken( $brand-e, 15% );
+      box-shadow: 0px 3px 0px 0px darken($brand-e, 15%);
 
       &:hover {
-        background-color: darken( $brand-e, 5% );
+        background-color: darken($brand-e, 5%);
       }
     }
   }
@@ -92,10 +92,10 @@
     .btn__text {
       background-color: $brand-g;
       color: #fff;
-      box-shadow: 0px 3px 0px 0px darken( $brand-g, 15% );
+      box-shadow: 0px 3px 0px 0px darken($brand-g, 15%);
 
       &:hover {
-        background-color: darken( $brand-g, 5% );
+        background-color: darken($brand-g, 5%);
       }
     }
   }
