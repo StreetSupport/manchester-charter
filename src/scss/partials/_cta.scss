@@ -35,8 +35,8 @@
 
   .take-action__element & {
     @include mq($from: xs) {
-    margin-left: 25%;
-    margin-bottom: -220px;
+      margin-left: 25%;
+      margin-bottom: -220px;
     }
   }
 
