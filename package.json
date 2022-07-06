@@ -75,7 +75,7 @@
     "knockout": "3.5.0-rc",
     "knockout.validation": "2.0.3",
     "marked": "^0.6.2",
-    "moment": "2.19.3",
+    "moment": "2.29.4",
     "q": "1.4.1",
     "snyk": "^1.234.0",
     "spin.js": "2.3.2",
